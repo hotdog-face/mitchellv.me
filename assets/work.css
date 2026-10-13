@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Work pages (work/*.html): projects brought over from Behance.
+   Loaded after site.css. Each project page sets --work-bg on .work-body.
+   ========================================================================== */
+
+.work-page { --canvas: 1400px; --text-col: 680px; --row-h: 260px; overflow-x: clip; }
+
+/* ---------- Intro: title, short description, meta ---------- */
+.work-intro { width: min(var(--text-col), 100% - 32px); margin: 0 auto; padding: 56px 0 40px; text-align: center; }
+.work-back { display: inline-block; margin-bottom: 24px; font-size: 12px; letter-spacing: .2em; color: var(--muted); text-decoration: none; text-transform: uppercase; }
+.work-back:hover { color: var(--pink); }
+.work-intro h1 { font-size: clamp(30px, 5vw, 44px); color: var(--ink); font-weight: 700; letter-spacing: -.01em; margin-bottom: 16px; overflow-wrap: anywhere; }
+.work-desc { font-size: 17px; margin: 0 0 16px; }
+.work-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 8px; margin: 0; padding: 0; list-style: none; font-size: 13px; color: var(--muted); }
+.work-meta li { border: 1px solid #ddd; border-radius: 999px; padding: 2px 12px; }
+.work-meta .work-date { border-color: transparent; padding-inline: 4px; }
+
+/* ---------- Module column ---------- */
+.work-body { background: var(--work-bg, #fff); }
+.work-canvas { width: min(var(--canvas), 100%); margin: 0 auto; }
+.m { margin: 0; }
+.m img, .m video { margin-inline: auto; max-width: 100%; height: auto; }
+
+/* Text blocks */
+.m-text { width: min(var(--text-col), 100% - 32px); margin: 0 auto; padding: 56px 0; font-size: 17px; line-height: 1.65; text-align: center; }
+.m-text h2 { font-size: clamp(26px, 4vw, 36px); color: var(--ink); font-weight: 700; margin: 0 0 .6em; }
+.m-text h3 { font-size: 20px; color: var(--ink); font-weight: 700; margin: 1.6em 0 .5em; }
+.m-text > :first-child { margin-top: 0; }
+.m-text > :last-child { margin-bottom: 0; }
+.m-text .ta-l { text-align: left; }
+.m-text .ta-c { text-align: center; }
+.m-text ol, .m-text ul { text-align: left; padding-left: 1.4em; margin: 0 0 1em; }
+.m-text li { margin-bottom: .5em; }
+.m-text a { color: var(--teal-link); }
+
+/* Justified image grid (Behance "media collection"): each item grows in proportion to its aspect ratio --r */
+.m-grid { display: flex; flex-wrap: wrap; }
+.m-grid > * { flex: var(--r) var(--r) calc(var(--r) * var(--row-h)); min-width: 0; }
+.m-grid img, .m-grid video { width: 100%; height: 100%; object-fit: cover; }
+
+/* Hosted video player (Adobe) */
+.m-embed { margin: 0 auto; padding: 24px 0; }
+.m-embed > div { position: relative; width: 100%; }
+.m-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.m-caption { width: min(var(--text-col), 100% - 32px); margin: 8px auto 0; font-size: 13px; font-style: italic; color: var(--muted); text-align: center; }
+
+/* Dark project backgrounds */
+.work-body.is-dark, .work-body.is-dark .m-text h2, .work-body.is-dark .m-text h3 { color: #eee; }
+.work-body.is-dark .m-text a { color: var(--mint); }
+
+/* ---------- Prev / next ---------- */
+.work-pager { width: min(var(--canvas), 100% - 32px); margin: 0 auto; padding: 56px 0 72px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.work-pager a { display: block; text-decoration: none; padding: 20px 0; border-top: 1px solid #ddd; }
+.work-pager a:hover strong { color: var(--pink); }
+.work-pager span { display: block; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.work-pager strong { font-size: 20px; color: var(--ink); font-weight: 700; transition: color .2s; }
+.work-pager .next { text-align: right; }
+.work-all { grid-column: 1 / -1; justify-self: center; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.work-pager .work-all { border: 0; padding: 0; }
+
+/* ---------- Index: cover grid ---------- */
+.work-index { background: var(--page-gray); padding: 0 0 96px; }
+.work-index .work-intro { padding-bottom: 48px; }
+.work-grid { width: min(var(--canvas), 100% - 32px); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 32px 24px; }
+.work-card { display: block; text-decoration: none; color: var(--text); }
+.work-card figure { margin: 0 0 12px; aspect-ratio: 808 / 632; overflow: hidden; background: #ddd; }
+.work-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.work-card:hover img, .work-card:focus-visible img { transform: scale(1.03); }
+.work-card h2 { font-size: 19px; font-weight: 700; color: var(--ink); margin: 0 0 4px; }
+.work-card:hover h2 { color: var(--pink); }
+.work-card p { font-size: 13px; color: var(--muted); margin: 0; }
+
+@media (max-width: 820px) {
+  .work-page { --row-h: 150px; }
+  .work-intro { padding-top: 40px; }
+  .m-text { padding: 40px 0; font-size: 16px; }
+}
+@media (max-width: 480px) {
+  .work-page { --row-h: 110px; }
+  .work-pager { grid-template-columns: 1fr; gap: 0; }
+  .work-pager .next { text-align: left; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-card img { transition: none; }
+}
