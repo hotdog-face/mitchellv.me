@@ -22,8 +22,12 @@
 .wx-image { overflow: hidden; }
 .wx-image a { display: block; width: 100%; height: 100%; }
 .wx-img { position: absolute; max-width: none; }
-.wx-imgbtn .wx-hover { opacity: 0; transition: opacity .2s; }
-.wx-imgbtn:hover .wx-hover { opacity: 1; }
+/* Image buttons (project tiles): normal, hover and pressed images, faded like the original (0.5s in, 0.1s base) */
+.wx-imgbtn .wx-img { transition: opacity .1s; }
+.wx-imgbtn .wx-hover, .wx-imgbtn .wx-press { opacity: 0; transition: opacity .5s; }
+.wx-imgbtn:hover .wx-hover, .wx-imgbtn a:focus-visible .wx-hover { opacity: 1; }
+.wx-imgbtn:active .wx-press { opacity: 1; transition-duration: .1s; }
+.wx-imgbtn:active .wx-hover { opacity: 0; }
 
 .wx-btn {
   display: flex; align-items: center; justify-content: center;
