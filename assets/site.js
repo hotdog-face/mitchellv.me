@@ -53,3 +53,31 @@ document.querySelectorAll('[data-slideshow]').forEach(function (ss) {
     v.innerHTML = ''; v.src = v.getAttribute('data-hevc'); v.load(); v.play().catch(function () {});
   });
 })();
+
+// Section links (#about, #work, #contact): the phone layout has its own anchors
+// with an "-m" suffix, so jump to whichever copy is actually visible.
+(function () {
+  function target(hash) {
+    var el = document.getElementById(hash.slice(1));
+    if (el && el.offsetParent === null) el = document.getElementById(hash.slice(1) + '-m') || el;
+    return el;
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href*="#"]');
+    if (!a || a.pathname.replace(/index\.html$/, '') !== location.pathname.replace(/index\.html$/, '')) return;
+    var el = target(a.hash); if (!el) return;
+    e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); history.replaceState(null, '', a.hash);
+  });
+  if (location.hash) { var el = target(location.hash); if (el) setTimeout(function () { el.scrollIntoView(); }, 50); }
+})();
+
+// Highlight the section dot for whatever is on screen.
+(function () {
+  var dots = document.querySelectorAll('.wx-dotnav a'); if (!dots.length) return;
+  function update() {
+    var cur = 0;
+    dots.forEach(function (d, i) { var t = d.hash === '#top' ? document.body : document.getElementById(d.hash.slice(1)); if (t && t.getBoundingClientRect().top < innerHeight / 2) cur = i; });
+    dots.forEach(function (d, i) { d.classList.toggle('on', i === cur); });
+  }
+  addEventListener('scroll', update, { passive: true }); update();
+})();
