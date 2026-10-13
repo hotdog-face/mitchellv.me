@@ -18,3 +18,13 @@ document.querySelectorAll('[data-gallery]').forEach(function (g) {
   }
   show(0);
 });
+
+// Popups: <button data-open="id"> opens <dialog id="id">; clicking the backdrop or [data-close] closes it.
+document.querySelectorAll('[data-open]').forEach(function (btn) {
+  var dlg = document.getElementById(btn.getAttribute('data-open'));
+  if (!dlg) return;
+  btn.addEventListener('click', function () { dlg.showModal(); });
+  dlg.addEventListener('click', function (e) {
+    if (e.target === dlg || e.target.hasAttribute('data-close')) dlg.close();
+  });
+});

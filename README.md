@@ -10,13 +10,12 @@ Mitchell Vizensky's portfolio. Plain HTML and CSS with no build step and no depe
 | `copy-of-store-revamp.html` | Pokémon TV case study (old Wix URL, kept so existing links work) |
 | `store-update.html` | Big Fish Casino store revamp |
 | `rtsstore.html` | ReelTown Slots store (not linked from home) |
-| `hulu-re-design.html` | Hulu redesign draft (not linked from home) |
 | `resume.pdf` | Resume linked from the home page |
 | `assets/site.css` | All styles. Colors and fonts are variables at the top. |
-| `assets/site.js` | Pokémon TV hero slideshow |
+| `assets/site.js` | Pokémon TV hero slideshow and the "My Process" popup |
 | `assets/img/`, `assets/video/` | Images (WebP) and videos (MP4, including former GIFs) |
 
-The header and footer are copied into each page. If you change one, change it in all five.
+The header and footer are copied into each page. If you change one, change it in all four.
 
 ## Preview locally
 

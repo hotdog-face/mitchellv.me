@@ -262,3 +262,21 @@ p { margin: 0 0 1em; }
   .facts { grid-template-columns: 1fr; gap: 4px; }
   .facts dd { margin-bottom: 12px; }
 }
+
+/* ---------- Popup (My Process) ---------- */
+.btn { font-family: inherit; cursor: pointer; }
+.popup {
+  width: min(760px, 100% - 32px); max-height: min(85vh, 900px);
+  padding: 0; border: 0; background: var(--white); color: var(--text);
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+.popup::backdrop { background: rgba(0,0,0,.6); }
+.popup-body { padding: 48px clamp(20px, 6vw, 64px); font-size: 15px; }
+.popup-body h2 { font-size: 30px; color: var(--ink); text-align: center; margin-bottom: 32px; }
+.popup-body h3 { color: var(--teal-link); font-size: 17px; font-weight: 700; margin: 40px 0 16px; }
+.popup-body h4 { color: #000; font-size: 15px; font-weight: 700; margin: 28px 0 8px; }
+.popup-close {
+  position: sticky; top: 0; float: right; margin: 8px 8px 0 0;
+  width: 44px; height: 44px; border: 0; background: var(--white);
+  font-size: 32px; line-height: 1; color: var(--ink); cursor: pointer;
+}
