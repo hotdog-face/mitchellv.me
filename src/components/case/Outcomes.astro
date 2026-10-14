@@ -1,0 +1,35 @@
+---
+// Final band: "Outcomes" with the headline number on one half, the summary on a colored half.
+interface Props { stat: string; label: string; left?: string; right?: string; statColor?: string; height?: number }
+const { stat, label, left = '#f1efeb', right = '#0d4d90', statColor = '#f87a7c', height = 721 } = Astro.props;
+---
+<section class="outcomes" style={`--l:${left};--r:${right};--stat:${statColor};--h:${height}px`}>
+  <div class="half left">
+    <div class="stat">
+      <h2 data-anim="float">Outcomes</h2>
+      <p class="big">{stat}</p>
+      <p class="label">{label}</p>
+    </div>
+  </div>
+  <div class="half right"><div class="summary"><slot /></div></div>
+</section>
+
+<style>
+  .outcomes { display: grid; grid-template-columns: 1fr 1fr; min-height: var(--h); }
+  .half { display: flex; align-items: center; }
+  .left { background: var(--l); justify-content: flex-end; }
+  .right { background: var(--r); }
+  .stat { width: 229px; margin-right: 191px; text-align: center; }
+  h2 { font-size: 40px; font-weight: 700; color: var(--text); }
+  .big { margin: 18px 0 0; font-size: 50px; line-height: 45px; color: var(--stat); }
+  .label { margin: 8px 0 0; font-size: 22px; line-height: 19.8px; color: var(--text); }
+  .summary { width: 398px; margin-left: 92px; color: var(--white); font-size: 18px; line-height: 1.2; }
+  .summary :global(strong) { font-weight: 700; }
+  .summary :global(a) { color: inherit; }
+  @media (max-width: 999px) {
+    .outcomes { grid-template-columns: 1fr; min-height: 0; }
+    .half { padding: 56px var(--gutter); justify-content: center; }
+    .stat { margin: 0; }
+    .summary { width: min(560px, 100%); margin: 0; font-size: 17px; line-height: 1.5; }
+  }
+</style>

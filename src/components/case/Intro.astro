@@ -1,0 +1,26 @@
+---
+// Title block at the top of a case study: title, green rule, Problem/Goals text and the NDA note.
+import Heading from './Heading.astro';
+interface Props { title: string; nda?: string; x?: number; width?: number; top?: number }
+const { title, nda, x = 175, width = 682, top = 0 } = Astro.props;
+---
+<div class="intro" style={`--x:${x}px;--w:${width}px;--top:${top}px`}>
+  <Heading as="h1" align="left">{title}</Heading>
+  <div class="body"><slot /></div>
+  {nda && <p class="nda">{nda}</p>}
+</div>
+
+<style>
+  .intro { width: min(var(--w), 100%); margin-left: var(--x); margin-top: var(--top); }
+  .body { margin-top: 22px; font-size: 13px; line-height: 16.9px; }
+  .body :global(h3) { font-size: 22px; font-weight: 700; color: var(--text); margin: 0; line-height: normal; }
+  .body :global(p) { margin: 0 0 16.9px; }
+  .body :global(ul) { margin: 0; padding-left: 16.9px; }
+  .body :global(li) { margin: 0; }
+  .nda { margin: 21px 0 0; max-width: 460px; font-size: 12px; line-height: 1.45; color: var(--muted); }
+  @media (max-width: 999px) {
+    .intro { margin-left: 0; }
+    .body { font-size: 15px; line-height: 1.5; }
+    .body :global(p) { margin-bottom: 1em; }
+  }
+</style>

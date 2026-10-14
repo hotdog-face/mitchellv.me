@@ -1,0 +1,26 @@
+---
+// Row of persona cards (Pokémon TV).
+import Img from '../Img.astro';
+interface Props { people: { name: string; image: string; age: string; share: string; description: string }[] }
+const { people } = Astro.props;
+---
+<div class="personas">
+  {people.map(p => (
+    <article class="persona" data-anim="float-up">
+      <h3><span>{p.name}</span></h3>
+      <Img name={p.image} alt="" sizes="144px" class="photo" />
+      <p><strong>Age:</strong> {p.age}<br /><strong>Market Share:</strong> {p.share}<br /><strong>Description:</strong> {p.description}</p>
+    </article>
+  ))}
+</div>
+
+<style>
+  .personas { display: grid; grid-template-columns: repeat(4, 246px); gap: 10px; justify-content: center; }
+  .persona { background: #fafafa; border-radius: 10px; min-height: 428px; padding: 27px 16px 20px; }
+  h3 { text-align: center; font-size: 22px; line-height: 24.2px; font-weight: 400; }
+  h3 span { background: #414141; color: #fff; padding: 0 .25em; }
+  .persona :global(.photo) { width: 144px; height: 144px; margin: 21px auto 17px; border-radius: 50%; object-fit: cover; }
+  p { margin: 0; font-size: 13px; line-height: 16.9px; }
+  @media (max-width: 1060px) { .personas { grid-template-columns: repeat(2, minmax(0, 300px)); } }
+  @media (max-width: 560px) { .personas { grid-template-columns: 1fr; } .persona { min-height: 0; } p { font-size: 15px; line-height: 1.5; } }
+</style>

@@ -1,0 +1,48 @@
+---
+// "Process" section: numbered steps with a highlight that moves to the next step every
+// `interval` seconds (the original auto-advancing slideshow), and artwork beside the list.
+import Heading from './Heading.astro';
+interface Props {
+  title?: string; headingSize?: 30 | 40; rule?: boolean; ruleWidth?: number; caption?: string; steps: string[]; interval?: number;
+  badge?: 'circle' | 'tab'; badgeColor?: string; numberColor?: string; boxColor?: string; radius?: number;
+  textSize?: number; lineHeight?: string;
+  stepsX?: number; stepsWidth?: number; stepsTop?: number; mediaX?: number; mediaTop?: number;
+  boxLeft?: number; boxRight?: number;
+}
+const {
+  title = 'Process', headingSize = 40, rule = true, ruleWidth = 121, caption, steps, interval = 2, badge = 'circle', badgeColor = '#dbdee2', numberColor = '#000',
+  boxColor = '#dbdee2', radius = 20, textSize = 16, lineHeight = 'normal',
+  stepsX = 30, stepsWidth = 463, stepsTop = 62, mediaX = 480, mediaTop = 16, boxLeft = 11, boxRight = 12,
+} = Astro.props;
+const vars = `--steps-x:${stepsX}px;--steps-w:${stepsWidth}px;--steps-top:${stepsTop}px;--media-x:${mediaX}px;--media-top:${mediaTop}px;--box:${boxColor};--r:${radius}px;--badge:${badgeColor};--num:${numberColor};--fs:${textSize}px;--lh:${lineHeight};--box-l:${boxLeft}px;--box-r:${boxRight}px`;
+---
+<div class="steps-block" style={vars} id="process">
+  <Heading size={headingSize} rule={rule} ruleWidth={ruleWidth}>{title}</Heading>
+  <div class="layout">
+    <div class="steps" data-steps={interval} data-anim="float-left">
+      <div class:list={['marker', badge]} aria-hidden="true"><span class="badge"><span class="num">1</span></span><span class="box"></span></div>
+      <ol>{steps.map(s => <li>{s}</li>)}</ol>
+    </div>
+    <div class="media"><slot />{caption && <p class="media-caption">{caption}</p>}</div>
+  </div>
+</div>
+
+<style>
+  .layout { display: grid; grid-template-columns: var(--steps-w) 1fr; align-items: start; padding-left: var(--steps-x); margin-top: var(--steps-top); }
+  .steps { position: relative; }
+  ol { position: relative; margin: 0; padding: 0; list-style: none; font-size: var(--fs); line-height: var(--lh); }
+  li { padding: 3px 0; }
+  li + li { margin-top: calc(1em * 1.15 - 6px); }
+  .marker { position: absolute; left: 0; right: 0; top: var(--y, 0); height: var(--hgt, 0); transition: top 1s ease-in-out, height 1s ease-in-out; }
+  .box { position: absolute; inset: 0 calc(var(--box-r) * -1) 0 calc(var(--box-l) * -1); background: var(--box); border-radius: var(--r); }
+  .badge { position: absolute; top: 0; display: grid; place-items: center; font-family: Futura, Jost, var(--sans); font-size: 15px; color: var(--num); }
+  .circle .badge { left: -62px; width: 32px; height: 33px; border-radius: 50%; background: var(--badge); }
+  .tab .badge { left: -50px; width: 50px; height: 32px; border-radius: var(--r); background: var(--badge); padding-right: 18px; }
+  .media { margin-left: calc(var(--media-x) - var(--steps-w)); margin-top: var(--media-top); position: relative; }
+  .media-caption { margin: 0; font-size: 12px; }
+  @media (max-width: 999px) {
+    .layout { grid-template-columns: 1fr; padding-left: 52px; margin-top: 32px; }
+    .media { margin: 32px 0 0 -52px; }
+    ol { font-size: 16px; line-height: 1.45; }
+  }
+</style>

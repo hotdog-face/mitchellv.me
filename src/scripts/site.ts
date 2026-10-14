@@ -136,7 +136,30 @@ function initDotNav() {
   update();
 }
 
+// ---------------------------------------------------------------------------
+// Process steps: move the highlight (and its number badge) to the next step every N seconds.
+function initSteps() {
+  document.querySelectorAll<HTMLElement>('[data-steps]').forEach(el => {
+    const items = Array.from(el.querySelectorAll<HTMLElement>('li'));
+    const marker = el.querySelector<HTMLElement>('.marker');
+    const num = el.querySelector<HTMLElement>('.num');
+    if (!items.length || !marker) return;
+    let i = 0;
+    const place = () => {
+      const li = items[i];
+      marker.style.setProperty('--y', li.offsetTop + 'px');
+      marker.style.setProperty('--hgt', li.offsetHeight + 'px');
+      if (num) num.textContent = String(i + 1);
+    };
+    place();
+    addEventListener('resize', place);
+    const s = Number(el.dataset.steps);
+    if (s && !reducedMotion) setInterval(() => { i = (i + 1) % items.length; place(); }, s * 1000);
+  });
+}
+
 initReveal();
+initSteps();
 initSlideshows();
 initGalleries();
 initPopups();

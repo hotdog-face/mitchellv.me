@@ -1,0 +1,24 @@
+---
+// Images that slide in from the side on a timer (no arrows), as in "Iterative Process" and "Wireframes".
+import Img from '../Img.astro';
+interface Props { images: { name: string; width: number; top?: number; alt?: string }[]; interval?: number; height?: number }
+const { images, interval = 5, height = 440 } = Astro.props;
+---
+<div class="auto-slides" data-slideshow data-autoplay={interval} data-transition="horizontal" style={`--h:${height}px`}>
+  <div class="slides">
+    {images.map((im, i) => (
+      <div class:list={['slide', { on: i === 0 }]}>
+        <Img name={im.name} alt={im.alt ?? ''} sizes={`(max-width: 999px) 92vw, ${im.width}px`} style={`width:${im.width}px;margin-top:${im.top ?? 0}px`} />
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .auto-slides { position: relative; height: var(--h); overflow: hidden; }
+  .slides, .slide { position: absolute; inset: 0; }
+  .slide { display: flex; justify-content: center; align-items: flex-start; visibility: hidden; }
+  .slide.on { visibility: visible; }
+  .slide :global(img) { max-width: 100%; height: auto; }
+  @media (max-width: 999px) { .auto-slides { height: auto; aspect-ratio: 4 / 3; } .slide { align-items: center; } .slide :global(img) { margin-top: 0 !important; } }
+</style>

@@ -1,0 +1,32 @@
+---
+// A full-width section. `bg` is its background color; content sits in the 980px column.
+// `pinned` shows an image fixed to the screen while the band scrolls over it (the original "reveal" effect).
+import Img from '../Img.astro';
+import Video from '../Video.astro';
+interface Props { bg?: string; pinned?: string; pinnedVideo?: string; pinnedOpacity?: number; tint?: string; height?: number; pad?: string; class?: string; id?: string; wide?: boolean }
+const { bg, pinned, pinnedVideo, pinnedOpacity = 1, tint, height, pad = 'var(--section-y) 0', class: cls = '', id, wide = false } = Astro.props;
+---
+<section class:list={['band', cls]} id={id} style={`--bg:${bg ?? 'transparent'};--h:${height ? height + 'px' : 'auto'};--pad:${pad}`}>
+  {(pinned || pinnedVideo) && (
+    <div class="pin" aria-hidden="true" style={`opacity:${pinnedOpacity}`}>
+      <div class="track">
+        {pinned && <Img name={pinned} alt="" class="pin-media" sizes="100vw" />}
+        {pinnedVideo && <Video name={pinnedVideo} class="pin-media" />}
+      </div>
+    </div>
+  )}
+  {tint && <div class="tint" style={`background:${tint}`}></div>}
+  <div class:list={['inner', { wide }]}><slot /></div>
+</section>
+
+<style>
+  .band { position: relative; display: flow-root; background: var(--bg); min-height: var(--h); padding: var(--pad); }
+  .inner { position: relative; width: min(var(--content), 100% - 2 * var(--gutter)); margin-inline: auto; }
+  .inner.wide { width: 100%; }
+  /* pinned background: clipped to the band, image stays put while the page scrolls */
+  .pin { position: absolute; inset: 0; clip-path: inset(0); }
+  .track { position: absolute; left: 0; right: 0; top: -100vh; bottom: -100vh; }
+  .pin :global(.pin-media) { position: sticky; top: 0; display: block; width: 100%; height: 100vh; object-fit: cover; }
+  .tint { position: absolute; inset: 0; }
+  @media (max-width: 999px) { .band { min-height: 0; } }
+</style>

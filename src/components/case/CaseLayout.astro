@@ -1,0 +1,13 @@
+---
+// Page wrapper for case-study MDX files.
+import Base from '../../layouts/Base.astro';
+const { frontmatter } = Astro.props;
+---
+<Base title={frontmatter.title} description={frontmatter.description} fonts="family=Jost:wght@400">
+  <div class="case" style={`background:${frontmatter.pageColor ?? '#fff'}`}><slot /></div>
+</Base>
+<style>
+  .case { overflow-x: clip; }
+  .case :global(.caption) { font-size: 12px; color: var(--muted); text-align: center; }
+  .case :global(.lede) { text-align: center; }
+</style>

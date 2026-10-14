@@ -1,0 +1,17 @@
+---
+// Section heading with the short green rule underneath, as used throughout the case studies.
+interface Props { size?: 30 | 40; align?: 'center' | 'left'; rule?: boolean; ruleWidth?: number; as?: 'h1' | 'h2' | 'h3'; class?: string; anim?: string }
+const { size = 40, align = 'center', rule = true, ruleWidth = 121, as: Tag = 'h2', class: cls, anim = 'float' } = Astro.props;
+---
+<div class:list={['heading', align, cls]} style={`--size:${size}px;--rule:${ruleWidth}px`}>
+  <Tag data-anim={anim}><slot /></Tag>
+  {rule && <span class="rule" aria-hidden="true"></span>}
+</div>
+
+<style>
+  .heading { text-align: var(--align, center); }
+  .heading.left { --align: left; }
+  h1, h2, h3 { font-family: var(--sans); font-weight: 700; font-size: clamp(26px, 2.2vw + 18px, var(--size)); line-height: 1.35; color: var(--text); margin: 0; }
+  .rule { display: block; width: var(--rule); border-top: 2px solid #43c296; margin: 14px auto 0; }
+  .left .rule { margin-left: 0; }
+</style>
