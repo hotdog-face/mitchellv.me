@@ -133,7 +133,7 @@
   },
   {
    "type": "text",
-   "html": "<h3>A map for your round</h3><p class=\"ta-l\">The lobby is a small island map. Each match is a node, the prize pot sits at the end of the path, and wins and losses light up as you go, so players always know where they are in the round and what they're playing for. Tapping an upcoming node shows what a win or a loss would earn, and tapping a finished one shows that match's history. After each match, rewards fly into the pot and the marker moves to the next node. Finishing every match unlocks the pot.</p>"
+   "html": "<h3>A map for your round</h3><p class=\"ta-l\">In my prototype, the lobby was a small island map. Each match is a node, the prize pot sits at the end of the path, and wins and losses light up as you go, so players always know where they are in the round and what they're playing for. Tapping an upcoming node shows what a win or a loss would earn, and tapping a finished one shows that match's history. After each match, rewards fly into the pot and the marker moves to the next node. Finishing every match unlocks the pot.</p>"
   },
   {
    "type": "grid",
@@ -167,7 +167,57 @@
   },
   {
    "type": "text",
-   "html": "<h3>Live in the game</h3><p class=\"ta-l\">Build &amp; Battle now runs as a recurring event in Pokémon TCG Live, with each event themed around an expansion.</p>"
+   "html": "<h3>Live in the game</h3><p class=\"ta-l\">Build &amp; Battle runs as a recurring event in Pokémon TCG Live, themed around each new expansion. In the shipped version, the map became a path of hex tiles: each match is a tile, wins and losses are marked as you go, a marker shows your next match, and the prize pot sits at the top. Tapping the pot slides in your match history and the rewards you've banked so far, and the deck editor is always one tap away.</p>"
+  },
+  {
+   "type": "image",
+   "name": "live-lobby",
+   "width": 1600,
+   "height": 900,
+   "alt": "Shipped Build & Battle lobby: a hex path of matches with the prize pot at the top",
+   "maxWidth": 1200
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "live-history",
+     "width": 1600,
+     "height": 900,
+     "alt": "Match history panel with the round's record and rewards",
+     "ratio": 1.7778
+    },
+    {
+     "kind": "image",
+     "name": "live-edit-deck",
+     "width": 1600,
+     "height": 900,
+     "alt": "The Build & Battle deck editor: card library and 40-card deck",
+     "ratio": 1.7778
+    }
+   ]
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "live-rewards",
+     "width": 1600,
+     "height": 900,
+     "alt": "Match rewards added to the prize pot after a match",
+     "ratio": 1.7778
+    },
+    {
+     "kind": "image",
+     "name": "live-lobby-progress",
+     "width": 1600,
+     "height": 900,
+     "alt": "Back on the map with the next match marked",
+     "ratio": 1.7778
+    }
+   ]
   },
   {
    "type": "grid",
