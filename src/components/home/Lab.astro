@@ -39,8 +39,8 @@ const plain = (html = '') => html.replace(/<[^>]+>/g, '').trim();
     )}
   </div>
   <div class="grid">
-    {rest.map(p => (
-      <a class="build" href={`/work/${p.slug}`}>
+    {rest.map((p, i) => (
+      <a class="build" href={`/work/${p.slug}`} data-anim="float-up" style={`--anim-dur:.8s;--anim-delay:${i * 0.1}s`}>
         <Img name={`work/${p.slug}/${p.card.image}`} alt="" sizes="(max-width: 560px) 100vw, (max-width: 999px) 50vw, 270px" />
         <span class="t">{p.title}</span>
         <span class="d">{plain(p.description)}</span>

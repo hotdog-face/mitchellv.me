@@ -103,7 +103,7 @@ button { font: inherit; }
 .js [data-anim] { transition: opacity var(--anim-dur, 1.2s) ease-out, translate var(--anim-dur, 1.2s) cubic-bezier(.22,.8,.3,1), clip-path var(--anim-dur, 1.2s) ease-in-out; transition-delay: var(--anim-delay, 0s); }
 .js [data-anim]:not(.anim-in) { opacity: 0; }
 .js [data-anim="float"]:not(.anim-in) { translate: 0 -60px; }
-.js [data-anim="float-up"]:not(.anim-in) { translate: 0 60px; }
+.js [data-anim="float-up"]:not(.anim-in) { translate: 0 36px; }
 .js [data-anim="float-left"]:not(.anim-in) { translate: -60px 0; }
 .js [data-anim="float-right"]:not(.anim-in) { translate: 60px 0; }
 .js [data-anim="fly"]:not(.anim-in) { translate: 0 120px; }

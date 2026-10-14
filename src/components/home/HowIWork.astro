@@ -14,7 +14,7 @@ const steps = [
     <p class="sub">How I take a feature from a player problem to something people can play.</p>
     <ol class="steps">
       {steps.map((s, i) => (
-        <li>
+        <li data-anim="float-up" style={`--anim-dur:.8s;--anim-delay:${i * 0.1}s`}>
           <span class="n" aria-hidden="true">{i + 1}</span>
           <h3>{s.title}</h3>
           <p>{s.text}</p>

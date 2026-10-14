@@ -22,6 +22,12 @@ export interface CaseStudy {
   homeImage?: string;
   /** The home image is a cutout on a transparent background: show it without a frame. */
   homeImageAlpha?: boolean;
+  /**
+   * Short loop that plays over the home image on hover (public/assets/hover/<name>.mp4).
+   * `box` places it in % of the image (left, top, width, height), e.g. inside a device screen;
+   * `fit: 'contain'` letterboxes it on the card's background instead of cropping.
+   */
+  hoverClip?: { name: string; box?: [number, number, number, number]; fit?: 'cover' | 'contain' };
   /** Shown in "Selected work" on the home page. */
   featured: boolean;
 }
@@ -45,6 +51,7 @@ export const caseStudies: CaseStudy[] = [
     image: 'work/card-dex/cover',
     homeImage: 'cases/card-dex-window',
     homeImageAlpha: true,
+    hoverClip: { name: 'card-dex', box: [2.24, 5.32, 95.56, 89.11] },
     featured: true,
   },
   {
@@ -63,6 +70,7 @@ export const caseStudies: CaseStudy[] = [
       { value: '40%', label: 'of rounds played across multiple sessions' },
     ],
     image: 'work/build-battle/cover',
+    hoverClip: { name: 'build-battle', fit: 'contain' },
     featured: true,
   },
   {
@@ -81,6 +89,7 @@ export const caseStudies: CaseStudy[] = [
     image: 'cases/pokemon-tv',
     homeImage: 'cases/pokemon-tv-switch',
     homeImageAlpha: true,
+    hoverClip: { name: 'pokemon-tv', box: [18.03, 8.05, 63.54, 85.09] },
     featured: true,
   },
   {
@@ -97,6 +106,7 @@ export const caseStudies: CaseStudy[] = [
       { value: '+38.4%', label: 'sales over the previous store' },
     ],
     image: 'cases/bfc',
+    hoverClip: { name: 'bfc' },
     featured: true,
   },
   {

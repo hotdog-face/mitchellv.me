@@ -222,8 +222,139 @@ function initCountUp() {
   els.forEach(el => io.observe(el));
 }
 
+// ---------------------------------------------------------------------------
+// Email menus (EmailMenu.astro): the button opens a small menu instead of a bare mailto link.
+function initEmailMenus() {
+  const menus = Array.from(document.querySelectorAll<HTMLElement>('[data-email-menu]'));
+  if (!menus.length) return;
+  const closeAll = (except?: HTMLElement) => menus.forEach(m => {
+    if (m === except) return;
+    m.querySelector<HTMLElement>('.em-pop')!.hidden = true;
+    m.querySelector('[data-email-toggle]')!.setAttribute('aria-expanded', 'false');
+  });
+  menus.forEach(m => {
+    const toggle = m.querySelector<HTMLElement>('[data-email-toggle]')!;
+    const pop = m.querySelector<HTMLElement>('.em-pop')!;
+    toggle.addEventListener('click', e => {
+      e.preventDefault();
+      const open = pop.hidden;
+      closeAll(m);
+      pop.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+      if (open) pop.querySelector<HTMLElement>('button, a')?.focus();
+    });
+    const copy = m.querySelector<HTMLButtonElement>('[data-email-copy]');
+    copy?.addEventListener('click', async () => {
+      const label = copy.querySelector('span')!;
+      try { await navigator.clipboard.writeText(copy.dataset.emailCopy!); }
+      catch { const r = document.createRange(); r.selectNodeContents(m.querySelector('.em-addr')!); getSelection()?.removeAllRanges(); getSelection()?.addRange(r); }
+      label.textContent = 'Copied!'; copy.classList.add('ok');
+      setTimeout(() => { label.textContent = 'Copy address'; copy.classList.remove('ok'); }, 1600);
+    });
+  });
+  document.addEventListener('click', e => { if (!(e.target as Element).closest('[data-email-menu]')) closeAll(); });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    const open = menus.find(m => !m.querySelector<HTMLElement>('.em-pop')!.hidden);
+    if (open) { closeAll(); open.querySelector<HTMLElement>('[data-email-toggle]')!.focus(); }
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Hover clips (Selected work): a short loop fades in over the cover while the pointer is on the
+// card. Mouse and trackpad only; touch devices and reduced-motion visitors keep the still image.
+function initHoverClips() {
+  if (reducedMotion || !matchMedia('(hover: hover)').matches) return;
+  document.querySelectorAll<HTMLVideoElement>('video[data-hover-src]').forEach(v => {
+    const card = v.closest<HTMLElement>('.case') ?? v.parentElement!;
+    v.addEventListener('playing', () => v.classList.add('playing'));
+    card.addEventListener('pointerenter', () => {
+      if (!v.src) { v.src = v.dataset.hoverSrc!; v.load(); }
+      v.play().catch(() => {});
+    });
+    card.addEventListener('pointerleave', () => { v.classList.remove('playing'); v.pause(); });
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Click-to-zoom (work pages): images open full screen at their largest size. Arrow keys move
+// between the page's images; Escape, the close button or a click on the backdrop closes it.
+function initZoom() {
+  const imgs = Array.from(document.querySelectorAll<HTMLImageElement>('.work-body .m-img img, .work-body .m-grid img'));
+  if (!imgs.length) return;
+  const largest = (img: HTMLImageElement) => {
+    const set = img.getAttribute('srcset');
+    if (!set) return img.currentSrc || img.src;
+    return set.split(',').map(p => p.trim().split(/\s+/)).sort((a, b) => parseInt(b[1]) - parseInt(a[1]))[0][0];
+  };
+  const dlg = document.createElement('dialog');
+  dlg.className = 'zoom';
+  dlg.innerHTML = '<img alt=""><p class="zoom-cap"></p><button type="button" class="zoom-close" aria-label="Close">&times;</button>' +
+    '<button type="button" class="zoom-prev" aria-label="Previous image">&lsaquo;</button><button type="button" class="zoom-next" aria-label="Next image">&rsaquo;</button>';
+  document.body.append(dlg);
+  const big = dlg.querySelector('img')!, cap = dlg.querySelector<HTMLElement>('.zoom-cap')!;
+  let i = 0;
+  const show = (n: number) => {
+    i = (n + imgs.length) % imgs.length;
+    big.src = largest(imgs[i]); big.alt = imgs[i].alt; cap.textContent = imgs[i].alt;
+    dlg.classList.toggle('single', imgs.length < 2);
+  };
+  imgs.forEach((img, n) => {
+    img.classList.add('zoomable');
+    img.tabIndex = 0;
+    img.setAttribute('role', 'button');
+    img.setAttribute('aria-label', (img.alt ? img.alt + '. ' : '') + 'Open full size');
+    const open = () => { show(n); dlg.showModal(); };
+    img.addEventListener('click', open);
+    img.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  });
+  dlg.querySelector('.zoom-prev')!.addEventListener('click', () => show(i - 1));
+  dlg.querySelector('.zoom-next')!.addEventListener('click', () => show(i + 1));
+  dlg.querySelector('.zoom-close')!.addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => { if (e.target === dlg || e.target === big) dlg.close(); });
+  dlg.addEventListener('keydown', e => { if (e.key === 'ArrowRight') show(i + 1); if (e.key === 'ArrowLeft') show(i - 1); });
+}
+
+// ---------------------------------------------------------------------------
+// Case study section menu: built from the page's section headings (key ones only), highlights the
+// section on screen, and a thin bar shows how far through the case study the reader is.
+function initSectionNav() {
+  const nav = document.querySelector<HTMLElement>('[data-sect-nav]');
+  const body = document.querySelector<HTMLElement>('.work-body');
+  if (!nav || !body) return;
+  const key = /problem|overview|brief|what i did|competit|iteration|prototyp|grey box|mapping|testing|research|shaped|map for|celebrat|final layout|purchase flow|live in|launch|ship it|results|learned/i;
+  const heads = Array.from(body.querySelectorAll<HTMLHeadingElement>('.m-text h3')).filter(h => key.test(h.textContent!)).slice(0, 10);
+  if (heads.length < 3) { nav.hidden = true; return; }
+  const inner = nav.querySelector('.sect-inner')!;
+  const links = heads.map(h => {
+    h.id ||= 's-' + h.textContent!.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent!.replace(/^Chapter two:\s*/i, '').replace(/:.*$/, '');
+    inner.append(a);
+    return a;
+  });
+  const bar = nav.querySelector<HTMLElement>('.read-progress')!;
+  const update = () => {
+    const r = body.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, (innerHeight * 0.4 - r.top) / r.height));
+    bar.style.setProperty('--p', p.toFixed(4));
+    let cur = -1;
+    heads.forEach((h, i) => { if (h.getBoundingClientRect().top < innerHeight * 0.35) cur = i; });
+    links.forEach((a, i) => a.classList.toggle('on', i === cur));
+    if (cur >= 0) { const a = links[cur]; const box = inner as HTMLElement; if (a.offsetLeft < box.scrollLeft || a.offsetLeft + a.offsetWidth > box.scrollLeft + box.clientWidth) box.scrollTo({ left: a.offsetLeft - 16, behavior: 'smooth' }); }
+  };
+  addEventListener('scroll', update, { passive: true });
+  addEventListener('resize', update);
+  update();
+}
+
 initReveal();
 initLazyVideo();
+initEmailMenus();
+initHoverClips();
+initZoom();
+initSectionNav();
 initCompare();
 initCountUp();
 initSteps();

@@ -1,5 +1,6 @@
 ---
 import Img from '../Img.astro';
+import EmailMenu from '../EmailMenu.astro';
 import { about } from '../../data/home';
 import { email } from '../../data/site';
 import processDetails from '../../data/process-details.html?raw';
@@ -18,7 +19,7 @@ import processDetails from '../../data/process-details.html?raw';
     <p class="services" data-anim="fade" style="--anim-dur:.6s;--anim-delay:.7s">{about.services.split(' / ').map(s => s.replaceAll(' ', '\u00a0')).join(' / ')}</p>
     <div class="ctas">
       <a class="btn btn--green" href={about.resume}>Resume</a>
-      <a class="btn btn--ghost" href={`mailto:${email}`}>Email</a>
+      <EmailMenu label="Email" class="btn btn--ghost" />
       <button class="btn btn--ghost" type="button" data-open="process-details">My Process</button>
     </div>
   </div>
@@ -46,15 +47,15 @@ import processDetails from '../../data/process-details.html?raw';
   h2 { margin-top: 20px; font-family: var(--heebo); font-weight: 500; font-size: 15px; line-height: 36px; letter-spacing: .25em; color: var(--white); }
   .services { margin: 12px 0 0; font-size: 14px; line-height: 19.5px; letter-spacing: .15em; }
   .ctas { display: flex; flex-wrap: wrap; gap: 34px; justify-content: center; margin-top: 42px; }
-  .ctas .btn { width: 201px; min-height: 56px; border-radius: 5px; font-size: 22px; }
-  .ctas .btn--ghost { border-width: 2px; }
+  .ctas :global(.btn) { width: 201px; min-height: 56px; border-radius: 5px; font-size: 22px; }
+  .ctas :global(.btn--ghost) { border-width: 2px; }
   @media (max-width: 640px) {
     .inner { padding-bottom: 48px; }
     .process li { font-size: 8px; letter-spacing: .12em; }
     .bio { font-size: 16px; line-height: 1.55; text-align: center; }
     .services { letter-spacing: .08em; line-height: 1.6; }
     .ctas { gap: 16px; flex-direction: column; align-items: center; }
-    .ctas .btn { width: min(280px, 100%); }
+    .ctas :global(.btn) { width: min(280px, 100%); }
   }
 
   /* My Process popup */

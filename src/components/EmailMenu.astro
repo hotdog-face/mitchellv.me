@@ -1,0 +1,32 @@
+---
+// "Email me" button that works without a mail app: it opens a small menu to copy the address,
+// open a pre-filled Gmail draft, or use the visitor's mail app. Behaviour lives in site.ts
+// (initEmailMenus); without JavaScript the button falls back to a plain mailto link.
+import { email } from '../data/site';
+interface Props { label?: string; class?: string; subject?: string }
+const { label = 'Email me', class: cls = 'btn btn--pink', subject = 'Hello from mitchellv.me' } = Astro.props;
+const s = encodeURIComponent(subject);
+const mailto = `mailto:${email}?subject=${s}`;
+const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${s}`;
+---
+<span class="email-menu" data-email-menu>
+  <a class={cls} href={mailto} aria-haspopup="menu" aria-expanded="false" data-email-toggle>{label}</a>
+  <span class="em-pop" role="menu" hidden>
+    <span class="em-addr">{email}</span>
+    <button type="button" role="menuitem" data-email-copy={email}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h11v13h-2V5H8zM4 7h11v14H4zm2 2v10h7V9z"/></svg><span>Copy address</span></button>
+    <a role="menuitem" href={gmail} target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3zm2 2v.5l7 4.6 7-4.6V7zm14 2.9-7 4.6-7-4.6V17h14z"/></svg><span>Open in Gmail</span></a>
+    <a role="menuitem" href={mailto}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H7l-3 3zm2 2v8.2l.2-.2H18V6z"/></svg><span>Open mail app</span></a>
+  </span>
+</span>
+
+<style>
+  .email-menu { position: relative; display: inline-block; }
+  .em-pop { position: absolute; z-index: 30; left: 50%; bottom: calc(100% + 10px); translate: -50% 0; min-width: 230px; padding: 8px; border-radius: 12px; background: #fff; color: #222; box-shadow: 0 16px 40px rgba(0,0,0,.35); text-align: left; display: grid; gap: 2px; }
+  .em-pop[hidden] { display: none; }
+  .em-pop::after { content: ""; position: absolute; left: 50%; top: 100%; translate: -50% 0; border: 8px solid transparent; border-top-color: #fff; }
+  .em-addr { padding: 6px 10px 8px; font-size: 12.5px; color: #6b6b72; border-bottom: 1px solid #ececef; margin-bottom: 4px; user-select: all; }
+  .em-pop button, .em-pop a { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px; border: 0; border-radius: 8px; background: none; color: #222; font: 500 15px/1.2 var(--sans); text-decoration: none; cursor: pointer; text-align: left; }
+  .em-pop button:hover, .em-pop a:hover, .em-pop button:focus-visible, .em-pop a:focus-visible { background: #f1f1f4; outline: none; }
+  .em-pop svg { width: 18px; height: 18px; fill: var(--pink); flex: none; }
+  .em-pop .ok svg { fill: #1f9d6b; }
+</style>

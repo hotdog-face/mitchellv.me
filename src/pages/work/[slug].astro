@@ -43,6 +43,7 @@ const description = p.description ? plain(p.description) : `${p.title} - ${p.met
     </div>
 
     {cs && <Glance cs={cs} />}
+    {cs && <nav class="sect-nav" aria-label="Sections of this case study" data-sect-nav><div class="sect-inner"></div><span class="read-progress" aria-hidden="true"></span></nav>}
 
     <div class:list={['work-body', { 'is-dark': p.dark }]} style={`--work-bg:${p.background}`}>
       <div class="work-canvas">
