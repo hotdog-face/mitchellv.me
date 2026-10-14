@@ -1,0 +1,35 @@
+{
+ "title": "vita-agent-bridge",
+ "pageTitle": "MV | vita-agent-bridge",
+ "slug": "vita-agent-bridge",
+ "order": 0.3,
+ "description": "<p>See and control a PS Vita over the network, and let an AI agent do it. A kernel plugin and service that capture the screen, inject input and manage files, with an MCP server for AI agents.</p>",
+ "meta": {
+  "date": "2026",
+  "fields": [
+   "Development",
+   "AI tooling",
+   "Homebrew"
+  ]
+ },
+ "card": {
+  "image": "cover",
+  "line": "2026 · Build · AI agents on real hardware"
+ },
+ "background": "#0d1117",
+ "dark": true,
+ "modules": [
+  {
+   "type": "image",
+   "name": "cover",
+   "width": 1150,
+   "height": 900,
+   "maxWidth": 900,
+   "alt": "vita-agent-bridge: look, act, look again"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Look, act, look again</h3><p class=\"ta-l\">vita-agent-bridge runs inside the PS Vita's own shell, so it keeps working while games launch. It captures the screen, injects buttons and touch, launches apps, reads and writes files, and can reset a stuck console. A command-line tool drives it from a terminal, and an MCP server gives the same abilities to AI agents like Claude.</p><p class=\"ta-l\">With screenshots in the loop, an agent can work the console on its own: install homebrew, walk through a menu, check that an app booted, or pull a log off the memory card.</p><h3>Why I built it</h3><ul class=\"ta-l\"><li>Automated testing on real hardware, with no capture card.</li><li>Remote debugging while an app is still running.</li><li>Agent-driven setup of a fresh console, checking its own work from the screen.</li></ul><p class=\"ta-l\">It's built with safety in mind: no token file means no open port, and every upload is verified with a checksum on the console.</p><p><a href=\"https://github.com/hotdog-face/vita-agent-bridge\">View vita-agent-bridge on GitHub</a></p>"
+  }
+ ]
+}

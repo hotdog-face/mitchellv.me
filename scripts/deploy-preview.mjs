@@ -16,7 +16,7 @@ const REPO = 'https://github.com/hotdog-face/mitchellv-preview.git';
 const OUT = 'dist-preview';
 const run = (cmd, opts = {}) => execSync(cmd, { stdio: 'inherit', ...opts });
 
-run(`npx astro build --outDir ${OUT}`, { env: { ...process.env, PUBLIC_PREVIEW: '1' } });
+run(`npx astro build --outDir ${OUT}`, { env: { ...process.env, PUBLIC_PREVIEW: '1', PUBLIC_SHOW_SERVICES: '1' } });
 
 const walk = dir => fs.readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)]);
 const prefix = url => url.startsWith('/') && !url.startsWith('//') ? BASE + url : url;

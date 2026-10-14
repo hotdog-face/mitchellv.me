@@ -1,0 +1,92 @@
+---
+// The contract services page, built but switched off. The live site does not generate it until
+// PUBLIC_SHOW_SERVICES is set (turn it on after leaving TPCI: add the variable to the deploy
+// workflow, then link it from the header and contact section). The review preview always shows it.
+// It is marked noindex and left out of the sitemap either way, until it is meant to be public.
+import Base from '../layouts/Base.astro';
+import Img from '../components/Img.astro';
+import { caseStudies } from '../data/caseStudies';
+import { email } from '../data/site';
+
+export function getStaticPaths() {
+  return import.meta.env.PUBLIC_SHOW_SERVICES ? [{ params: { page: 'services' } }] : [];
+}
+
+const proof = caseStudies.filter(c => c.featured);
+const offers = [
+  { title: 'Feature UX', text: 'Collection, progression, game modes, live events and stores. Flows, grey box, interaction design and a spec your engineers can build from.', fit: 'For a feature that needs a senior owner from first sketch to launch.' },
+  { title: 'Playable prototypes', text: 'A working build of the idea, in Unity or web code, made fast with AI coding tools. Your team plays it instead of reviewing slides.', fit: 'For deciding whether an idea is worth building before you commit a team to it.' },
+  { title: 'Ongoing part-time', text: 'A senior game UX designer embedded with your team for 15 to 25 hours a week, remote.', fit: 'For studios that need senior UX without a full-time hire.' },
+];
+---
+<Base title="Contract game UX | Mitchell Vizensky" description="Senior game UX designer available for contract work: feature UX and playable prototypes for game studios.">
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <section class="sv-hero">
+    <p class="eyebrow">Contract work</p>
+    <h1>Game UX, from idea to playable.</h1>
+    <p class="lede">I'm a senior game UX designer with 14 years in games, most recently on Pokémon TCG Live at The Pokémon Company International. I help studios design features players come back for, and I build playable prototypes to prove them early.</p>
+    <div class="ctas"><a class="btn btn--pink" href={`mailto:${email}?subject=Contract%20game%20UX`}>Start a conversation</a><a class="btn btn--line" href="/resume.pdf" target="_blank" rel="noopener">Resume</a></div>
+    <p class="mail">{email}</p>
+  </section>
+
+  <section class="sv-offers">
+    <h2>Ways to work together</h2>
+    <div class="cards">
+      {offers.map(o => <div class="card"><h3>{o.title}</h3><p>{o.text}</p><p class="fit">{o.fit}</p></div>)}
+    </div>
+  </section>
+
+  <section class="sv-proof">
+    <h2>Recent results</h2>
+    <div class="list">
+      {proof.map(c => (
+        <a class="row" href={c.href}>
+          <Img name={c.image} alt="" sizes="200px" class="thumb" />
+          <span class="info"><strong>{c.title}</strong><span>{c.product}{c.year && <> · {c.year}</>}</span></span>
+          {c.impact[0] && <span class="stat"><b>{c.impact[0].value}</b> {c.impact[0].label}</span>}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="sv-cta">
+    <h2>Have a feature or prototype in mind?</h2>
+    <p>Tell me about the game, the problem and the timeline.</p>
+    <a class="btn btn--pink" href={`mailto:${email}?subject=Contract%20game%20UX`}>Email me</a>
+    <p class="mail">{email}</p>
+  </section>
+</Base>
+
+<style>
+  .sv-hero, .sv-offers, .sv-proof, .sv-cta { width: min(1000px, 100% - 2 * var(--gutter)); margin-inline: auto; }
+  .sv-hero { padding: 88px 0 56px; }
+  .eyebrow { margin: 0 0 10px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--pink); font-weight: 700; }
+  h1 { font-size: clamp(34px, 5vw, 56px); font-weight: 700; line-height: 1.05; color: var(--ink); }
+  .lede { margin-top: 18px; max-width: 640px; font-size: 18px; line-height: 1.55; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+  .ctas .btn { border-radius: 5px; font-size: 17px; }
+  .btn--line { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+  .btn--line:hover { background: var(--ink); color: #fff; filter: none; }
+  .mail { margin-top: 10px; font-size: 14px; color: #5f6470; }
+  h2 { font-size: clamp(24px, 3vw, 30px); font-weight: 700; color: var(--ink); }
+  .sv-offers { padding: 40px 0; }
+  .cards { margin-top: 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .card { padding: 22px; border-radius: 12px; background: var(--page-gray); display: flex; flex-direction: column; gap: 10px; }
+  .card h3 { font-size: 19px; font-weight: 700; color: var(--ink); }
+  .card p { margin: 0; font-size: 15px; line-height: 1.5; }
+  .card .fit { margin-top: auto; font-size: 13.5px; color: #5f6470; }
+  .sv-proof { padding: 40px 0; }
+  .list { margin-top: 20px; display: grid; gap: 12px; }
+  .row { display: grid; grid-template-columns: 120px 1fr auto; gap: 18px; align-items: center; padding: 12px; border-radius: 12px; border: 1px solid #e2e4ea; text-decoration: none; color: var(--text); }
+  .row:hover { border-color: var(--pink); }
+  .row :global(.thumb) { width: 120px; aspect-ratio: 808 / 632; object-fit: cover; border-radius: 8px; }
+  .info { display: grid; gap: 2px; }
+  .info strong { color: var(--ink); font-size: 17px; }
+  .info span { font-size: 13.5px; color: #5f6470; }
+  .stat { font-size: 13.5px; text-align: right; max-width: 220px; }
+  .stat b { display: block; font-size: 24px; color: var(--pink); }
+  .sv-cta { padding: 56px 0 96px; text-align: center; }
+  .sv-cta p { margin: 10px auto 22px; max-width: 520px; }
+  .sv-cta .btn { border-radius: 5px; font-size: 17px; }
+  @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } .row { grid-template-columns: 90px 1fr; } .row :global(.thumb) { width: 90px; } .stat { grid-column: 2; text-align: left; } }
+</style>

@@ -1,0 +1,57 @@
+{
+ "title": "Classic Mac Games",
+ "pageTitle": "MV | Classic Mac Games",
+ "slug": "classic-mac",
+ "order": 0.4,
+ "description": "<p>Games and toys for the original black-and-white Macintosh: an 8 MHz 68000, a 1-bit screen and System 6. Written in C and built on a modern Mac.</p>",
+ "meta": {
+  "date": "2026",
+  "fields": [
+   "Development",
+   "Game Design",
+   "Retro"
+  ]
+ },
+ "card": {
+  "image": "cover",
+  "line": "2026 · Build · 1-bit Macintosh games"
+ },
+ "background": "#d9d6cf",
+ "dark": false,
+ "modules": [
+  {
+   "type": "grid",
+   "maxWidth": 1000,
+   "items": [
+    {
+     "kind": "image",
+     "name": "jlb-title",
+     "width": 768,
+     "height": 768,
+     "alt": "Just One Boss title screen on a 1-bit Macintosh",
+     "ratio": 1
+    },
+    {
+     "kind": "image",
+     "name": "jlb-laser",
+     "width": 768,
+     "height": 768,
+     "alt": "Just One Boss laser attack on a 1-bit Macintosh",
+     "ratio": 1
+    },
+    {
+     "kind": "image",
+     "name": "celeste-play",
+     "width": 768,
+     "height": 768,
+     "alt": "Celeste Classic gameplay on a 1-bit Macintosh",
+     "ratio": 1
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>Designing for 1 bit and 8 MHz</h3><p class=\"ta-l\">These run on a stock Mac Plus, SE or Classic with 1 to 4 MB of RAM, or in an emulator. Every frame has to read in pure black and white, and every effect has to fit a 68000 with no floating-point unit.</p><ul class=\"ta-l\"><li><strong>One Foe</strong>, an original single-boss bullet-hell duel with four attack phases.</li><li><strong>Celeste Classic</strong>, a port of the PICO-8 original.</li><li><strong>Just One Boss</strong>, a port of the PICO-8 one-boss bullet dodger, made with its creator's permission.</li><li>Small toys and desk accessories, built with the Retro68 cross-compiler.</li></ul><p class=\"ta-l\">Most projects include a floppy disk image you can mount in an emulator or copy to real hardware.</p><p><a href=\"https://github.com/hotdog-face/classic-mac\">View classic-mac on GitHub</a> · <a href=\"https://github.com/hotdog-face/mac-classic-celeste-port\">Celeste port</a> · <a href=\"https://github.com/hotdog-face/just-one-boss-mac\">Just One Boss port</a></p>"
+  }
+ ]
+}

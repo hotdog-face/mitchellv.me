@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Hero from '../components/home/Hero.astro';
 import SelectedWork from '../components/home/SelectedWork.astro';
 import Strengths from '../components/home/Strengths.astro';
+import HowIWork from '../components/home/HowIWork.astro';
 import About from '../components/home/About.astro';
 import Lab from '../components/home/Lab.astro';
 import Tiles from '../components/home/Tiles.astro';
@@ -23,18 +24,19 @@ const person = {
   sameAs: ['https://www.linkedin.com/in/mitchellvizensky', 'https://github.com/hotdog-face', 'https://www.behance.net/Mitchellvizensky', 'https://dribbble.com/mvizensk'],
 };
 ---
-<Base title="Mitchell Vizensky - Senior UX Designer for Games" description="Senior UX designer for games. I design the systems players come back for: collecting, progression, live events and stores. Currently on Pokémon TCG Live at The Pokémon Company International." fonts="family=Heebo:wght@500&family=Quicksand:wght@400">
+<Base title="Mitchell Vizensky - Senior Game UX Designer" description="Senior game UX designer who takes features from idea to playable. Collection, progression, live events and stores for Pokémon TCG Live, plus playable prototypes and builds of my own." fonts="family=Heebo:wght@500&family=Quicksand:wght@400">
   <script type="application/ld+json" set:html={JSON.stringify(person)} slot="head" />
   <Hero />
   <SelectedWork />
   <Strengths />
+  <HowIWork />
   <About />
   <Lab />
   <Tiles />
   <Quote />
   <Contact />
   <nav class="dot-nav" slot="after" aria-label="Page sections">
-    <a href="#top" aria-label="Top of page"></a><a href="#work" aria-label="Selected work"></a><a href="#about" aria-label="About"></a><a href="#lab" aria-label="Lab"></a><a href="#contact" aria-label="Contact"></a>
+    <a href="#top" aria-label="Top of page"></a><a href="#work" aria-label="Selected work"></a><a href="#about" aria-label="About"></a><a href="#builds" aria-label="Builds"></a><a href="#contact" aria-label="Contact"></a>
   </nav>
 </Base>
 

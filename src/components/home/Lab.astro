@@ -1,35 +1,51 @@
 ---
-// Home page: side projects I design and build myself (src/data/caseStudies.ts → lab).
+// Home page "Builds": side projects I design and build myself (src/data/caseStudies.ts → lab).
+// The first one gets the big card; the rest sit in a grid under it.
 import Img from '../Img.astro';
 import { getWork } from '../../data/work';
 import { lab } from '../../data/caseStudies';
 const all = await getWork();
-const items = lab.map(href => all.find(p => `/work/${p.slug}` === href)!).filter(Boolean);
-const github: Record<string, string> = { vitaos: 'https://github.com/hotdog-face/VitaOS' };
+const items = lab.map(href => all.find(p => `/work/${p.slug}` === href)).filter((p): p is NonNullable<typeof p> => !!p);
+const [lead, ...rest] = items;
+const github: Record<string, string> = {
+  vitaos: 'https://github.com/hotdog-face/VitaOS',
+  'gameplay-spotlight': 'https://github.com/hotdog-face/gameplay-spotlight',
+  'vita-agent-bridge': 'https://github.com/hotdog-face/vita-agent-bridge',
+  'classic-mac': 'https://github.com/hotdog-face/classic-mac',
+  'retro-tv': 'https://github.com/hotdog-face/BroadcastBrain',
+};
 const plain = (html = '') => html.replace(/<[^>]+>/g, '').trim();
 ---
-<section class="lab" id="lab">
+<section class="lab" id="builds">
   <div class="inner">
     <div class="intro">
-      <p class="eyebrow">Lab</p>
-      <h2>I also design and build my own software.</h2>
-      <p>Side projects keep my prototyping sharp. I take them from idea to shipped release on my own: the product thinking, the interface, the motion and the code.</p>
+      <p class="eyebrow">Builds</p>
+      <h2>I design and build my own software, end to end.</h2>
+      <p>Homebrew for consoles, games for the original black-and-white Macintosh, tools that let AI agents test on real hardware. I take each one from idea to a working build, often with AI coding tools. It keeps my prototyping sharp, and it's how I test ideas for real.</p>
+      <p class="gh"><a href="https://github.com/hotdog-face" target="_blank" rel="noopener">Everything is on GitHub →</a></p>
     </div>
-    <div class="items">
-      {items.map(p => (
-        <article class="item">
-          <a class="media" href={`/work/${p.slug}`} tabindex="-1" aria-hidden="true"><Img name={`work/${p.slug}/${p.card.image}`} alt="" sizes="(max-width: 860px) 100vw, 520px" /></a>
-          <div class="text">
-            <h3><a href={`/work/${p.slug}`}>{p.title}</a></h3>
-            <p>{plain(p.description)}</p>
-            <div class="links">
-              <a class="btn" href={`/work/${p.slug}`}>See the project</a>
-              {github[p.slug] && <a class="btn btn--ghost" href={github[p.slug]} target="_blank" rel="noopener">GitHub</a>}
-            </div>
+    {lead && (
+      <article class="lead">
+        <a class="media" href={`/work/${lead.slug}`} tabindex="-1" aria-hidden="true"><Img name={`work/${lead.slug}/${lead.card.image}`} alt="" sizes="(max-width: 860px) 100vw, 520px" /></a>
+        <div class="text">
+          <h3><a href={`/work/${lead.slug}`}>{lead.title}</a></h3>
+          <p>{plain(lead.description)}</p>
+          <div class="links">
+            <a class="btn" href={`/work/${lead.slug}`}>See the project</a>
+            {github[lead.slug] && <a class="btn btn--ghost" href={github[lead.slug]} target="_blank" rel="noopener">GitHub</a>}
           </div>
-        </article>
-      ))}
-    </div>
+        </div>
+      </article>
+    )}
+  </div>
+  <div class="grid">
+    {rest.map(p => (
+      <a class="build" href={`/work/${p.slug}`}>
+        <Img name={`work/${p.slug}/${p.card.image}`} alt="" sizes="(max-width: 560px) 100vw, (max-width: 999px) 50vw, 270px" />
+        <span class="t">{p.title}</span>
+        <span class="d">{plain(p.description)}</span>
+      </a>
+    ))}
   </div>
 </section>
 
@@ -38,8 +54,9 @@ const plain = (html = '') => html.replace(/<[^>]+>/g, '').trim();
   .inner { width: min(1100px, 100% - 2 * var(--gutter)); margin-inline: auto; display: grid; grid-template-columns: 1fr 1.6fr; gap: 56px; align-items: center; }
   .eyebrow { margin: 0 0 10px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--mint); font-weight: 700; }
   h2 { font-size: clamp(26px, 3vw, 34px); font-weight: 700; color: #fff; line-height: 1.2; }
-  .intro p:last-child { margin-top: 14px; color: #b8bdcb; font-size: 16px; line-height: 1.55; }
-  .item { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 18px; }
+  .intro p:not(.eyebrow) { margin-top: 14px; color: #b8bdcb; font-size: 16px; line-height: 1.55; }
+  .intro .gh a { color: var(--mint); font-weight: 700; text-decoration: none; }
+  .lead { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 18px; }
   .media { display: block; border-radius: 10px; overflow: hidden; }
   .media :global(img) { width: 100%; aspect-ratio: 960 / 544; object-fit: cover; }
   h3 { font-size: 24px; font-weight: 700; }
@@ -49,5 +66,14 @@ const plain = (html = '') => html.replace(/<[^>]+>/g, '').trim();
   .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
   .links .btn { min-width: 0; min-height: 44px; padding: 0 18px; border-radius: 5px; font-size: 15px; }
   .links .btn--ghost:hover { color: #0b0f1a; }
-  @media (max-width: 860px) { .inner, .item { grid-template-columns: 1fr; gap: 28px; } .lab { padding: 64px 0; } }
+  .grid { width: min(1100px, 100% - 2 * var(--gutter)); margin: 32px auto 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+  .build { display: grid; gap: 8px; align-content: start; text-decoration: none; color: #b8bdcb; }
+  .build :global(img) { width: 100%; aspect-ratio: 1150 / 900; object-fit: cover; border-radius: 10px; border: 1px solid rgba(255,255,255,.08); transition: transform .3s; }
+  .build:hover :global(img) { transform: translateY(-3px); }
+  .t { font-size: 17px; font-weight: 700; color: #fff; }
+  .build:hover .t { color: var(--mint); }
+  .d { font-size: 13.5px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  @media (max-width: 999px) { .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 860px) { .inner, .lead { grid-template-columns: 1fr; gap: 28px; } .lab { padding: 64px 0; } }
+  @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }
 </style>

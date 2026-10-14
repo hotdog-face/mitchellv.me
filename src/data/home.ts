@@ -3,8 +3,8 @@
 
 export const hero = {
   name: "I'm Mitchell Vizensky",
-  headline: 'Senior UX designer for games.',
-  pitch: 'I design the systems players come back for: collecting, progression, live events and stores. Right now that means Pokémon TCG Live at The Pokémon Company International.',
+  headline: 'Senior game UX designer. I take features from idea to playable.',
+  pitch: 'I design the systems players come back for (collecting, progression, live events and stores) and build playable prototypes to prove them early. Right now that means Pokémon TCG Live at The Pokémon Company International.',
   previously: 'Previously at Amazon, Big Fish Games and PLAYSTUDIOS',
   background: 'bff7d9c7',
 };
@@ -20,10 +20,10 @@ export const proof = [
 // What I bring, framed around what games studios hire senior UX designers for.
 // `href` points to the case study that proves it.
 export const strengths = [
+  { title: 'Playable prototypes', text: 'I build working prototypes in code, often with AI coding tools, so a team can play an idea before committing to it.', proof: 'Builds', href: '/#builds' },
   { title: 'Collection & progression', text: 'Systems that give players long-term goals and a reason to return: collections, missions, stats and rewards.', proof: 'Card Dex & Research Missions', href: '/work/card-dex' },
   { title: 'Game modes & live events', text: 'New ways to play, designed end to end from flow and grey box to the live event players see.', proof: 'Build & Battle', href: '/work/build-battle' },
   { title: 'Stores & monetization', text: 'Store and offer experiences that feel rewarding to players and measurably move revenue.', proof: 'Big Fish Casino Store, +38.4% sales', href: '/bfc-store-revamp' },
-  { title: 'Research & prototyping', text: "I set up the user research process for Pokémon's Game Studio team, and I prototype in grey box, Unity and code to test ideas early.", proof: 'Pokémon TV on Nintendo Switch', href: '/pokemon-tv' },
 ];
 
 export const about = {
@@ -89,7 +89,7 @@ export const clients = {
 };
 
 export const quote = {
-  text: "User centered design is the idea that the work I do isn't about me or my portfolio. It is about the people I'm designing for and how the work I produce might help them live better lives.",
+  text: "The work isn't about me or my portfolio. It's about the players: what they came to do, what delights them, and what brings them back.",
   video: '07b58ef8',
 };
 

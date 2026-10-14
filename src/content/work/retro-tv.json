@@ -1,0 +1,35 @@
+{
+ "title": "Retro Cable TV",
+ "pageTitle": "MV | Retro Cable TV",
+ "slug": "retro-tv",
+ "order": 0.5,
+ "description": "<p>A retro cable box that plays 2002 to 2006 American television on a CRT, fed by a pipeline that turns archived TV into a searchable, scheduled library.</p>",
+ "meta": {
+  "date": "2026",
+  "fields": [
+   "Development",
+   "AI tooling",
+   "Hardware"
+  ]
+ },
+ "card": {
+  "image": "cover",
+  "line": "2026 · Build · CRT cable channel"
+ },
+ "background": "#14100c",
+ "dark": true,
+ "modules": [
+  {
+   "type": "image",
+   "name": "cover",
+   "width": 1150,
+   "height": 900,
+   "maxWidth": 900,
+   "alt": "BroadcastBrain commands: run, search and dashboard"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Turning a pile of tapes into a channel</h3><p class=\"ta-l\">The box runs FieldStation42 on a Raspberry Pi driving a composite CRT. The hard part is the library, so I built two tools for it.</p><p class=\"ta-l\"><strong>BroadcastBrain</strong> takes Internet Archive downloads, VHS captures, DVR recordings and DVD rips, and turns them into a segmented, analyzed, deduplicated library ready to schedule as cable. You drop videos in a folder, run one command, and wake up to a processed library. You can search it in plain English, like \"all MTV clips from 2004\", and every AI step is optional: the pipeline still runs without it and fills the gaps later.</p><p class=\"ta-l\"><strong>RetroConvert</strong> batch-converts video to 640x480 for the CRT. It never upscales, verifies each file before deleting the source, and picks up where it left off.</p><p><a href=\"https://github.com/hotdog-face/BroadcastBrain\">View BroadcastBrain on GitHub</a> · <a href=\"https://github.com/hotdog-face/RetroConvert\">RetroConvert</a></p>"
+  }
+ ]
+}

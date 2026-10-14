@@ -1,0 +1,43 @@
+---
+// Home page: how I take a feature from idea to playable. Each step links to where the site shows it.
+const steps = [
+  { title: 'Find the real problem', text: 'Research, data and playtests show what players actually struggle with. In Card Dex, getting one missing card took 14 steps.', link: { label: 'Card Dex', href: '/work/card-dex' } },
+  { title: 'Grey box the flow', text: 'Every screen and state, mapped before any art. It is fast to change and easy for a whole team to agree on.', link: { label: 'Build & Battle', href: '/work/build-battle' } },
+  { title: 'Make it playable', text: 'A working prototype in code, often built with AI coding tools, so the team can play the idea instead of imagining it.', link: { label: 'Builds', href: '/#builds' } },
+  { title: 'Test with players and real hardware', text: 'Playtests with UX research, on real devices and screens, not just mockups.', link: { label: 'vita-agent-bridge', href: '/work/vita-agent-bridge' } },
+  { title: 'Ship it and measure', text: 'A clear spec for engineering, then the numbers: +33.5% monthly users for Pokémon TV, +38.4% sales for the Big Fish Casino store.', link: { label: 'Pokémon TV', href: '/pokemon-tv' } },
+];
+---
+<section class="how" id="how">
+  <div class="inner">
+    <h2 class="heading"><b>FROM IDEA</b> TO PLAYABLE</h2>
+    <p class="sub">How I take a feature from a player problem to something people can play.</p>
+    <ol class="steps">
+      {steps.map((s, i) => (
+        <li>
+          <span class="n" aria-hidden="true">{i + 1}</span>
+          <h3>{s.title}</h3>
+          <p>{s.text}</p>
+          <a href={s.link.href}>See it in {s.link.label} →</a>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .how { background: var(--page-gray); padding: 72px 0 80px; }
+  .inner { width: min(1100px, 100% - 2 * var(--gutter)); margin-inline: auto; }
+  .heading { text-align: center; font-size: clamp(28px, 4vw, 37px); color: #222; }
+  .heading b { color: #000; }
+  .sub { margin: 10px auto 0; text-align: center; max-width: 560px; font-size: 16px; }
+  .steps { margin: 40px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; counter-reset: none; }
+  li { position: relative; display: flex; flex-direction: column; gap: 8px; padding-top: 18px; border-top: 3px solid var(--pink); }
+  .n { font-size: 13px; font-weight: 700; letter-spacing: .1em; color: var(--pink); }
+  h3 { font-size: 17px; font-weight: 700; color: var(--ink); line-height: 1.25; }
+  li p { margin: 0; font-size: 14px; line-height: 1.5; flex: 1; }
+  li a { font-size: 13px; font-weight: 700; color: var(--pink); text-decoration: none; }
+  li a:hover { text-decoration: underline; }
+  @media (max-width: 999px) { .steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } .how { padding: 56px 0 64px; } }
+</style>

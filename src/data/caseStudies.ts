@@ -106,8 +106,8 @@ export const caseStudies: CaseStudy[] = [
   },
 ];
 
-/** Side projects I design and build myself. */
-export const lab = ['/work/vitaos'];
+/** Builds: side projects I design and build myself, in the order shown. */
+export const lab = ['/work/vitaos', '/work/gameplay-spotlight', '/work/vita-agent-bridge', '/work/classic-mac', '/work/retro-tv'];
 
 export const caseStudyFor = (path: string) => caseStudies.find(c => c.href === path.replace(/\/$/, ''));
 

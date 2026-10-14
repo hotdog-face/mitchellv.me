@@ -1,0 +1,35 @@
+{
+ "title": "Gameplay Spotlight",
+ "pageTitle": "MV | Gameplay Spotlight",
+ "slug": "gameplay-spotlight",
+ "order": 0.2,
+ "description": "<p>A gameplay-first GameCube launcher for choosing something to play from the couch. You browse real gameplay stills and game logos instead of cover art.</p>",
+ "meta": {
+  "date": "2026",
+  "fields": [
+   "UX/UI",
+   "Development",
+   "Homebrew"
+  ]
+ },
+ "card": {
+  "image": "cover",
+  "line": "2026 · Build · GameCube launcher"
+ },
+ "background": "#101010",
+ "dark": true,
+ "modules": [
+  {
+   "type": "image",
+   "name": "crt",
+   "width": 695,
+   "height": 510,
+   "maxWidth": 900,
+   "alt": "Gameplay Spotlight running on a GameCube and a CRT television"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Designed for the couch and a CRT</h3><p class=\"ta-l\">Cover art tells you what a game is called. A gameplay still tells you what it feels like to play, which is what you're actually deciding from across the room. So Gameplay Spotlight leads with uncropped 4:3 gameplay images and a wrapping carousel of game logos, laid out for a CRT with adjustable screen position and scale.</p><ul class=\"ta-l\"><li>A showcase view with a bigger image, the logo, player and patch badges and a Play prompt.</li><li>Favorites, recent launches, game-night filters and a bookmark that remembers where you were.</li><li>Fullscreen stills and photo cycling, with About and Patches tabs.</li><li>Destructive actions kept apart from browsing: deleted images go to a recoverable trash with their own confirmation.</li></ul><p class=\"ta-l\">It's a fork built on Cubiboot, and Swiss still launches the games. Photo above: the real hardware, a GameCube with GC Loader driving a 4:3 CRT. It's a source-only developer preview.</p><p><a href=\"https://github.com/hotdog-face/gameplay-spotlight\">View gameplay-spotlight on GitHub</a></p>"
+  }
+ ]
+}

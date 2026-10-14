@@ -22,8 +22,8 @@ const archive = all.filter(c => !taken.has(c.href));
     <div class="work-intro">
       <a class="work-back" href="/">&larr; Home</a>
       <h1>Work</h1>
-      <p class="work-desc">Case studies from Pokémon TCG Live, Pokémon TV and Big Fish Games, side projects I build myself, and earlier art direction and branding.</p>
-      <nav class="jump" aria-label="Sections"><a href="#case-studies">Case studies</a><a href="#lab">Lab</a><a href="#archive">Archive</a></nav>
+      <p class="work-desc">Case studies from Pokémon TCG Live, Pokémon TV and Big Fish Games, builds of my own, and earlier art direction and branding.</p>
+      <nav class="jump" aria-label="Sections"><a href="#case-studies">Case studies</a><a href="#builds">Builds</a><a href="#archive">Archive</a></nav>
     </div>
 
     <section id="case-studies" class="group">
@@ -32,9 +32,9 @@ const archive = all.filter(c => !taken.has(c.href));
       <ProjectGrid cards={cases} eager={4} />
     </section>
 
-    <section id="lab" class="group">
-      <h2>Lab</h2>
-      <p>Software I design and build on my own, from idea to release.</p>
+    <section id="builds" class="group">
+      <h2>Builds</h2>
+      <p>Software I design and build on my own, from idea to a working build.</p>
       <ProjectGrid cards={labCards} />
     </section>
 
