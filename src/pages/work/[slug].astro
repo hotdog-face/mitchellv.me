@@ -5,7 +5,7 @@ import Img from '../../components/Img.astro';
 import Glance from '../../components/Glance.astro';
 import NextCase from '../../components/NextCase.astro';
 import { getWork, imageSizes, gridSizes, type Project } from '../../data/work';
-import { caseStudyFor, nextCaseStudy } from '../../data/caseStudies';
+import { caseStudyFor, nextCaseStudy, vtName } from '../../data/caseStudies';
 import '../../styles/work.css';
 
 export async function getStaticPaths() {
@@ -33,7 +33,7 @@ const description = p.description ? plain(p.description) : `${p.title} - ${p.met
 
     <div class="work-intro">
       <a class="work-back" href="/work/">&larr; All work</a>
-      <h1>{p.title}</h1>
+      <h1 style={`view-transition-name:${vtName(`/work/${p.slug}`)}`}>{p.title}</h1>
       {p.description && <p class="work-desc" set:html={p.description} />}
       <ul class="work-meta">
         {p.meta.date && <li class="work-date">{p.meta.date}</li>}
@@ -83,6 +83,19 @@ const description = p.description ? plain(p.description) : `${p.title} - ${p.met
                 </div>
               );
             }
+            case 'compare':
+              return (
+                <figure class="m m-compare" data-compare style={`--pos:50%;max-width:${m.maxWidth ?? 1400}px`}>
+                  <div class="cmp-stage" style={`aspect-ratio:${m.after.width}/${m.after.height}`}>
+                    <Img name={`${dir}/${m.after.name}`} alt={m.after.alt} sizes={imageSizes(m.maxWidth ?? 1400)} loading={loading} class="cmp-after" />
+                    <div class="cmp-before"><Img name={`${dir}/${m.before.name}`} alt={m.before.alt} sizes={imageSizes(m.maxWidth ?? 1400)} loading={loading} /></div>
+                    <span class="cmp-label cmp-label-b">{m.beforeLabel}</span>
+                    <span class="cmp-label cmp-label-a">{m.afterLabel}</span>
+                    <span class="cmp-handle" aria-hidden="true"></span>
+                    <input class="cmp-range" type="range" min="0" max="100" value="50" aria-label={`Compare ${m.beforeLabel.toLowerCase()} and ${m.afterLabel.toLowerCase()}`} />
+                  </div>
+                </figure>
+              );
             case 'text':
               return <div class="m m-text" set:html={m.html} />;
             case 'embed':

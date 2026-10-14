@@ -4,18 +4,19 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import PhoneBar from '../components/PhoneBar.astro';
 
-interface Props { title: string; description?: string; fonts?: string; image?: string }
-const { title, image = '/assets/og/home.jpg', description = 'Mitchell Vizensky - Senior UX/UI Designer at The Pokémon Company International. Portfolio of game and product design work.', fonts } = Astro.props;
+interface Props { title: string; description?: string; fonts?: string; image?: string; theme?: 'light' }
+const { title, theme, image = '/assets/og/home.jpg', description = 'Mitchell Vizensky - Senior UX/UI Designer at The Pokémon Company International. Portfolio of game and product design work.', fonts } = Astro.props;
 // pages are served without a trailing slash, except the home page and the /work/ index
 const path = Astro.url.pathname === '/' || Astro.url.pathname === '/work/' ? Astro.url.pathname : Astro.url.pathname.replace(/\/$/, '');
 const canonical = new URL(path, Astro.site);
 const ogImage = new URL(image, Astro.site);
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme={theme}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content={theme ?? 'light dark'}>
   <title>{title}</title>
   <meta name="description" content={description}>
   <link rel="canonical" href={canonical}>

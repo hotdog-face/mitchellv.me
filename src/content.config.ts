@@ -34,6 +34,14 @@ const module = z.discriminatedUnion('type', [
       video.extend({ kind: z.literal('video'), ratio: z.number() }),
     ])),
   }),
+  // drag-to-compare: two same-size images of one screen (e.g. prototype vs. shipped)
+  z.object({
+    type: z.literal('compare'),
+    before: image, after: image,
+    beforeLabel: z.string().default('Prototype'),
+    afterLabel: z.string().default('Shipped'),
+    maxWidth: z.number().optional(),
+  }),
   z.object({ type: z.literal('text'), html: z.string() }),
   z.object({ type: z.literal('embed'), src: z.string().url(), title: z.string(), width: z.number(), height: z.number() }),
 ]);

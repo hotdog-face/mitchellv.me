@@ -49,7 +49,7 @@ const archive = all.filter(c => !taken.has(c.href));
 
 <style>
   .jump { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
-  .jump a { padding: 6px 14px; border: 1px solid #d6d9e2; border-radius: 999px; font-size: 13px; color: var(--text); text-decoration: none; }
+  .jump a { padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; color: var(--text); text-decoration: none; }
   .jump a:hover { border-color: var(--pink); color: var(--pink); }
   .group { padding: 24px 0 56px; scroll-margin-top: calc(var(--header-h) + 8px); }
   .group > h2, .group > p { width: min(1400px, 100% - 32px); margin-inline: auto; }

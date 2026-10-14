@@ -117,3 +117,6 @@ export function nextCaseStudy(path: string) {
   const i = caseStudies.findIndex(c => c.href === path.replace(/\/$/, ''));
   return i < 0 ? undefined : caseStudies[(i + 1) % caseStudies.length];
 }
+
+/** Shared-element name so a project's title glides between its card and its page (see global.css). */
+export const vtName = (href: string) => 'p-' + href.replace(/^\//, '').replace(/[^a-z0-9]+/gi, '-').replace(/-$/, '');

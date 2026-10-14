@@ -8,7 +8,7 @@ const { frontmatter } = Astro.props;
 const cs = caseStudyFor(Astro.url.pathname);
 const nextCs = nextCaseStudy(Astro.url.pathname);
 ---
-<Base title={frontmatter.title} description={frontmatter.description} image={frontmatter.ogImage} fonts="family=Jost:wght@400">
+<Base title={frontmatter.title} description={frontmatter.description} image={frontmatter.ogImage} fonts="family=Jost:wght@400" theme="light">
   {cs && <Glance cs={cs} intro />}
   <div class="case" style={`background:${frontmatter.pageColor ?? '#fff'}`}><slot /></div>
   {nextCs && <NextCase cs={nextCs} />}

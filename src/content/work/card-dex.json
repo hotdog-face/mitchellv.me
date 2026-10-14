@@ -46,50 +46,44 @@
    "html": "<h3>Prototyping in grey box</h3><p class=\"ta-l\">I mapped the experience into 13 flows, from item granting and new card tags to sorting, switching series, exchanging and completing a set. I built each one as a grey-box prototype in landscape and portrait. Keeping it grey kept reviews focused on structure and behavior before any art was made, and it gave engineering and art a clear spec to build from.</p><p class=\"ta-l\">The layout borrows from the physical hobby: every expansion is a binder page. Owned cards fill their slots, missing cards leave a numbered gap, and a missing card can be exchanged for right where you see it.</p>"
   },
   {
-   "type": "grid",
-   "items": [
-    {
-     "kind": "image",
-     "name": "proto-new",
-     "width": 1600,
-     "height": 900,
-     "alt": "Grey-box prototype: an expansion's cards with New tags on the latest additions",
-     "ratio": 1.7778
-    },
-    {
-     "kind": "image",
-     "name": "shipped-new",
-     "width": 1600,
-     "height": 900,
-     "alt": "Shipped Card Dex: the same expansion view with New tags in the live game",
-     "ratio": 1.7778
-    }
-   ]
+   "type": "compare",
+   "before": {
+    "name": "proto-new",
+    "width": 1600,
+    "height": 900,
+    "alt": "Grey-box prototype: an expansion's cards with New tags on the latest additions"
+   },
+   "after": {
+    "name": "shipped-new",
+    "width": 1600,
+    "height": 900,
+    "alt": "Shipped Card Dex: the same expansion view with New tags in the live game"
+   },
+   "beforeLabel": "Prototype",
+   "afterLabel": "Shipped",
+   "maxWidth": 1200
   },
   {
-   "type": "grid",
-   "items": [
-    {
-     "kind": "image",
-     "name": "proto-exchange",
-     "width": 1600,
-     "height": 900,
-     "alt": "Grey-box prototype: exchanging for a missing card from its big card view",
-     "ratio": 1.7778
-    },
-    {
-     "kind": "image",
-     "name": "shipped-exchange",
-     "width": 1600,
-     "height": 900,
-     "alt": "Shipped Card Dex: the big card view with an Exchange button",
-     "ratio": 1.7778
-    }
-   ]
+   "type": "compare",
+   "before": {
+    "name": "proto-exchange",
+    "width": 1600,
+    "height": 900,
+    "alt": "Grey-box prototype: exchanging for a missing card from its big card view"
+   },
+   "after": {
+    "name": "shipped-exchange",
+    "width": 1600,
+    "height": 900,
+    "alt": "Shipped Card Dex: the big card view with an Exchange button"
+   },
+   "beforeLabel": "Prototype",
+   "afterLabel": "Shipped",
+   "maxWidth": 1200
   },
   {
    "type": "text",
-   "html": "<p class=\"ta-l\">Prototype on the left, shipped game on the right. Getting a missing card now takes 5 steps: open Card Dex, pick the expansion, select the card, exchange, and see it land in your collection.</p>"
+   "html": "<p class=\"ta-l\">Drag across each screen to compare the prototype with the shipped game. Getting a missing card now takes 5 steps: open Card Dex, pick the expansion, select the card, exchange, and see it land in your collection.</p>"
   },
   {
    "type": "grid",
@@ -117,25 +111,22 @@
    "html": "<h3>Testing with players</h3><p class=\"ta-l\">Before launch, UX research ran a moderated playtest with outside players from both the collector and competitive groups. First impressions were positive across both. Players found the binder icon on the home screen easily, called the core functions straightforward, and said the layout brought back the feeling of flipping through a physical binder. Competitive players saw it helping their deck building too, not just their collection.</p><p class=\"ta-l\">The study also pointed to the next round of improvements, which became the backlog for Research Missions.</p>"
   },
   {
-   "type": "grid",
-   "items": [
-    {
-     "kind": "image",
-     "name": "proto-complete",
-     "width": 1600,
-     "height": 900,
-     "alt": "Grey-box prototype: Expansion Collected celebration",
-     "ratio": 1.7778
-    },
-    {
-     "kind": "image",
-     "name": "shipped-complete",
-     "width": 1600,
-     "height": 900,
-     "alt": "Shipped Card Dex: Main Set Completed celebration for Temporal Forces",
-     "ratio": 1.7778
-    }
-   ]
+   "type": "compare",
+   "before": {
+    "name": "proto-complete",
+    "width": 1600,
+    "height": 900,
+    "alt": "Grey-box prototype: Expansion Collected celebration"
+   },
+   "after": {
+    "name": "shipped-complete",
+    "width": 1600,
+    "height": 900,
+    "alt": "Shipped Card Dex: Main Set Completed celebration for Temporal Forces"
+   },
+   "beforeLabel": "Prototype",
+   "afterLabel": "Shipped",
+   "maxWidth": 1200
   },
   {
    "type": "text",

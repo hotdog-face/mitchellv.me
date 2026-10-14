@@ -2,6 +2,7 @@
 // A grid of project cards (cover, title, one-line summary). Used on /work and the home page.
 import Img from './Img.astro';
 import type { Card } from '../data/work';
+import { vtName } from '../data/caseStudies';
 
 interface Props { cards: Card[]; eager?: number }
 const { cards, eager = 0 } = Astro.props;
@@ -12,7 +13,7 @@ const sizes = '(min-width: 1432px) 332px, (min-width: 1004px) 31vw, (min-width: 
   {cards.map((c, i) => (
     <a class="project-card" href={c.href}>
       <figure><Img name={c.image} sizes={sizes} loading={i < eager ? 'eager' : 'lazy'} /></figure>
-      <h2>{c.title}</h2>
+      <h2 style={`view-transition-name:${vtName(c.href)}`}>{c.title}</h2>
       <p>{c.line}</p>
       {c.note && <p class="note">{c.note}</p>}
     </a>
@@ -26,12 +27,12 @@ const sizes = '(min-width: 1432px) 332px, (min-width: 1004px) 31vw, (min-width: 
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.6; text-align: left;
   }
   .project-card { display: block; text-decoration: none; color: var(--text); }
-  .project-card figure { margin: 0 0 12px; aspect-ratio: 808 / 632; overflow: hidden; background: #ddd; }
+  .project-card figure { margin: 0 0 12px; aspect-ratio: 808 / 632; overflow: hidden; background: var(--card-bg); }
   .project-card :global(img) { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
   .project-card:hover :global(img), .project-card:focus-visible :global(img) { transform: scale(1.03); }
   .project-card h2 { font-size: 19px; font-weight: 700; color: var(--ink); margin: 0 0 4px; letter-spacing: 0; text-transform: none; }
-  .project-card:hover h2 { color: var(--pink); }
+  .project-card:hover h2 { color: var(--pink-ink); }
   .project-card p { font-size: 13px; color: var(--muted); margin: 0; }
-  .project-card .note { margin-top: 4px; font-size: 13px; font-weight: 700; color: var(--pink); }
+  .project-card .note { margin-top: 4px; font-size: 13px; font-weight: 700; color: var(--pink-ink); }
   @media (prefers-reduced-motion: reduce) { .project-card :global(img) { transition: none; } }
 </style>

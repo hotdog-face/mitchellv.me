@@ -1,7 +1,7 @@
 ---
 // "At a glance" summary at the top of a case study: company, role, team, platforms and results.
 // Facts come from src/data/caseStudies.ts.
-import type { CaseStudy } from '../data/caseStudies';
+import { vtName, type CaseStudy } from '../data/caseStudies';
 // `intro` adds a back link, title and summary (for the case studies whose page has no intro of its own).
 interface Props { cs: CaseStudy; dark?: boolean; intro?: boolean }
 const { cs, dark = false, intro = false } = Astro.props;
@@ -12,7 +12,7 @@ const { cs, dark = false, intro = false } = Astro.props;
       <div class="intro">
         <a class="back" href="/work/">&larr; All work</a>
         <p class="eyebrow">{cs.product}{cs.year && <> · {cs.year}</>}</p>
-        <p class="title">{cs.title}</p>
+        <p class="title" style={`view-transition-name:${vtName(cs.href)}`}>{cs.title}</p>
         <p class="summary">{cs.summary}</p>
       </div>
     )}
@@ -24,7 +24,7 @@ const { cs, dark = false, intro = false } = Astro.props;
     </dl>
     {cs.impact.length > 0 && (
       <ul class="impact">
-        {cs.impact.map(s => <li><strong>{s.value}</strong><span>{s.label}</span></li>)}
+        {cs.impact.map(s => <li><strong data-count>{s.value}</strong><span>{s.label}</span></li>)}
       </ul>
     )}
   </div>
@@ -47,6 +47,7 @@ const { cs, dark = false, intro = false } = Astro.props;
   .impact li { display: flex; align-items: baseline; gap: 10px; }
   .impact strong { font-size: clamp(24px, 2.4vw, 30px); font-weight: 700; color: var(--pink); white-space: nowrap; }
   .glance.dark .impact strong { color: #ff6fae; }
+  @media (prefers-color-scheme: dark) { :global(:root:not([data-theme="light"])) .glance { --g-text: #e8eaf0; --g-muted: #9aa1b2; --g-line: rgba(255,255,255,.1); --g-bg: rgba(255,255,255,.04); } :global(:root:not([data-theme="light"])) .impact strong { color: #ff6fae; } }
   .impact span { font-size: 14px; color: var(--g-text); }
   @media (max-width: 820px) { .facts { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 480px) { .facts { grid-template-columns: 1fr; } .impact { gap: 12px; flex-direction: column; } }

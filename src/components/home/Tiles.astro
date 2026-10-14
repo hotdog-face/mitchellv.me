@@ -1,21 +1,15 @@
 ---
+// Home page archive: earlier work not already shown in Selected work or Builds, as one consistent
+// tile style (cover, title and year over a soft gradient). Capped at three rows; /work has everything.
 import Img from '../Img.astro';
-import Video from '../Video.astro';
-import { tiles as allTiles, tileLabels } from '../../data/home';
 import { getCards } from '../../data/work';
 import { caseStudies, lab } from '../../data/caseStudies';
 
-// The archive: everything not already shown in Selected work or the Lab. The original tiles keep
-// their own hover art; every other project gets a tile built from its cover, with the same hover
-// label done in CSS.
 const above = new Set<string>([...caseStudies.filter(c => c.featured).map(c => c.href), ...lab]);
-const tiles = allTiles.filter(t => !above.has(t.href));
-const shown = new Set<string>([...above, ...tiles.map(t => t.href)]);
-// Capped at three rows; /work has everything.
 const ARCHIVE_MAX = 9;
-const more = (await getCards()).filter(c => !shown.has(c.href)).slice(0, Math.max(0, ARCHIVE_MAX - tiles.length))
-  .map(c => ({ ...c, label: tileLabels[c.href] ?? c.title.split(/ [-—–] /)[0] }));
-const sizes = '(max-width: 520px) 92vw, (max-width: 820px) 46vw, 310px';
+const items = (await getCards()).filter(c => !above.has(c.href)).slice(0, ARCHIVE_MAX)
+  .map(c => ({ ...c, short: c.title.split(/ [-—–] /)[0] }));
+const sizes = '(max-width: 520px) 92vw, (max-width: 820px) 46vw, 330px';
 ---
 <section class="tiles-band" id="archive">
   <div class="head">
@@ -23,47 +17,33 @@ const sizes = '(max-width: 520px) 92vw, (max-width: 820px) 46vw, 310px';
     <p class="sub">Earlier UX, game art direction, branding and illustration from Big Fish Games, PLAYSTUDIOS and Amazon.</p>
   </div>
   <div class="tiles">
-    {tiles.map(t => (
-      <a class="tile" href={t.href} aria-label={t.label}>
-        {t.video ? <Video name={t.video} class="base" /> : <Img name={t.image!} alt="" class="base" sizes={sizes} />}
-        <Img name={t.hover} alt="" class="hover" sizes={sizes} />
-        {t.pressed && <Img name={t.pressed} alt="" class="pressed" sizes={sizes} />}
-      </a>
-    ))}
-    {more.map(c => (
-      <a class="tile made" href={c.href} aria-label={c.title}>
-        <Img name={c.image} alt="" class="base" sizes={sizes} />
-        <span class="hover label" aria-hidden="true">{c.label}</span>
+    {items.map(c => (
+      <a class="tile" href={c.href}>
+        <Img name={c.image} alt="" sizes={sizes} />
+        <span class="cap"><span class="t">{c.short}</span><span class="l">{c.line}</span></span>
       </a>
     ))}
   </div>
-  <p class="more"><a class="btn" href="/work/">All Work</a></p>
+  <p class="more"><a class="btn" href="/work/#archive">See the full archive</a></p>
 </section>
 
 <style>
-  .tiles-band { background: #e8e8e8; padding: 72px 0 72px; overflow: hidden; }
-  .head { width: min(var(--content), 100% - 2 * var(--gutter)); margin: 0 auto 36px; text-align: center; }
-  .heading { font-size: clamp(28px, 4vw, 37px); color: #000; }
+  .tiles-band { background: var(--band); padding: 72px 0; overflow: hidden; }
+  .head { width: min(1100px, 100% - 2 * var(--gutter)); margin: 0 auto 36px; text-align: center; }
+  .heading { font-size: clamp(28px, 4vw, 37px); color: var(--heading); }
   .sub { margin: 10px auto 0; max-width: 560px; font-size: 16px; color: var(--text); }
-  .tiles { width: min(var(--content), 100% - 2 * var(--gutter)); margin-inline: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 21px 25px; }
-  /* Rounded like the original tile art (22px on a 310 × 220 tile); clipping also hides the
-     white corners baked into the two video tiles. */
-  .tile { position: relative; display: block; aspect-ratio: 310 / 220; border-radius: 7.1% / 10%; overflow: hidden; container-type: inline-size; isolation: isolate; }
-  .tile > :global(*) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity .1s; }
-  .tile.made > :global(.base) { object-fit: cover; }
-  .tile :global(.hover), .tile :global(.pressed) { opacity: 0; transition: opacity .5s; }
-  .tile:hover :global(.hover), .tile:focus-visible :global(.hover) { opacity: 1; }
-  .tile:active :global(.pressed) { opacity: 1; transition-duration: .1s; }
-  .tile:active :global(.hover) { opacity: 0; }
-  /* Same look as the hover art on the original tiles: a white wash and thin rounded caps. */
-  .label {
-    display: grid; place-items: center; padding: 0 8%; box-sizing: border-box;
-    background: rgba(244, 243, 248, .74); color: #60606e; text-align: center; text-wrap: balance;
-    font-family: "Quicksand", var(--sans); font-weight: 400; text-transform: uppercase;
-    font-size: 13cqi; line-height: 1.12; letter-spacing: .01em;
-  }
-  .more { margin: 37px 0 0; text-align: center; line-height: 0; }
-  .more .btn { width: 201px; border-radius: 5px; font-size: 22px; }
-  @media (max-width: 820px) { .tiles { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+  .tiles { width: min(1100px, 100% - 2 * var(--gutter)); margin-inline: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .tile { position: relative; display: block; aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; background: #cfd2da; isolation: isolate; box-shadow: 0 8px 24px rgba(20, 24, 40, .12); }
+  .tile :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.22,.8,.3,1); }
+  .tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10, 12, 20, .82) 0%, rgba(10, 12, 20, .35) 32%, rgba(10, 12, 20, 0) 55%); transition: opacity .3s; }
+  .cap { position: absolute; left: 16px; right: 16px; bottom: 14px; z-index: 1; display: grid; gap: 2px; color: #fff; }
+  .t { font-size: 18px; font-weight: 700; line-height: 1.2; }
+  .l { font-size: 12.5px; color: rgba(255, 255, 255, .78); }
+  .tile:hover :global(img), .tile:focus-visible :global(img) { transform: scale(1.05); }
+  .tile:focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; }
+  .more { margin: 36px 0 0; text-align: center; }
+  .more .btn { border-radius: 5px; font-size: 18px; }
+  @media (max-width: 820px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } }
   @media (max-width: 520px) { .tiles { grid-template-columns: 1fr; } .tiles-band { padding: 56px 0; } }
+  @media (prefers-reduced-motion: reduce) { .tile :global(img) { transition: none; } }
 </style>

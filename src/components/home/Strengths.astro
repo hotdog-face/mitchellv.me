@@ -5,7 +5,7 @@ import { proof, strengths, clients } from '../../data/home';
 ---
 <section class="strengths" aria-labelledby="strengths-title">
   <ul class="proof">
-    {proof.map(p => <li><strong>{p.value}</strong><span>{p.label}</span></li>)}
+    {proof.map(p => <li><strong data-count>{p.value}</strong><span>{p.label}</span></li>)}
   </ul>
   <div class="inner">
     <h2 id="strengths-title" class="heading"><b>WHAT</b> I BRING</h2>
@@ -26,14 +26,14 @@ import { proof, strengths, clients } from '../../data/home';
 </section>
 
 <style>
-  .strengths { background: #fff; padding: 0 0 40px; overflow: hidden; }
+  .strengths { background: var(--bg); padding: 0 0 40px; overflow: hidden; }
   .proof { margin: 0; padding: 28px var(--gutter); list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 18px 56px; background: #12141c; color: #fff; }
   .proof li { display: flex; align-items: baseline; gap: 10px; }
   .proof strong { font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; color: var(--mint); }
   .proof span { font-size: 14px; color: rgba(255,255,255,.75); }
   .inner { width: min(1100px, 100% - 2 * var(--gutter)); margin-inline: auto; padding-top: 72px; }
-  .heading { text-align: center; font-size: clamp(28px, 4vw, 37px); color: #222; }
-  .heading b { color: #000; }
+  .heading { text-align: center; font-size: clamp(28px, 4vw, 37px); color: var(--heading); }
+  .heading b { color: var(--heading); }
   .cards { margin-top: 40px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
   .card { display: flex; flex-direction: column; gap: 10px; padding: 24px 22px; border-radius: 12px; background: var(--page-gray); text-decoration: none; color: var(--text); border-top: 4px solid var(--pink); transition: transform .25s, box-shadow .25s; }
   .card:nth-child(2) { border-top-color: var(--blue); }
@@ -42,10 +42,11 @@ import { proof, strengths, clients } from '../../data/home';
   .card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(20,24,40,.12); }
   h3 { font-size: 19px; font-weight: 700; color: var(--ink); }
   .card p { margin: 0; font-size: 14.5px; line-height: 1.5; flex: 1; }
-  .proof-link { font-size: 13px; font-weight: 700; color: var(--pink); }
+  .proof-link { font-size: 13px; font-weight: 700; color: var(--pink-ink); }
   .clients { margin-top: 64px; text-align: center; }
   .label { margin: 0 0 6px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
   .clients :global(.logos) { width: min(1430px, 100%); margin: 0 auto; height: auto; }
+  @media (prefers-color-scheme: dark) { :global(:root:not([data-theme="light"])) .clients :global(.logos) { filter: invert(1) hue-rotate(180deg) brightness(1.1); } }
   @media (max-width: 999px) { .cards { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 560px) { .cards { grid-template-columns: 1fr; } .inner { padding-top: 56px; } .proof { gap: 12px 28px; } }
 </style>

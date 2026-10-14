@@ -185,8 +185,47 @@ function initLazyVideo() {
   vids.forEach(v => io.observe(v));
 }
 
+// ---------------------------------------------------------------------------
+// Compare sliders: the range input drives --pos, which clips the "before" image.
+function initCompare() {
+  document.querySelectorAll<HTMLElement>('[data-compare]').forEach(el => {
+    const range = el.querySelector<HTMLInputElement>('.cmp-range');
+    if (!range) return;
+    const set = () => el.style.setProperty('--pos', range.value + '%');
+    range.addEventListener('input', set);
+    set();
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Count-up stats: <strong data-count>+29%</strong> counts up from zero the first time it
+// comes into view. Values that aren't a single number (like "14 → 5") are left alone.
+function initCountUp() {
+  const els = Array.from(document.querySelectorAll<HTMLElement>('[data-count]'));
+  if (!els.length || reducedMotion || !('IntersectionObserver' in window)) return;
+  const pattern = /^([+~]?)(\d+(?:\.\d+)?)(%?)$/;
+  const run = (el: HTMLElement) => {
+    const m = el.textContent!.trim().match(pattern);
+    if (!m) return;
+    const [, pre, num, post] = m;
+    const target = parseFloat(num), decimals = (num.split('.')[1] || '').length, t0 = performance.now(), dur = 1100;
+    const step = (t: number) => {
+      const k = Math.min(1, (t - t0) / dur), eased = 1 - Math.pow(1 - k, 3);
+      el.textContent = pre + (target * eased).toFixed(decimals) + post;
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const io = new IntersectionObserver(entries => {
+    for (const en of entries) if (en.isIntersecting) { run(en.target as HTMLElement); io.unobserve(en.target); }
+  }, { threshold: 0.6 });
+  els.forEach(el => io.observe(el));
+}
+
 initReveal();
 initLazyVideo();
+initCompare();
+initCountUp();
 initSteps();
 initSlideshows();
 initGalleries();
