@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import Base from '../../layouts/Base.astro';
 import Img from '../../components/Img.astro';
 import Glance from '../../components/Glance.astro';
+import CardDexDemo from '../../components/case/CardDexDemo.astro';
 import NextCase from '../../components/NextCase.astro';
 import { getWork, imageSizes, gridSizes, type Project } from '../../data/work';
 import { caseStudyFor, nextCaseStudy, vtName } from '../../data/caseStudies';
@@ -98,6 +99,8 @@ const description = p.description ? plain(p.description) : `${p.title} - ${p.met
                   </div>
                 </figure>
               );
+            case 'component':
+              return <div class="m m-component">{m.name === 'card-dex-demo' && <CardDexDemo />}</div>;
             case 'text':
               return <div class="m m-text" set:html={m.html.replace(/<(\/?)h3>/g, '<$1h2 class="sh">')} />;
             case 'embed':

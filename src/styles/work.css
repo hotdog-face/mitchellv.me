@@ -30,6 +30,7 @@
 .work-body:not(.is-dark) { --text: #414141; --ink: #222; --muted: #808080; --heading: #000; --line: #ddd; color-scheme: light; color: var(--text); }
 .work-canvas { width: min(var(--canvas), 100%); margin: 0 auto; }
 .m { margin: 0; }
+.m-component { padding: 24px 0 48px; }
 .m img, .m video { margin-inline: auto; max-width: 100%; height: auto; }
 
 /* Text blocks */

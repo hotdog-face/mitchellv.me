@@ -349,8 +349,57 @@ function initSectionNav() {
   update();
 }
 
+// ---------------------------------------------------------------------------
+// Flow demo (CardDexDemo.astro): tabs for each flow; clicking the screen or Next advances a step,
+// and the last step shows a summary with the step count.
+function initFlowDemo() {
+  document.querySelectorAll<HTMLElement>('[data-flow-demo]').forEach(root => {
+    const tabs = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-flow]'));
+    const panels = Array.from(root.querySelectorAll<HTMLElement>('[data-flow-panel]'));
+    const select = (id: string) => {
+      tabs.forEach(t => t.setAttribute('aria-selected', String(t.dataset.flow === id)));
+      panels.forEach(p => { p.hidden = p.dataset.flowPanel !== id; if (!p.hidden) reset(p); });
+    };
+    const reset = (p: HTMLElement) => show(p, 0);
+    const show = (p: HTMLElement, n: number) => {
+      const screens = Array.from(p.querySelectorAll<HTMLElement>('.fd-screen'));
+      const dots = Array.from(p.querySelectorAll<HTMLElement>('.fd-dots li'));
+      const done = p.querySelector<HTMLElement>('.fd-done')!;
+      const next = p.querySelector<HTMLButtonElement>('.fd-next')!;
+      p.dataset.at = String(n);
+      const finished = n >= screens.length;
+      screens.forEach((s, i) => { s.hidden = i !== Math.min(n, screens.length - 1); });
+      done.hidden = !finished;
+      dots.forEach((d, i) => { d.classList.toggle('on', i === n); d.classList.toggle('past', i < n); });
+      next.textContent = finished ? 'Start over' : 'Next';
+      if (!finished) {
+        const label = screens[n].getAttribute('aria-label')!.replace(/\. Select to continue\.$/, '');
+        const [, num, text] = label.match(/^(Step \d+ of \d+): (.*)$/)!;
+        p.querySelector('.fd-n')!.textContent = num;
+        p.querySelector('.fd-text')!.textContent = text;
+      } else {
+        p.querySelector('.fd-n')!.textContent = 'Done';
+        p.querySelector('.fd-text')!.textContent = done.querySelector('.fd-done-text')!.textContent;
+      }
+    };
+    const advance = (p: HTMLElement) => {
+      const n = Number(p.dataset.at || 0), total = p.querySelectorAll('.fd-screen').length;
+      show(p, n >= total ? 0 : n + 1);
+    };
+    tabs.forEach(t => t.addEventListener('click', () => select(t.dataset.flow!)));
+    panels.forEach(p => {
+      p.querySelectorAll('.fd-screen').forEach(s => s.addEventListener('click', () => advance(p)));
+      p.querySelector('.fd-next')!.addEventListener('click', () => advance(p));
+      p.querySelector('[data-restart]')!.addEventListener('click', () => reset(p));
+      p.querySelector<HTMLElement>('[data-switch]')!.addEventListener('click', e => select((e.currentTarget as HTMLElement).dataset.switch!));
+      reset(p);
+    });
+  });
+}
+
 initReveal();
 initLazyVideo();
+initFlowDemo();
 initEmailMenus();
 initHoverClips();
 initZoom();

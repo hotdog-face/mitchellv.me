@@ -43,6 +43,8 @@ const module = z.discriminatedUnion('type', [
     maxWidth: z.number().optional(),
   }),
   z.object({ type: z.literal('text'), html: z.string() }),
+  // an interactive component from src/components/case (see the switch in work/[slug].astro)
+  z.object({ type: z.literal('component'), name: z.enum(['card-dex-demo']) }),
   z.object({ type: z.literal('embed'), src: z.string().url(), title: z.string(), width: z.number(), height: z.number() }),
 ]);
 

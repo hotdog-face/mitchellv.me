@@ -42,6 +42,10 @@
    "label": "The old flow: from the shop's card gallery to the deck builder and back (sped up)"
   },
   {
+   "type": "component",
+   "name": "card-dex-demo"
+  },
+  {
    "type": "text",
    "html": "<h3>Prototyping in grey box</h3><p class=\"ta-l\">I mapped the experience into 13 flows, from item granting and new card tags to sorting, switching series, exchanging and completing a set. I built each one as a grey-box prototype in landscape and portrait. Keeping it grey kept reviews focused on structure and behavior before any art was made, and it gave engineering and art a clear spec to build from.</p><p class=\"ta-l\">The layout borrows from the physical hobby: every expansion is a binder page. Owned cards fill their slots, missing cards leave a numbered gap, and a missing card can be exchanged for right where you see it.</p>"
   },

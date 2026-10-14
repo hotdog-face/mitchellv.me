@@ -1,0 +1,127 @@
+---
+// Playable comparison for the Card Dex case study: click through getting one missing card the old
+// way (14 steps, from the 2025 review deck) and with Card Dex (5 steps, the shipped game).
+// Each step shows the real screen with a marker where the player taps. Behaviour: initFlowDemo in site.ts.
+import Img from '../Img.astro';
+
+type Step = { img: string; text: string; x?: number; y?: number };
+const flows: { id: string; tab: string; device: 'phone' | 'desktop'; note: string; steps: Step[]; done: string }[] = [
+  {
+    id: 'old', tab: 'The old way', device: 'phone', note: 'Mobile, before Card Dex (2025)',
+    done: '14 steps, across two parts of the game, to get one card.',
+    steps: [
+      { img: 'old-home', text: 'Go to the Shop', x: 84, y: 93 },
+      { img: 'old-shop', text: 'Open the Expansions tab', x: 34, y: 4 },
+      { img: 'old-shop', text: 'Select View Card Gallery', x: 83, y: 50 },
+      { img: 'old-gallery', text: 'Browse the set', x: 50, y: 58 },
+      { img: 'old-gallery', text: 'Find a missing card and memorize it', x: 61, y: 40 },
+      { img: 'old-shop', text: 'Back out of the Shop', x: 4, y: 4 },
+      { img: 'old-home', text: 'Return to Home', x: 50, y: 93 },
+      { img: 'old-home', text: 'Go to Decks', x: 50, y: 82 },
+      { img: 'old-decks', text: 'Edit a deck', x: 75, y: 96 },
+      { img: 'old-search', text: 'Search the card library for the card you memorized', x: 50, y: 38 },
+      { img: 'old-filter', text: 'Set the filter to All cards', x: 91, y: 21 },
+      { img: 'old-exchange', text: 'Exchange for the card', x: 74, y: 82 },
+      { img: 'old-shop', text: 'Repeat steps 1 to 4 to get back to the gallery', x: 83, y: 50 },
+      { img: 'old-updated', text: 'See your updated collection', x: 17, y: 48 },
+    ],
+  },
+  {
+    id: 'new', tab: 'Card Dex', device: 'desktop', note: 'Card Dex as it ships today',
+    done: '5 steps, without leaving Card Dex.',
+    steps: [
+      { img: 'new-home', text: 'Open Card Dex', x: 35.5, y: 3 },
+      { img: 'new-set', text: 'Pick the expansion', x: 48, y: 21 },
+      { img: 'new-set', text: 'Select a missing card (they show darkened)', x: 78.5, y: 54 },
+      { img: 'new-confirm', text: 'Exchange for the card', x: 50, y: 92 },
+      { img: 'new-updated', text: 'See it land in your collection', x: 78.5, y: 54 },
+    ],
+  },
+];
+---
+<section class="fdemo" data-flow-demo aria-label="Try it: getting one missing card, before and after Card Dex">
+  <div class="fd-head">
+    <p class="fd-eyebrow">Try it</p>
+    <p class="fd-title">Get one missing card, the old way and with Card Dex</p>
+    <div class="fd-tabs" role="tablist">
+      {flows.map((f, i) => <button type="button" role="tab" aria-selected={i === 0 ? 'true' : 'false'} data-flow={f.id}>{f.tab} <span>{f.steps.length} steps</span></button>)}
+    </div>
+  </div>
+
+  {flows.map((f, fi) => (
+    <div class:list={['fd-flow', f.device]} data-flow-panel={f.id} hidden={fi !== 0} data-done={f.done}>
+      <div class="fd-stage">
+        {f.steps.map((s, si) => (
+          <button type="button" class="fd-screen" data-step={si} hidden={si !== 0} aria-label={`Step ${si + 1} of ${f.steps.length}: ${s.text}. Select to continue.`}>
+            <span class="fd-frame">
+              <Img name={`work/card-dex/demo/${s.img}`} alt="" sizes={f.device === 'phone' ? '300px' : '(max-width: 1000px) 100vw, 960px'} />
+              {s.x !== undefined && <span class="fd-tap" style={`left:${s.x}%;top:${s.y}%`} aria-hidden="true"></span>}
+            </span>
+          </button>
+        ))}
+        <div class="fd-done" hidden>
+          <p class="fd-done-count"><strong>{f.steps.length}</strong> steps</p>
+          <p class="fd-done-text">{f.done}</p>
+          <div class="fd-done-actions">
+            <button type="button" class="btn" data-restart>Start over</button>
+            <button type="button" class="btn btn--quiet" data-switch={fi === 0 ? 'new' : 'old'}>{fi === 0 ? 'Now try Card Dex' : 'Compare with the old way'}</button>
+          </div>
+        </div>
+      </div>
+      <div class="fd-bar">
+        <p class="fd-step" aria-live="polite"><span class="fd-n">Step 1 of {f.steps.length}</span> <span class="fd-text">{f.steps[0].text}</span></p>
+        <ol class="fd-dots" aria-hidden="true">{f.steps.map((_, si) => <li class:list={{ on: si === 0 }}></li>)}</ol>
+        <button type="button" class="fd-next">Next</button>
+      </div>
+      <p class="fd-note">{f.note}. Click the screen or press Next.</p>
+    </div>
+  ))}
+</section>
+
+<style>
+  .fdemo { --fd-bg: #121214; --fd-panel: #1c1c1f; --fd-text: #ececef; --fd-muted: #9a9aa2; width: min(1000px, 100% - 32px); margin: 0 auto; padding: 28px; border-radius: 18px; background: var(--fd-bg); color: var(--fd-text); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .fd-head { display: grid; gap: 6px; margin-bottom: 18px; }
+  .fd-eyebrow { margin: 0; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #ff6fae; font-weight: 700; }
+  .fd-title { margin: 0; font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; color: #fff; }
+  .fd-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .fd-tabs button { padding: 9px 16px; border-radius: 999px; border: 1px solid #3a3a40; background: none; color: var(--fd-text); font: 600 15px/1 inherit; cursor: pointer; }
+  .fd-tabs button span { color: var(--fd-muted); font-weight: 400; margin-left: 4px; }
+  .fd-tabs button[aria-selected="true"] { background: #fff; color: #121214; border-color: #fff; }
+  .fd-tabs button[aria-selected="true"] span { color: #6b6b72; }
+  .fd-stage { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; background: #0a0a0c; overflow: hidden; display: grid; place-items: center; }
+  .fd-screen { position: absolute; inset: 0; display: grid; place-items: center; padding: 0; border: 0; background: none; cursor: pointer; }
+  .fd-screen[hidden], .fd-done[hidden], .fd-flow[hidden] { display: none; }
+  .fd-frame { position: relative; display: block; line-height: 0; }
+  .desktop .fd-frame, .desktop .fd-frame :global(img) { width: 100%; height: 100%; }
+  .desktop .fd-screen { place-items: stretch; }
+  .desktop .fd-frame :global(img) { object-fit: cover; }
+  .phone .fd-frame { height: 94%; border-radius: 18px; overflow: hidden; box-shadow: 0 0 0 6px #2a2a2f, 0 20px 40px rgba(0,0,0,.6); }
+  .phone .fd-frame :global(img) { height: 100%; width: auto; max-width: none; }
+  .fd-tap { position: absolute; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; border: 3px solid #ff6fae; box-shadow: 0 0 0 4px rgba(255, 111, 174, .3), 0 0 24px rgba(255, 111, 174, .6); animation: fd-pulse 1.4s ease-out infinite; pointer-events: none; }
+  @keyframes fd-pulse { 0% { transform: scale(.7); opacity: 1; } 100% { transform: scale(1.35); opacity: .25; } }
+  .fd-done { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: 10px; background: rgba(10, 10, 12, .88); padding: 24px; }
+  .fd-done-count { margin: 0; font-size: 22px; color: var(--fd-muted); }
+  .fd-done-count strong { display: block; font-size: clamp(64px, 9vw, 104px); line-height: 1; color: #ff6fae; }
+  .fd-done-text { margin: 0; font-size: 18px; color: #fff; }
+  .fd-done-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 10px; }
+  .fd-done-actions .btn { min-width: 0; min-height: 44px; padding: 0 18px; border-radius: 6px; font-size: 15px; }
+  .fd-done-actions .btn--quiet { background: transparent; border: 1px solid #fff; color: #fff; }
+  .fd-bar { display: grid; grid-template-columns: 1fr auto auto; gap: 16px; align-items: center; margin-top: 14px; }
+  .fd-step { margin: 0; font-size: 15px; min-width: 0; }
+  .fd-n { color: #ff6fae; font-weight: 700; margin-right: 6px; font-variant-numeric: tabular-nums; }
+  .fd-dots { display: flex; gap: 5px; margin: 0; padding: 0; list-style: none; }
+  .fd-dots li { width: 7px; height: 7px; border-radius: 50%; background: #3a3a40; }
+  .fd-dots li.on { background: #ff6fae; }
+  .fd-dots li.past { background: #8a4a68; }
+  .fd-next { padding: 10px 18px; border: 0; border-radius: 6px; background: #ff6fae; color: #121214; font: 700 15px/1 inherit; cursor: pointer; }
+  .fd-note { margin: 10px 0 0; font-size: 12.5px; color: var(--fd-muted); }
+  button:focus-visible { outline: 3px solid #ff6fae; outline-offset: 2px; }
+  @media (max-width: 640px) {
+    .fdemo { padding: 18px; }
+    .fd-bar { grid-template-columns: 1fr auto; }
+    .fd-dots { display: none; }
+    .phone .fd-stage { aspect-ratio: 3 / 4; }
+  }
+  @media (prefers-reduced-motion: reduce) { .fd-tap { animation: none; } }
+</style>
+
