@@ -5,24 +5,27 @@ import Heading from './Heading.astro';
 interface Props {
   title?: string; headingSize?: 30 | 40; rule?: boolean; ruleWidth?: number; caption?: string; steps: string[]; interval?: number;
   badge?: 'circle' | 'tab'; badgeColor?: string; numberColor?: string; boxColor?: string; radius?: number;
-  textSize?: number; lineHeight?: string;
+  textSize?: number; lineHeight?: string; gap?: string;
   stepsX?: number; stepsWidth?: number; stepsTop?: number; mediaX?: number; mediaTop?: number;
-  boxLeft?: number; boxRight?: number;
+  boxLeft?: number; boxRight?: number; nav?: boolean;
 }
 const {
   title = 'Process', headingSize = 40, rule = true, ruleWidth = 121, caption, steps, interval = 2, badge = 'circle', badgeColor = '#dbdee2', numberColor = '#000',
-  boxColor = '#dbdee2', radius = 20, textSize = 16, lineHeight = 'normal',
-  stepsX = 30, stepsWidth = 463, stepsTop = 62, mediaX = 480, mediaTop = 16, boxLeft = 11, boxRight = 12,
+  boxColor = '#dbdee2', radius = 20, textSize = 16, lineHeight = 'normal', gap = '1.15em',
+  stepsX = 30, stepsWidth = 463, stepsTop = 62, mediaX = 480, mediaTop = 16, boxLeft = 11, boxRight = 12, nav = true,
 } = Astro.props;
-const vars = `--steps-x:${stepsX}px;--steps-w:${stepsWidth}px;--steps-top:${stepsTop}px;--media-x:${mediaX}px;--media-top:${mediaTop}px;--box:${boxColor};--r:${radius}px;--badge:${badgeColor};--num:${numberColor};--fs:${textSize}px;--lh:${lineHeight};--box-l:${boxLeft}px;--box-r:${boxRight}px`;
+const vars = `--steps-x:${stepsX}px;--steps-w:${stepsWidth}px;--steps-top:${stepsTop}px;--media-x:${mediaX}px;--media-top:${mediaTop}px;--box:${boxColor};--r:${radius}px;--badge:${badgeColor};--num:${numberColor};--fs:${textSize}px;--lh:${lineHeight};--gap:${gap};--box-l:${boxLeft}px;--box-r:${boxRight}px`;
 ---
-<div class="steps-block" style={vars} id="process">
+<div class="steps-block" style={vars} id="process" data-steps-block>
   <Heading size={headingSize} rule={rule} ruleWidth={ruleWidth}>{title}</Heading>
   <div class="layout">
     <div class="steps" data-steps={interval} data-anim="float-left">
       <div class:list={['marker', badge]} aria-hidden="true"><span class="badge"><span class="num">1</span></span><span class="box"></span></div>
       <ol>{steps.map(s => <li>{s}</li>)}</ol>
     </div>
+    {nav && <button class="nav prev" type="button" data-step="-1" aria-label="Previous step"></button>}
+    {nav && <button class="nav next" type="button" data-step="1" aria-label="Next step"></button>}
+    {nav && <div class="dots" aria-hidden="true">{steps.map((_, i) => <span class:list={{ on: i === 0 }}></span>)}</div>}
     <div class="media"><slot />{caption && <p class="media-caption">{caption}</p>}</div>
   </div>
 </div>
@@ -32,15 +35,24 @@ const vars = `--steps-x:${stepsX}px;--steps-w:${stepsWidth}px;--steps-top:${step
   .steps { position: relative; }
   ol { position: relative; margin: 0; padding: 0; list-style: none; font-size: var(--fs); line-height: var(--lh); }
   li { padding: 3px 0; }
-  li + li { margin-top: calc(1em * 1.15 - 6px); }
+  li + li { margin-top: calc(var(--gap) - 6px); }
   .marker { position: absolute; left: 0; right: 0; top: var(--y, 0); height: var(--hgt, 0); transition: top 1s ease-in-out, height 1s ease-in-out; }
   .box { position: absolute; inset: 0 calc(var(--box-r) * -1) 0 calc(var(--box-l) * -1); background: var(--box); border-radius: var(--r); }
   .badge { position: absolute; top: 0; display: grid; place-items: center; font-family: Futura, Jost, var(--sans); font-size: 15px; color: var(--num); }
   .circle .badge { left: -62px; width: 32px; height: 33px; border-radius: 50%; background: var(--badge); }
   .tab .badge { left: -50px; width: 50px; height: 32px; border-radius: var(--r); background: var(--badge); padding-right: 18px; }
-  .media { margin-left: calc(var(--media-x) - var(--steps-w)); margin-top: var(--media-top); position: relative; }
+  .media { margin-left: calc(var(--media-x) - var(--steps-w) - var(--steps-x)); margin-top: var(--media-top); position: relative; }
+  /* arrows sit at the screen edges like the original full-width slideshow */
+  .nav { position: absolute; top: 50%; width: 44px; height: 64px; margin-top: -32px; border: 0; background: none; cursor: pointer; }
+  .nav.prev { left: 12px; } .nav.next { right: 12px; }
+  .nav::before { content: ""; position: absolute; left: 50%; top: 50%; width: 18px; height: 18px; border: solid #4dbc96; border-width: 0 0 2px 2px; }
+  .prev::before { transform: translate(-30%, -50%) rotate(45deg); } .next::before { transform: translate(-70%, -50%) rotate(-135deg); }
+  .dots { position: absolute; left: 0; right: 0; bottom: 20px; display: flex; gap: 10px; justify-content: center; }
+  .dots span { width: 8px; height: 8px; border-radius: 50%; background: rgba(77,188,150,.35); }
+  .dots span.on { background: #4dbc96; }
   .media-caption { margin: 0; font-size: 12px; }
   @media (max-width: 999px) {
+    .nav, .dots { display: none; }
     .layout { grid-template-columns: 1fr; padding-left: 52px; margin-top: 32px; }
     .media { margin: 32px 0 0 -52px; }
     ol { font-size: 16px; line-height: 1.45; }

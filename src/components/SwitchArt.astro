@@ -1,0 +1,16 @@
+---
+// Tilted Nintendo Switch frame with the Pokémon TV recording playing on its screen.
+import Img from './Img.astro';
+import Video from './Video.astro';
+interface Props { width?: number; class?: string }
+const { width = 600, class: cls } = Astro.props;
+---
+<div class:list={['switch', cls]} style={`--w:${width}px`}>
+  <Img name="c7fc5658" alt="Pokémon TV running on a Nintendo Switch" class="frame" sizes={`(max-width: 999px) 92vw, ${width}px`} />
+  <Video name="b104a008" class="screen" />
+</div>
+<style>
+  .switch { position: relative; width: min(var(--w), 100%); aspect-ratio: 600 / 225; }
+  .switch :global(.frame) { width: 100%; height: 100%; object-fit: cover; rotate: -5.39deg; }
+  .switch :global(.screen) { position: absolute; left: 12.67%; top: 0.9%; width: 71%; height: 90.2%; object-fit: cover; rotate: -5.63deg; }
+</style>

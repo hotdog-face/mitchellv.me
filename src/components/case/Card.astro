@@ -1,17 +1,17 @@
 ---
 // Rounded panel with a heading and text (e.g. "Competitive Analysis" over a pinned background).
 import Heading from './Heading.astro';
-interface Props { title: string; width?: number; size?: 30 | 40; bg?: string; textSize?: number }
-const { title, width = 747, size = 40, bg = '#edeff0', textSize = 13 } = Astro.props;
+interface Props { title: string; width?: number; size?: 30 | 40; bg?: string; textSize?: number; color?: string }
+const { title, width = 747, size = 40, bg = '#edeff0', textSize = 13, color = 'var(--text)' } = Astro.props;
 ---
-<div class="card" style={`--w:${width}px;--card-bg:${bg};--fs:${textSize}px`}>
+<div class="card" style={`--w:${width}px;--card-bg:${bg};--fs:${textSize}px;--tc:${color}`}>
   <Heading size={size}>{title}</Heading>
   <div class="text" data-anim="float-up"><slot /></div>
 </div>
 
 <style>
   .card { width: min(var(--w), 100%); margin-inline: auto; padding: 17px 29px 22px; background: var(--card-bg); border-radius: 10px; text-align: center; }
-  .text { margin-top: 16px; font-size: var(--fs); line-height: normal; }
+  .text { margin-top: 16px; font-size: var(--fs); line-height: normal; color: var(--tc); }
   @media (max-width: 999px) { .text { font-size: 15px; line-height: 1.5; } }
   .text :global(p) { margin: 0; }
 </style>

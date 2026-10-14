@@ -73,6 +73,7 @@ function initSlideshows() {
 function initGalleries() {
   document.querySelectorAll<HTMLElement>('[data-gallery]').forEach(g => {
     const items = Array.from(g.querySelectorAll<HTMLElement>(':scope > img, :scope > video, :scope > picture'));
+    if (items.length) items.forEach((el, n) => el.classList.toggle('on', n === 0));
     if (!items.length) return;
     let i = 0, timer = 0;
     const show = (n: number) => {
@@ -144,17 +145,22 @@ function initSteps() {
     const marker = el.querySelector<HTMLElement>('.marker');
     const num = el.querySelector<HTMLElement>('.num');
     if (!items.length || !marker) return;
-    let i = 0;
+    const block = el.closest('[data-steps-block]') ?? el;
+    const dots = Array.from(block.querySelectorAll<HTMLElement>('.dots span'));
+    let i = 0, timer = 0;
     const place = () => {
       const li = items[i];
       marker.style.setProperty('--y', li.offsetTop + 'px');
       marker.style.setProperty('--hgt', li.offsetHeight + 'px');
       if (num) num.textContent = String(i + 1);
+      dots.forEach((d, n) => d.classList.toggle('on', n === i));
     };
-    place();
-    addEventListener('resize', place);
     const s = Number(el.dataset.steps);
-    if (s && !reducedMotion) setInterval(() => { i = (i + 1) % items.length; place(); }, s * 1000);
+    const go = (n: number) => { i = (n + items.length) % items.length; place(); schedule(); };
+    const schedule = () => { clearTimeout(timer); if (s && !reducedMotion) timer = window.setTimeout(() => go(i + 1), s * 1000); };
+    block.querySelectorAll<HTMLElement>('[data-step]').forEach(b => b.addEventListener('click', () => go(i + Number(b.dataset.step))));
+    place(); schedule();
+    addEventListener('resize', place);
   });
 }
 

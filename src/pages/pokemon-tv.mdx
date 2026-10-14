@@ -1,0 +1,160 @@
+---
+layout: ../components/case/CaseLayout.astro
+title: Pokémon TV on Nintendo Switch | Mitchell Vizensky
+description: Porting the Pokémon TV streaming service to the Nintendo Switch — monthly active users across all platforms up 33.5% after launch.
+pageColor: "#ffffff"
+---
+import Band from '../components/case/Band.astro';
+import Heading from '../components/case/Heading.astro';
+import Intro from '../components/case/Intro.astro';
+import Steps from '../components/case/Steps.astro';
+import Card from '../components/case/Card.astro';
+import AutoSlides from '../components/case/AutoSlides.astro';
+import Personas from '../components/case/Personas.astro';
+import Outcomes from '../components/case/Outcomes.astro';
+import DeviceGallery from '../components/case/DeviceGallery.astro';
+import SwitchArt from '../components/SwitchArt.astro';
+import Img from '../components/Img.astro';
+import Video from '../components/Video.astro';
+
+<Band bg="#e8e8e8" height={1125} pad="81px 0 0" class="ptv-hero">
+  <DeviceGallery device="88006853" video="489ee345" shots={['97acd621', '935ea055', '8f5e2513', '499869ef', 'fc5d3fa3', 'fdc901a2']} />
+  <Intro title="Pokémon TV" x={149} top={99} nda="To comply with my non-disclosure agreement, I have omitted and obfuscated confidential information in this case study. All information in this case study is my own and does not necessarily reflect the views of TPCI.">
+
+<h3 style={{ color: '#43c296' }}>Problem</h3>
+
+In March of 2021, young Pokémon fans could exclusively access Pokémon TV (PTV) via web; the streaming service needed to be ported to the Nintendo Switch™ to increase accessibility for its most important audience. TPCI created this streaming service with the intent of influencing sales of Pokémon Trading Cards - making the bold choice to exclude monetization. The streaming service needed to be easy for young viewers to navigate while offering a vast library of Pokémon’s entertainment content.
+
+<h3 style={{ color: '#43c296' }}>Goals</h3>
+
+- Influence sales of Pokémon Trading Cards
+- Port PTV to Nintendo Switch™
+- Drive new Pokémon viewers to the platform to achieve 7.2M average monthly USA views in 2021
+- Expand the total reach of Pokémon’s home entertainment
+- Increase customer lifetime value (LTV) while growing brand loyalty
+- Create a polished experience that is fun and sparks user delight
+
+</Intro>
+</Band>
+
+<Band bg="#fafafa" height={677} pad="54px 0 0">
+  <Steps headingSize={30} ruleWidth={120} interval={3} badge="tab" badgeColor="#edeff0" numberColor="#fff" boxColor="#edeff0" radius={10}
+    textSize={14} lineHeight="18.2px" gap="18.2px" stepsX={18} stepsWidth={473} stepsTop={42} boxLeft={18} boxRight={1} mediaX={511} mediaTop={103}
+    steps={[
+      'Conducted a competitive analysis, identified key personas, and considered customer feedback and product metrics to create informed user centered designs',
+      'Used the previously built web product as the basis for porting to the Nintendo Switch™ in order to mock up platform specific solutions and wireframes',
+      'Gained approval and buy-in from stakeholders as I iterated on the designs for PTV on Nintendo Switch™',
+      'Worked as a member of an R&D team, in close collaboration with engineering, to rapidly prototype my approved designs in the Unity game engine',
+      'Created an interactive prototype in Unity, localized into eight languages, and conducted internal user research to inform usability findings',
+      'Maintained detailed user interface specifications',
+      'Owned documentation and final production of all designs and assets',
+    ]}>
+    <SwitchArt />
+    <p class="unity-caption">This is a recording of a test of the project running in Unity</p>
+  </Steps>
+</Band>
+
+<Band bg="#edeff0" height={850} pad="103px 0 0">
+  <Heading size={30} ruleWidth={120}>Personas</Heading>
+  <div class="personas-wrap">
+    <Personas people={[
+      { name: 'Kids', image: '2f7f5063', age: '4- 12', share: '45%', description: 'Kids present the largest opportunity for the brand as they influence their parents to purchase Pokémon cards, games, and toys; they have the highest potential customer LTV.' },
+      { name: 'Millennials', image: 'a200004d', age: '25-40', share: '15%', description: 'Adults with disposable income and no children who grew up loving Pokémon will engage with the original animated series and potentially purchase cards, games, and toys.' },
+      { name: 'Millennial Parents', image: '90dc9bd2', age: '25-40', share: '25%', description: 'Parents hold the purchasing power, while children influence those purchases. The parents pass down their love of Pokémon to their children in a cyclical relationship creating a bond over the brand.' },
+      { name: 'TCG Players', image: '542aca4a', age: '6-45', share: '15%', description: 'TCG players can access on-demand videos of card matches while remaining immersed in the Pokémon ecosystem. This influences players to purchase and play the physical cards.' },
+    ]} />
+  </div>
+</Band>
+
+<Band bg="#ffffff" height={673} pad="66px 0 0">
+  <Card title="Competitive Analysis" width={746} size={30} textSize={14} color="#000">
+    I conducted an in-depth competitive analysis of the top streaming services available on the Nintendo Switch™. This helped me gain a deeper understanding of user expectations, where competitors excel, and what competitors do poorly. It also helped me make informed decisions and gain buy-in when speaking with stakeholders.
+  </Card>
+  <Img name="d10c853d" alt="Competitive analysis of streaming apps on Nintendo Switch: user journeys" class="ca-chart" sizes="(max-width: 999px) 100vw, 929px" />
+</Band>
+
+<Band bg="#edeff0" height={697} pad="69px 0 0">
+  <AutoSlides height={359} images={[
+    { name: 'e9ed3d2e', width: 868, top: 23, alt: 'Wireframe flow' },
+    { name: '8d48767f', width: 860, alt: 'Wireframes' },
+  ]} />
+  <Heading size={30} ruleWidth={120}>Wireframes</Heading>
+  <div class="lede wire-text">
+    <p>I utilized the findings of the competitive analysis to brainstorm ideas for the potential layout and UX of PTV’s Nintendo Switch™ port. I produced several iterations of potential designs and presented them to key stakeholders until we identified the best layouts from which to create a playable prototype.</p>
+    <p>The wireframing process of this project called for fewer iterations and less exploration due to the desire for the Nintendo Switch™ app to be cohesive with the web product that already existed at the time. The colors, fonts, and branding were all meant to be inspired by the web product. The mock ups I did were meant to explore the best possible way for users to discover and view video content on the Nintendo Switch™ platform while taking controller support and touchscreen functionality into account.</p>
+  </div>
+</Band>
+
+<Band bg="#fafafa" height={850} pad="87px 0 0">
+  <Card title="Interactive Prototype" width={492} size={30} color="#000">
+    This is an interactive prototype was used as a proof of concept to gain approval on the UX flow before we started building in the Unity engine.
+  </Card>
+  <Video name="d262048f" class="proto" label="Interactive prototype of the Pokémon TV app" />
+</Band>
+
+<section class="building">
+  <div class="building-text">
+    <Heading size={30} ruleWidth={120} align="left">Building for Nintendo Switch™</Heading>
+    <ul>
+      <li>After a lot of setup and trial and error, we finally got the app to run on the Nintendo Switch™ dev kit.</li>
+      <li>Learning to push builds to a Nintendo Switch™ device with a licensed developer kit was a massive life goal achieved.</li>
+      <li>UI implementation was easier in some ways because the Nintendo Switch™ has a fixed screen resolution, so there was no need to consider responsive UI scaling.</li>
+      <li>This port offered vast learning experiences in regards to building the UX for controller support and touchscreen interactions.</li>
+      <li>Once completed I became the resident Nintendo Switch™ expert on my team at TPCI.</li>
+    </ul>
+  </div>
+  <Img name="7903ec09" alt="Pokémon TV running on a Nintendo Switch dev kit" class="building-photo" sizes="(max-width: 999px) 100vw, 33vw" />
+</section>
+
+<Band height={432} pad="10px 0 0" wide>
+  <Heading size={30} ruleWidth={120}>Final Shippable Product</Heading>
+  <div class="shipped">
+    <Img name="8f3e8355" alt="Pokémon TV home screen on Nintendo Switch" sizes="(max-width: 999px) 100vw, 600px" />
+    <Video name="0ca48d1e" label="Pokémon TV on Nintendo Switch" />
+  </div>
+</Band>
+
+<Band bg="#f4f3f2" height={749} pad="85px 0 0">
+  <Heading size={30} ruleWidth={75}>Customer LTV in Action</Heading>
+  <div class="yt">
+    <iframe src="https://www.youtube-nocookie.com/embed/eefmgiP7Kfo" title="Pokémon TV on Nintendo Switch launch video" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</Band>
+
+<Outcomes stat="+33.5%" label="Monthly active users" left="#fafafa" right="#00785a" height={671}>
+Upon its launch in August 2021, Pokémon TV for Nintendo Switch™ was promoted on the official Pokémon Youtube channel through a [launch announcement video](https://www.youtube.com/watch?v=eefmgiP7Kfo). Following its launch, the **monthly active users across all platforms increased by 33.5%**. On average, users watched for 1 hour, with series and movies being the most engaging content, followed by junior's content. The app was developed to support new releases of Pokémon content and has continued to serve customers in all available regions with minimal maintenance. The app was responsive, easy to use, and had a low bug count post-launch.
+</Outcomes>
+
+<style>{`
+  .ptv-hero .device { margin-left: 45px; }
+  .unity-caption { margin: -6px 0 0 84px; font-size: 12px; color: #d6d1e2; }
+  .personas-wrap { margin: 38px -17px 0; }
+  .ca-chart { width: 929px; max-width: none; margin: 59px 0 0 25px; }
+  .wire-text { width: min(687px, 100%); margin: 16px auto 0; font-size: 13px; line-height: normal; color: #000; }
+  .wire-text p { margin: 0; }
+  .proto { width: 831px; height: 456px; margin: 37px 0 0 74px; object-fit: cover; }
+  .building { display: grid; grid-template-columns: 2fr 1fr; min-height: 891px; background: #edeff0; }
+  .building-text { width: 371px; justify-self: end; margin-right: 138px; padding-top: 217px; }
+  .building-text ul { margin: 37px 0 0; padding-left: 16.9px; font-size: 13px; line-height: 16.9px; }
+  .building-text li + li { margin-top: 16.9px; }
+  .building-photo { width: 100%; height: 100%; object-fit: cover; }
+  .shipped { display: grid; grid-template-columns: 600px 600px; justify-content: center; margin-top: 23px; }
+  .shipped > * { width: 600px; height: 337px; object-fit: cover; }
+  .yt { width: 710px; aspect-ratio: 710 / 406; margin: 52px auto 0; }
+  .yt iframe { width: 100%; height: 100%; border: 0; }
+  @media (max-width: 1240px) { .shipped { grid-template-columns: 1fr 1fr; } .shipped > * { width: 100%; height: auto; } }
+  @media (max-width: 999px) {
+    .ptv-hero .device { margin-left: 0; }
+    .unity-caption { margin-left: 0; }
+    .personas-wrap { margin: 32px 0 0; }
+    .ca-chart, .proto { width: 100%; height: auto; margin-left: 0; }
+    .wire-text { font-size: 15px; line-height: 1.5; }
+    .wire-text p + p { margin-top: 1em; }
+    .building { grid-template-columns: 1fr; min-height: 0; }
+    .building-text { width: auto; justify-self: stretch; margin: 0; padding: 56px var(--gutter); }
+    .building-text ul { font-size: 15px; line-height: 1.5; }
+    .building-photo { height: 60vw; }
+    .shipped { grid-template-columns: 1fr; }
+    .yt { width: 100%; }
+  }
+`}</style>

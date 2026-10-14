@@ -1,0 +1,23 @@
+---
+// Pokémon TV hero: Switch hardware image with the intro video and screenshots cycling on its screen.
+import Img from '../Img.astro';
+interface Props { device: string; video: string; shots: string[] }
+const { device, video, shots } = Astro.props;
+---
+<div class="device">
+  <Img name={device} alt="Nintendo Switch" class="hw" sizes="(max-width: 999px) 100vw, 890px" loading="eager" />
+  <div class="screen" data-gallery>
+    <video src={`/assets/video/${video}.mp4`} poster={`/assets/video/${video}.webp`} muted playsinline class="on"></video>
+    {shots.map(s => <Img name={s} alt="Pokémon TV screenshot" sizes="(max-width: 999px) 70vw, 565px" />)}
+    <button class="gallery-next" type="button" aria-label="Next screenshot"></button>
+  </div>
+</div>
+<style>
+  .device { position: relative; width: min(890px, 100%); aspect-ratio: 890 / 379; }
+  .device :global(.hw) { width: 100%; height: 100%; object-fit: cover; }
+  .screen { position: absolute; left: 18.09%; top: 8.18%; width: 63.48%; height: 84.96%; overflow: hidden; background: #000; }
+  .screen > :global(video), .screen > :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .8s; }
+  .screen > :global(.on) { opacity: 1; }
+  .gallery-next { position: absolute; right: 8px; top: 50%; width: 36px; height: 48px; margin-top: -24px; border: 0; background: none; cursor: pointer; z-index: 2; }
+  .gallery-next::before { content: ""; position: absolute; left: 40%; top: 50%; width: 14px; height: 14px; border: solid #fff; border-width: 2px 2px 0 0; transform: translate(-50%, -50%) rotate(45deg); }
+</style>
