@@ -1,0 +1,319 @@
+{
+  "title": "Amazon Game On — Branding & UX/UI",
+  "pageTitle": "MV | Amazon Game On — Branding & UX/UI",
+  "slug": "amazon-game-on",
+  "order": 1,
+  "meta": {
+    "date": "February 2024",
+    "fields": [
+      "Graphic Design",
+      "Illustration"
+    ]
+  },
+  "card": {
+    "image": "cover",
+    "line": "2024 · Graphic Design · Illustration"
+  },
+  "background": "#000000",
+  "dark": true,
+  "modules": [
+    {
+      "type": "image",
+      "name": "01",
+      "width": 1400,
+      "height": 758,
+      "alt": "Amazon Game On — Branding & UX/UI, image 1"
+    },
+    {
+      "type": "grid",
+      "items": [
+        {
+          "kind": "image",
+          "name": "02-01",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 2",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-02",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 3",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-03",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 4",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-04",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 5",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-05",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 6",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-06",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 7",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-07",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 8",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-08",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 9",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-09",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 10",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-10",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 11",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-11",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 12",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-12",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 13",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-13",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 14",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-14",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 15",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-15",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 16",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-16",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 17",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-17",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 18",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-18",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 19",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-19",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 20",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-20",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 21",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-21",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 22",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-22",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 23",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-23",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 24",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-24",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 25",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-25",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 26",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-26",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 27",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-27",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 28",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-28",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 29",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-29",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 30",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "02-30",
+          "width": 300,
+          "height": 300,
+          "alt": "Amazon Game On — Branding & UX/UI, image 31",
+          "ratio": 1.0
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "03",
+      "width": 1400,
+      "height": 758,
+      "alt": "Amazon Game On — Branding & UX/UI, image 32"
+    },
+    {
+      "type": "image",
+      "name": "04",
+      "width": 1000,
+      "height": 750,
+      "alt": "Amazon Game On — Branding & UX/UI, image 33"
+    },
+    {
+      "type": "image",
+      "name": "05",
+      "width": 1000,
+      "height": 750,
+      "alt": "Amazon Game On — Branding & UX/UI, image 34"
+    },
+    {
+      "type": "image",
+      "name": "06",
+      "width": 1000,
+      "height": 750,
+      "alt": "Amazon Game On — Branding & UX/UI, image 35"
+    },
+    {
+      "type": "image",
+      "name": "07",
+      "width": 1000,
+      "height": 750,
+      "alt": "Amazon Game On — Branding & UX/UI, image 36"
+    }
+  ],
+  "behance": {
+    "id": 191459805,
+    "url": "https://www.behance.net/gallery/191459805/Amazon-Game-On-Branding-UXUI",
+    "publishedOn": "2024-02-14",
+    "fields": [
+      "Graphic Design",
+      "Illustration"
+    ],
+    "tools": [],
+    "tags": []
+  }
+}

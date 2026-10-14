@@ -1,0 +1,137 @@
+{
+  "title": "My Konami Slots - App Art Direction",
+  "pageTitle": "MV | My Konami Slots - App Art Direction",
+  "slug": "my-konami-slots",
+  "order": 12,
+  "meta": {
+    "date": "March 2019",
+    "fields": [
+      "Art Direction",
+      "Branding",
+      "UI/UX"
+    ]
+  },
+  "card": {
+    "image": "cover",
+    "line": "2019 · Art Direction · Branding"
+  },
+  "background": "#FFFFFF",
+  "dark": false,
+  "modules": [
+    {
+      "type": "image",
+      "name": "01",
+      "width": 1400,
+      "height": 1329,
+      "alt": "My Konami Slots - App Art Direction, image 1"
+    },
+    {
+      "type": "text",
+      "html": "<p class=\"ta-l\">During my time at <a href=\"https://www.playstudios.com/\" target=\"_blank\" rel=\"noopener\">Playstudios</a> I got the privilege to Art Direct My Konami Slots. The app requirements were to make a Konami branded mobile casino app that feels like a high end casino with asian accents. The app was made through a partnership deal that allowed us to use Konami's slot game IP within the app that we produced. My Konami is now a top grossing casino genre app on the IOS and Android app store. Available on IOS, Android, Kindle and Facebook. Production art images range from final in-game assets to early concepts.</p>"
+    },
+    {
+      "type": "image",
+      "name": "04",
+      "width": 1400,
+      "height": 816,
+      "alt": "My Konami Slots - App Art Direction, image 2"
+    },
+    {
+      "type": "image",
+      "name": "05",
+      "width": 1400,
+      "height": 1135,
+      "alt": "My Konami Slots - App Art Direction, image 3"
+    },
+    {
+      "type": "image",
+      "name": "06",
+      "width": 1400,
+      "height": 746,
+      "alt": "My Konami Slots - App Art Direction, image 4"
+    },
+    {
+      "type": "image",
+      "name": "07",
+      "width": 1400,
+      "height": 746,
+      "alt": "My Konami Slots - App Art Direction, image 5"
+    },
+    {
+      "type": "image",
+      "name": "08",
+      "width": 1400,
+      "height": 2529,
+      "alt": "My Konami Slots - App Art Direction, image 6"
+    },
+    {
+      "type": "image",
+      "name": "09",
+      "width": 1400,
+      "height": 1082,
+      "alt": "My Konami Slots - App Art Direction, image 7"
+    },
+    {
+      "type": "image",
+      "name": "10",
+      "width": 1400,
+      "height": 900,
+      "alt": "My Konami Slots - App Art Direction, image 8"
+    },
+    {
+      "type": "image",
+      "name": "11",
+      "width": 1400,
+      "height": 900,
+      "alt": "My Konami Slots - App Art Direction, image 9"
+    },
+    {
+      "type": "image",
+      "name": "12",
+      "width": 1400,
+      "height": 394,
+      "alt": "My Konami Slots - App Art Direction, image 10"
+    },
+    {
+      "type": "image",
+      "name": "13",
+      "width": 1024,
+      "height": 768,
+      "alt": "My Konami Slots - App Art Direction, image 11"
+    },
+    {
+      "type": "image",
+      "name": "14",
+      "width": 1400,
+      "height": 558,
+      "alt": "My Konami Slots - App Art Direction, image 12"
+    },
+    {
+      "type": "image",
+      "name": "15",
+      "width": 1400,
+      "height": 889,
+      "alt": "My Konami Slots - App Art Direction, image 13"
+    }
+  ],
+  "behance": {
+    "id": 77783895,
+    "url": "https://www.behance.net/gallery/77783895/My-Konami-Slots-App-Art-Direction",
+    "publishedOn": "2019-03-20",
+    "fields": [
+      "Art Direction",
+      "Branding",
+      "UI/UX"
+    ],
+    "tools": [],
+    "tags": [
+      "app design",
+      "UI",
+      "ux",
+      "art direction ",
+      "my konami",
+      "konami",
+      "Glass UI"
+    ]
+  }
+}

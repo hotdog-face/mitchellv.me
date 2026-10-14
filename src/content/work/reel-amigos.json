@@ -1,0 +1,143 @@
+{
+  "title": "Reel Amigos - Mobile Game",
+  "pageTitle": "MV | Reel Amigos - Mobile Game",
+  "slug": "reel-amigos",
+  "order": 15,
+  "meta": {
+    "date": "March 2019",
+    "fields": [
+      "Art Direction",
+      "Illustration",
+      "UI/UX"
+    ]
+  },
+  "card": {
+    "image": "cover",
+    "line": "2019 · Art Direction · Illustration"
+  },
+  "background": "#FFFFFF",
+  "dark": false,
+  "modules": [
+    {
+      "type": "image",
+      "name": "01",
+      "width": 1400,
+      "height": 675,
+      "alt": "Reel Amigos - Mobile Game, image 1"
+    },
+    {
+      "type": "text",
+      "html": "<p class=\"ta-l\">Art direction work done towards all final art assets for the game I made for Play Studios titled \"Reel Amigos.\" The game is currently live on IOS, Android, and Facebook. Production art images range from final in-game assets to early concepts.</p>"
+    },
+    {
+      "type": "image",
+      "name": "04",
+      "width": 1400,
+      "height": 977,
+      "alt": "Reel Amigos - Mobile Game, image 2"
+    },
+    {
+      "type": "image",
+      "name": "05",
+      "width": 1400,
+      "height": 977,
+      "alt": "Reel Amigos - Mobile Game, image 3"
+    },
+    {
+      "type": "grid",
+      "items": [
+        {
+          "kind": "image",
+          "name": "06-01",
+          "width": 2400,
+          "height": 1286,
+          "alt": "Reel Amigos - Mobile Game, image 4",
+          "ratio": 1.8667
+        },
+        {
+          "kind": "image",
+          "name": "06-02",
+          "width": 2400,
+          "height": 1855,
+          "alt": "Reel Amigos - Mobile Game, image 5",
+          "ratio": 1.2941
+        },
+        {
+          "kind": "image",
+          "name": "06-03",
+          "width": 2400,
+          "height": 1855,
+          "alt": "Reel Amigos - Mobile Game, image 6",
+          "ratio": 1.2941
+        },
+        {
+          "kind": "image",
+          "name": "06-04",
+          "width": 2400,
+          "height": 1855,
+          "alt": "Reel Amigos - Mobile Game, image 7",
+          "ratio": 1.2941
+        },
+        {
+          "kind": "image",
+          "name": "06-05",
+          "width": 2400,
+          "height": 1553,
+          "alt": "Reel Amigos - Mobile Game, image 8",
+          "ratio": 1.5455
+        },
+        {
+          "kind": "video",
+          "name": "06-06",
+          "width": 392,
+          "height": 500,
+          "label": "Reel Amigos - Mobile Game, image 9",
+          "ratio": 0.784
+        },
+        {
+          "kind": "video",
+          "name": "06-07",
+          "width": 332,
+          "height": 500,
+          "label": "Reel Amigos - Mobile Game, image 10",
+          "ratio": 0.666
+        },
+        {
+          "kind": "image",
+          "name": "06-08",
+          "width": 2400,
+          "height": 1255,
+          "alt": "Reel Amigos - Mobile Game, image 11",
+          "ratio": 1.913
+        }
+      ]
+    },
+    {
+      "type": "embed",
+      "src": "https://www-ccv.adobe.io/v1/player/ccv/GytxetyAKvN/embed?api_key=behance1&bgcolor=%23191919",
+      "title": "Reel Amigos - Mobile Game video",
+      "width": 1022,
+      "height": 720
+    }
+  ],
+  "behance": {
+    "id": 77783261,
+    "url": "https://www.behance.net/gallery/77783261/Reel-Amigos-Mobile-Game",
+    "publishedOn": "2019-03-20",
+    "fields": [
+      "Art Direction",
+      "Illustration",
+      "UI/UX"
+    ],
+    "tools": [],
+    "tags": [
+      "art direction ",
+      "reel amigos",
+      "Character design ",
+      "mexican game",
+      "mobile game",
+      "Indie game",
+      "game pitch"
+    ]
+  }
+}

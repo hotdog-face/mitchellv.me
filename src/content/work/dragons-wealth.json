@@ -1,0 +1,97 @@
+{
+  "title": "Dragons Wealth - Mobile Game",
+  "pageTitle": "MV | Dragons Wealth - Mobile Game",
+  "slug": "dragons-wealth",
+  "order": 13,
+  "meta": {
+    "date": "March 2019",
+    "fields": [
+      "Art Direction",
+      "Illustration",
+      "UI/UX"
+    ]
+  },
+  "card": {
+    "image": "cover",
+    "line": "2019 · Art Direction · Illustration"
+  },
+  "background": "#FFFFFF",
+  "dark": false,
+  "modules": [
+    {
+      "type": "image",
+      "name": "01",
+      "width": 1400,
+      "height": 541,
+      "alt": "Dragons Wealth - Mobile Game, image 1"
+    },
+    {
+      "type": "text",
+      "html": "<p>Art Direction work done towards all final art assets for the game I made for Play Studios titled \"Dragons Wealth\". The game is a live on IOS, Android and Facebook. Production art images range from final in-game assets to early concepts.</p>"
+    },
+    {
+      "type": "image",
+      "name": "04",
+      "width": 1400,
+      "height": 724,
+      "alt": "Dragons Wealth - Mobile Game, image 2"
+    },
+    {
+      "type": "image",
+      "name": "05",
+      "width": 1400,
+      "height": 965,
+      "alt": "Dragons Wealth - Mobile Game, image 3"
+    },
+    {
+      "type": "image",
+      "name": "06",
+      "width": 1400,
+      "height": 930,
+      "alt": "Dragons Wealth - Mobile Game, image 4"
+    },
+    {
+      "type": "image",
+      "name": "07",
+      "width": 1400,
+      "height": 936,
+      "alt": "Dragons Wealth - Mobile Game, image 5"
+    },
+    {
+      "type": "image",
+      "name": "08",
+      "width": 1400,
+      "height": 1332,
+      "alt": "Dragons Wealth - Mobile Game, image 6"
+    },
+    {
+      "type": "image",
+      "name": "09",
+      "width": 1400,
+      "height": 890,
+      "alt": "Dragons Wealth - Mobile Game, image 7"
+    }
+  ],
+  "behance": {
+    "id": 77782503,
+    "url": "https://www.behance.net/gallery/77782503/Dragons-Wealth-Mobile-Game",
+    "publishedOn": "2019-03-20",
+    "fields": [
+      "Art Direction",
+      "Illustration",
+      "UI/UX"
+    ],
+    "tools": [],
+    "tags": [
+      "mobile game",
+      "app",
+      "ui ux",
+      "dragons",
+      "Character design ",
+      "Character",
+      "casino",
+      "art direction ",
+      "ILLUSTRATION "
+    ]
+  }
+}

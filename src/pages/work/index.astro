@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import Img from '../../components/Img.astro';
+import { getWork } from '../../data/work';
+import '../../styles/work.css';
+
+const projects = await getWork();
+// one card per column: 4 columns at 1400px (332px each), 3 / 2 / 1 on smaller screens
+const sizes = '(min-width: 1432px) 332px, (min-width: 1004px) 31vw, (min-width: 680px) 47vw, calc(100vw - 32px)';
+---
+<Base title="MV | Work" description="Game art direction, UX/UI, branding and illustration by Mitchell Vizensky.">
+  <div class="work-page work-index">
+
+    <div class="work-intro">
+      <a class="work-back" href="/">&larr; Home</a>
+      <h1>All Work</h1>
+      <p class="work-desc">Game art direction, UX/UI, branding and illustration.</p>
+    </div>
+
+    <div class="work-grid">
+      {projects.map((p, i) => (
+        <a class="work-card" href={`/work/${p.slug}`}>
+          <figure><Img name={`work/${p.slug}/${p.card.image}`} sizes={sizes} loading={i < 6 ? 'eager' : 'lazy'} /></figure>
+          <h2>{p.title}</h2>
+          <p>{p.card.line}</p>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</Base>

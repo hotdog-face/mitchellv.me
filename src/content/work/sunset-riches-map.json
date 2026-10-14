@@ -1,0 +1,158 @@
+{
+  "title": "Sunset Riches Map Feature",
+  "pageTitle": "MV | Sunset Riches Map Feature",
+  "slug": "sunset-riches-map",
+  "order": 11,
+  "description": "Artwork done for a map feature in a mobile casino game",
+  "meta": {
+    "date": "January 2019",
+    "fields": [
+      "UI/UX",
+      "Art Direction",
+      "Graphic Design"
+    ]
+  },
+  "card": {
+    "image": "cover",
+    "line": "2019 · UI/UX · Art Direction"
+  },
+  "background": "#FFFFFF",
+  "dark": false,
+  "modules": [
+    {
+      "type": "image",
+      "name": "01",
+      "width": 1400,
+      "height": 772,
+      "alt": "Sunset Riches Map Feature, image 1"
+    },
+    {
+      "type": "text",
+      "html": "<p>How might we build a casino game with saga style map progression?</p>"
+    },
+    {
+      "type": "embed",
+      "src": "https://www-ccv.adobe.io/v1/player/ccv/5gqQs57EWt6/embed?api_key=behance1&bgcolor=%23191919",
+      "title": "Sunset Riches Map Feature video",
+      "width": 1200,
+      "height": 678
+    },
+    {
+      "type": "grid",
+      "items": [
+        {
+          "kind": "image",
+          "name": "06-01",
+          "width": 2400,
+          "height": 1800,
+          "alt": "Sunset Riches Map Feature, image 2",
+          "ratio": 1.3333
+        },
+        {
+          "kind": "image",
+          "name": "06-02",
+          "width": 2400,
+          "height": 1800,
+          "alt": "Sunset Riches Map Feature, image 3",
+          "ratio": 1.3333
+        }
+      ]
+    },
+    {
+      "type": "grid",
+      "items": [
+        {
+          "kind": "image",
+          "name": "07-01",
+          "width": 2400,
+          "height": 1722,
+          "alt": "Sunset Riches Map Feature, image 4",
+          "ratio": 1.3934
+        },
+        {
+          "kind": "image",
+          "name": "07-02",
+          "width": 2400,
+          "height": 342,
+          "alt": "Sunset Riches Map Feature, image 5",
+          "ratio": 7.0137
+        },
+        {
+          "kind": "image",
+          "name": "07-03",
+          "width": 2400,
+          "height": 458,
+          "alt": "Sunset Riches Map Feature, image 6",
+          "ratio": 5.2451
+        },
+        {
+          "kind": "image",
+          "name": "07-04",
+          "width": 2400,
+          "height": 341,
+          "alt": "Sunset Riches Map Feature, image 7",
+          "ratio": 7.0481
+        },
+        {
+          "kind": "image",
+          "name": "07-05",
+          "width": 2400,
+          "height": 379,
+          "alt": "Sunset Riches Map Feature, image 8",
+          "ratio": 6.3291
+        },
+        {
+          "kind": "image",
+          "name": "07-06",
+          "width": 1569,
+          "height": 437,
+          "alt": "Sunset Riches Map Feature, image 9",
+          "ratio": 3.5904
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "08",
+      "width": 1136,
+      "height": 900,
+      "label": "Sunset Riches Map Feature, image 10"
+    },
+    {
+      "type": "video",
+      "name": "09",
+      "width": 1400,
+      "height": 801,
+      "label": "Sunset Riches Map Feature, image 11"
+    },
+    {
+      "type": "video",
+      "name": "10",
+      "width": 600,
+      "height": 338,
+      "label": "Sunset Riches Map Feature, image 12"
+    }
+  ],
+  "behance": {
+    "id": 75599775,
+    "url": "https://www.behance.net/gallery/75599775/Sunset-Riches-Map-Feature",
+    "publishedOn": "2019-01-30",
+    "fields": [
+      "UI/UX",
+      "Art Direction",
+      "Graphic Design"
+    ],
+    "tools": [
+      "Adobe Photoshop"
+    ],
+    "tags": [
+      "Map Feature",
+      "map",
+      "casino",
+      "Casino Game",
+      "mobile game",
+      "mobile",
+      "game"
+    ]
+  }
+}

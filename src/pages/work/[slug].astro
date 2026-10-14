@@ -1,0 +1,95 @@
+---
+import Base from '../../layouts/Base.astro';
+import Img from '../../components/Img.astro';
+import { getWork, imageSizes, gridSizes, type Project } from '../../data/work';
+import '../../styles/work.css';
+
+export async function getStaticPaths() {
+  const all = await getWork();
+  const n = all.length;
+  return all.map((project, i) => ({
+    params: { slug: project.slug },
+    props: { project, prev: all[(i - 1 + n) % n], next: all[(i + 1) % n] },
+  }));
+}
+
+interface Props { project: Project; prev: Project; next: Project }
+const { project: p, prev, next } = Astro.props;
+const dir = `work/${p.slug}`;
+const pub = `/assets/work/${p.slug}`;
+const plain = (html: string) => html.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+const description = p.description ? plain(p.description) : `${p.title} — ${p.meta.fields.join(', ')}. A project by Mitchell Vizensky.`;
+---
+<Base title={p.pageTitle} description={description}>
+  <div class="work-page">
+
+    <div class="work-intro">
+      <a class="work-back" href="/work/">&larr; All work</a>
+      <h1>{p.title}</h1>
+      {p.description && <p class="work-desc" set:html={p.description} />}
+      <ul class="work-meta">
+        {p.meta.date && <li class="work-date">{p.meta.date}</li>}
+        {p.meta.fields.map(f => <li>{f}</li>)}
+      </ul>
+    </div>
+
+    <div class:list={['work-body', { 'is-dark': p.dark }]} style={`--work-bg:${p.background}`}>
+      <div class="work-canvas">
+        {p.modules.map((m, i) => {
+          const loading = i === 0 ? 'eager' : 'lazy';
+          switch (m.type) {
+            case 'image':
+              return (
+                <figure class="m m-img" style={m.overlay ? 'position:relative' : m.maxWidth ? `max-width:${m.maxWidth}px;margin-inline:auto` : undefined}>
+                  <Img name={`${dir}/${m.name}`} alt={m.alt} sizes={imageSizes(m.maxWidth ?? m.width)} loading={loading} />
+                  {m.overlay && (
+                    <video src={`${pub}/${m.overlay.name}.mp4`} poster={`${pub}/${m.overlay.name}.webp`} autoplay muted loop playsinline aria-hidden="true"
+                      style={`position:absolute;left:${m.overlay.left}%;top:${m.overlay.top}%;width:${m.overlay.width}%;height:auto`}></video>
+                  )}
+                </figure>
+              );
+            case 'video':
+              return (
+                <figure class="m m-img">
+                  <video src={`${pub}/${m.name}.mp4`} poster={`${pub}/${m.name}.webp`} width={m.width} height={m.height}
+                    autoplay muted loop playsinline preload="metadata" aria-label={m.label}></video>
+                </figure>
+              );
+            case 'grid': {
+              const sizes = gridSizes(m.items.map(it => it.ratio));
+              return (
+                <div class="m m-grid">
+                  {m.items.map((it, j) => (
+                    <div style={`--r:${it.ratio.toFixed(4)}`}>
+                      {it.kind === 'image'
+                        ? <Img name={`${dir}/${it.name}`} alt={it.alt} sizes={sizes[j]} loading={loading} />
+                        : <video src={`${pub}/${it.name}.mp4`} poster={`${pub}/${it.name}.webp`} width={it.width} height={it.height}
+                            autoplay muted loop playsinline preload="metadata" aria-label={it.label}></video>}
+                    </div>
+                  ))}
+                </div>
+              );
+            }
+            case 'text':
+              return <div class="m m-text" set:html={m.html} />;
+            case 'embed':
+              return (
+                <div class="m m-embed" style={`max-width:${m.width}px`}>
+                  <div style={`aspect-ratio:${m.width}/${m.height}`}>
+                    <iframe src={m.src} title={m.title} loading="lazy" allow="fullscreen" allowfullscreen></iframe>
+                  </div>
+                </div>
+              );
+          }
+        })}
+      </div>
+    </div>
+
+    <nav class="work-pager" aria-label="More projects">
+      <a class="prev" href={`/work/${prev.slug}`}><span>&larr; Previous</span><strong>{prev.title}</strong></a>
+      <a class="next" href={`/work/${next.slug}`}><span>Next &rarr;</span><strong>{next.title}</strong></a>
+      <a class="work-all" href="/work/">All work</a>
+    </nav>
+
+  </div>
+</Base>

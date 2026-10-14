@@ -1,0 +1,179 @@
+{
+  "title": "VHS Bootlegs",
+  "pageTitle": "MV | VHS Bootlegs",
+  "slug": "vhs-bootlegs",
+  "order": 5,
+  "description": "Custom VHS Covers for modern films",
+  "meta": {
+    "date": "July 2019",
+    "fields": [
+      "Graphic Design",
+      "Illustration",
+      "Branding"
+    ]
+  },
+  "card": {
+    "image": "cover",
+    "line": "2019 · Graphic Design · Illustration"
+  },
+  "background": "#FFFFFF",
+  "dark": false,
+  "modules": [
+    {
+      "type": "image",
+      "name": "01",
+      "width": 1400,
+      "height": 1022,
+      "alt": "VHS Bootlegs, image 1"
+    },
+    {
+      "type": "text",
+      "html": "<p class=\"ta-l\"><strong>Some movies are just meant to be on VHS</strong>, so I've taken it upon myself to create my own custom VHS, from the box art, labels, to the previews on the tape before the film plays. This passion project is one that puts old materials to good use and showcases new films on a beloved old medium that technology has left behind. If you are also a collector of VHS tapes and would like to add some new films to your collection, I sell the digital files ready to print on my <a href=\"https://www.etsy.com/shop/RetroWaveCoStore?ref=seller-platform-mcnav\" target=\"_blank\" rel=\"noopener\">Etsy Shop</a>. Thanks for the support and feel free to message me if you have questions, suggestions, or requests.</p>"
+    },
+    {
+      "type": "image",
+      "name": "03",
+      "width": 1400,
+      "height": 1400,
+      "alt": "VHS Bootlegs, image 2"
+    },
+    {
+      "type": "image",
+      "name": "04",
+      "width": 1400,
+      "height": 1400,
+      "alt": "VHS Bootlegs, image 3"
+    },
+    {
+      "type": "image",
+      "name": "05",
+      "width": 1400,
+      "height": 1400,
+      "alt": "VHS Bootlegs, image 4"
+    },
+    {
+      "type": "grid",
+      "items": [
+        {
+          "kind": "image",
+          "name": "06-01",
+          "width": 2048,
+          "height": 2048,
+          "alt": "VHS Bootlegs, image 5",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "06-02",
+          "width": 2048,
+          "height": 2048,
+          "alt": "VHS Bootlegs, image 6",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "06-03",
+          "width": 2048,
+          "height": 2048,
+          "alt": "VHS Bootlegs, image 7",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "06-04",
+          "width": 2048,
+          "height": 2048,
+          "alt": "VHS Bootlegs, image 8",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "06-05",
+          "width": 2048,
+          "height": 2048,
+          "alt": "VHS Bootlegs, image 9",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "06-06",
+          "width": 2048,
+          "height": 2048,
+          "alt": "VHS Bootlegs, image 10",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "06-07",
+          "width": 2048,
+          "height": 2048,
+          "alt": "VHS Bootlegs, image 11",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "06-08",
+          "width": 2048,
+          "height": 2048,
+          "alt": "VHS Bootlegs, image 12",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "06-09",
+          "width": 2048,
+          "height": 2048,
+          "alt": "VHS Bootlegs, image 13",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "06-10",
+          "width": 2048,
+          "height": 2048,
+          "alt": "VHS Bootlegs, image 14",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "06-11",
+          "width": 2048,
+          "height": 2048,
+          "alt": "VHS Bootlegs, image 15",
+          "ratio": 1.0
+        },
+        {
+          "kind": "image",
+          "name": "06-12",
+          "width": 2048,
+          "height": 2048,
+          "alt": "VHS Bootlegs, image 16",
+          "ratio": 1.0
+        }
+      ]
+    }
+  ],
+  "behance": {
+    "id": 83230551,
+    "url": "https://www.behance.net/gallery/83230551/VHS-Bootlegs",
+    "publishedOn": "2019-07-24",
+    "fields": [
+      "Graphic Design",
+      "Illustration",
+      "Branding"
+    ],
+    "tools": [
+      "Adobe Photoshop"
+    ],
+    "tags": [
+      "vhs",
+      "graphic deisgn",
+      "Movies",
+      "Film  ",
+      "Retro",
+      "print",
+      "Cover Art",
+      "video tape"
+    ]
+  }
+}

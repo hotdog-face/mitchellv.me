@@ -1,0 +1,112 @@
+{
+  "title": "Sunset Riches Parallax Backgrounds",
+  "pageTitle": "MV | Sunset Riches Parallax Backgrounds",
+  "slug": "sunset-riches-parallax",
+  "order": 7,
+  "meta": {
+    "date": "March 2019",
+    "fields": [
+      "Illustration",
+      "Art Direction",
+      "Creative Direction"
+    ]
+  },
+  "card": {
+    "image": "cover",
+    "line": "2019 · Illustration · Art Direction"
+  },
+  "background": "#FFFFFF",
+  "dark": false,
+  "modules": [
+    {
+      "type": "image",
+      "name": "01",
+      "width": 1400,
+      "height": 683,
+      "alt": "Sunset Riches Parallax Backgrounds, image 1"
+    },
+    {
+      "type": "text",
+      "html": "<p>How might we merge the delights of travel with a mobile slots experience.</p>"
+    },
+    {
+      "type": "image",
+      "name": "04",
+      "width": 1400,
+      "height": 164,
+      "alt": "Sunset Riches Parallax Backgrounds, image 2"
+    },
+    {
+      "type": "image",
+      "name": "05",
+      "width": 1400,
+      "height": 354,
+      "alt": "Sunset Riches Parallax Backgrounds, image 3"
+    },
+    {
+      "type": "image",
+      "name": "06",
+      "width": 1400,
+      "height": 1107,
+      "alt": "Sunset Riches Parallax Backgrounds, image 4"
+    },
+    {
+      "type": "image",
+      "name": "07",
+      "width": 1400,
+      "height": 1107,
+      "alt": "Sunset Riches Parallax Backgrounds, image 5"
+    },
+    {
+      "type": "image",
+      "name": "08",
+      "width": 1400,
+      "height": 1107,
+      "alt": "Sunset Riches Parallax Backgrounds, image 6"
+    },
+    {
+      "type": "image",
+      "name": "09",
+      "width": 1400,
+      "height": 1107,
+      "alt": "Sunset Riches Parallax Backgrounds, image 7"
+    },
+    {
+      "type": "image",
+      "name": "10",
+      "width": 1400,
+      "height": 1107,
+      "alt": "Sunset Riches Parallax Backgrounds, image 8"
+    },
+    {
+      "type": "embed",
+      "src": "https://www-ccv.adobe.io/v1/player/ccv/F9_XCaMbREv/embed?api_key=behance1&bgcolor=%23191919",
+      "title": "Sunset Riches Parallax Backgrounds video",
+      "width": 964,
+      "height": 720
+    }
+  ],
+  "behance": {
+    "id": 77781431,
+    "url": "https://www.behance.net/gallery/77781431/Sunset-Riches-Parallax-Backgrounds",
+    "publishedOn": "2019-03-20",
+    "fields": [
+      "Illustration",
+      "Art Direction",
+      "Creative Direction"
+    ],
+    "tools": [],
+    "tags": [
+      "parallax",
+      "mobile game",
+      "casino",
+      "social casino",
+      "backgrounds",
+      "Matte Painting",
+      "background painting",
+      "scenery",
+      "ILLUSTRATION ",
+      "Game Art"
+    ]
+  }
+}

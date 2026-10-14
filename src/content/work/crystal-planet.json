@@ -1,0 +1,97 @@
+{
+  "title": "Crystal Planet",
+  "pageTitle": "MV | Crystal Planet",
+  "slug": "crystal-planet",
+  "order": 16,
+  "meta": {
+    "date": "March 2015",
+    "fields": [
+      "Art Direction",
+      "Graphic Design",
+      "Illustration"
+    ]
+  },
+  "card": {
+    "image": "cover",
+    "line": "2015 · Art Direction · Graphic Design"
+  },
+  "background": "#FFFFFF",
+  "dark": false,
+  "modules": [
+    {
+      "type": "image",
+      "name": "01",
+      "width": 1240,
+      "height": 1063,
+      "alt": "Crystal Planet, image 1"
+    },
+    {
+      "type": "text",
+      "html": "<p>Art direction work done towards all final art assets for the game I made for Play Studios titled \"Crystal Planet.\" The game is currently live on IOS, Android, and Kindle and Facebook. Production art images range from final in-game assets to early concepts.</p>"
+    },
+    {
+      "type": "image",
+      "name": "04",
+      "width": 1240,
+      "height": 802,
+      "alt": "Crystal Planet, image 2"
+    },
+    {
+      "type": "image",
+      "name": "05",
+      "width": 1240,
+      "height": 757,
+      "alt": "Crystal Planet, image 3"
+    },
+    {
+      "type": "image",
+      "name": "06",
+      "width": 1240,
+      "height": 760,
+      "alt": "Crystal Planet, image 4"
+    },
+    {
+      "type": "image",
+      "name": "07",
+      "width": 1239,
+      "height": 706,
+      "alt": "Crystal Planet, image 5"
+    },
+    {
+      "type": "embed",
+      "src": "https://www-ccv.adobe.io/v1/player/ccv/LpmIb5Lobm8/embed?api_key=behance1&bgcolor=%23191919",
+      "title": "Crystal Planet video",
+      "width": 630,
+      "height": 360
+    },
+    {
+      "type": "text",
+      "html": "<p>Thank you for viewing!</p>\n<p>mail@mitchellv.me</p>"
+    }
+  ],
+  "behance": {
+    "id": 24138265,
+    "url": "https://www.behance.net/gallery/24138265/Crystal-Planet",
+    "publishedOn": "2015-03-02",
+    "fields": [
+      "Art Direction",
+      "Graphic Design",
+      "Illustration"
+    ],
+    "tools": [
+      "Adobe Flash",
+      "Adobe Photoshop"
+    ],
+    "tags": [
+      "My Vegas",
+      "play studios",
+      "drawing art",
+      "mobiel game",
+      "Space ",
+      "digging game",
+      "Art Director",
+      "game pitch",
+      "Indie game"
+    ]
+  }
+}

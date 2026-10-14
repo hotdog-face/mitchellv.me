@@ -1,41 +1,42 @@
 # mitchellv.me
 
-Mitchell Vizensky's portfolio. Plain HTML and CSS with no build step and no dependencies. What's in this folder is exactly what gets published.
+Mitchell Vizensky's portfolio, built with [Astro](https://astro.build). Pushing to `main` builds the site and publishes it to GitHub Pages at https://www.mitchellv.me, usually within two minutes.
 
-## Files
+## Where things are
 
-| Path | What it is |
+| To change… | Edit |
 | --- | --- |
-| `index.html` | Home page |
-| `copy-of-store-revamp.html` | Pokémon TV case study (old Wix URL, kept so existing links work) |
-| `store-update.html` | Big Fish Casino store revamp |
-| `rtsstore.html` | ReelTown Slots store (not linked from home) |
-| `resume.pdf` | Resume linked from the home page |
-| `assets/site.css` | All styles. Colors and fonts are variables at the top. |
-| `assets/site.js` | Pokémon TV hero slideshow and the "My Process" popup |
-| `assets/img/`, `assets/video/` | Images (WebP) and videos (MP4, including former GIFs) |
+| Home page text, featured projects, project tiles | `src/data/home.ts` |
+| The "My Process" popup | `src/data/process-details.html` |
+| Email, social links, footer "Last updated" year | `src/data/site.ts` |
+| A case study's text and images | `src/pages/pokemon-tv.mdx`, `bfc-store-revamp.mdx`, `reeltown-slots.mdx` |
+| Work pages (Behance projects, VIP Revamp) | `src/content/work/*` |
+| Colors, fonts, spacing for the whole site | `src/styles/global.css` (variables at the top) |
+| Header, footer, phone bar | `src/components/Header.astro`, `Footer.astro`, `PhoneBar.astro` |
+| Home page sections | `src/components/home/*.astro` |
+| Case-study building blocks (steps, cards, slideshows, outcomes…) | `src/components/case/*.astro` |
+| Animations, slideshows, popup behavior | `src/scripts/site.ts` |
 
-The header and footer are copied into each page. If you change one, change it in all four.
+Case studies are MDX: ordinary Markdown text plus a few components such as `<Card>`, `<Steps>` and `<Outcomes>`. Change the words directly; each component's options are described at the top of its file.
 
-## Preview locally
+## Images and video
 
-```bash
-npx serve .
+- **Images** go in `src/assets/img/` (or `src/assets/work/<project>/`). Refer to one by file name without the extension, for example `<Img name="c7fc5658" alt="…" />`. Astro makes smaller copies for phones automatically.
+- **Video** goes in `public/assets/video/` as `<name>.mp4`, plus an optional `<name>.webp` poster frame. Use it with `<Video name="…" />`. Animations should be MP4 rather than GIF, because GIFs are 10 to 50 times larger:
+  ```
+  ffmpeg -i in.gif -movflags +faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -c:v libx264 -crf 23 out.mp4
+  ```
+
+## Working on the site
+
+```
+npm install        # once
+npm run dev        # live preview at http://localhost:4321
+npm run build      # production build into dist/
 ```
 
-Then open http://localhost:3000. Any static server works. `serve` is used because it handles the extensionless URLs, like `/store-update`, the same way GitHub Pages does.
+Old Wix addresses (`/copy-of-store-revamp`, `/store-update`, `/rtsstore`) redirect to the new pages; see `astro.config.mjs`.
 
-## Publish
+## History
 
-Pushing to `main` publishes to GitHub Pages automatically, usually within a minute.
-
-## Adding images and video
-
-- Images: export as WebP, or as JPG/PNG at no more than about 2400px wide.
-- Animations: use a muted, looping MP4 instead of a GIF, because GIFs are 10 to 50 times larger:
-  `ffmpeg -i in.gif -movflags +faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -c:v libx264 -crf 23 out.mp4`
-  then `<video src="..." autoplay muted loop playsinline></video>`.
-
-## Original Wix export
-
-The full-resolution originals from the old Wix site (images, videos, fonts, raw page HTML) are archived outside this repo in `~/Desktop/mitchellv-wix-archive`. Back that folder up somewhere safe.
+The site was rebuilt from Wix in October 2026. The original Wix export and the tools used to measure it are archived in `~/Desktop/mitchellv-wix-archive`, and the Behance originals in `~/Desktop/mitchellv-behance-archive`.

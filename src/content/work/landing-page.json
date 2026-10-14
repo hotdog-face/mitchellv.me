@@ -1,0 +1,44 @@
+{
+  "title": "Landing Page",
+  "pageTitle": "MV | Landing Page",
+  "slug": "landing-page",
+  "order": 4,
+  "meta": {
+    "date": "July 2019",
+    "fields": [
+      "UI/UX"
+    ]
+  },
+  "card": {
+    "image": "cover",
+    "line": "2019 · UI/UX"
+  },
+  "background": "#FFFFFF",
+  "dark": false,
+  "modules": [
+    {
+      "type": "image",
+      "name": "01",
+      "width": 1400,
+      "height": 1054,
+      "alt": "Landing Page, image 1"
+    },
+    {
+      "type": "image",
+      "name": "02",
+      "width": 1400,
+      "height": 934,
+      "alt": "Landing Page, image 2"
+    }
+  ],
+  "behance": {
+    "id": 83026577,
+    "url": "https://www.behance.net/gallery/83026577/Landing-Page",
+    "publishedOn": "2019-07-17",
+    "fields": [
+      "UI/UX"
+    ],
+    "tools": [],
+    "tags": []
+  }
+}

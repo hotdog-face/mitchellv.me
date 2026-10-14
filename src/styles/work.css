@@ -1,16 +1,21 @@
 /* ==========================================================================
-   Work pages (work/*.html): projects brought over from Behance.
-   Loaded after site.css. Each project page sets --work-bg on .work-body.
+   /work pages (src/pages/work): projects brought over from Behance.
+   Imported by those pages after global.css. Each project sets --work-bg on .work-body.
    ========================================================================== */
 
-.work-page { --canvas: 1400px; --text-col: 680px; --row-h: 260px; overflow-x: clip; }
+/* The work pages keep the type of the old site (Helvetica Neue, 1.6 line height). */
+.work-page {
+  --canvas: 1400px; --text-col: 680px; --row-h: 260px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.6;
+  overflow-x: clip;
+}
 
 /* ---------- Intro: title, short description, meta ---------- */
 .work-intro { width: min(var(--text-col), 100% - 32px); margin: 0 auto; padding: 56px 0 40px; text-align: center; }
 .work-back { display: inline-block; margin-bottom: 24px; font-size: 12px; letter-spacing: .2em; color: var(--muted); text-decoration: none; text-transform: uppercase; }
 .work-back:hover { color: var(--pink); }
 .work-intro h1 { font-size: clamp(30px, 5vw, 44px); color: var(--ink); font-weight: 700; letter-spacing: -.01em; margin-bottom: 16px; overflow-wrap: anywhere; }
-.work-desc { font-size: 17px; margin: 0 0 16px; }
+.work-intro .work-desc { font-size: 17px; margin: 0 0 16px; }
 .work-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 8px; margin: 0; padding: 0; list-style: none; font-size: 13px; color: var(--muted); }
 .work-meta li { border: 1px solid #ddd; border-radius: 999px; padding: 2px 12px; }
 .work-meta .work-date { border-color: transparent; padding-inline: 4px; }
@@ -31,7 +36,7 @@
 .m-text .ta-c { text-align: center; }
 .m-text ol, .m-text ul { text-align: left; padding-left: 1.4em; margin: 0 0 1em; }
 .m-text li { margin-bottom: .5em; }
-.m-text a { color: var(--teal-link); }
+.m-text a { color: var(--teal); }
 
 /* Justified image grid (Behance "media collection"): each item grows in proportion to its aspect ratio --r */
 .m-grid { display: flex; flex-wrap: wrap; }

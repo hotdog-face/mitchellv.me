@@ -1,0 +1,94 @@
+{
+  "title": "Leagues Feature",
+  "pageTitle": "MV | Leagues Feature",
+  "slug": "leagues",
+  "order": 6,
+  "description": "Leagues feature design for a mobile game.",
+  "meta": {
+    "date": "March 2019",
+    "fields": [
+      "Art Direction",
+      "UI/UX",
+      "Illustration"
+    ]
+  },
+  "card": {
+    "image": "cover",
+    "line": "2019 · Art Direction · UI/UX"
+  },
+  "background": "#FFFFFF",
+  "dark": false,
+  "modules": [
+    {
+      "type": "image",
+      "name": "01",
+      "width": 1400,
+      "height": 788,
+      "alt": "Leagues Feature, image 1"
+    },
+    {
+      "type": "embed",
+      "src": "https://www-ccv.adobe.io/v1/player/ccv/AcJ3-8bRzZi/embed?api_key=behance1&bgcolor=%23191919",
+      "title": "Leagues Feature video",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "type": "text",
+      "html": "<p>How might we offer an engaging solo experience for the subset of players who don't enjoy our social features.</p>\n<h3>Overview</h3>\n<p class=\"ta-l\">Common in many mid-to hardcore titles, Leagues are fixed duration competitions throughout the collections seasons where players compete with others based on a certain criteria - in our case, earning points (medals) through spinning.</p>\n<p class=\"ta-l\">Leagues will be an exciting addition with a number of benefits</p>\n<ol><li>Adds an underlying purpose to spinning by introducing tangible goals (bracket targets, status, exclusive rewards) users can shoot for.</li><li>Synergies with our collection/ cosmetic system, introducing another means of earning exclusive cosmetics and serving as another outlet to enable users to prominently display their status and showcase their cosmetics.</li><li>Gives competitive players uninterested in Clubs a reason to engage more, and makes individual efforts meaningful for players relying on their club mates.</li></ol>"
+    },
+    {
+      "type": "image",
+      "name": "05",
+      "width": 1400,
+      "height": 1400,
+      "alt": "Leagues Feature, image 2"
+    },
+    {
+      "type": "image",
+      "name": "06",
+      "width": 1400,
+      "height": 1058,
+      "alt": "Leagues Feature, image 3"
+    },
+    {
+      "type": "image",
+      "name": "07",
+      "width": 1400,
+      "height": 154,
+      "alt": "Leagues Feature, image 4"
+    },
+    {
+      "type": "image",
+      "name": "08",
+      "width": 1400,
+      "height": 1426,
+      "alt": "Leagues Feature, image 5"
+    }
+  ],
+  "behance": {
+    "id": 77778819,
+    "url": "https://www.behance.net/gallery/77778819/Leagues-Feature",
+    "publishedOn": "2019-03-20",
+    "fields": [
+      "Art Direction",
+      "UI/UX",
+      "Illustration"
+    ],
+    "tools": [
+      "Adobe Photoshop"
+    ],
+    "tags": [
+      "mobile",
+      "game",
+      "UI",
+      "ux",
+      "user interface",
+      "design",
+      "user experience",
+      "fish",
+      "Theme",
+      "map"
+    ]
+  }
+}

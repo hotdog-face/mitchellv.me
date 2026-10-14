@@ -1,0 +1,99 @@
+{
+  "title": "Logo Collection",
+  "pageTitle": "MV | Logo Collection",
+  "slug": "logo-collection",
+  "order": 10,
+  "description": "A twenty piece collection of logos Ive done for mobile and facebook games over the years.",
+  "meta": {
+    "date": "March 2019",
+    "fields": [
+      "Branding",
+      "Illustration",
+      "Typography"
+    ]
+  },
+  "card": {
+    "image": "cover",
+    "line": "2019 · Branding · Illustration"
+  },
+  "background": "#FFFFFF",
+  "dark": false,
+  "modules": [
+    {
+      "type": "image",
+      "name": "01",
+      "width": 1400,
+      "height": 1381,
+      "alt": "Logo Collection, image 1"
+    },
+    {
+      "type": "image",
+      "name": "02",
+      "width": 1400,
+      "height": 2206,
+      "alt": "Logo Collection, image 2"
+    },
+    {
+      "type": "image",
+      "name": "03",
+      "width": 1400,
+      "height": 2205,
+      "alt": "Logo Collection, image 3"
+    },
+    {
+      "type": "image",
+      "name": "04",
+      "width": 1400,
+      "height": 2207,
+      "alt": "Logo Collection, image 4"
+    },
+    {
+      "type": "image",
+      "name": "05",
+      "width": 1400,
+      "height": 2203,
+      "alt": "Logo Collection, image 5"
+    },
+    {
+      "type": "image",
+      "name": "06",
+      "width": 1400,
+      "height": 2228,
+      "alt": "Logo Collection, image 6"
+    },
+    {
+      "type": "image",
+      "name": "07",
+      "width": 1400,
+      "height": 2203,
+      "alt": "Logo Collection, image 7"
+    },
+    {
+      "type": "image",
+      "name": "08",
+      "width": 1400,
+      "height": 2044,
+      "alt": "Logo Collection, image 8"
+    }
+  ],
+  "behance": {
+    "id": 77779951,
+    "url": "https://www.behance.net/gallery/77779951/Logo-Collection",
+    "publishedOn": "2019-03-20",
+    "fields": [
+      "Branding",
+      "Illustration",
+      "Typography"
+    ],
+    "tools": [
+      "Adobe Photoshop"
+    ],
+    "tags": [
+      "logo",
+      "branding ",
+      "mobile game",
+      "game logo",
+      "app icon"
+    ]
+  }
+}

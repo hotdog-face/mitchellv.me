@@ -1,0 +1,54 @@
+{
+  "title": "Card Battler UX & Icons",
+  "pageTitle": "MV | Card Battler UX & Icons",
+  "slug": "card-battler",
+  "order": 8,
+  "meta": {
+    "date": "March 2019",
+    "fields": [
+      "Art Direction",
+      "UI/UX",
+      "Icon Design"
+    ]
+  },
+  "card": {
+    "image": "cover",
+    "line": "2019 · Art Direction · UI/UX"
+  },
+  "background": "#FFFFFF",
+  "dark": false,
+  "modules": [
+    {
+      "type": "text",
+      "html": "<h2>Card Battler Game UX Flow &amp; Lower Bar Icons</h2>"
+    },
+    {
+      "type": "video",
+      "name": "02",
+      "width": 320,
+      "height": 568,
+      "label": "Card Battler UX & Icons, image 1"
+    },
+    {
+      "type": "image",
+      "name": "03",
+      "width": 800,
+      "height": 600,
+      "alt": "Card Battler UX & Icons, image 2"
+    }
+  ],
+  "behance": {
+    "id": 77782333,
+    "url": "https://www.behance.net/gallery/77782333/Card-Battler-UX-Icons",
+    "publishedOn": "2019-03-20",
+    "fields": [
+      "Art Direction",
+      "UI/UX",
+      "Icon Design"
+    ],
+    "tools": [
+      "Adobe Photoshop"
+    ],
+    "tags": []
+  }
+}

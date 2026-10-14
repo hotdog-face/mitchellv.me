@@ -1,0 +1,41 @@
+{
+  "title": "Video Game Character Illustration",
+  "pageTitle": "MV | Video Game Character Illustration",
+  "slug": "character-illustration",
+  "order": 2,
+  "meta": {
+    "date": "September 2019",
+    "fields": [
+      "Illustration",
+      "Art Direction",
+      "Motion Graphics"
+    ]
+  },
+  "card": {
+    "image": "cover",
+    "line": "2019 · Illustration · Art Direction"
+  },
+  "background": "#FFFFFF",
+  "dark": false,
+  "modules": [
+    {
+      "type": "image",
+      "name": "01",
+      "width": 1400,
+      "height": 1050,
+      "alt": "Video Game Character Illustration, image 1"
+    }
+  ],
+  "behance": {
+    "id": 85756563,
+    "url": "https://www.behance.net/gallery/85756563/Video-Game-Character-Illustration",
+    "publishedOn": "2019-09-20",
+    "fields": [
+      "Illustration",
+      "Art Direction",
+      "Motion Graphics"
+    ],
+    "tools": [],
+    "tags": []
+  }
+}

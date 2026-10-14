@@ -1,0 +1,77 @@
+{
+  "title": "VIP Program Revamp",
+  "pageTitle": "VIP Program Revamp | Mitchell Vizensky",
+  "slug": "vip-revamp",
+  "order": 14,
+  "description": "Role: Visual Design Lead &nbsp;|&nbsp; Client: Big Fish Games &nbsp;|&nbsp; Project: VIP Program Revamp",
+  "meta": {
+    "fields": [
+      "Big Fish Casino",
+      "Visual Design",
+      "Interaction Design",
+      "Iconography"
+    ]
+  },
+  "card": {
+    "image": "cover",
+    "line": "Big Fish Casino · Visual Design"
+  },
+  "background": "#FFFFFF",
+  "dark": false,
+  "modules": [
+    {
+      "type": "text",
+      "html": "<p>The VIP Program within Big Fish Casino’s top grossing mobile app received a massive overhaul. Big Fish wanted to open up the VIP experience to all users to include those who haven't monetized. The revamped VIP experience clarified the confusion around sale multipliers, provided a premium look and feel while in the feature, showcased the benefits of being a higher tiered VIP member, and clarified the sense of visual progress upon tiering up. My role as Visual Design Lead was to work closely with the UX Design Lead and Big Fish's mobile team to help redesign BFC's VIP program into the what you see below. There were several designers working on different mobile projects simultaneously, so it was important to all collaborate in person to make sure we were aligned as a team.</p>"
+    },
+    {
+      "type": "image",
+      "name": "01",
+      "width": 2400,
+      "height": 1500,
+      "alt": "VIP Program Revamp, image 1"
+    },
+    {
+      "type": "image",
+      "name": "02",
+      "width": 2000,
+      "height": 2867,
+      "alt": "VIP Program Revamp, image 2"
+    },
+    {
+      "type": "text",
+      "html": "<h2>Interaction Design</h2>"
+    },
+    {
+      "type": "image",
+      "name": "03",
+      "width": 1386,
+      "height": 394,
+      "alt": "VIP Program Revamp, interaction flow",
+      "overlay": {
+        "name": "03-anim",
+        "left": 83.8,
+        "top": 0.7,
+        "width": 15.9
+      }
+    },
+    {
+      "type": "image",
+      "name": "04",
+      "width": 2400,
+      "height": 1800,
+      "alt": "VIP Program Revamp, image 4"
+    },
+    {
+      "type": "text",
+      "html": "<h2>Iconography</h2>\n<h3>Benefits Icons</h3>"
+    },
+    {
+      "type": "image",
+      "name": "05",
+      "width": 1400,
+      "height": 1458,
+      "alt": "VIP benefits icons",
+      "maxWidth": 600
+    }
+  ]
+}
