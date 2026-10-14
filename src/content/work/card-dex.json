@@ -1,0 +1,206 @@
+{
+ "title": "Card Dex & Research Missions",
+ "pageTitle": "MV | Card Dex & Research Missions - Pokémon TCG Live",
+ "slug": "card-dex",
+ "order": -1,
+ "description": "<p>How players collect cards in Pokémon Trading Card Game Live. I designed the Card Dex, which turned a 14-step chore into a 5-step flow, and then Research Missions, which turns collecting into goals worth chasing.</p>",
+ "meta": {
+  "date": "2025 - 2026",
+  "fields": [
+   "UX Design",
+   "Prototyping",
+   "UX Research"
+  ]
+ },
+ "card": {
+  "image": "cover",
+  "line": "2025 - 2026 · Pokémon TCG Live · UX Design"
+ },
+ "background": "#12141c",
+ "dark": true,
+ "modules": [
+  {
+   "type": "video",
+   "name": "shipped-tour",
+   "width": 1280,
+   "height": 722,
+   "label": "Card Dex in Pokémon TCG Live: browsing expansions, new cards and exchanging for a missing card"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Overview</h3><p class=\"ta-l\">Pokémon TCG Live is the official digital version of the Pokémon Trading Card Game on desktop and mobile. Many of its players are collectors, but the game had no real place to enjoy a collection. Cards lived inside the deck builder and the shop, and finding a missing card meant a long trip through both.</p><p class=\"ta-l\">I was the only UX designer on the feature, working with a game designer, an artist, engineering and UX research. I owned the flows, the grey-box prototypes and the interaction design, and I tested in development builds alongside the research team. Card Dex launched in July 2025. Research Missions, its follow-up, launched in 2026 as part of Pokémon's 30th anniversary.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>The problem: 14 steps to get one card</h3><p class=\"ta-l\">Before Card Dex, the only way to see an expansion's cards was a card gallery buried in the shop. To get a card you were missing, you had to memorize it, leave the shop, open the deck builder, edit a deck, search the card library, set the filter and exchange for it there. Then you went back to the shop to see your updated collection.</p><p class=\"ta-l\">It took 14 steps. New cards were hard to spot, there was only one kind of collection goal (all or nothing), and finishing an expansion went completely unacknowledged.</p>"
+  },
+  {
+   "type": "video",
+   "name": "before",
+   "width": 1280,
+   "height": 722,
+   "label": "The old flow: from the shop's card gallery to the deck builder and back (sped up)"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Prototyping in grey box</h3><p class=\"ta-l\">I mapped the experience into 13 flows, from item granting and new card tags to sorting, switching series, exchanging and completing a set. I built each one as a grey-box prototype in landscape and portrait. Keeping it grey kept reviews focused on structure and behavior before any art was made, and it gave engineering and art a clear spec to build from.</p><p class=\"ta-l\">The layout borrows from the physical hobby: every expansion is a binder page. Owned cards fill their slots, missing cards leave a numbered gap, and a missing card can be exchanged for right where you see it.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "proto-new",
+     "width": 1600,
+     "height": 900,
+     "alt": "Grey-box prototype: an expansion's cards with New tags on the latest additions",
+     "ratio": 1.7778
+    },
+    {
+     "kind": "image",
+     "name": "shipped-new",
+     "width": 1600,
+     "height": 900,
+     "alt": "Shipped Card Dex: the same expansion view with New tags in the live game",
+     "ratio": 1.7778
+    }
+   ]
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "proto-exchange",
+     "width": 1600,
+     "height": 900,
+     "alt": "Grey-box prototype: exchanging for a missing card from its big card view",
+     "ratio": 1.7778
+    },
+    {
+     "kind": "image",
+     "name": "shipped-exchange",
+     "width": 1600,
+     "height": 900,
+     "alt": "Shipped Card Dex: the big card view with an Exchange button",
+     "ratio": 1.7778
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<p class=\"ta-l\">Prototype on the left, shipped game on the right. Getting a missing card now takes 5 steps: open Card Dex, pick the expansion, select the card, exchange, and see it land in your collection.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "video",
+     "name": "proto-exchange",
+     "width": 1280,
+     "height": 722,
+     "label": "Prototype: exchanging for a missing card",
+     "ratio": 1.7729
+    },
+    {
+     "kind": "video",
+     "name": "new-banner",
+     "width": 1280,
+     "height": 700,
+     "label": "Shipped: new card banners after opening a pack",
+     "ratio": 1.8286
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>Testing with players</h3><p class=\"ta-l\">Before launch, UX research ran a moderated playtest with outside players from both the collector and competitive groups. First impressions were positive across both. Players found the binder icon on the home screen easily, called the core functions straightforward, and said the layout brought back the feeling of flipping through a physical binder. Competitive players saw it helping their deck building too, not just their collection.</p><p class=\"ta-l\">The study also pointed to the next round of improvements, which became the backlog for Research Missions.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "proto-complete",
+     "width": 1600,
+     "height": 900,
+     "alt": "Grey-box prototype: Expansion Collected celebration",
+     "ratio": 1.7778
+    },
+    {
+     "kind": "image",
+     "name": "shipped-complete",
+     "width": 1600,
+     "height": 900,
+     "alt": "Shipped Card Dex: Main Set Completed celebration for Temporal Forces",
+     "ratio": 1.7778
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>Celebrating progress</h3><p class=\"ta-l\">Collecting a whole expansion is a long goal, so the design gives players two: the main set and the master set. Each has its own celebration, and new cards get banners the moment they arrive.</p><h3>Results</h3><ul class=\"ta-l\"><li>Getting a missing card went from 14 steps to 5.</li><li>Card Dex, together with the 10.5 update, lifted day-3 retention to the game's 2025 goal of 20%.</li><li>Players who opened a card's big view were about 5 points more likely to come back the next day.</li></ul>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Chapter two: Research Missions</h3><p class=\"ta-l\">Card Dex gave collectors a home. Research Missions gives them a reason to keep going. Each expansion gets a list of missions from easy to hard, such as collecting one of each common or every ultra rare. Finishing them earns booster packs, currency and, for featured sets, deck cosmetics. It launched with Pokémon's 30th anniversary celebration.</p><p class=\"ta-l\">I designed the missions list, mission details, the exchange flow from inside a mission, reward collection and Collector Stats. I explored layouts in prototypes like the one below.</p>"
+  },
+  {
+   "type": "video",
+   "name": "missions-proto",
+   "width": 1280,
+   "height": 718,
+   "label": "Research Missions prototype: mission list, progress and collecting rewards"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "proto-mission",
+     "width": 1600,
+     "height": 900,
+     "alt": "Prototype: a mission in progress showing owned and missing cards",
+     "ratio": 1.7778
+    },
+    {
+     "kind": "video",
+     "name": "proto-missions",
+     "width": 1280,
+     "height": 718,
+     "label": "Prototype: completing a mission and the full card set",
+     "ratio": 1.7827
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>Shaped by players</h3><p class=\"ta-l\">Player feedback from Card Dex drove several changes. Empty slots were hard to scan and took an extra tap to see, so unowned cards now show darkened, which makes the whole set visible at a glance. Completed missions get a checkmark animation and move to the bottom of the list. Collector Stats moved into the first release, giving collectors a long-term view of everything they've achieved.</p><p class=\"ta-l\">A usability study before launch rated overall satisfaction 4.4 out of 5. All 10 players asked said they were more interested in playing after seeing the feature, and 10 of 11 said Collector Stats made them more interested in collecting.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "video",
+     "name": "main-set",
+     "width": 1280,
+     "height": 720,
+     "label": "Main set completion build-up and celebration",
+     "ratio": 1.7778
+    },
+    {
+     "kind": "video",
+     "name": "master-set",
+     "width": 1280,
+     "height": 720,
+     "label": "Master set completion, with a bigger build-up than the main set",
+     "ratio": 1.7778
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<p class=\"ta-l\">Main set and master set completions now build up differently, giving the harder goal the bigger moment.</p><h3>What I learned</h3><p class=\"ta-l\">The biggest win was not a screen. It was removing the trip between the shop and the deck builder by putting the action where the player already is. Grey-box prototypes made that easy to agree on early, and testing in real builds with players kept every later decision grounded.</p>"
+  }
+ ]
+}

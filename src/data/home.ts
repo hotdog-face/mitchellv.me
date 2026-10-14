@@ -53,6 +53,7 @@ export const tiles = [
 // Hover labels for the project tiles added after the original six (keyed by link).
 // Projects not listed use their title up to the first dash.
 export const tileLabels: Record<string, string> = {
+  '/work/card-dex': 'Card Dex',
   '/work/vitaos': 'VitaOS',
   '/reeltown-slots': 'ReelTown Store',
   '/work/character-illustration': 'Character Art',
