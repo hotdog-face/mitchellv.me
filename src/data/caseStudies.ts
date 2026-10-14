@@ -120,10 +120,13 @@ export const lab = ['/work/vitaos', '/work/gameplay-spotlight', '/work/vita-agen
 
 export const caseStudyFor = (path: string) => caseStudies.find(c => c.href === path.replace(/\/$/, ''));
 
-/** The case study after this one, wrapping around. */
+/** The next featured case study, wrapping around. Non-featured case studies point to the first one. */
 export function nextCaseStudy(path: string) {
-  const i = caseStudies.findIndex(c => c.href === path.replace(/\/$/, ''));
-  return i < 0 ? undefined : caseStudies[(i + 1) % caseStudies.length];
+  const featured = caseStudies.filter(c => c.featured);
+  const here = path.replace(/\/$/, '');
+  if (!caseStudies.some(c => c.href === here)) return undefined;
+  const i = featured.findIndex(c => c.href === here);
+  return featured[(i + 1) % featured.length];
 }
 
 /** Shared-element name so a project's title glides between its card and its page (see global.css). */
