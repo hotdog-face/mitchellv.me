@@ -76,7 +76,7 @@ const work = defineCollection({
 
 // Notes: short write-ups about how things were built (src/content/notes/*.md).
 const notes = defineCollection({
-  loader: glob({ pattern: '*.md', base: './src/content/notes' }),
+  loader: glob({ pattern: '*.md', base: './src/drafts/notes' }), // shelved: pages live in src/drafts/notes-pages
   schema: z.object({
     title: z.string(),
     summary: z.string(),
