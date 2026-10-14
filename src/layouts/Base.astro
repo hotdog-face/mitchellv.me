@@ -20,7 +20,12 @@ const ogImage = new URL(image, Astro.site);
   <title>{title}</title>
   <meta name="description" content={description}>
   <link rel="canonical" href={canonical}>
-  <link rel="icon" href="/assets/favicon.png">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121214" media="(prefers-color-scheme: dark)">
   <!-- link previews (LinkedIn, Slack, messages, etc.) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Mitchell Vizensky">
@@ -33,7 +38,8 @@ const ogImage = new URL(image, Astro.site);
   <meta name="twitter:card" content="summary_large_image">
   {fonts && <link rel="preconnect" href="https://fonts.googleapis.com" />}
   {fonts && <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />}
-  {fonts && <link rel="stylesheet" href={`https://fonts.googleapis.com/css2?${fonts}&display=swap`} />}
+  {fonts && <link rel="stylesheet" href={`https://fonts.googleapis.com/css2?${fonts}&display=swap`} media="print" onload="this.media='all'" />}
+  {fonts && <noscript><link rel="stylesheet" href={`https://fonts.googleapis.com/css2?${fonts}&display=swap`} /></noscript>}
   {import.meta.env.PUBLIC_PREVIEW && <meta name="robots" content="noindex, nofollow">}
   <slot name="head" />
   <script is:inline>document.documentElement.classList.add('js')</script>

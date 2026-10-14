@@ -90,11 +90,11 @@ button { font: inherit; }
   display: inline-flex; align-items: center; justify-content: center;
   min-width: 200px; min-height: 56px; padding: 0 24px;
   font-family: var(--sans); font-size: 16px; text-decoration: none; color: var(--white);
-  background: var(--blue); border: 1px solid transparent; cursor: pointer;
+  background: var(--btn-blue, #0a6fa3); border: 1px solid transparent; cursor: pointer;
   transition: filter .2s, background .2s, color .2s;
 }
 .btn:hover { filter: brightness(1.08); }
-.btn--green { background: var(--green); }
+.btn--green { background: #1f7f5f; }
 .btn--pink { background: var(--pink); }
 .btn--ghost { background: transparent; border-color: var(--white); }
 .btn--ghost:hover { background: var(--white); color: var(--pink); filter: none; }

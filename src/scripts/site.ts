@@ -323,7 +323,7 @@ function initSectionNav() {
   const body = document.querySelector<HTMLElement>('.work-body');
   if (!nav || !body) return;
   const key = /problem|overview|brief|what i did|competit|iteration|prototyp|grey box|mapping|testing|research|shaped|map for|celebrat|final layout|purchase flow|live in|launch|ship it|results|learned/i;
-  const heads = Array.from(body.querySelectorAll<HTMLHeadingElement>('.m-text h3')).filter(h => key.test(h.textContent!)).slice(0, 10);
+  const heads = Array.from(body.querySelectorAll<HTMLHeadingElement>('.m-text h2.sh, .m-text h3')).filter(h => key.test(h.textContent!)).slice(0, 10);
   if (heads.length < 3) { nav.hidden = true; return; }
   const inner = nav.querySelector('.sect-inner')!;
   const links = heads.map(h => {

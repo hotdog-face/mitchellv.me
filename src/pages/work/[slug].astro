@@ -99,7 +99,7 @@ const description = p.description ? plain(p.description) : `${p.title} - ${p.met
                 </figure>
               );
             case 'text':
-              return <div class="m m-text" set:html={m.html} />;
+              return <div class="m m-text" set:html={m.html.replace(/<(\/?)h3>/g, '<$1h2 class="sh">')} />;
             case 'embed':
               return (
                 <div class="m m-embed" style={`max-width:${m.width}px`}>

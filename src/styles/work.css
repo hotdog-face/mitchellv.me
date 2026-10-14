@@ -35,7 +35,7 @@
 /* Text blocks */
 .m-text { width: min(var(--text-col), 100% - 32px); margin: 0 auto; padding: 56px 0; font-size: 17px; line-height: 1.65; text-align: center; }
 .m-text h2 { font-size: clamp(26px, 4vw, 36px); color: var(--ink); font-weight: 700; margin: 0 0 .6em; }
-.m-text h3 { font-size: 20px; color: var(--ink); font-weight: 700; margin: 1.6em 0 .5em; }
+.m-text h3, .m-text h2.sh { font-size: 20px; color: var(--ink); font-weight: 700; margin: 1.6em 0 .5em; }
 .m-text > :first-child { margin-top: 0; }
 .m-text > :last-child { margin-bottom: 0; }
 .m-text .ta-l { text-align: left; }
@@ -57,7 +57,7 @@
 .m-caption { width: min(var(--text-col), 100% - 32px); margin: 8px auto 0; font-size: 13px; font-style: italic; color: var(--muted); text-align: center; }
 
 /* Dark project backgrounds */
-.work-body.is-dark, .work-body.is-dark .m-text h2, .work-body.is-dark .m-text h3 { color: #eee; }
+.work-body.is-dark, .work-body.is-dark .m-text h2, .work-body.is-dark .m-text h3, .work-body.is-dark .m-text h2.sh { color: #eee; }
 .work-body.is-dark .m-text a { color: var(--mint); }
 
 /* ---------- Prev / next ---------- */
@@ -68,7 +68,7 @@
 .work-pager strong { font-size: 20px; color: var(--ink); font-weight: 700; transition: color .2s; }
 .work-pager .next { text-align: right; }
 .work-all { grid-column: 1 / -1; justify-self: center; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
-.work-pager .work-all { border: 0; padding: 0; }
+.work-pager .work-all { border: 0; padding: 12px 16px; }
 
 /* ---------- Index: cover grid ---------- */
 .work-index { background: var(--page-gray); padding: 0 0 96px; }
@@ -123,4 +123,4 @@ dialog.zoom.single .zoom-prev, dialog.zoom.single .zoom-next { display: none; }
 .sect-inner a:hover { color: var(--ink); }
 .sect-inner a.on { background: var(--pink-ink); color: #fff; }
 .read-progress { position: absolute; left: 0; bottom: -1px; height: 3px; width: 100%; background: var(--pink); transform-origin: 0 50%; transform: scaleX(var(--p, 0)); }
-.work-body .m-text h3 { scroll-margin-top: calc(var(--header-h) + 64px); }
+.work-body .m-text h3, .work-body .m-text h2.sh { scroll-margin-top: calc(var(--header-h) + 64px); }

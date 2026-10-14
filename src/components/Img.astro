@@ -11,6 +11,7 @@ interface Props {
   class?: string;
   style?: string;
   loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
   widths?: number[];
 }
 const { name, alt = '', sizes = '100vw', loading = 'lazy', widths, ...rest } = Astro.props;
