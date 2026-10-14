@@ -57,8 +57,8 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --bg: #0e1016; --page-gray: #161922; --band: #12141b; --heading: #fff;
-    --ink: #eef0f5; --text: #c4c8d2; --muted: #9097a5; --line: #2a2e3a; --card-bg: #222632;
+    --bg: #121214; --page-gray: #1c1c1f; --band: #18181b; --heading: #fff;
+    --ink: #ececef; --text: #c6c6cc; --muted: #9a9aa2; --line: #2c2c31; --card-bg: #26262a;
     --pink-ink: #ff6fae;
   }
 }

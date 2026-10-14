@@ -16,7 +16,7 @@
   "image": "cover",
   "line": "2025 - 2026 · Pokémon TCG Live · UX Design"
  },
- "background": "#12141c",
+ "background": "#121214",
  "dark": true,
  "modules": [
   {
@@ -212,7 +212,7 @@
   },
   {
    "type": "text",
-   "html": "<h3>Shaped by players</h3><p class=\"ta-l\">Player feedback from Card Dex drove several changes. Empty slots were hard to scan and took an extra tap to see, so unowned cards now show darkened, which makes the whole set visible at a glance. Completed missions get a checkmark animation and move to the bottom of the list. Collector Stats moved into the first release, giving collectors a long-term view of everything they've achieved.</p><p class=\"ta-l\">A usability study before launch rated overall satisfaction 4.4 out of 5. All 10 players asked said they were more interested in playing after seeing the feature, and 10 of 11 said Collector Stats made them more interested in collecting.</p>"
+   "html": "<h3>Shaped by players</h3><p class=\"ta-l\">Player feedback from Card Dex drove several changes. Empty slots were hard to scan and took an extra tap to see, so unowned cards now show darkened, which makes the whole set visible at a glance. Completed missions get a checkmark animation and move to the bottom of the list. Collector Stats moved into the first release, giving collectors a long-term view of everything they've achieved.</p><p class=\"ta-l\">A usability study before launch rated overall satisfaction 4.4 out of 5. All 10 players asked said they were more interested in playing after seeing the feature, and 10 of 11 said Collector Stats made them more interested in collecting.</p><h3>Research Missions results</h3><ul class=\"ta-l\"><li>42% of weekly players claimed a Research Missions reward in its first four weeks, peaking at 48% in launch week.</li><li>61% of players who claimed one reward went on to claim five or more.</li><li>The share of weekly players taking an action in Card Dex jumped from 8% to 39%. Research Missions launched alongside the 30th Celebration expansion, which also drives activity, so part of that lift is the new set.</li></ul>"
   },
   {
    "type": "grid",
