@@ -3,6 +3,8 @@
 import Img from '../Img.astro';
 import { caseStudies, vtName } from '../../data/caseStudies';
 const featured = caseStudies.filter(c => c.featured);
+// "14 → 5": draw the arrow lighter so the two numbers carry the weight
+const parts = (v: string) => v.split('→').map(x => x.trim());
 ---
 <section class="selected" id="work">
   <div class="head">
@@ -20,8 +22,15 @@ const featured = caseStudies.filter(c => c.featured);
           <h3 style={`view-transition-name:${vtName(c.href)}`}><a href={c.href}>{c.title}</a></h3>
           <p class="summary">{c.summary}</p>
           {c.impact.length > 0 && (
-            <ul class="impact">
-              {c.impact.slice(0, 3).map(s => <li><strong data-count>{s.value}</strong><span>{s.label}</span></li>)}
+            <ul class="impact" style={`--n:${Math.min(3, c.impact.length)}`}>
+              {c.impact.slice(0, 3).map(s => (
+                <li>
+                  {s.value.includes('→')
+                    ? <strong>{parts(s.value)[0]}<span class="arr" aria-label="to">→</span>{parts(s.value)[1]}</strong>
+                    : <strong data-count>{s.value}</strong>}
+                  <span class="lbl">{s.label}</span>
+                </li>
+              ))}
             </ul>
           )}
           <p class="role">{c.role}</p>
@@ -52,10 +61,14 @@ const featured = caseStudies.filter(c => c.featured);
   h3 a { text-decoration: none; }
   h3 a:hover { color: var(--pink-ink); }
   .summary { margin: 14px 0 0; font-size: 16px; line-height: 1.55; color: var(--text); }
-  .impact { margin: 22px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 14px 28px; }
-  .impact li { display: grid; gap: 2px; max-width: 170px; }
-  .impact strong { font-size: 28px; line-height: 1.1; font-weight: 700; color: var(--pink-ink); white-space: nowrap; }
-  .impact span { font-size: 13px; line-height: 1.35; color: var(--text); }
+  /* Stats: equal columns, one number size, labels top-aligned under each number */
+  .impact { margin: 24px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); max-width: calc(var(--n, 3) * 170px); }
+  .impact li { display: flex; flex-direction: column; gap: 6px; padding: 2px 16px; border-left: 1px solid var(--line); }
+  .impact li:first-child { padding-left: 0; border-left: 0; }
+  .impact strong { display: flex; align-items: center; gap: 6px; font-size: 30px; line-height: 1; font-weight: 700; letter-spacing: -.01em; color: var(--pink-ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .impact .arr { font-size: .62em; font-weight: 400; opacity: .55; }
+  .impact .lbl { font-size: 13px; line-height: 1.35; color: var(--text); }
+  @media (max-width: 400px) { .impact strong { font-size: 25px; } .impact li { padding: 2px 10px; } }
   .role { margin: 20px 0 0; font-size: 13px; color: var(--muted); }
   .text .btn { margin-top: 22px; min-width: 190px; border-radius: 5px; font-size: 18px; }
   @media (max-width: 860px) {
