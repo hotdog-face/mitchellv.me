@@ -29,5 +29,10 @@ const { bg, pinned, pinnedVideo, pinnedOpacity = 1, tint, height, pad = 'var(--s
   .track { position: absolute; left: 0; right: 0; top: -100vh; bottom: -100vh; }
   .pin :global(.pin-media) { position: sticky; top: 0; display: block; width: 100%; height: 100vh; object-fit: cover; }
   .tint { position: absolute; inset: 0; }
-  @media (max-width: 999px) { .band { min-height: 0; } }
+  @media (max-width: 999px) {
+    /* desktop spacing doesn't apply on phones: use a consistent rhythm instead */
+    .band { min-height: 0; padding: 48px 0; }
+    /* image-only bands (e.g. before/after) keep a visible height */
+    .band.layered:has(.inner:empty) { min-height: 125vw; padding: 0; }
+  }
 </style>
