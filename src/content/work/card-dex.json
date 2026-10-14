@@ -175,7 +175,74 @@
   },
   {
    "type": "text",
+   "html": "<h3>Live in the game</h3><p class=\"ta-l\">Research Missions as it shipped for the 30th Celebration expansion. Missions are grouped by difficulty, each shows its progress, and opening one shows exactly which cards you own and which you still need.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "live-missions-tiers",
+     "width": 1600,
+     "height": 852,
+     "alt": "Live Research Missions list: Medium and Hard missions with progress bars",
+     "ratio": 1.8779
+    },
+    {
+     "kind": "image",
+     "name": "live-mission-detail",
+     "width": 1600,
+     "height": 852,
+     "alt": "Live mission details: one owned card in full color and two darkened cards still needed",
+     "ratio": 1.8779
+    }
+   ]
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "live-missions",
+     "width": 1600,
+     "height": 852,
+     "alt": "Live Research Missions list for the 30th Celebration expansion",
+     "ratio": 1.8779
+    },
+    {
+     "kind": "image",
+     "name": "live-rewards",
+     "width": 1600,
+     "height": 852,
+     "alt": "Live mission rewards preview: a 30th Celebration booster pack",
+     "ratio": 1.8779
+    }
+   ]
+  },
+  {
+   "type": "text",
    "html": "<h3>Shaped by players</h3><p class=\"ta-l\">Player feedback from Card Dex drove several changes. Empty slots were hard to scan and took an extra tap to see, so unowned cards now show darkened, which makes the whole set visible at a glance. Completed missions get a checkmark animation and move to the bottom of the list. Collector Stats moved into the first release, giving collectors a long-term view of everything they've achieved.</p><p class=\"ta-l\">A usability study before launch rated overall satisfaction 4.4 out of 5. All 10 players asked said they were more interested in playing after seeing the feature, and 10 of 11 said Collector Stats made them more interested in collecting.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "live-darkened",
+     "width": 1600,
+     "height": 852,
+     "alt": "Live Card Dex: unowned cards shown darkened in the set grid",
+     "ratio": 1.8779
+    },
+    {
+     "kind": "image",
+     "name": "live-stats",
+     "width": 1600,
+     "height": 852,
+     "alt": "Live Collection Stats: missions completed, missions in progress, master sets completed and total cards collected",
+     "ratio": 1.8779
+    }
+   ]
   },
   {
    "type": "grid",
