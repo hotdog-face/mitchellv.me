@@ -10,7 +10,7 @@ export const hero = {
 export const about = {
   process: ['EMPATHIZE', 'DEFINE', 'IDEATE', 'PROTOTYPE', 'TEST'],
   bio: [
-    "With 11 years of gaming experience and 7 of those years specializing in UX/UI design, I bring a strong foundation in art and animation to my passion for visual and interaction design. Currently contributing to The Pokémon Trading Card Game Live at The Pokémon Company International, I previously honed my skills at Amazon's Mobile Games Experience Team. Grounded in user-centric principles, I craft designs that not only delight but also align with company objectives, leveraging data-driven methodologies.",
+    "With 14 years of gaming experience and 10 of those years specializing in UX/UI design, I bring a strong foundation in art and animation to my passion for visual and interaction design. Currently contributing to The Pokémon Trading Card Game Live at The Pokémon Company International, I previously honed my skills at Amazon's Mobile Games Experience Team. Grounded in user-centric principles, I craft designs that not only delight but also align with company objectives, leveraging data-driven methodologies.",
     'You have just under 15 seconds to surprise and delight your users before the cognitive load becomes too much and they close your software. This is why, in today’s tech-filled world, user experience (UX) is critical to the success of your company. Your users are most likely moving a mile-a-minute and doing multiple things at once. Creating a simplistic, streamlined experience will keep your multitasking audience engaged and interested in what your company has to say.',
     "I'm focused on creating meaningful experiences through design that will hold your users’ attention and keep them on their path to purchase. I’ve built my career in UX with the principles of user-centered design and design thinking at the core of my process and execution. Let’s work together to create a user experience that is intuitive and keeps your users around for longer than 15 seconds.",
   ],
@@ -35,7 +35,7 @@ export const featured = [
   {
     title: 'Bug Brite',
     href: '/work/bug-brite',
-    text: "After leaving Big Fish Games I was finally freed up to make a product that aligns with my own product vision and strategies. I teamed up with two of my skilled friends, and we have set our sights on the hyper casual mobile game market. Bug Brite is the first product we've completed together and are currently refining features to improve retention metrics.",
+    text: "After leaving Big Fish Games I was finally freed up to make a product that aligned with my own product vision and strategies. I teamed up with two of my skilled friends, and we set our sights on the hyper-casual mobile game market. Bug Brite was the first product we completed together.",
     media: 'phone-image',
   },
 ] as const;
