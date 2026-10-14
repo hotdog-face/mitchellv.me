@@ -16,6 +16,16 @@
   "image": "cover",
   "line": "2026 · Build · CRT cable channel"
  },
+ "links": [
+  {
+   "label": "BroadcastBrain on GitHub",
+   "href": "https://github.com/hotdog-face/BroadcastBrain"
+  },
+  {
+   "label": "RetroConvert",
+   "href": "https://github.com/hotdog-face/RetroConvert"
+  }
+ ],
  "background": "#121214",
  "dark": true,
  "modules": [

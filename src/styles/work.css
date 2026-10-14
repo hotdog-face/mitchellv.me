@@ -17,6 +17,10 @@
 .work-intro h1 { font-size: clamp(30px, 5vw, 44px); color: var(--ink); font-weight: 700; letter-spacing: -.01em; margin-bottom: 16px; overflow-wrap: anywhere; }
 .work-intro .work-desc { font-size: 17px; margin: 0 0 16px; }
 .work-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 8px; margin: 0; padding: 0; list-style: none; font-size: 13px; color: var(--muted); }
+.work-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0 0; }
+.work-links .btn { min-width: 0; min-height: 42px; padding: 0 18px; border-radius: 5px; font-size: 15px; }
+.work-links .btn--quiet { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.work-links .btn--quiet:hover { border-color: var(--pink-ink); color: var(--pink-ink); filter: none; }
 .work-meta li { border: 1px solid var(--line); border-radius: 999px; padding: 2px 12px; }
 .work-meta .work-date { border-color: transparent; padding-inline: 4px; }
 

@@ -16,6 +16,20 @@
   "image": "cover",
   "line": "2026 · Build · 1-bit Macintosh games"
  },
+ "links": [
+  {
+   "label": "View on GitHub",
+   "href": "https://github.com/hotdog-face/classic-mac"
+  },
+  {
+   "label": "Celeste port",
+   "href": "https://github.com/hotdog-face/mac-classic-celeste-port"
+  },
+  {
+   "label": "Just One Boss port",
+   "href": "https://github.com/hotdog-face/just-one-boss-mac"
+  }
+ ],
  "background": "#d9d6cf",
  "dark": false,
  "modules": [

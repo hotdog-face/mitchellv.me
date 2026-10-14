@@ -56,6 +56,8 @@ const work = defineCollection({
     description: z.string().optional(), // HTML
     meta: z.object({ date: z.string().optional(), fields: z.array(z.string()) }),
     card: z.object({ image: z.string(), line: z.string() }),
+    // buttons under the intro (e.g. GitHub, latest release)
+    links: z.array(z.object({ label: z.string(), href: z.string().url() })).optional(),
     background: z.string(),
     dark: z.boolean(),
     modules: z.array(module),

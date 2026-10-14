@@ -39,6 +39,7 @@ const description = p.description ? plain(p.description) : `${p.title} - ${p.met
         {p.meta.date && <li class="work-date">{p.meta.date}</li>}
         {p.meta.fields.map(f => <li>{f}</li>)}
       </ul>
+      {p.links && <p class="work-links">{p.links.map((l, i) => <a class:list={['btn', { 'btn--quiet': i > 0 }]} href={l.href} target="_blank" rel="noopener">{l.label}</a>)}</p>}
     </div>
 
     {cs && <Glance cs={cs} />}

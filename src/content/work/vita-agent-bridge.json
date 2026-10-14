@@ -16,6 +16,12 @@
   "image": "cover",
   "line": "2026 · Build · AI agents on real hardware"
  },
+ "links": [
+  {
+   "label": "View on GitHub",
+   "href": "https://github.com/hotdog-face/vita-agent-bridge"
+  }
+ ],
  "background": "#121214",
  "dark": true,
  "modules": [

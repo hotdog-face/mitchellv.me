@@ -18,6 +18,10 @@ export interface CaseStudy {
   impact: Stat[];
   /** Cover image name (see Img.astro). */
   image: string;
+  /** Optional image for the home page's Selected work, used instead of `image`. */
+  homeImage?: string;
+  /** The home image is a cutout on a transparent background: show it without a frame. */
+  homeImageAlpha?: boolean;
   /** Shown in "Selected work" on the home page. */
   featured: boolean;
 }
@@ -73,6 +77,8 @@ export const caseStudies: CaseStudy[] = [
       { value: '+33.5%', label: 'monthly active users across platforms' },
     ],
     image: 'cases/pokemon-tv',
+    homeImage: 'cases/pokemon-tv-switch',
+    homeImageAlpha: true,
     featured: true,
   },
   {

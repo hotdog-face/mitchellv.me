@@ -16,6 +16,12 @@
   "image": "cover",
   "line": "2026 · Build · GameCube launcher"
  },
+ "links": [
+  {
+   "label": "View on GitHub",
+   "href": "https://github.com/hotdog-face/gameplay-spotlight"
+  }
+ ],
  "background": "#101010",
  "dark": true,
  "modules": [

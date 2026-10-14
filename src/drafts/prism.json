@@ -1,0 +1,33 @@
+{
+ "title": "Prism",
+ "pageTitle": "MV | Prism",
+ "slug": "prism",
+ "order": 0.15,
+ "description": "<p>Prism turns a Steam Deck into a living-room console: one home screen for Steam games, emulated games and, optionally, Plex movies and TV, with the habits of a real console.</p>",
+ "meta": {
+  "date": "2026",
+  "fields": [
+   "UX/UI",
+   "Development",
+   "Console UI"
+  ]
+ },
+ "card": {
+  "image": "cover",
+  "line": "2026 · Build · Steam Deck home screen"
+ },
+ "links": [
+  {
+   "label": "View on GitHub",
+   "href": "https://github.com/hotdog-face/prism"
+  }
+ ],
+ "background": "#121214",
+ "dark": true,
+ "modules": [
+  {
+   "type": "text",
+   "html": "<h3>A console, not a launcher</h3><p class=\"ta-l\">Prism boots straight into one home screen that holds your Steam games, your emulated games and, if you want, your Plex movies and TV. The design goal was to make a Steam Deck docked to a TV feel like a console: no desktop, no menus that assume a mouse, nothing to configure every time.</p><ul class=\"ta-l\"><li>The Steam button opens a quick-menu card over any game: resume, save and load states, quit, sleep timer.</li><li>Controllers get player numbers in the order they're picked up, in every emulator, so local multiplayer just works.</li><li>Docking switches resolution and controls on its own, and the screen dims and sleeps without stopping downloads.</li><li>New games appear by themselves: install a Steam game or copy a ROM and it shows up within 15 minutes.</li><li>A rescue chord (hold L5 and R5) always gets you back home.</li></ul><p class=\"ta-l\">It's built on ES-DE with a small patch, its own theme and a set of background services that run in Steam's Game Mode.</p>"
+  }
+ ]
+}

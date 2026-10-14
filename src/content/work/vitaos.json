@@ -16,6 +16,16 @@
   "image": "cover",
   "line": "2026 · UX/UI · Product Design"
  },
+ "links": [
+  {
+   "label": "View on GitHub",
+   "href": "https://github.com/hotdog-face/VitaOS"
+  },
+  {
+   "label": "Download the latest release",
+   "href": "https://github.com/hotdog-face/VitaOS/releases/latest"
+  }
+ ],
  "background": "#121214",
  "dark": true,
  "modules": [
