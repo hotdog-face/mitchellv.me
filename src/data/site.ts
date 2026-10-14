@@ -17,4 +17,4 @@ export const footerSocial = [
 ];
 
 // "Last updated" line in the footer — change this when the site gets new content
-export const lastUpdated = '2024';
+export const lastUpdated = '2026';

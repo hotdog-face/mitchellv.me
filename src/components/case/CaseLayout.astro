@@ -3,7 +3,7 @@
 import Base from '../../layouts/Base.astro';
 const { frontmatter } = Astro.props;
 ---
-<Base title={frontmatter.title} description={frontmatter.description} fonts="family=Jost:wght@400">
+<Base title={frontmatter.title} description={frontmatter.description} image={frontmatter.ogImage} fonts="family=Jost:wght@400">
   <div class="case" style={`background:${frontmatter.pageColor ?? '#fff'}`}><slot /></div>
 </Base>
 <style>

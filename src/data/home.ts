@@ -3,7 +3,7 @@
 
 export const hero = {
   name: "I'm Mitchell",
-  role: 'Senior UX/UI Designer at The Pokemon Company International',
+  role: 'Senior UX/UI Designer at The Pokémon Company International',
   background: 'bff7d9c7',
 };
 

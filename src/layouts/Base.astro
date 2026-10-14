@@ -4,9 +4,12 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import PhoneBar from '../components/PhoneBar.astro';
 
-interface Props { title: string; description?: string; fonts?: string }
-const { title, description = 'Mitchell Vizensky — Senior UX/UI Designer at The Pokémon Company International. Portfolio of game and product design work.', fonts } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+interface Props { title: string; description?: string; fonts?: string; image?: string }
+const { title, image = '/assets/og/home.jpg', description = 'Mitchell Vizensky — Senior UX/UI Designer at The Pokémon Company International. Portfolio of game and product design work.', fonts } = Astro.props;
+// pages are served without a trailing slash, except the home page and the /work/ index
+const path = Astro.url.pathname === '/' || Astro.url.pathname === '/work/' ? Astro.url.pathname : Astro.url.pathname.replace(/\/$/, '');
+const canonical = new URL(path, Astro.site);
+const ogImage = new URL(image, Astro.site);
 ---
 <!doctype html>
 <html lang="en">
@@ -17,6 +20,16 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   <meta name="description" content={description}>
   <link rel="canonical" href={canonical}>
   <link rel="icon" href="/assets/favicon.png">
+  <!-- link previews (LinkedIn, Slack, messages, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mitchell Vizensky">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   {fonts && <link rel="preconnect" href="https://fonts.googleapis.com" />}
   {fonts && <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />}
   {fonts && <link rel="stylesheet" href={`https://fonts.googleapis.com/css2?${fonts}&display=swap`} />}
