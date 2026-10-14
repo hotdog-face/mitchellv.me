@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "resume": "\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --no-proxy-server --no-pdf-header-footer --print-to-pdf=public/resume.pdf resume/resume.html"
   },
   "dependencies": {
     "@astrojs/mdx": "4.3.14",

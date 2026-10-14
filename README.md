@@ -19,6 +19,10 @@ Mitchell Vizensky's portfolio, built with [Astro](https://astro.build). Pushing 
 
 Case studies are MDX: ordinary Markdown text plus a few components such as `<Card>`, `<Steps>` and `<Outcomes>`. Change the words directly; each component's options are described at the top of its file.
 
+## Resume
+
+`public/resume.pdf` is printed from `resume/resume.html`. Edit the text there, then run `npm run resume` (uses Google Chrome) to rebuild the PDF. Keep it to one page.
+
 ## Images and video
 
 - **Images** go in `src/assets/img/` (or `src/assets/work/<project>/`). Refer to one by file name without the extension, for example `<Img name="c7fc5658" alt="…" />`. Astro makes smaller copies for phones automatically.
