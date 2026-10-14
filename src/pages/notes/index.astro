@@ -1,0 +1,72 @@
+---
+// Notes: short write-ups about how things were built. DRAFT: unlisted and noindex until approved.
+import Base from '../../layouts/Base.astro';
+import Img from '../../components/Img.astro';
+import { getCollection } from 'astro:content';
+const notes = (await getCollection('notes')).sort((a, b) => +b.data.date - +a.data.date);
+const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const [lead, ...rest] = notes;
+---
+<Base title="Notes | Mitchell Vizensky" description="Notes on how I design and build things: game UX, prototypes, homebrew and AI tooling.">
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <div class="notes">
+    <header class="n-head">
+      <p class="eyebrow">Notes</p>
+      <h1>How I design and build things.</h1>
+      <p class="lede">Short write-ups on game UX, playable prototypes, homebrew and working with AI coding tools.</p>
+    </header>
+
+    {lead && (
+      <a class="lead" href={`/notes/${lead.id}`}>
+        {lead.data.cover && <Img name={lead.data.cover} alt="" sizes="(max-width: 860px) 100vw, 560px" loading="eager" />}
+        <div class="lead-text">
+          <p class="meta">{fmt(lead.data.date)}{lead.data.readMinutes && <> · {lead.data.readMinutes} min read</>}</p>
+          <h2>{lead.data.title}</h2>
+          <p>{lead.data.summary}</p>
+          <ul class="tags">{lead.data.tags.map(t => <li>{t}</li>)}</ul>
+        </div>
+      </a>
+    )}
+
+    <ol class="list">
+      {rest.map(n => (
+        <li>
+          <a href={`/notes/${n.id}`}>
+            <span class="date">{fmt(n.data.date)}</span>
+            <span class="body"><strong>{n.data.title}</strong><span>{n.data.summary}</span></span>
+            {n.data.cover && <Img name={n.data.cover} alt="" sizes="160px" class="thumb" />}
+          </a>
+        </li>
+      ))}
+    </ol>
+  </div>
+</Base>
+
+<style>
+  .notes { width: min(980px, 100% - 32px); margin: 0 auto; padding: 72px 0 96px; }
+  .eyebrow { margin: 0 0 10px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--pink-ink); font-weight: 700; }
+  h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 700; line-height: 1.08; color: var(--ink); }
+  .lede { margin-top: 14px; max-width: 560px; font-size: 18px; line-height: 1.55; }
+  .lead { margin-top: 48px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center; text-decoration: none; color: var(--text); }
+  .lead :global(img) { width: 100%; aspect-ratio: 1150 / 900; object-fit: cover; border-radius: 14px; box-shadow: 0 14px 40px rgba(0,0,0,.18); transition: transform .4s; }
+  .lead:hover :global(img) { transform: translateY(-3px); }
+  .meta, .date { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .lead h2 { margin: 8px 0 10px; font-size: clamp(26px, 3vw, 34px); font-weight: 700; line-height: 1.15; color: var(--ink); }
+  .lead:hover h2, .list a:hover strong { color: var(--pink-ink); }
+  .lead-text p:not(.meta) { margin: 0; font-size: 16px; line-height: 1.55; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; padding: 0; list-style: none; }
+  .tags li { padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; color: var(--muted); }
+  .list { margin: 56px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+  .list li { border-bottom: 1px solid var(--line); }
+  .list a { display: grid; grid-template-columns: 120px 1fr 120px; gap: 24px; align-items: center; padding: 22px 0; text-decoration: none; color: var(--text); }
+  .body { display: grid; gap: 4px; }
+  .body strong { font-size: 19px; color: var(--ink); transition: color .2s; }
+  .body span { font-size: 15px; line-height: 1.5; }
+  .list :global(.thumb) { width: 120px; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+  @media (max-width: 760px) {
+    .lead { grid-template-columns: 1fr; gap: 20px; }
+    .list a { grid-template-columns: 1fr 88px; gap: 14px; }
+    .date { grid-column: 1 / -1; }
+    .list :global(.thumb) { width: 88px; }
+  }
+</style>

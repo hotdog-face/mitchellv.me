@@ -72,4 +72,18 @@ const work = defineCollection({
   }),
 });
 
-export const collections = { work };
+// Notes: short write-ups about how things were built (src/content/notes/*.md).
+const notes = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/notes' }),
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    date: z.coerce.date(),
+    tags: z.array(z.string()),
+    cover: z.string().optional(),       // image name, see Img.astro
+    build: z.string().optional(),       // related /work/<slug>
+    readMinutes: z.number().optional(),
+  }),
+});
+
+export const collections = { work, notes };

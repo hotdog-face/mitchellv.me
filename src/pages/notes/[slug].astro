@@ -1,0 +1,58 @@
+---
+// A single note. DRAFT: unlisted and noindex until approved.
+import Base from '../../layouts/Base.astro';
+import Img from '../../components/Img.astro';
+import { getCollection, render } from 'astro:content';
+import { getWork } from '../../data/work';
+
+export async function getStaticPaths() {
+  return (await getCollection('notes')).map(n => ({ params: { slug: n.id }, props: { note: n } }));
+}
+const { note } = Astro.props;
+const { Content } = await render(note);
+const d = note.data;
+const build = d.build ? (await getWork()).find(p => p.slug === d.build) : undefined;
+const fmt = (x: Date) => x.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+---
+<Base title={`${d.title} | Mitchell Vizensky`} description={d.summary}>
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <article class="note">
+    <header>
+      <a class="back" href="/notes/">&larr; All notes</a>
+      <h1>{d.title}</h1>
+      <p class="sum">{d.summary}</p>
+      <p class="meta">{fmt(d.date)}{d.readMinutes && <> · {d.readMinutes} min read</>} · {d.tags.join(', ')}</p>
+    </header>
+    {d.cover && <Img name={d.cover} alt="" sizes="(max-width: 760px) 100vw, 760px" loading="eager" class="cover" />}
+    <div class="prose"><Content /></div>
+    {build && (
+      <a class="build" href={`/work/${build.slug}`}>
+        <Img name={`work/${build.slug}/${build.card.image}`} alt="" sizes="140px" />
+        <span><small>The build</small><strong>{build.title}</strong><span>See the project &rarr;</span></span>
+      </a>
+    )}
+  </article>
+</Base>
+
+<style>
+  .note { width: min(700px, 100% - 32px); margin: 0 auto; padding: 64px 0 96px; }
+  .back { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+  .back:hover { color: var(--pink-ink); }
+  h1 { margin-top: 20px; font-size: clamp(32px, 5vw, 46px); font-weight: 700; line-height: 1.08; letter-spacing: -.01em; color: var(--ink); }
+  .sum { margin-top: 14px; font-size: 19px; line-height: 1.5; }
+  .meta { margin-top: 14px; font-size: 13px; color: var(--muted); }
+  .note :global(.cover) { width: 100%; margin: 32px 0 8px; border-radius: 14px; aspect-ratio: 16 / 10; object-fit: cover; }
+  .prose { font-size: 17.5px; line-height: 1.7; color: var(--text); }
+  .prose :global(p) { margin: 1.1em 0; }
+  .prose :global(h2) { margin: 1.8em 0 .4em; font-size: 24px; font-weight: 700; color: var(--ink); }
+  .prose :global(strong) { color: var(--ink); }
+  .prose :global(pre) { margin: 1.4em 0; padding: 18px 20px; overflow-x: auto; border-radius: 10px; background: #18181b; color: #ececef; font-size: 14.5px; line-height: 1.6; }
+  .prose :global(code) { font-family: ui-monospace, Menlo, monospace; }
+  .build { margin-top: 48px; display: flex; align-items: center; gap: 18px; padding: 14px; border: 1px solid var(--line); border-radius: 14px; text-decoration: none; color: var(--text); }
+  .build:hover { border-color: var(--pink-ink); }
+  .build :global(img) { width: 120px; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; flex: none; }
+  .build > span { display: grid; gap: 2px; }
+  .build small { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .build strong { font-size: 19px; color: var(--ink); }
+  .build > span > span { font-size: 14px; color: var(--pink-ink); font-weight: 700; }
+</style>
