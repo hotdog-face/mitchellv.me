@@ -18,7 +18,7 @@ const { project: p, prev, next } = Astro.props;
 const dir = `work/${p.slug}`;
 const pub = `/assets/work/${p.slug}`;
 const plain = (html: string) => html.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
-const description = p.description ? plain(p.description) : `${p.title} — ${p.meta.fields.join(', ')}. A project by Mitchell Vizensky.`;
+const description = p.description ? plain(p.description) : `${p.title} - ${p.meta.fields.join(', ')}. A project by Mitchell Vizensky.`;
 ---
 <Base title={p.pageTitle} description={description}>
   <div class="work-page">

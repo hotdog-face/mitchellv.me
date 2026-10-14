@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import PhoneBar from '../components/PhoneBar.astro';
 
 interface Props { title: string; description?: string; fonts?: string; image?: string }
-const { title, image = '/assets/og/home.jpg', description = 'Mitchell Vizensky — Senior UX/UI Designer at The Pokémon Company International. Portfolio of game and product design work.', fonts } = Astro.props;
+const { title, image = '/assets/og/home.jpg', description = 'Mitchell Vizensky - Senior UX/UI Designer at The Pokémon Company International. Portfolio of game and product design work.', fonts } = Astro.props;
 // pages are served without a trailing slash, except the home page and the /work/ index
 const path = Astro.url.pathname === '/' || Astro.url.pathname === '/work/' ? Astro.url.pathname : Astro.url.pathname.replace(/\/$/, '');
 const canonical = new URL(path, Astro.site);

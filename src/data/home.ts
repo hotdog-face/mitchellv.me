@@ -10,11 +10,10 @@ export const hero = {
 export const about = {
   process: ['EMPATHIZE', 'DEFINE', 'IDEATE', 'PROTOTYPE', 'TEST'],
   bio: [
-    "With 14 years of gaming experience and 10 of those years specializing in UX/UI design, I bring a strong foundation in art and animation to my passion for visual and interaction design. Currently contributing to The Pokémon Trading Card Game Live at The Pokémon Company International, I previously honed my skills at Amazon's Mobile Games Experience Team. Grounded in user-centric principles, I craft designs that not only delight but also align with company objectives, leveraging data-driven methodologies.",
-    'You have just under 15 seconds to surprise and delight your users before the cognitive load becomes too much and they close your software. This is why, in today’s tech-filled world, user experience (UX) is critical to the success of your company. Your users are most likely moving a mile-a-minute and doing multiple things at once. Creating a simplistic, streamlined experience will keep your multitasking audience engaged and interested in what your company has to say.',
-    "I'm focused on creating meaningful experiences through design that will hold your users’ attention and keep them on their path to purchase. I’ve built my career in UX with the principles of user-centered design and design thinking at the core of my process and execution. Let’s work together to create a user experience that is intuitive and keeps your users around for longer than 15 seconds.",
+    "I'm a senior UX/UI designer with 10 years in the craft and 14 in games. I'm currently working on Pokémon TCG Live at The Pokémon Company International, and before that I designed for Amazon's Mobile Games Experience team and Big Fish Games. My background in art and animation shapes how I approach interaction and visual design.",
+    "I start with the people I'm designing for: research, quick prototypes, and testing early and often. Then I use data to make sure the work moves the business too. Lately I've also been building my own software end to end, like VitaOS, a modern home screen for the PS Vita.",
   ],
-  services: 'Product Strategy / UX Prototyping / Wireframing / Branding / Visual Design / Interaction Design / Motion Graphics / User Research / Data Visualization / Design Systems / Accessibility Design / Creative Direction / Concept Art / Team Leadership / Storytelling / Feedback and Critique / Project Management',
+  services: 'Product Strategy / UX Research / Prototyping / Interaction Design / Visual Design / Design Systems / Motion / Art Direction',
   resume: '/resume.pdf',
 };
 
@@ -23,19 +22,19 @@ export const featured = [
   {
     title: 'Pokémon TV',
     href: '/pokemon-tv',
-    text: 'In March of 2021, young Pokémon fans could exclusively access Pokémon TV (PTV) via web; the streaming service needed to be ported to the Nintendo Switch™ to increase accessibility for its most important audience. TPCI created this streaming service with the intent of influencing sales of Pokémon Trading Cards - making the bold choice to exclude monetization. The streaming service needed to be easy for young viewers to navigate while offering a vast library of Pokémon’s entertainment content.',
+    text: "Pokémon TV was web-only, which left out a big part of its audience: kids on Nintendo Switch. I designed the Switch app, a free streaming service with no purchases. It had to be easy for young viewers to navigate while surfacing a huge library of Pokémon shows and movies. After launch, monthly active users across all platforms grew 33.5%.",
     media: 'switch',
   },
   {
     title: 'BFC Store Revamp',
     href: '/bfc-store-revamp',
-    text: "Big Fish Casino is a top-30 highest grossing social casino mobile app. Despite the app's success, its age had begun to show with the outdated store design. This redesign completely re-imagined the store's interaction and visual design, ultimately improving the company's bottom line and making purchasing a more intuitive and rewarding process.",
+    text: "Big Fish Casino is a top-30 grossing social casino app, but its store hadn't kept up. I redesigned the store's interaction and visual design from the ground up, making purchasing more intuitive and rewarding. Sales went up 38.4% over the previous store.",
     media: 'phone-video',
   },
   {
     title: 'Bug Brite',
     href: '/work/bug-brite',
-    text: "After leaving Big Fish Games I was finally freed up to make a product that aligned with my own product vision and strategies. I teamed up with two of my skilled friends, and we set our sights on the hyper-casual mobile game market. Bug Brite was the first product we completed together.",
+    text: "After Big Fish Games, I teamed up with two friends to build games around our own product vision. Bug Brite, a hyper-casual mobile game, was our first release.",
     media: 'phone-image',
   },
 ] as const;
