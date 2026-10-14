@@ -1,0 +1,198 @@
+{
+ "title": "Build & Battle",
+ "pageTitle": "MV | Build & Battle - Pokémon TCG Live",
+ "slug": "build-battle",
+ "order": -0.5,
+ "description": "<p>A new game mode for Pokémon Trading Card Game Live that brings the in-store prerelease tournament online, giving newer players a friendlier way to build a deck and battle.</p>",
+ "meta": {
+  "date": "2024",
+  "fields": [
+   "UX Design",
+   "Prototyping",
+   "Game Mode Design"
+  ]
+ },
+ "card": {
+  "image": "cover",
+  "line": "2024 · Pokémon TCG Live · UX Design"
+ },
+ "background": "#121a2c",
+ "dark": true,
+ "modules": [
+  {
+   "type": "image",
+   "name": "live-intro-1",
+   "width": 1600,
+   "height": 852,
+   "alt": "Build & Battle in Pokémon TCG Live: build a deck with a Build & Battle Box"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Overview</h3><p class=\"ta-l\">Ranked play can be a hard first step for players coming out of the tutorial, especially if they have never built a deck. In the physical game, many players start at a prerelease: everyone opens a Build &amp; Battle Box, builds a deck from what they pulled and plays a few casual matches for prizes.</p><p class=\"ta-l\">Build &amp; Battle brings that event into Pokémon TCG Live as a recurring mode tied to new expansions. I designed the UX for the mode end to end, from the flow and wireframes to interactive prototypes and the screen-by-screen spec, working with a game designer, art and engineering.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>From one afternoon at a store to a mode you can pick up anytime</h3><p class=\"ta-l\">A real prerelease happens in one sitting: you sit in a pod with three other players, play everyone in it and collect prizes based on your record. Online, people play in short sessions on their phones. So the digital version keeps the heart of the event and changes the structure around it:</p><ul class=\"ta-l\"><li>Players can leave mid-round and come back to exactly where they were.</li><li>Instead of fixed pods, they match against anyone else playing.</li><li>They can edit their deck between matches.</li><li>Every match adds rewards to a prize pot, so progress always feels like it counts.</li></ul>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "wire-40",
+     "width": 600,
+     "height": 1191,
+     "alt": "Early wireframe: home screen with game modes",
+     "ratio": 0.5038
+    },
+    {
+     "kind": "image",
+     "name": "wire-160",
+     "width": 600,
+     "height": 1191,
+     "alt": "Early wireframe: Build & Battle Box acquisition flow",
+     "ratio": 0.5038
+    },
+    {
+     "kind": "image",
+     "name": "wire-200",
+     "width": 600,
+     "height": 1191,
+     "alt": "Early wireframe: deck editing with unused cards and potential cards",
+     "ratio": 0.5038
+    },
+    {
+     "kind": "image",
+     "name": "wire-280",
+     "width": 600,
+     "height": 1191,
+     "alt": "Early wireframe: four-prize match setup",
+     "ratio": 0.5038
+    }
+   ],
+   "maxWidth": 1040
+  },
+  {
+   "type": "text",
+   "html": "<h3>Mapping the whole mode first</h3><p class=\"ta-l\">I started with low-fidelity walkthroughs of the entire loop: buy in, open the box, build, play, collect. Seeing it end to end made the open questions obvious early. I also explored two directions: Classic, where you buy a box and keep every card, and a Live variant, where you play with loaner cards and keep only what you win.</p><p class=\"ta-l\">The flow then became the spec. Every screen in the feature brief was documented with its states, edge cases and links into the interactive prototype, so engineering and art could build from one source of truth.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "spec-01",
+     "width": 1600,
+     "height": 1468,
+     "alt": "Feature brief page: the lobby map wireframes with annotated interactions",
+     "ratio": 1.0899
+    },
+    {
+     "kind": "image",
+     "name": "spec-03",
+     "width": 1596,
+     "height": 1536,
+     "alt": "Feature brief page: match nodes showing prospective rewards and match history",
+     "ratio": 1.0391
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>Getting into a round</h3><p class=\"ta-l\">The buy-in screen explains the mode in three quick slides and shows the cost up front, and purchases confirm in a bottom drawer rather than a full-screen interruption. Opening the box leads into the Seed Deck Inspector, the digital version of the deck and Trainer Tips card that come in a real Build &amp; Battle Box. Players can browse the 40 cards they got, read tips on how to play the deck, and track the set's promo cards.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "video",
+     "name": "buy-in",
+     "width": 600,
+     "height": 1068,
+     "label": "Prototype: buying into a round and opening the Build & Battle Box",
+     "ratio": 0.5618
+    },
+    {
+     "kind": "video",
+     "name": "seed-deck",
+     "width": 600,
+     "height": 1068,
+     "label": "Prototype: the Seed Deck Inspector",
+     "ratio": 0.5618
+    },
+    {
+     "kind": "video",
+     "name": "purchase-drawer",
+     "width": 600,
+     "height": 1068,
+     "label": "Prototype: confirming a purchase in the bottom drawer",
+     "ratio": 0.5607
+    }
+   ],
+   "maxWidth": 960
+  },
+  {
+   "type": "text",
+   "html": "<h3>A map for your round</h3><p class=\"ta-l\">The lobby is a small island map. Each match is a node, the prize pot sits at the end of the path, and wins and losses light up as you go, so players always know where they are in the round and what they're playing for. Tapping an upcoming node shows what a win or a loss would earn, and tapping a finished one shows that match's history. After each match, rewards fly into the pot and the marker moves to the next node. Finishing every match unlocks the pot.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "video",
+     "name": "between-matches",
+     "width": 600,
+     "height": 1068,
+     "label": "Prototype: progressing across the map between matches",
+     "ratio": 0.5618
+    },
+    {
+     "kind": "video",
+     "name": "prize-pot",
+     "width": 600,
+     "height": 1068,
+     "label": "Prototype: unlocking and collecting the prize pot",
+     "ratio": 0.5618
+    },
+    {
+     "kind": "video",
+     "name": "round-complete",
+     "width": 600,
+     "height": 1068,
+     "label": "Prototype: round complete, ready to start a new round",
+     "ratio": 0.5618
+    }
+   ],
+   "maxWidth": 960
+  },
+  {
+   "type": "text",
+   "html": "<h3>Live in the game</h3><p class=\"ta-l\">Build &amp; Battle now runs as a recurring event in Pokémon TCG Live, with each event themed around an expansion.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "live-intro-2",
+     "width": 1600,
+     "height": 852,
+     "alt": "Live Build & Battle intro: battle against other Trainers",
+     "ratio": 1.8779
+    },
+    {
+     "kind": "image",
+     "name": "live-intro-3",
+     "width": 1600,
+     "height": 852,
+     "alt": "Live Build & Battle intro: earn rewards",
+     "ratio": 1.8779
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>What I learned</h3><p class=\"ta-l\">Translating a physical event is less about copying it and more about deciding which parts make it special. Here that was opening a box together and playing for prizes. Keeping those, and redesigning everything around them for short mobile sessions, gave newer players a low-pressure way in without losing what experienced players love about prereleases.</p>"
+  }
+ ]
+}

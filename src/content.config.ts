@@ -28,6 +28,7 @@ const module = z.discriminatedUnion('type', [
   z.object({
     type: z.literal('grid'),
     // justified row: each item grows in proportion to its aspect ratio
+    maxWidth: z.number().optional(), // cap the row width in px (e.g. for rows of portrait phone screens)
     items: z.array(z.union([
       image.extend({ kind: z.literal('image'), ratio: z.number() }),
       video.extend({ kind: z.literal('video'), ratio: z.number() }),

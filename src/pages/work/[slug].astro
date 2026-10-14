@@ -58,7 +58,7 @@ const description = p.description ? plain(p.description) : `${p.title} - ${p.met
             case 'grid': {
               const sizes = gridSizes(m.items.map(it => it.ratio));
               return (
-                <div class="m m-grid">
+                <div class="m m-grid" style={m.maxWidth ? `max-width:${m.maxWidth}px;margin-inline:auto` : undefined}>
                   {m.items.map((it, j) => (
                     <div style={`--r:${it.ratio.toFixed(4)}`}>
                       {it.kind === 'image'

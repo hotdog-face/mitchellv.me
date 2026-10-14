@@ -54,6 +54,7 @@ export const tiles = [
 // Projects not listed use their title up to the first dash.
 export const tileLabels: Record<string, string> = {
   '/work/card-dex': 'Card Dex',
+  '/work/build-battle': 'Build & Battle',
   '/work/vitaos': 'VitaOS',
   '/reeltown-slots': 'ReelTown Store',
   '/work/character-illustration': 'Character Art',
