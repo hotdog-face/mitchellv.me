@@ -24,7 +24,7 @@ let files = 0;
 for (const file of walk(OUT)) {
   if (file.endsWith('.html')) {
     let html = fs.readFileSync(file, 'utf8');
-    html = html.replace(/(\s(?:href|src|poster|data-hevc|action)=")(\/(?!\/)[^"]*)"/g, (_, a, url) => `${a}${prefix(url)}"`);
+    html = html.replace(/(\s(?:href|src|poster|data-hevc|data-lazy-src|action)=")(\/(?!\/)[^"]*)"/g, (_, a, url) => `${a}${prefix(url)}"`);
     html = html.replace(/(\ssrcset=")([^"]*)"/g, (_, a, set) => `${a}${set.split(',').map(part => part.replace(/^(\s*)(\S+)/, (m, ws, url) => ws + prefix(url))).join(',')}"`);
     html = html.replace(/url\((\/(?!\/)[^)]*)\)/g, (_, url) => `url(${prefix(url)})`);
     fs.writeFileSync(file, html);
