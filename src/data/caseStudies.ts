@@ -43,6 +43,8 @@ export const caseStudies: CaseStudy[] = [
       { value: '+29%', label: 'card exchanges per player after launch' },
     ],
     image: 'work/card-dex/cover',
+    homeImage: 'cases/card-dex-window',
+    homeImageAlpha: true,
     featured: true,
   },
   {
