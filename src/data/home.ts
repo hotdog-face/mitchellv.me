@@ -29,8 +29,8 @@ export const strengths = [
 export const about = {
   process: ['EMPATHIZE', 'DEFINE', 'IDEATE', 'PROTOTYPE', 'TEST'],
   bio: [
-    "I'm a senior UX/UI designer with 10 years in the craft and 14 in games. At The Pokémon Company International, I designed Card Dex and Research Missions, the systems Pokémon TCG Live players use to collect cards, and launched Pokémon TV on Nintendo Switch. Before that, I designed for Amazon's Mobile Games Experience team and Big Fish Games.",
-    "I start with the people I'm designing for: research, quick prototypes, and testing early and often. Then I use data to make sure the work moves the business too. Card Dex helped the game reach its 2025 retention goal, and my Big Fish Casino store redesign lifted sales 38.4%. With a background in art and animation, I care about craft, and I prototype in code to test ideas for real.",
+    "I came to UX from art and animation: a BFA in motion graphics, a mentorship with Pixar artists, and four years directing art on mobile games at PLAYSTUDIOS. Over the last 10 years I've designed for Big Fish Games, Amazon's Mobile Games Experience team and now The Pokémon Company International, where I work on Pokémon TCG Live.",
+    "I start with the people I'm designing for: research, quick prototypes, and testing early and often. Then I use data to make sure the work moves the business too. At TPCI I set up the user research process for our Game Studio team, and outside work I design and build my own software, like VitaOS.",
   ],
   services: 'Product Strategy / UX Research / Prototyping / Interaction Design / Visual Design / Design Systems / Motion / Art Direction',
   resume: '/resume.pdf',

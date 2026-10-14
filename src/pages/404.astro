@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import { caseStudies } from '../data/caseStudies';
+---
+<Base title="Page not found | Mitchell Vizensky">
+  <section class="nf">
+    <p class="code">404</p>
+    <h1>This page wandered off.</h1>
+    <p>It may have moved when the site was rebuilt. These are a good place to start:</p>
+    <ul>
+      {caseStudies.filter(c => c.featured).map(c => <li><a href={c.href}>{c.title}</a></li>)}
+    </ul>
+    <p><a class="btn" href="/">Back to home</a></p>
+  </section>
+</Base>
+<style>
+  .nf { width: min(640px, 100% - 32px); margin: 0 auto; padding: 96px 0; text-align: center; }
+  .code { font-size: 14px; letter-spacing: .3em; color: var(--pink); }
+  h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; margin: 8px 0 16px; }
+  ul { list-style: none; padding: 0; margin: 20px 0 32px; display: grid; gap: 10px; }
+  ul a { color: var(--ink); font-weight: 700; }
+  .btn { border-radius: 5px; }
+</style>

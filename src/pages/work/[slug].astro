@@ -61,8 +61,11 @@ const description = p.description ? plain(p.description) : `${p.title} - ${p.met
             case 'video':
               return (
                 <figure class="m m-img">
-                  <video src={`${pub}/${m.name}.mp4`} poster={`${pub}/${m.name}.webp`} width={m.width} height={m.height}
-                    autoplay muted loop playsinline preload="metadata" aria-label={m.label}></video>
+                  {i === 0
+                    ? <video src={`${pub}/${m.name}.mp4`} poster={`${pub}/${m.name}.webp`} width={m.width} height={m.height}
+                        autoplay muted loop playsinline preload="metadata" aria-label={m.label}></video>
+                    : <video data-lazy-src={`${pub}/${m.name}.mp4`} poster={`${pub}/${m.name}.webp`} width={m.width} height={m.height}
+                        data-autoplay muted loop playsinline preload="none" aria-label={m.label}></video>}
                 </figure>
               );
             case 'grid': {
@@ -73,8 +76,8 @@ const description = p.description ? plain(p.description) : `${p.title} - ${p.met
                     <div style={`--r:${it.ratio.toFixed(4)}`}>
                       {it.kind === 'image'
                         ? <Img name={`${dir}/${it.name}`} alt={it.alt} sizes={sizes[j]} loading={loading} />
-                        : <video src={`${pub}/${it.name}.mp4`} poster={`${pub}/${it.name}.webp`} width={it.width} height={it.height}
-                            autoplay muted loop playsinline preload="metadata" aria-label={it.label}></video>}
+                        : <video data-lazy-src={`${pub}/${it.name}.mp4`} poster={`${pub}/${it.name}.webp`} width={it.width} height={it.height}
+                            data-autoplay muted loop playsinline preload="none" aria-label={it.label}></video>}
                     </div>
                   ))}
                 </div>

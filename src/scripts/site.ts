@@ -85,6 +85,7 @@ function initGalleries() {
       const cur = items[i];
       cur.classList.add('on');
       if (cur instanceof HTMLVideoElement) {
+        if (!cur.src && cur.dataset.lazySrc) { cur.src = cur.dataset.lazySrc; cur.load(); }
         cur.currentTime = 0;
         cur.play().catch(() => {});
         cur.onended = () => show(i + 1);
@@ -164,7 +165,28 @@ function initSteps() {
   });
 }
 
+// ---------------------------------------------------------------------------
+// Looping videos: <video data-lazy-src="…" data-autoplay> loads and plays only when it comes
+// near the screen, and pauses when it leaves, so long pages stay light.
+function initLazyVideo() {
+  const vids = Array.from(document.querySelectorAll<HTMLVideoElement>('video[data-lazy-src]'));
+  if (!vids.length) return;
+  const start = (v: HTMLVideoElement) => {
+    if (!v.src) { v.src = v.dataset.lazySrc!; v.load(); }
+    if (v.hasAttribute('data-autoplay') && !reducedMotion) v.play().catch(() => {});
+  };
+  if (!('IntersectionObserver' in window)) { vids.forEach(start); return; }
+  const io = new IntersectionObserver(entries => {
+    for (const en of entries) {
+      const v = en.target as HTMLVideoElement;
+      if (en.isIntersecting) start(v); else if (v.src) v.pause();
+    }
+  }, { rootMargin: '300px 0px' });
+  vids.forEach(v => io.observe(v));
+}
+
 initReveal();
+initLazyVideo();
 initSteps();
 initSlideshows();
 initGalleries();
