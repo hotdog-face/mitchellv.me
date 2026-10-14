@@ -1,0 +1,93 @@
+/* ==========================================================================
+   mitchellv.me — design tokens and base styles.
+   Every color, font and size the site uses is defined here once.
+   ========================================================================== */
+
+@font-face { font-family: "Yellowjacket"; src: url("/assets/fonts/yellowjacket.woff2") format("woff2"); font-display: swap; }
+
+:root {
+  /* color */
+  --ink: #222;
+  --text: #414141;
+  --muted: #808080;
+  --white: #fff;
+  --pink: #cb2872;
+  --coral: #f55259;
+  --mint: #00e3aa;
+  --green: #4dbc96;
+  --blue: #0bbfee;
+  --navy: #0d4d90;
+  --teal: #00785a;
+  --teal-dark: #17413f;
+  --page-gray: #eef0f6;
+  --sand: #f1efeb;
+  --stone: #edeff0;
+
+  /* type — Helvetica (not Helvetica Neue) matches the original site's metrics */
+  --sans: Helvetica, Arial, sans-serif;
+  --open: "Open Sans", var(--sans);
+  --lucida: "Lucida Sans Unicode", "Lucida Grande", var(--sans);
+  --heebo: Heebo, var(--sans);
+  --logo: "Yellowjacket", var(--sans);
+
+  /* fluid type scale: phone → desktop */
+  --fs-body: clamp(14px, 0.35vw + 12.6px, 16px);
+  --fs-small: clamp(12px, 0.2vw + 11.2px, 13px);
+  --fs-h1: clamp(30px, 2.2vw + 21px, 40px);
+  --fs-h2: clamp(24px, 1.2vw + 19px, 30px);
+  --fs-stat: clamp(40px, 2vw + 32px, 50px);
+
+  /* layout */
+  --content: 980px;
+  --gutter: 16px;
+  --header-h: 64px;
+  --section-y: clamp(56px, 6vw, 96px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: var(--sans); color: var(--text); background: var(--white); line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+img, video, svg { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3, h4, h5 { font-weight: 400; line-height: 1.2; margin: 0; color: var(--ink); }
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+button { font: inherit; }
+
+/* containers */
+.wrap { width: min(var(--content), 100% - 2 * var(--gutter)); margin-inline: auto; }
+.section { padding-block: var(--section-y); }
+.center { text-align: center; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* headings with the short green rule used throughout the original */
+.rule-heading { font-family: var(--sans); font-weight: 700; font-size: var(--fs-h2); text-align: center; color: var(--text); }
+.rule-heading::after { content: ""; display: block; width: 120px; height: 0; border-top: 2px solid var(--green); margin: 14px auto 0; }
+.rule-heading.left { text-align: left; }
+.rule-heading.left::after { margin-left: 0; }
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 200px; min-height: 56px; padding: 0 24px;
+  font-family: var(--sans); font-size: 16px; text-decoration: none; color: var(--white);
+  background: var(--blue); border: 1px solid transparent; cursor: pointer;
+  transition: filter .2s, background .2s, color .2s;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn--green { background: var(--green); }
+.btn--ghost { background: transparent; border-color: var(--white); }
+.btn--ghost:hover { background: var(--white); color: var(--pink); filter: none; }
+
+/* scroll-in animations (names from the original site: FloatIn, FadeIn, Reveal, FlyIn) */
+.js [data-anim] { transition: opacity var(--anim-dur, 1.2s) ease-out, translate var(--anim-dur, 1.2s) cubic-bezier(.22,.8,.3,1), clip-path var(--anim-dur, 1.2s) ease-in-out; transition-delay: var(--anim-delay, 0s); }
+.js [data-anim]:not(.anim-in) { opacity: 0; }
+.js [data-anim="float"]:not(.anim-in) { translate: 0 -60px; }
+.js [data-anim="fly"]:not(.anim-in) { translate: 0 120px; }
+.js [data-anim="reveal"]:not(.anim-in) { opacity: 1; clip-path: inset(0 100% 0 0); }
+.js [data-anim="reveal-right"]:not(.anim-in) { opacity: 1; clip-path: inset(0 0 0 100%); }
+.js [data-anim^="reveal"].anim-in { clip-path: inset(0); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js [data-anim] { transition: none; opacity: 1 !important; translate: none !important; clip-path: none !important; }
+}

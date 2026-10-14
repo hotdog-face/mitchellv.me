@@ -1,0 +1,27 @@
+---
+// Fixed bottom bar of quick links on phones, as on the original mobile site.
+import { email } from '../data/site';
+const links = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mitchellvizensky', d: 'M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4z' },
+  { label: 'Instagram', href: 'https://www.instagram.com/retrowaveco/?hl=en', d: 'M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM12 3.6c2.7 0 3 0 4.1.06 2.7.12 4 1.42 4.12 4.12.06 1.07.06 1.39.06 4.1s0 3.03-.06 4.1c-.12 2.69-1.41 4-4.12 4.12-1.07.05-1.38.06-4.1.06s-3.03 0-4.1-.06c-2.72-.12-4-1.43-4.12-4.12C3.62 15.03 3.6 14.7 3.6 12s.02-3.03.06-4.1C3.79 5.2 5.08 3.9 7.8 3.78 8.97 3.7 9.3 3.6 12 3.6zM12 2C9.28 2 8.94 2 7.88 2.06 4.24 2.22 2.22 4.24 2.06 7.88 2 8.94 2 9.28 2 12s0 3.06.06 4.12c.16 3.64 2.18 5.66 5.82 5.82C8.94 22 9.28 22 12 22s3.06 0 4.12-.06c3.63-.16 5.66-2.18 5.82-5.82.06-1.06.06-1.4.06-4.12s0-3.06-.06-4.12c-.16-3.63-2.18-5.66-5.82-5.82C15.06 2 14.72 2 12 2z' },
+  { label: 'Pinterest', href: 'https://www.pinterest.com/mitchellvizensk/', d: 'M12.3 2C6.8 2 4 5.9 4 9.2c0 2 .75 3.77 2.36 4.43.27.11.5 0 .58-.29l.23-.92c.08-.29.05-.39-.17-.64-.47-.55-.77-1.27-.77-2.28 0-2.94 2.2-5.57 5.73-5.57 3.12 0 4.84 1.91 4.84 4.46 0 3.35-1.49 6.18-3.69 6.18-1.22 0-2.13-1-1.84-2.25.35-1.47 1.03-3.06 1.03-4.13 0-.95-.51-1.74-1.57-1.74-1.25 0-2.25 1.29-2.25 3.02 0 1.1.37 1.85.37 1.85l-1.5 6.36c-.45 1.89-.07 4.2-.03 4.43.02.14.2.17.28.07.12-.15 1.62-2 2.13-3.86.15-.52.83-3.22.83-3.22.41.78 1.6 1.47 2.87 1.47 3.78 0 6.34-3.44 6.34-8.05C20.4 5.1 17.25 2 12.3 2z' },
+  { label: 'Email', href: `mailto:${email}`, d: 'M2 5h20v14H2zm2 2v.6l8 5.1 8-5.1V7zm16 2.9-8 5.1-8-5.1V17h16z' },
+];
+---
+<nav class="phone-bar" aria-label="Quick links">
+  {links.map(l => <a href={l.href} target={l.href.startsWith('http') ? '_blank' : undefined} rel="noopener" aria-label={l.label}><svg viewBox="0 0 24 24" aria-hidden="true"><path d={l.d} /></svg></a>)}
+</nav>
+<a class="to-top" href="#top" aria-label="Back to top"></a>
+
+<style>
+  .phone-bar { display: none; }
+  @media (max-width: 999px) {
+    .phone-bar { position: fixed; inset: auto 0 0 0; z-index: 40; display: grid; grid-template-columns: repeat(4, 1fr); background: var(--white); border-top: 1px solid #e5e5e5; padding-bottom: env(safe-area-inset-bottom); }
+    .phone-bar a { display: grid; place-items: center; height: 50px; color: #000; border-left: 1px solid #eee; }
+    .phone-bar a:first-child { border-left: 0; }
+    .phone-bar svg { width: 24px; height: 24px; fill: currentColor; }
+  }
+  .to-top { position: fixed; right: 22px; bottom: 22px; z-index: 40; width: 36px; height: 36px; border: 1px solid #fff; background: rgba(0,0,0,.25); }
+  .to-top::before { content: ""; position: absolute; left: 50%; top: 55%; width: 10px; height: 10px; border: solid #fff; border-width: 1px 0 0 1px; transform: translate(-50%, -50%) rotate(45deg); }
+  @media (max-width: 999px) { .to-top { display: none; } }
+</style>

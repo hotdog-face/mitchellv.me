@@ -1,0 +1,14 @@
+---
+// Looping, muted video (used for former GIFs and background clips).
+// `name` refers to public/assets/video/<name>.mp4 (+ .webp poster).
+// Transparent clips have .webm (VP9 alpha) and .mov (HEVC alpha, for Safari) instead.
+import fs from 'node:fs';
+interface Props { name: string; class?: string; style?: string; controls?: boolean; autoplay?: boolean; label?: string }
+const { name, controls = false, autoplay = !controls, label, ...rest } = Astro.props;
+const dir = 'public/assets/video/';
+const alpha = fs.existsSync(dir + name + '.webm');
+const poster = fs.existsSync(dir + name + '.webp') ? `/assets/video/${name}.webp` : undefined;
+---
+{alpha
+  ? <video {...rest} poster={poster} autoplay muted loop playsinline data-hevc={`/assets/video/${name}.mov`} aria-label={label} aria-hidden={label ? undefined : 'true'}><source src={`/assets/video/${name}.webm`} type="video/webm" /></video>
+  : <video {...rest} src={`/assets/video/${name}.mp4`} poster={poster} autoplay={autoplay} muted={!controls} loop={!controls} controls={controls} playsinline preload={controls ? 'metadata' : 'auto'} aria-label={label} aria-hidden={label || controls ? undefined : 'true'}></video>}

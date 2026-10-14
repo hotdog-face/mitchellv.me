@@ -1,0 +1,68 @@
+---
+import Img from '../Img.astro';
+import { about } from '../../data/home';
+import { email } from '../../data/site';
+import processDetails from '../../data/process-details.html?raw';
+---
+<section class="about" id="about">
+  <Img name="ad8410d4" alt="" class="bg" sizes="100vw" />
+  <div class="inner">
+    <div class="process">
+      <Img name="e2360e39" alt="" class="process-anim" />
+      <ol>{about.process.map(step => <li data-anim="fade" style="--anim-dur:.6s;--anim-delay:.6s">{step}</li>)}</ol>
+    </div>
+    <Img name="avatar" alt="Mitchell Vizensky" class="avatar" sizes="149px" data-anim="fade" />
+    <div class="bio" data-anim="fade">{about.bio.map(p => <p>{p}</p>)}</div>
+    <hr data-anim="fade" style="--anim-dur:.6s;--anim-delay:.8s" />
+    <h2 data-anim="fade" style="--anim-dur:.6s;--anim-delay:.6s">SERVICES</h2>
+    <p class="services" data-anim="fade" style="--anim-dur:.6s;--anim-delay:.7s">{about.services}</p>
+    <div class="ctas">
+      <a class="btn btn--green" href={about.resume}>Resume</a>
+      <a class="btn btn--ghost" href={`mailto:${email}`}>Email</a>
+      <button class="btn btn--ghost" type="button" data-open="process-details">My Process</button>
+    </div>
+  </div>
+</section>
+
+<dialog class="popup" id="process-details" aria-labelledby="process-details-title">
+  <button class="close" type="button" aria-label="Close" data-close>&times;</button>
+  <div class="popup-body" set:html={processDetails} />
+</dialog>
+
+<style>
+  /* Coral base with the holographic image at 55% on top, as in the original */
+  .about { position: relative; overflow: hidden; background: var(--coral); color: var(--white); text-align: center; }
+  .about :global(.bg) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; }
+  .inner { position: relative; width: min(var(--content), 100% - 2 * var(--gutter)); margin-inline: auto; padding: 15px 0 56px; }
+  .process { position: relative; width: 410px; max-width: 100%; margin-inline: auto; }
+  .process :global(.process-anim) { width: 100%; height: auto; }
+  .process ol { position: absolute; left: 0; right: 0; top: 68px; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); }
+  .process li { font-size: 9px; line-height: 20.7px; font-weight: 700; letter-spacing: .21em; }
+  .about :global(.avatar) { width: 149px; height: 149px; margin: -14px auto 0; border-radius: 50%; object-fit: cover; }
+  .bio { margin-top: 15px; font-size: 15px; line-height: 1.28; }
+  .bio p { margin: 0 0 1.28em; }
+  .bio p:last-child { margin-bottom: 0; }
+  hr { width: 125px; margin: 24px auto 0; border: 0; border-top: 1px solid rgba(255,255,255,.32); }
+  h2 { margin-top: 20px; font-family: var(--heebo); font-weight: 500; font-size: 15px; line-height: 36px; letter-spacing: .25em; color: var(--white); }
+  .services { margin: 12px 0 0; font-size: 14px; line-height: 19.5px; letter-spacing: .15em; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 34px; justify-content: center; margin-top: 42px; }
+  .ctas .btn { width: 201px; min-height: 56px; border-radius: 5px; font-size: 22px; }
+  .ctas .btn--ghost { border-width: 2px; }
+  @media (max-width: 640px) {
+    .inner { padding-bottom: 48px; }
+    .process li { font-size: 8px; letter-spacing: .12em; }
+    .bio { font-size: 16px; line-height: 1.55; text-align: center; }
+    .services { letter-spacing: .08em; line-height: 1.6; }
+    .ctas { gap: 16px; flex-direction: column; align-items: center; }
+    .ctas .btn { width: min(280px, 100%); }
+  }
+
+  /* My Process popup */
+  .popup { width: min(760px, 100% - 32px); max-height: min(85vh, 900px); padding: 0; border: 0; color: var(--text); box-shadow: 0 20px 60px rgba(0,0,0,.35); }
+  .popup::backdrop { background: rgba(0,0,0,.6); }
+  .close { position: sticky; top: 0; float: right; margin: 8px 8px 0 0; width: 44px; height: 44px; border: 0; background: var(--white); font-size: 32px; line-height: 1; cursor: pointer; }
+  .popup-body { padding: 48px clamp(20px, 6vw, 64px); font-size: 15px; text-align: left; }
+  .popup-body :global(h2) { font-size: 30px; text-align: center; margin-bottom: 32px; }
+  .popup-body :global(h3) { color: var(--teal); font-size: 17px; font-weight: 700; margin: 40px 0 16px; }
+  .popup-body :global(h4) { color: #000; font-size: 15px; font-weight: 700; margin: 28px 0 8px; }
+</style>

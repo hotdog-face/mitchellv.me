@@ -1,0 +1,28 @@
+---
+import Img from '../Img.astro';
+import { contact } from '../../data/home';
+import { email, social } from '../../data/site';
+---
+<section class="contact" id="contact">
+  <h2>GET IN <span>TOUCH</span></h2>
+  <p>{contact.lead}</p>
+  <p><span class="label">E-mail:</span> <a href={`mailto:${email}`}>{email}</a></p>
+  <p class="label connect">Connect with me:</p>
+  <div class="icons">
+    {social.map(s => <a href={s.href} target="_blank" rel="noopener" aria-label={s.label}><Img name={s.round} alt="" sizes="60px" /></a>)}
+  </div>
+</section>
+
+<style>
+  .contact { background: #000; color: #fffffe; text-align: center; height: 698px; padding-top: 190px; }
+  h2 { font-size: 45px; line-height: 60px; color: var(--white); }
+  h2 span { color: var(--mint); font-weight: 300; }
+  p { margin: 0; font-size: 20px; line-height: 34px; }
+  p:first-of-type { margin-top: 19px; }
+  .label { color: var(--teal-dark); color: #17413f; font-weight: 700; }
+  .connect { margin-top: 34px; }
+  a { color: var(--white); text-decoration: none; }
+  .icons { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 9px; }
+  .icons :global(img) { width: 60px; height: 60px; }
+  @media (max-width: 999px) { .contact { height: auto; padding: 72px var(--gutter) 80px; } h2 { font-size: clamp(32px, 8vw, 45px); } p { font-size: 18px; } .icons { gap: 12px; } .icons :global(img) { width: 44px; height: 44px; } }
+</style>
