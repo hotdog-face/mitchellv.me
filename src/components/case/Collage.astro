@@ -1,0 +1,17 @@
+---
+// Fixed collage of images (the original "pro gallery"), scaled to fit the column.
+import Img from '../Img.astro';
+interface Props { width: number; height: number; items: { name: string; x: number; y: number; w: number; h: number }[] }
+const { width, height, items } = Astro.props;
+const pct = (v: number, of: number) => `${(v / of * 100).toFixed(3)}%`;
+---
+<div class="collage" style={`aspect-ratio:${width} / ${height}`}>
+  {items.map(i => (
+    <Img name={i.name} alt="Store layout iteration" sizes={`(max-width: 999px) ${Math.round(i.w / width * 100)}vw, ${i.w}px`}
+      style={`left:${pct(i.x, width)};top:${pct(i.y, height)};width:${pct(i.w, width)};height:${pct(i.h, height)}`} />
+  ))}
+</div>
+<style>
+  .collage { position: relative; width: 100%; }
+  .collage :global(img) { position: absolute; object-fit: cover; }
+</style>
