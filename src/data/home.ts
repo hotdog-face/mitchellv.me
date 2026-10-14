@@ -51,6 +51,18 @@ export const tiles = [
   { href: '/work/dragons-wealth', label: 'Dragons Wealth', image: 'c3766fa6', hover: '5aa9153f' },
 ];
 
+// Hover labels for the project tiles added after the original six (keyed by link).
+// Projects not listed use their title up to the first dash.
+export const tileLabels: Record<string, string> = {
+  '/work/vitaos': 'VitaOS',
+  '/reeltown-slots': 'ReelTown Store',
+  '/work/character-illustration': 'Character Art',
+  '/work/leagues': 'Leagues',
+  '/work/sunset-riches-parallax': 'SSR Parallax',
+  '/work/card-battler': 'Card Battler',
+  '/work/my-konami-slots': 'My Konami Slots',
+};
+
 export const clients = {
   image: '9b965350',
   alt: 'Clients: Shaq, Cirque du Soleil, MGM Grand, Konami, Big Fish, Plarium, Virgin, Adobe, Amazon, MTV, The Pokémon Company International',
