@@ -15,6 +15,7 @@ export default defineConfig({
     '/reeltown-slots': '/work/reeltown-slots',
     '/store-update': '/work/bfc-store-revamp',
     '/rtsstore': '/work/reeltown-slots',
+    '/work/tiny-town': '/work/',
   },
   image: { responsiveStyles: false },
 });
