@@ -192,6 +192,10 @@
   },
   {
    "type": "text",
+   "html": "<h3>Results</h3><ul class=\"ta-l\"><li>16% of weekly players joined the launch event, and about 7% play each event since.</li><li>About 80% of started rounds are finished with the prize pot collected (77% to 83% across events, improving over time).</li><li>40% of rounds are played across more than one session, and 23% across more than one day. Letting players leave and come back was the right call.</li><li>Players edit their deck between matches in 23% of rounds.</li><li>Between 42% and 53% of players who finish a round start another in the same event, and 24% to 30% come back for the next event.</li><li>The participation gap between new and established players narrowed from 11 points to 2 across events, so the mode reaches newer players better over time.</li><li>Players who tried Build &amp; Battle in their first two weeks were 15 points more likely to still be playing a month later. That's an association rather than a controlled test, since players who try a new mode early may already be more engaged.</li></ul>"
+  },
+  {
+   "type": "text",
    "html": "<h3>What I learned</h3><p class=\"ta-l\">Translating a physical event is less about copying it and more about deciding which parts make it special. Here that was opening a box together and playing for prizes. Keeping those, and redesigning everything around them for short mobile sessions, gave newer players a low-pressure way in without losing what experienced players love about prereleases.</p>"
   }
  ]

@@ -35,8 +35,8 @@ export const caseStudies: CaseStudy[] = [
     platforms: 'Desktop and mobile',
     impact: [
       { value: '14 → 5', label: 'steps to get a missing card' },
-      { value: '20%', label: 'day-3 retention goal reached' },
-      { value: '4.4/5', label: 'player satisfaction in testing' },
+      { value: '61%', label: 'of card exchanges now happen in Card Dex' },
+      { value: '+29%', label: 'card exchanges per player after launch' },
     ],
     image: 'work/card-dex/cover',
     featured: true,
@@ -52,8 +52,9 @@ export const caseStudies: CaseStudy[] = [
     team: 'Game designer, art, engineering',
     platforms: 'Mobile and desktop',
     impact: [
-      { value: 'Shipped', label: 'as a recurring live event mode' },
-      { value: '6', label: 'interactive prototypes, buy-in to prize pot' },
+      { value: '16%', label: 'of weekly players joined the launch event' },
+      { value: '~80%', label: 'of started rounds finished' },
+      { value: '40%', label: 'of rounds played across multiple sessions' },
     ],
     image: 'work/build-battle/cover',
     featured: true,
