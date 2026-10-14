@@ -73,5 +73,5 @@ export const quote = {
 };
 
 export const contact = {
-  lead: "Let's talk about how I can help you on your next project!",
+  lead: 'Want to work together? Say hello.',
 };
