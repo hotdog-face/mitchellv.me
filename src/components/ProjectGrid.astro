@@ -1,0 +1,35 @@
+---
+// A grid of project cards (cover, title, one-line summary). Used on /work and the home page.
+import Img from './Img.astro';
+import type { Card } from '../data/work';
+
+interface Props { cards: Card[]; eager?: number }
+const { cards, eager = 0 } = Astro.props;
+// one card per column: 4 columns at 1400px (332px each), 3 / 2 / 1 on smaller screens
+const sizes = '(min-width: 1432px) 332px, (min-width: 1004px) 31vw, (min-width: 680px) 47vw, calc(100vw - 32px)';
+---
+<div class="project-grid">
+  {cards.map((c, i) => (
+    <a class="project-card" href={c.href}>
+      <figure><Img name={c.image} sizes={sizes} loading={i < eager ? 'eager' : 'lazy'} /></figure>
+      <h2>{c.title}</h2>
+      <p>{c.line}</p>
+    </a>
+  ))}
+</div>
+
+<style>
+  .project-grid {
+    width: min(var(--grid-w, 1400px), 100% - 32px); margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 32px 24px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.6; text-align: left;
+  }
+  .project-card { display: block; text-decoration: none; color: var(--text); }
+  .project-card figure { margin: 0 0 12px; aspect-ratio: 808 / 632; overflow: hidden; background: #ddd; }
+  .project-card :global(img) { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+  .project-card:hover :global(img), .project-card:focus-visible :global(img) { transform: scale(1.03); }
+  .project-card h2 { font-size: 19px; font-weight: 700; color: var(--ink); margin: 0 0 4px; letter-spacing: 0; text-transform: none; }
+  .project-card:hover h2 { color: var(--pink); }
+  .project-card p { font-size: 13px; color: var(--muted); margin: 0; }
+  @media (prefers-reduced-motion: reduce) { .project-card :global(img) { transition: none; } }
+</style>

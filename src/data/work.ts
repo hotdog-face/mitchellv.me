@@ -8,6 +8,24 @@ export async function getWork(): Promise<Project[]> {
   return (await getCollection('work')).map(e => e.data).sort((a, b) => a.order - b.order);
 }
 
+/** A project card: everything a grid needs to link to one project. */
+export interface Card { href: string; title: string; line: string; image: string }
+
+// The case studies live in src/pages/*.mdx rather than the work collection.
+// `after` places each one in the card order (between work projects of that order and the next).
+const caseStudies: (Card & { after: number })[] = [
+  { href: '/pokemon-tv', title: 'Pokémon TV for Nintendo Switch', line: '2021 · UX/UI · Case Study', image: 'cases/pokemon-tv', after: 0 },
+  { href: '/bfc-store-revamp', title: 'Big Fish Casino Store Revamp', line: 'Big Fish Casino · UX/UI · Case Study', image: 'cases/bfc', after: 0 },
+  { href: '/reeltown-slots', title: 'ReelTown Slots Store Revamp', line: 'ReelTown Slots · UX/UI · Case Study', image: 'cases/reeltown', after: 0 },
+];
+
+/** Every project on the site (case studies and work pages), newest first. Used by /work and the home page. */
+export async function getCards(): Promise<Card[]> {
+  const work = (await getWork()).map(p => ({ href: `/work/${p.slug}`, title: p.title, line: p.card.line, image: `work/${p.slug}/${p.card.image}`, order: p.order }));
+  const cases = caseStudies.map(({ after, ...c }, i) => ({ ...c, order: after + 0.1 * (i + 1) }));
+  return [...work, ...cases].sort((a, b) => a.order - b.order).map(({ order, ...c }) => c);
+}
+
 export const CANVAS = 1400; // max width of the module column (--canvas in work.css)
 
 /** `sizes` for a single image that is shown at most `width` px wide inside the canvas. */

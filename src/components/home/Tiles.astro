@@ -1,7 +1,13 @@
 ---
 import Img from '../Img.astro';
 import Video from '../Video.astro';
-import { tiles, clients } from '../../data/home';
+import ProjectGrid from '../ProjectGrid.astro';
+import { tiles, clients, featured } from '../../data/home';
+import { getCards } from '../../data/work';
+
+// Every project not already shown above (featured projects and tiles), newest first.
+const shown = new Set<string>([...featured.map(f => f.href), ...tiles.map(t => t.href)]);
+const more = (await getCards()).filter(c => !shown.has(c.href));
 ---
 <section class="tiles-band">
   <div class="tiles">
@@ -13,12 +19,14 @@ import { tiles, clients } from '../../data/home';
       </a>
     ))}
   </div>
-  <p class="more"><a class="btn" href="/work/">More Projects</a></p>
+  <h2 class="more-title" id="more-projects">More Projects</h2>
+  <ProjectGrid cards={more} />
+  <p class="more"><a class="btn" href="/work/">All Work</a></p>
   <Img name={clients.image} alt={clients.alt} class="clients" sizes="100vw" data-anim="fly" />
 </section>
 
 <style>
-  .tiles-band { background: #e8e8e8; padding: 78px 0 11px; overflow: hidden; }
+  .tiles-band { background: #e8e8e8; padding: 78px 0 11px; overflow: hidden; --grid-w: var(--content); }
   .tiles { width: min(var(--content), 100% - 2 * var(--gutter)); margin-inline: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 21px 25px; }
   .tile { position: relative; display: block; aspect-ratio: 310 / 220; }
   .tile > :global(*) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity .1s; }
@@ -26,7 +34,8 @@ import { tiles, clients } from '../../data/home';
   .tile:hover :global(.hover), .tile:focus-visible :global(.hover) { opacity: 1; }
   .tile:active :global(.pressed) { opacity: 1; transition-duration: .1s; }
   .tile:active :global(.hover) { opacity: 0; }
-  .more { margin: 37px 0 0; text-align: center; }
+  .more-title { margin: 72px auto 32px; text-align: center; font-size: clamp(26px, 3vw, 34px); font-weight: 700; color: var(--ink); }
+  .more { margin: 48px 0 0; text-align: center; }
   .more .btn { width: 201px; border-radius: 5px; font-size: 22px; }
   .tiles-band :global(.clients) { width: min(1430px, 100%); margin: 50px auto 0; height: auto; }
   .more { line-height: 0; }
