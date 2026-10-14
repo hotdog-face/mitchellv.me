@@ -14,7 +14,7 @@ export const about = {
     'You have just under 15 seconds to surprise and delight your users before the cognitive load becomes too much and they close your software. This is why, in today’s tech-filled world, user experience (UX) is critical to the success of your company. Your users are most likely moving a mile-a-minute and doing multiple things at once. Creating a simplistic, streamlined experience will keep your multitasking audience engaged and interested in what your company has to say.',
     "I'm focused on creating meaningful experiences through design that will hold your users’ attention and keep them on their path to purchase. I’ve built my career in UX with the principles of user-centered design and design thinking at the core of my process and execution. Let’s work together to create a user experience that is intuitive and keeps your users around for longer than 15 seconds.",
   ],
-  services: 'Product Strategy / UX Prototyping / Wire Framing / Branding / Visual Design / Interaction Design / Motion Graphics / User Research / Data Visualization / Design Systems / Accessibility Design / Creative Direction / Concept Art / Team Leadership / Storytelling / Feedback and Critique / Project Management',
+  services: 'Product Strategy / UX Prototyping / Wireframing / Branding / Visual Design / Interaction Design / Motion Graphics / User Research / Data Visualization / Design Systems / Accessibility Design / Creative Direction / Concept Art / Team Leadership / Storytelling / Feedback and Critique / Project Management',
   resume: '/resume.pdf',
 };
 
@@ -29,13 +29,13 @@ export const featured = [
   {
     title: 'BFC Store Revamp',
     href: '/bfc-store-revamp',
-    text: "Big Fish Casino is a top-30 highest grossing social casino mobile app. Despite the app's success, its age had begun to show with the outdated store design. This redesign completely re-imagined the store's interaction and visual design, ultimately improving the companies bottom line and making purchasing a more intuitive and rewarding process.",
+    text: "Big Fish Casino is a top-30 highest grossing social casino mobile app. Despite the app's success, its age had begun to show with the outdated store design. This redesign completely re-imagined the store's interaction and visual design, ultimately improving the company's bottom line and making purchasing a more intuitive and rewarding process.",
     media: 'phone-video',
   },
   {
     title: 'Bug Brite',
     href: '/work/bug-brite',
-    text: "After leaving Big Fish Games I was finally free'd up to make a product that aligns with my own product vision and strategies. I teamed up with two of my skilled friends, and we have set our sights on the hyper casual mobile game market. Bug Brite is the first product we've completed together and are currently refining features to improve retention metrics.",
+    text: "After leaving Big Fish Games I was finally freed up to make a product that aligns with my own product vision and strategies. I teamed up with two of my skilled friends, and we have set our sights on the hyper casual mobile game market. Bug Brite is the first product we've completed together and are currently refining features to improve retention metrics.",
     media: 'phone-image',
   },
 ] as const;
@@ -62,5 +62,5 @@ export const quote = {
 };
 
 export const contact = {
-  lead: 'Lets talk about how I can help you on your next project!',
+  lead: "Let's talk about how I can help you on your next project!",
 };
