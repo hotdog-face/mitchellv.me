@@ -1,0 +1,221 @@
+{
+ "title": "ReelTown Slots Store Revamp",
+ "pageTitle": "MV | ReelTown Slots Store Revamp",
+ "slug": "reeltown-slots",
+ "order": -0.2,
+ "description": "<p>Overhauling the store of ReelTown Slots: competitor research, rounds of wireframes that brought a whole team to one design, and a purchase flow built around the moment a player gets what they paid for.</p>",
+ "meta": {
+  "date": "Big Fish Games",
+  "fields": [
+   "UX/UI",
+   "Wireframing",
+   "Monetization"
+  ]
+ },
+ "card": {
+  "image": "cover",
+  "line": "ReelTown Slots · UX/UI · Case Study"
+ },
+ "background": "#f4f3f2",
+ "dark": false,
+ "modules": [
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "f8a4def8",
+     "width": 2400,
+     "height": 1203,
+     "alt": "The redesigned ReelTown Slots store",
+     "ratio": 1.995
+    },
+    {
+     "kind": "image",
+     "name": "1220490e",
+     "width": 2400,
+     "height": 1200,
+     "alt": "The redesigned ReelTown Slots store",
+     "ratio": 2.0
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>The brief</h3><p class=\"ta-l\">I was brought onto the ReelTown Slots team to improve the app's usability, starting with the store. The goals were to increase conversion, improve legibility and the visual priority of the UI, explain the boost and VIP systems more clearly, and make buying feel clear and rewarding.</p><p class=\"ta-l\" style=\"font-size:13px;opacity:.75\">To comply with my non-disclosure agreement, I have omitted and obfuscated confidential information in this case study. All information in this case study is my own and does not necessarily reflect the views of Big Fish.</p>"
+  },
+  {
+   "type": "image",
+   "name": "af6ee882",
+   "width": 2400,
+   "height": 670,
+   "alt": "The previous ReelTown Slots store",
+   "maxWidth": 1200
+  },
+  {
+   "type": "text",
+   "html": "<p class=\"ta-l\">The previous store, before the redesign.</p>"
+  },
+  {
+   "type": "image",
+   "name": "49e466c7",
+   "width": 565,
+   "height": 728,
+   "alt": "Competitor store comparison",
+   "maxWidth": 420
+  },
+  {
+   "type": "text",
+   "html": "<h3>Competitor analysis</h3><p class=\"ta-l\">I started by learning what players in this niche had come to expect. I screen-recorded myself making small purchases in every app with real market share in our space, added each video to a shared spec, and compared every store on the same questions:</p><ul class=\"ta-l\"><li>Does the store have animated transitions?</li><li>Does it show the highest package first?</li><li>Are packages in a scrolling list?</li><li>Is there a confirmation after purchase?</li><li>Are there doobers (flying coins) that show the player they've been credited?</li><li>Does the player stay in the store after buying?</li></ul><p class=\"ta-l\">None of these is good or bad on its own, but together they gave us a clear record of the space before we committed to any decision.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "fc353094",
+     "width": 2400,
+     "height": 1641,
+     "alt": "Store wireframe iteration",
+     "ratio": 1.4625
+    },
+    {
+     "kind": "image",
+     "name": "f1bc53fb",
+     "width": 2400,
+     "height": 3599,
+     "alt": "Store wireframe iteration",
+     "ratio": 0.6669
+    },
+    {
+     "kind": "image",
+     "name": "2509843f",
+     "width": 2400,
+     "height": 2412,
+     "alt": "Store wireframe iteration",
+     "ratio": 0.995
+    },
+    {
+     "kind": "image",
+     "name": "618d8984",
+     "width": 2400,
+     "height": 1172,
+     "alt": "Store wireframe iteration",
+     "ratio": 2.0478
+    }
+   ]
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "a5fb2888",
+     "width": 2400,
+     "height": 970,
+     "alt": "Store wireframe iteration",
+     "ratio": 2.4742
+    },
+    {
+     "kind": "image",
+     "name": "aea9ea14",
+     "width": 1094,
+     "height": 1075,
+     "alt": "Store wireframe iteration",
+     "ratio": 1.0177
+    },
+    {
+     "kind": "image",
+     "name": "98b91e62",
+     "width": 2400,
+     "height": 1183,
+     "alt": "Store wireframe iteration",
+     "ratio": 2.0287
+    },
+    {
+     "kind": "image",
+     "name": "21e01e54",
+     "width": 2400,
+     "height": 3555,
+     "alt": "Store wireframe iteration",
+     "ratio": 0.6751
+    }
+   ]
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "5fe96ba5",
+     "width": 2400,
+     "height": 1014,
+     "alt": "Store wireframe iteration",
+     "ratio": 2.3669
+    },
+    {
+     "kind": "image",
+     "name": "5d5eb406",
+     "width": 1583,
+     "height": 1511,
+     "alt": "Store wireframe iteration",
+     "ratio": 1.0477
+    },
+    {
+     "kind": "image",
+     "name": "90f57b5b",
+     "width": 1094,
+     "height": 1075,
+     "alt": "Comparing horizontal and vertical package layouts",
+     "ratio": 1.0177
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>Iteration and exploration</h3><p class=\"ta-l\">Next I iterated on layouts. The brief was to stay away from visuals, so I worked in simple wireframes and focused on layout, visual priority and usability. This early stage is my favorite part of a project. With each round I narrowed in on what the decision makers wanted and what worked for the development team, while keeping players' needs first. Starting with the big problems and working down to the pixel-level ones, we arrived at a design the whole team was happy with.</p><p class=\"ta-l\">Stakeholders sometimes join late and ask why decisions were made, which can send a project back around in circles. So I save a new version of my working file at every major decision, so we can always jump back and see what we decided and why.</p>"
+  },
+  {
+   "type": "image",
+   "name": "fc353094",
+   "width": 2400,
+   "height": 1641,
+   "alt": "The final store layout",
+   "maxWidth": 1100
+  },
+  {
+   "type": "text",
+   "html": "<h3>Final layout</h3><p class=\"ta-l\">The layout we settled on in the final round.</p>"
+  },
+  {
+   "type": "video",
+   "name": "3094256d",
+   "width": 620,
+   "height": 348,
+   "label": "Purchase flow animation"
+  },
+  {
+   "type": "text",
+   "html": "<h3>The purchase flow</h3><p class=\"ta-l\">The most important part of a store is how buying feels. My competitor research set the minimum bar, and everything above it was a chance to delight. The key is the moment a player sees they've received what they bought: it should be exciting enough to feel like a real reward.</p>"
+  },
+  {
+   "type": "image",
+   "name": "4048a6b6",
+   "width": 1165,
+   "height": 670,
+   "alt": "Purchase confirmation still",
+   "maxWidth": 800
+  },
+  {
+   "type": "text",
+   "html": "<p class=\"ta-l\">This still was a placeholder for the illustrator to build from, with a particle effect planned for the character's staff. The particles, the animation choreography, the doobers and the big bold text all add up to a good experience for players spending their hard-earned money on virtual currency.</p><h3>Ship it</h3>"
+  },
+  {
+   "type": "video",
+   "name": "70ce7b3e",
+   "width": 532,
+   "height": 298,
+   "label": "The shipped store animation"
+  }
+ ]
+}

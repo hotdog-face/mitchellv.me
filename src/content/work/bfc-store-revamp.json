@@ -1,0 +1,151 @@
+{
+ "title": "Big Fish Casino Store Revamp",
+ "pageTitle": "MV | Big Fish Casino Store Revamp",
+ "slug": "bfc-store-revamp",
+ "order": -0.3,
+ "description": "<p>Redesigning the store of Big Fish Casino, a top-30 grossing social casino app, to make buying chips clearer and more rewarding. The new store brought in 38.4% more revenue than the old one.</p>",
+ "meta": {
+  "date": "Big Fish Games",
+  "fields": [
+   "UX/UI",
+   "User Research",
+   "Monetization"
+  ]
+ },
+ "card": {
+  "image": "cover",
+  "line": "Big Fish Casino · UX/UI · Case Study"
+ },
+ "background": "#f1efeb",
+ "dark": false,
+ "modules": [
+  {
+   "type": "image",
+   "name": "622e254c",
+   "width": 2400,
+   "height": 1771,
+   "alt": "The redesigned store on five phones",
+   "maxWidth": 1100
+  },
+  {
+   "type": "text",
+   "html": "<h3>The problem</h3><p class=\"ta-l\">Big Fish Casino is a top-30 grossing social casino mobile app. Despite its success, it had started to show its age. Customer feedback said the store was confusing, which put a hurdle in front of people who wanted to buy. The store needed to be designed for an older audience, to drive purchases and increase revenue.</p><p class=\"ta-l\"><strong>How might we make buying chips and gold in Big Fish Casino easier?</strong></p><h3>Goals</h3><ul class=\"ta-l\"><li>Increase bookings and conversion rate</li><li>Bring a modern look and feel that makes the store more trustworthy</li><li>Make the store's logic easy to understand</li><li>Promote sale multipliers, VIP multipliers and the total multiplier they add up to</li><li>Create a polished result that is fun and sparks delight</li></ul><p class=\"ta-l\" style=\"font-size:13px;opacity:.75\">To comply with my non-disclosure agreement, I have omitted and obfuscated confidential information in this case study. All information in this case study is my own and does not necessarily reflect the views of Big Fish.</p>"
+  },
+  {
+   "type": "compare",
+   "before": {
+    "name": "store-before",
+    "width": 1440,
+    "height": 1080,
+    "alt": "The Big Fish Casino store before the redesign"
+   },
+   "after": {
+    "name": "store-after",
+    "width": 1440,
+    "height": 1080,
+    "alt": "The redesigned Big Fish Casino store"
+   },
+   "beforeLabel": "Before",
+   "afterLabel": "After",
+   "maxWidth": 1000
+  },
+  {
+   "type": "text",
+   "html": "<h3>What I did</h3><ul class=\"ta-l\"><li>Ran a competitive analysis and used customer feedback and product metrics to ground the design.</li><li>Worked with product managers and engineers to build the redesigned store across platforms.</li><li>Built an interactive prototype and ran in-person user research to find usability issues.</li><li>Owned the UI specifications, documentation and final production of all designs and assets.</li></ul>"
+  },
+  {
+   "type": "video",
+   "name": "32a153cd",
+   "width": 530,
+   "height": 368,
+   "label": "Store design process animation"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Competitive analysis</h3><p class=\"ta-l\">I studied the top-grossing competitors, including apps outside the casino space, to see what they do well and what they do poorly. It also helped me make the case for my decisions with stakeholders.</p>"
+  },
+  {
+   "type": "grid",
+   "maxWidth": 1100,
+   "items": [
+    {
+     "kind": "image",
+     "name": "4d0b82df",
+     "width": 2400,
+     "height": 1839,
+     "alt": "Store layout iteration",
+     "ratio": 1.3051
+    },
+    {
+     "kind": "image",
+     "name": "aba3242e",
+     "width": 471,
+     "height": 572,
+     "alt": "Store layout iteration",
+     "ratio": 0.8234
+    },
+    {
+     "kind": "image",
+     "name": "88ac02d6",
+     "width": 727,
+     "height": 646,
+     "alt": "Store layout iteration",
+     "ratio": 1.1254
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>Iterating</h3><p class=\"ta-l\">I used the competitive analysis to explore layouts and flows for the new store, and presented many iterations to key stakeholders until we found the best layouts to build as playable prototypes.</p>"
+  },
+  {
+   "type": "video",
+   "name": "research",
+   "width": 640,
+   "height": 480,
+   "label": "Excerpt from a user testing session"
+  },
+  {
+   "type": "text",
+   "html": "<h3>User research</h3><p class=\"ta-l\">I built an interactive prototype, and we used it for direct interviews with players at our research lab in Seattle to understand what they prioritize when buying. Most players were happy with the new store, and their feedback shaped several more rounds of iteration.</p>"
+  },
+  {
+   "type": "image",
+   "name": "2a3539af",
+   "width": 1440,
+   "height": 650,
+   "alt": "Many iterations of the store's UI",
+   "maxWidth": 1200
+  },
+  {
+   "type": "text",
+   "html": "<h3>From approval to launch</h3><ul class=\"ta-l\"><li><strong>Engineering costing.</strong> As the design neared final approval, engineering ran a cost analysis to make sure it wasn't too expensive to build.</li><li><strong>Production.</strong> Art tasks such as effects animation and asset production were split across the art team. I worked closely with marketing, effects animators and illustrators to make sure it shipped polished and on time.</li><li><strong>Phased launch.</strong> Only some players saw the new store at first. Once the major bugs were fixed, it launched worldwide.</li><li><strong>After launch.</strong> We kept gathering data on what worked and what didn't, to keep improving revenue and the player experience.</li></ul>"
+  },
+  {
+   "type": "grid",
+   "maxWidth": 1000,
+   "items": [
+    {
+     "kind": "video",
+     "name": "526365ac",
+     "width": 972,
+     "height": 1080,
+     "label": "The store's purchase flow on a phone",
+     "ratio": 0.9
+    },
+    {
+     "kind": "video",
+     "name": "3118a3ac",
+     "width": 664,
+     "height": 614,
+     "label": "Production kickoff art",
+     "ratio": 1.0814
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>Results</h3><ul class=\"ta-l\"><li>The new store brought in 38.4% more revenue than the previous design.</li><li>Customer service tickets went down.</li><li>Players received it well: the clearer layout made buying chips easier and more delightful.</li></ul>"
+  }
+ ]
+}

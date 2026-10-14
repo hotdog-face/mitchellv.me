@@ -9,9 +9,12 @@ export default defineConfig({
   build: { format: 'preserve' },
   // addresses from the old Wix site keep working
   redirects: {
-    '/copy-of-store-revamp': '/pokemon-tv',
-    '/store-update': '/bfc-store-revamp',
-    '/rtsstore': '/reeltown-slots',
+    '/copy-of-store-revamp': '/work/pokemon-tv',
+    '/pokemon-tv': '/work/pokemon-tv',
+    '/bfc-store-revamp': '/work/bfc-store-revamp',
+    '/reeltown-slots': '/work/reeltown-slots',
+    '/store-update': '/work/bfc-store-revamp',
+    '/rtsstore': '/work/reeltown-slots',
   },
   image: { responsiveStyles: false },
 });

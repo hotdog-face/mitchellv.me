@@ -1,0 +1,170 @@
+{
+ "title": "Pokémon TV on Nintendo Switch",
+ "pageTitle": "MV | Pokémon TV on Nintendo Switch",
+ "slug": "pokemon-tv",
+ "order": -0.4,
+ "description": "<p>Porting the Pokémon TV streaming service to the Nintendo Switch, so young fans could watch on the device they already love. Monthly active users across all platforms rose 33.5% after launch.</p>",
+ "meta": {
+  "date": "2021",
+  "fields": [
+   "UX/UI",
+   "Prototyping",
+   "Console UI"
+  ]
+ },
+ "card": {
+  "image": "cover",
+  "line": "2021 · Pokémon TV · Case Study"
+ },
+ "background": "#f4f4f6",
+ "dark": false,
+ "modules": [
+  {
+   "type": "video",
+   "name": "0ca48d1e",
+   "width": 1280,
+   "height": 720,
+   "label": "Pokémon TV running on Nintendo Switch"
+  },
+  {
+   "type": "text",
+   "html": "<h3>The problem</h3><p class=\"ta-l\">In March of 2021, young Pokémon fans could only watch Pokémon TV on the web. The streaming service needed to come to Nintendo Switch to reach its most important audience. The Pokémon Company International created Pokémon TV to influence sales of Pokémon Trading Cards, and made the bold choice to leave out monetization entirely. The app had to be easy for young viewers to navigate while offering a big library of Pokémon shows and movies.</p><h3>Goals</h3><ul class=\"ta-l\"><li>Influence sales of Pokémon Trading Cards</li><li>Bring Pokémon TV to Nintendo Switch</li><li>Drive new viewers to the platform, toward a goal of 7.2M average monthly US views in 2021</li><li>Expand the reach of Pokémon's home entertainment</li><li>Increase customer lifetime value while growing brand loyalty</li><li>Create a polished experience that is fun and sparks delight</li></ul><p class=\"ta-l\" style=\"font-size:13px;opacity:.75\">To comply with my non-disclosure agreement, I have omitted and obfuscated confidential information in this case study. All information in this case study is my own and does not necessarily reflect the views of TPCI.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>What I did</h3><ul class=\"ta-l\"><li>Ran a competitive analysis, defined key personas, and used customer feedback and product metrics to ground the design.</li><li>Used the existing web product as the basis for the port, then designed Switch-specific solutions and wireframes.</li><li>Iterated on the designs with stakeholders until we had approval and buy-in.</li><li>Worked on an R&amp;D team, side by side with engineering, to prototype the approved designs in the Unity engine.</li><li>Built an interactive Unity prototype, localized into eight languages, and ran internal user research on it.</li><li>Owned the UI specifications, documentation and final production of all designs and assets.</li></ul>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Who it's for</h3><ul class=\"ta-l\"><li><strong>Kids, ages 4 to 12 (45% of viewers).</strong> The biggest opportunity: they influence their parents to buy cards, games and toys, and have the highest lifetime value.</li><li><strong>Millennial parents, 25 to 40 (25%).</strong> They hold the purchasing power and pass their love of Pokémon down to their kids.</li><li><strong>Millennials, 25 to 40 (15%).</strong> Adults who grew up with Pokémon and come back for the original series.</li><li><strong>TCG players, 6 to 45 (15%).</strong> On-demand videos of card matches keep them in the Pokémon world and playing the physical game.</li></ul>"
+  },
+  {
+   "type": "image",
+   "name": "d10c853d",
+   "width": 1328,
+   "height": 416,
+   "alt": "Competitive analysis: user journeys through streaming apps on Nintendo Switch",
+   "maxWidth": 1100
+  },
+  {
+   "type": "text",
+   "html": "<h3>Competitive analysis</h3><p class=\"ta-l\">I studied the top streaming services on Nintendo Switch to understand what users expect, where competitors excel and where they fall short. It grounded my decisions and helped me get buy-in from stakeholders.</p>"
+  },
+  {
+   "type": "image",
+   "name": "e9ed3d2e",
+   "width": 2400,
+   "height": 852,
+   "alt": "Wireframe flow for Pokémon TV on Nintendo Switch",
+   "maxWidth": 1200
+  },
+  {
+   "type": "image",
+   "name": "8d48767f",
+   "width": 2400,
+   "height": 949,
+   "alt": "Wireframes for Pokémon TV on Nintendo Switch",
+   "maxWidth": 1200
+  },
+  {
+   "type": "text",
+   "html": "<h3>Wireframes</h3><p class=\"ta-l\">I used the competitive analysis to explore layouts and flows for the Switch version, and iterated with key stakeholders until we found the best layout to build as a playable prototype.</p><p class=\"ta-l\">The app needed to feel like part of the same product as the existing web version, so the colors, fonts and branding followed it closely. My wireframes focused on how users discover and watch videos on Switch, with both controller support and touch in mind.</p>"
+  },
+  {
+   "type": "video",
+   "name": "d262048f",
+   "width": 1280,
+   "height": 702,
+   "label": "Interactive prototype of the Pokémon TV app"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Interactive prototype</h3><p class=\"ta-l\">This interactive prototype proved out the UX flow and won approval before we started building in Unity.</p>"
+  },
+  {
+   "type": "image",
+   "name": "7903ec09",
+   "width": 1087,
+   "height": 1702,
+   "alt": "Pokémon TV running on a Nintendo Switch development kit",
+   "maxWidth": 520
+  },
+  {
+   "type": "text",
+   "html": "<h3>Building for Nintendo Switch</h3><ul class=\"ta-l\"><li>After plenty of setup and trial and error, we got the app running on a Nintendo Switch development kit.</li><li>Pushing my own builds to a licensed Switch dev kit was a big personal milestone.</li><li>The Switch's fixed screen resolution made UI implementation simpler, with no responsive scaling to handle.</li><li>I learned a lot about designing UX for controllers and touch in the same app.</li><li>Afterward, I became my team's go-to Nintendo Switch expert at TPCI.</li></ul>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "97acd621",
+     "width": 2400,
+     "height": 1351,
+     "alt": "Shipped Pokémon TV screen on Nintendo Switch",
+     "ratio": 1.7765
+    },
+    {
+     "kind": "image",
+     "name": "935ea055",
+     "width": 2400,
+     "height": 1351,
+     "alt": "Shipped Pokémon TV screen on Nintendo Switch",
+     "ratio": 1.7765
+    },
+    {
+     "kind": "image",
+     "name": "8f5e2513",
+     "width": 2400,
+     "height": 1351,
+     "alt": "Shipped Pokémon TV screen on Nintendo Switch",
+     "ratio": 1.7765
+    }
+   ]
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "499869ef",
+     "width": 2400,
+     "height": 1351,
+     "alt": "Shipped Pokémon TV screen on Nintendo Switch",
+     "ratio": 1.7765
+    },
+    {
+     "kind": "image",
+     "name": "fc5d3fa3",
+     "width": 2400,
+     "height": 1351,
+     "alt": "Shipped Pokémon TV screen on Nintendo Switch",
+     "ratio": 1.7765
+    },
+    {
+     "kind": "image",
+     "name": "fdc901a2",
+     "width": 2400,
+     "height": 1351,
+     "alt": "Shipped Pokémon TV screen on Nintendo Switch",
+     "ratio": 1.7765
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>Launch</h3><p class=\"ta-l\">Pokémon TV for Nintendo Switch launched in August 2021, announced on the official Pokémon YouTube channel.</p>"
+  },
+  {
+   "type": "embed",
+   "src": "https://www.youtube-nocookie.com/embed/eefmgiP7Kfo",
+   "title": "Pokémon TV on Nintendo Switch launch video",
+   "width": 960,
+   "height": 540
+  },
+  {
+   "type": "text",
+   "html": "<h3>Results</h3><ul class=\"ta-l\"><li>Monthly active users across all platforms rose 33.5% after launch.</li><li>On average, viewers watched for an hour. Series and movies were the most engaging content, followed by the Junior section.</li><li>The app was responsive, easy to use and had a low bug count after launch. It kept supporting new Pokémon releases in every available region with minimal maintenance.</li></ul>"
+  }
+ ]
+}

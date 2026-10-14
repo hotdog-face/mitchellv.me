@@ -64,7 +64,7 @@ export const caseStudies: CaseStudy[] = [
     featured: true,
   },
   {
-    href: '/pokemon-tv',
+    href: '/work/pokemon-tv',
     title: 'Pokémon TV on Nintendo Switch',
     company: 'The Pokémon Company International',
     product: 'Pokémon TV',
@@ -82,7 +82,7 @@ export const caseStudies: CaseStudy[] = [
     featured: true,
   },
   {
-    href: '/bfc-store-revamp',
+    href: '/work/bfc-store-revamp',
     title: 'Big Fish Casino Store Revamp',
     company: 'Big Fish Games',
     product: 'Big Fish Casino',
@@ -98,7 +98,7 @@ export const caseStudies: CaseStudy[] = [
     featured: true,
   },
   {
-    href: '/reeltown-slots',
+    href: '/work/reeltown-slots',
     title: 'ReelTown Slots Store Revamp',
     company: 'Big Fish Games',
     product: 'ReelTown Slots',
