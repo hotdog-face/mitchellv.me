@@ -9,7 +9,7 @@ export async function getWork(): Promise<Project[]> {
 }
 
 /** A project card: everything a grid needs to link to one project. */
-export interface Card { href: string; title: string; line: string; image: string }
+export interface Card { href: string; title: string; line: string; image: string; note?: string }
 
 // The case studies live in src/pages/*.mdx rather than the work collection.
 // `after` places each one in the card order (between work projects of that order and the next).

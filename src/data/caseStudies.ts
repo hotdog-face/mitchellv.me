@@ -1,0 +1,118 @@
+// The curated case studies: what the home page leads with, the "Case studies" section on /work,
+// and the "At a glance" summary at the top of each case study. Edit facts here, in one place.
+// Order matters: it is the order on the home page and the "Next case study" order.
+
+export interface Stat { value: string; label: string }
+
+export interface CaseStudy {
+  href: string;
+  title: string;
+  company: string;
+  product: string;
+  year: string;
+  /** One or two sentences: the problem and what you did. Shown on cards. */
+  summary: string;
+  role: string;
+  team: string;
+  platforms: string;
+  impact: Stat[];
+  /** Cover image name (see Img.astro). */
+  image: string;
+  /** Shown in "Selected work" on the home page. */
+  featured: boolean;
+}
+
+export const caseStudies: CaseStudy[] = [
+  {
+    href: '/work/card-dex',
+    title: 'Card Dex & Research Missions',
+    company: 'The Pokémon Company International',
+    product: 'Pokémon TCG Live',
+    year: '2025 - 2026',
+    summary: 'Collecting a missing card took 14 steps across the shop and deck builder. I designed Card Dex, a home for every card you own, and Research Missions, which turns collecting into goals worth chasing.',
+    role: 'Senior UX Designer, primary UX designer on the feature',
+    team: 'Game designer, artist, contract UX designer, engineering, UX research',
+    platforms: 'Desktop and mobile',
+    impact: [
+      { value: '14 → 5', label: 'steps to get a missing card' },
+      { value: '20%', label: 'day-3 retention goal reached' },
+      { value: '4.4/5', label: 'player satisfaction in testing' },
+    ],
+    image: 'work/card-dex/cover',
+    featured: true,
+  },
+  {
+    href: '/work/build-battle',
+    title: 'Build & Battle',
+    company: 'The Pokémon Company International',
+    product: 'Pokémon TCG Live',
+    year: '2024',
+    summary: 'A new game mode that brings the in-store prerelease tournament online, so newer players have a friendlier way to build a deck and battle than Ranked.',
+    role: 'Senior UX Designer, UX for the whole mode',
+    team: 'Game designer, art, engineering',
+    platforms: 'Mobile and desktop',
+    impact: [
+      { value: 'Shipped', label: 'as a recurring live event mode' },
+      { value: '6', label: 'interactive prototypes, buy-in to prize pot' },
+    ],
+    image: 'work/build-battle/cover',
+    featured: true,
+  },
+  {
+    href: '/pokemon-tv',
+    title: 'Pokémon TV on Nintendo Switch',
+    company: 'The Pokémon Company International',
+    product: 'Pokémon TV',
+    year: '2021',
+    summary: 'Pokémon TV was web-only, which left out kids on Nintendo Switch. I designed the Switch app, a free streaming service built for controllers, touch and young viewers.',
+    role: 'UX/UI Designer, design through launch',
+    team: 'R&D team with engineering, prototyped in Unity',
+    platforms: 'Nintendo Switch',
+    impact: [
+      { value: '+33.5%', label: 'monthly active users across platforms' },
+    ],
+    image: 'cases/pokemon-tv',
+    featured: true,
+  },
+  {
+    href: '/bfc-store-revamp',
+    title: 'Big Fish Casino Store Revamp',
+    company: 'Big Fish Games',
+    product: 'Big Fish Casino',
+    year: '',
+    summary: "Big Fish Casino is a top-30 grossing social casino app, but its store hadn't kept up. I redesigned the store's interaction and visual design from the ground up.",
+    role: 'UX/UI Designer, research through production',
+    team: 'Product managers, engineering, art, effects animation, marketing',
+    platforms: 'iOS and Android',
+    impact: [
+      { value: '+38.4%', label: 'sales over the previous store' },
+    ],
+    image: 'cases/bfc',
+    featured: true,
+  },
+  {
+    href: '/reeltown-slots',
+    title: 'ReelTown Slots Store Revamp',
+    company: 'Big Fish Games',
+    product: 'ReelTown Slots',
+    year: '',
+    summary: 'Brought in to improve usability, I started with the store: competitor research and rounds of wireframes that got a whole team to agree on one design.',
+    role: 'UX Designer, wireframes and usability',
+    team: 'Product team and stakeholders',
+    platforms: 'iOS and Android',
+    impact: [],
+    image: 'cases/reeltown',
+    featured: false,
+  },
+];
+
+/** Side projects I design and build myself. */
+export const lab = ['/work/vitaos'];
+
+export const caseStudyFor = (path: string) => caseStudies.find(c => c.href === path.replace(/\/$/, ''));
+
+/** The case study after this one, wrapping around. */
+export function nextCaseStudy(path: string) {
+  const i = caseStudies.findIndex(c => c.href === path.replace(/\/$/, ''));
+  return i < 0 ? undefined : caseStudies[(i + 1) % caseStudies.length];
+}

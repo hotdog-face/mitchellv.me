@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "resume": "\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --no-proxy-server --no-pdf-header-footer --print-to-pdf=public/resume.pdf resume/resume.html"
+    "resume": "\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --no-proxy-server --no-pdf-header-footer --print-to-pdf=public/resume.pdf resume/resume.html",
+    "preview:deploy": "node scripts/deploy-preview.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "4.3.14",

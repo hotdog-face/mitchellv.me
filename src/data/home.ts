@@ -2,10 +2,29 @@
 // the layout lives in src/components/home/*.astro.
 
 export const hero = {
-  name: "I'm Mitchell",
-  role: 'Senior UX/UI Designer at The Pokémon Company International',
+  name: "I'm Mitchell Vizensky",
+  headline: 'Senior UX designer for games.',
+  pitch: 'I design the systems players come back for: collecting, progression, live events and stores. Right now that means Pokémon TCG Live at The Pokémon Company International.',
+  previously: 'Previously at Amazon, Big Fish Games and PLAYSTUDIOS',
   background: 'bff7d9c7',
 };
+
+// Quick proof points under the hero.
+export const proof = [
+  { value: '14', label: 'years in games' },
+  { value: '30+', label: 'games shipped' },
+  { value: 'Millions', label: 'of players reached' },
+  { value: '4', label: 'platforms: console, mobile, desktop, web' },
+];
+
+// What I bring, framed around what games studios hire senior UX designers for.
+// `href` points to the case study that proves it.
+export const strengths = [
+  { title: 'Collection & progression', text: 'Systems that give players long-term goals and a reason to return: collections, missions, stats and rewards.', proof: 'Card Dex & Research Missions', href: '/work/card-dex' },
+  { title: 'Game modes & live events', text: 'New ways to play, designed end to end from flow and grey box to the live event players see.', proof: 'Build & Battle', href: '/work/build-battle' },
+  { title: 'Stores & monetization', text: 'Store and offer experiences that feel rewarding to players and measurably move revenue.', proof: 'Big Fish Casino Store, +38.4% sales', href: '/bfc-store-revamp' },
+  { title: 'Research & prototyping', text: "I set up the user research process for Pokémon's Game Studio team, and I prototype in grey box, Unity and code to test ideas early.", proof: 'Pokémon TV on Nintendo Switch', href: '/pokemon-tv' },
+];
 
 export const about = {
   process: ['EMPATHIZE', 'DEFINE', 'IDEATE', 'PROTOTYPE', 'TEST'],

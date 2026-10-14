@@ -76,6 +76,7 @@ button { font: inherit; }
 }
 .btn:hover { filter: brightness(1.08); }
 .btn--green { background: var(--green); }
+.btn--pink { background: var(--pink); }
 .btn--ghost { background: transparent; border-color: var(--white); }
 .btn--ghost:hover { background: var(--white); color: var(--pink); filter: none; }
 

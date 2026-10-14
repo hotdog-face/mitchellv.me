@@ -14,6 +14,7 @@ const sizes = '(min-width: 1432px) 332px, (min-width: 1004px) 31vw, (min-width: 
       <figure><Img name={c.image} sizes={sizes} loading={i < eager ? 'eager' : 'lazy'} /></figure>
       <h2>{c.title}</h2>
       <p>{c.line}</p>
+      {c.note && <p class="note">{c.note}</p>}
     </a>
   ))}
 </div>
@@ -31,5 +32,6 @@ const sizes = '(min-width: 1432px) 332px, (min-width: 1004px) 31vw, (min-width: 
   .project-card h2 { font-size: 19px; font-weight: 700; color: var(--ink); margin: 0 0 4px; letter-spacing: 0; text-transform: none; }
   .project-card:hover h2 { color: var(--pink); }
   .project-card p { font-size: 13px; color: var(--muted); margin: 0; }
+  .project-card .note { margin-top: 4px; font-size: 13px; font-weight: 700; color: var(--pink); }
   @media (prefers-reduced-motion: reduce) { .project-card :global(img) { transition: none; } }
 </style>

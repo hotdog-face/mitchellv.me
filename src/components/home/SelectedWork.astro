@@ -1,0 +1,64 @@
+---
+// Home page: the featured case studies from src/data/caseStudies.ts, each with its results.
+import Img from '../Img.astro';
+import { caseStudies } from '../../data/caseStudies';
+const featured = caseStudies.filter(c => c.featured);
+---
+<section class="selected" id="work">
+  <div class="head">
+    <h2 class="heading"><b>SELECTED</b> WORK</h2>
+    <p class="sub">Shipped features from Pokémon TCG Live, Pokémon TV and Big Fish Casino, with the problem, my role and the results.</p>
+  </div>
+  <div class="list">
+    {featured.map((c, i) => (
+      <article class:list={['case', { flip: i % 2 === 1 }]}>
+        <a class="media" href={c.href} tabindex="-1" aria-hidden="true">
+          <Img name={c.image} alt="" sizes="(max-width: 860px) calc(100vw - 32px), 560px" loading={i < 2 ? 'eager' : 'lazy'} />
+        </a>
+        <div class="text" data-anim="fade">
+          <p class="eyebrow">{c.product}{c.year && <> · {c.year}</>}</p>
+          <h3><a href={c.href}>{c.title}</a></h3>
+          <p class="summary">{c.summary}</p>
+          {c.impact.length > 0 && (
+            <ul class="impact">
+              {c.impact.slice(0, 3).map(s => <li><strong>{s.value}</strong><span>{s.label}</span></li>)}
+            </ul>
+          )}
+          <p class="role">{c.role}</p>
+          <a class="btn" href={c.href}>Read case study</a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .selected { background: var(--page-gray); padding: 72px 0 88px; overflow: hidden; }
+  .head { width: min(1100px, 100% - 2 * var(--gutter)); margin: 0 auto 56px; text-align: center; }
+  .heading { font-size: clamp(28px, 4vw, 37px); color: #222; }
+  .heading b { color: #000; }
+  .sub { margin: 12px auto 0; max-width: 560px; color: var(--text); font-size: 16px; }
+  .list { width: min(1100px, 100% - 2 * var(--gutter)); margin-inline: auto; display: grid; gap: 72px; }
+  .case { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
+  .case.flip .media { order: 2; }
+  .media { display: block; border-radius: 14px; overflow: hidden; box-shadow: 0 18px 50px rgba(20, 24, 40, .18); background: #ddd; }
+  .media :global(img) { width: 100%; aspect-ratio: 808 / 632; object-fit: cover; transition: transform .5s; }
+  .case:hover .media :global(img) { transform: scale(1.025); }
+  .eyebrow { margin: 0 0 8px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--pink); font-weight: 700; }
+  h3 { font-size: clamp(28px, 3vw, 36px); font-weight: 700; line-height: 1.15; color: var(--ink); }
+  h3 a { text-decoration: none; }
+  h3 a:hover { color: var(--pink); }
+  .summary { margin: 14px 0 0; font-size: 16px; line-height: 1.55; color: var(--text); }
+  .impact { margin: 22px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 14px 28px; }
+  .impact li { display: grid; gap: 2px; max-width: 170px; }
+  .impact strong { font-size: 28px; line-height: 1.1; font-weight: 700; color: var(--pink); white-space: nowrap; }
+  .impact span { font-size: 13px; line-height: 1.35; color: var(--text); }
+  .role { margin: 20px 0 0; font-size: 13px; color: var(--muted); }
+  .text .btn { margin-top: 22px; min-width: 190px; border-radius: 5px; font-size: 18px; }
+  @media (max-width: 860px) {
+    .selected { padding: 56px 0 64px; }
+    .list { gap: 56px; }
+    .case { grid-template-columns: 1fr; gap: 22px; }
+    .case.flip .media { order: 0; }
+  }
+</style>
