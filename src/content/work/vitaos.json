@@ -32,9 +32,9 @@
   {
    "type": "video",
    "name": "tour",
-   "width": 960,
-   "height": 544,
-   "label": "VitaOS tour: Home, Play, Movies, Music and the homebrew store"
+   "width": 1280,
+   "height": 726,
+   "label": "VitaOS on the PS Vita: the splash animation, then Home, Play, Movies, Music and the homebrew store"
   },
   {
    "type": "text",

@@ -266,7 +266,7 @@ function initEmailMenus() {
 function initHoverClips() {
   if (reducedMotion || !matchMedia('(hover: hover)').matches) return;
   document.querySelectorAll<HTMLVideoElement>('video[data-hover-src]').forEach(v => {
-    const card = v.closest<HTMLElement>('.case') ?? v.parentElement!;
+    const card = v.closest<HTMLElement>('.case, .build, .lead') ?? v.parentElement!;
     v.addEventListener('playing', () => v.classList.add('playing'));
     card.addEventListener('pointerenter', () => {
       if (!v.src) { v.src = v.dataset.hoverSrc!; v.load(); }

@@ -3,7 +3,7 @@
  "pageTitle": "MV | Classic Mac Games",
  "slug": "classic-mac",
  "order": 0.4,
- "description": "<p>Games and toys for the original black-and-white Macintosh: an 8 MHz 68000, a 1-bit screen and System 6. Written in C and built on a modern Mac.</p>",
+ "description": "<p>Games, toys, screensavers and demos for the original black-and-white Macintosh: an 8 MHz 68000, a 1-bit screen and System 6. Written in C and built on a modern Mac.</p>",
  "meta": {
   "date": "2026",
   "fields": [
@@ -34,38 +34,116 @@
  "dark": false,
  "modules": [
   {
+   "type": "video",
+   "name": "growcity",
+   "width": 768,
+   "height": 514,
+   "label": "GrowCity, a tiny isometric city that grows on its own"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Designing for 1 bit and 8 MHz</h3><p class=\"ta-l\">These run on a stock Mac Plus, SE or Classic with 1 to 4 MB of RAM, or in an emulator. Every frame has to read in pure black and white, and every effect has to fit a 68000 with no floating-point unit. I measure real 8 MHz frame rates with a cycle-accurate emulator, so what you see is what the original hardware does.</p>"
+  },
+  {
    "type": "grid",
-   "maxWidth": 1000,
+   "maxWidth": 1100,
    "items": [
     {
-     "kind": "image",
-     "name": "jlb-title",
-     "width": 768,
-     "height": 768,
-     "alt": "Just One Boss title screen on a 1-bit Macintosh",
-     "ratio": 1
+     "kind": "video",
+     "name": "onefoe",
+     "width": 512,
+     "height": 566,
+     "label": "One Foe, an original single-boss bullet-hell duel",
+     "ratio": 0.9046
     },
     {
-     "kind": "image",
-     "name": "jlb-laser",
-     "width": 768,
-     "height": 768,
-     "alt": "Just One Boss laser attack on a 1-bit Macintosh",
-     "ratio": 1
+     "kind": "video",
+     "name": "celeste",
+     "width": 512,
+     "height": 512,
+     "label": "Celeste Classic, ported from PICO-8",
+     "ratio": 1.0
     },
     {
-     "kind": "image",
-     "name": "celeste-play",
-     "width": 768,
-     "height": 768,
-     "alt": "Celeste Classic gameplay on a 1-bit Macintosh",
-     "ratio": 1
+     "kind": "video",
+     "name": "justoneboss",
+     "width": 512,
+     "height": 512,
+     "label": "Just One Boss, ported from PICO-8 with its creator's permission",
+     "ratio": 1.0
     }
    ]
   },
   {
    "type": "text",
-   "html": "<h3>Designing for 1 bit and 8 MHz</h3><p class=\"ta-l\">These run on a stock Mac Plus, SE or Classic with 1 to 4 MB of RAM, or in an emulator. Every frame has to read in pure black and white, and every effect has to fit a 68000 with no floating-point unit.</p><ul class=\"ta-l\"><li><strong>One Foe</strong>, an original single-boss bullet-hell duel with four attack phases.</li><li><strong>Celeste Classic</strong>, a port of the PICO-8 original.</li><li><strong>Just One Boss</strong>, a port of the PICO-8 one-boss bullet dodger, made with its creator's permission.</li><li>Small toys and desk accessories, built with the Retro68 cross-compiler.</li></ul><p class=\"ta-l\">Most projects include a floppy disk image you can mount in an emulator or copy to real hardware.</p><p><a href=\"https://github.com/hotdog-face/classic-mac\">View classic-mac on GitHub</a> · <a href=\"https://github.com/hotdog-face/mac-classic-celeste-port\">Celeste port</a> · <a href=\"https://github.com/hotdog-face/just-one-boss-mac\">Just One Boss port</a></p>"
+   "html": "<h3>Games</h3><ul class=\"ta-l\"><li><strong>One Foe</strong>, an original single-boss bullet-hell duel with four attack phases.</li><li><strong>Celeste Classic</strong>, a port of the PICO-8 original.</li><li><strong>Just One Boss</strong>, a port of the PICO-8 one-boss bullet dodger, made with its creator's permission.</li><li><strong>GrowCity</strong>, a tiny city-growing toy.</li></ul>"
+  },
+  {
+   "type": "grid",
+   "maxWidth": 1100,
+   "items": [
+    {
+     "kind": "video",
+     "name": "pip",
+     "width": 338,
+     "height": 476,
+     "label": "Pip, a desk pet frog who lives on your Mac",
+     "ratio": 0.7101
+    },
+    {
+     "kind": "video",
+     "name": "aquarium",
+     "width": 768,
+     "height": 514,
+     "label": "Aquarium, a desktop fish tank",
+     "ratio": 1.4942
+    },
+    {
+     "kind": "video",
+     "name": "antfarm",
+     "width": 768,
+     "height": 514,
+     "label": "Ant Farm, an ant colony simulation",
+     "ratio": 1.4942
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>Toys and desk accessories</h3><ul class=\"ta-l\"><li><strong>Pip</strong>, a desk pet frog who yawns, scratches, gets startled, grumps, wanders and talks. Ask Pip a question, have it tell a joke, feed it or pet it.</li><li><strong>Aquarium</strong>, a desktop fish tank, and <strong>Ant Farm</strong>, an ant colony simulation.</li><li><strong>A dock</strong> for System 6 and 7, so the old Mac launches apps like a modern one.</li></ul>"
+  },
+  {
+   "type": "grid",
+   "maxWidth": 1100,
+   "items": [
+    {
+     "kind": "video",
+     "name": "dock",
+     "width": 768,
+     "height": 514,
+     "label": "A macOS-style dock for System 6 and 7",
+     "ratio": 1.4942
+    },
+    {
+     "kind": "video",
+     "name": "afterdark",
+     "width": 768,
+     "height": 514,
+     "label": "An Ants module for the After Dark screensaver",
+     "ratio": 1.4942
+    }
+   ]
+  },
+  {
+   "type": "video",
+   "name": "demos",
+   "width": 512,
+   "height": 342,
+   "label": "The demo pack: cube, donut, plasma, starfield and tunnel"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Screensavers and demos</h3><p class=\"ta-l\">Native modules for Berkeley Systems' After Dark 2.0, the 90s screensaver everyone remembers, and a small demoscene set pushing the 68000: a cube, plasma, a starfield, a tunnel and the obligatory spinning donut.</p><p class=\"ta-l\">Most projects include a floppy disk image you can mount in an emulator or copy to real hardware.</p>"
   }
  ]
 }

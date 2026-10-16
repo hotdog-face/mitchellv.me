@@ -1,0 +1,57 @@
+{
+ "title": "MR2 Dash",
+ "pageTitle": "MV | MR2 Dash",
+ "slug": "mr2-dash",
+ "order": 0.5,
+ "description": "<p>A live dashboard for my Toyota MR2, on my phone. It reads the car's computer through an OBD adapter and turns raw sensor data into the numbers that actually change how you drive: fuel economy right now, this trip and over time.</p>",
+ "meta": {
+  "date": "2026",
+  "fields": [
+   "UX/UI",
+   "Development",
+   "Hardware"
+  ]
+ },
+ "card": {
+  "image": "cover",
+  "line": "2026 · Build · Car dashboard app"
+ },
+ "background": "#121214",
+ "dark": true,
+ "modules": [
+  {
+   "type": "grid",
+   "maxWidth": 1000,
+   "items": [
+    {
+     "kind": "video",
+     "name": "demo",
+     "width": 540,
+     "height": 1200,
+     "label": "MR2 Dash demo: switching between the simple and gauge views, vehicle details and connection settings",
+     "ratio": 0.45
+    },
+    {
+     "kind": "image",
+     "name": "simple",
+     "width": 800,
+     "height": 1778,
+     "alt": "Simple view: instant mpg, last 5 minutes, trip and lifetime, with speed, rpm, coolant, load, airflow and lambda",
+     "ratio": 0.4499
+    },
+    {
+     "kind": "image",
+     "name": "details",
+     "width": 800,
+     "height": 1778,
+     "alt": "Vehicle details: estimated power and torque, charging voltage, coolant, load and fuel trim",
+     "ratio": 0.4499
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>Designed for a glance</h3><p class=\"ta-l\">A car is a terrible place to read a screen, so the hierarchy does the work. The biggest thing on screen is instant fuel economy, with a short read on what it means (\"Efficient cruise, light load at low revs\"). Under it sit the last 5 minutes, this trip and lifetime, so you can tell a good stretch from a good tank. Everything else is secondary and smaller.</p><ul class=\"ta-l\"><li><strong>Two views:</strong> a simple readout and a gauge, plus a 10-minute history bar colored from red to green.</li><li><strong>Honest numbers:</strong> estimates like power and torque are labeled as estimates, with a note on what they can and can't tell you, and the fuel gauge asks for a full-tank baseline instead of guessing.</li><li><strong>Built around the real car:</strong> it checks which values the car's computer actually supports and reads trouble codes.</li><li><strong>A demo mode</strong> with a simulated adapter, clearly marked and never saved as a real drive, for testing without the engine running.</li></ul><p class=\"ta-l\">It records trips too. I built it for my own car, to answer a question I kept asking while driving: is this actually efficient?</p>"
+  }
+ ]
+}

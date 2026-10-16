@@ -14,6 +14,8 @@ const github: Record<string, string> = {
   'classic-mac': 'https://github.com/hotdog-face/classic-mac',
   'retro-tv': 'https://github.com/hotdog-face/BroadcastBrain',
 };
+// short loops that play over a build's cover on hover (public/assets/hover/<slug>.mp4)
+const hover = new Set(['vitaos', 'hollowtide', 'classic-mac', 'mr2-dash']);
 const plain = (html = '') => html.replace(/<[^>]+>/g, '').trim();
 ---
 <section class="lab" id="builds">
@@ -21,12 +23,12 @@ const plain = (html = '') => html.replace(/<[^>]+>/g, '').trim();
     <div class="intro">
       <p class="eyebrow">Builds</p>
       <h2>I design and build my own software, end to end.</h2>
-      <p>Homebrew for consoles, games for the original black-and-white Macintosh, tools that let AI agents test on real hardware. I take each one from idea to a working build, often with AI coding tools. It keeps my prototyping sharp, and it's how I test ideas for real.</p>
+      <p>An MMO revival with its own client and a live server, homebrew for consoles, games for the original black-and-white Macintosh, a dashboard for my car. I take each one from idea to a working build, often with AI coding tools. It keeps my prototyping sharp, and it's how I test ideas for real.</p>
       <p class="gh"><a href="https://github.com/hotdog-face" target="_blank" rel="noopener">Everything is on GitHub →</a></p>
     </div>
     {lead && (
       <article class="lead">
-        <a class="media" href={`/work/${lead.slug}`} tabindex="-1" aria-hidden="true"><Img name={`work/${lead.slug}/${lead.card.image}`} alt="" sizes="(max-width: 860px) 100vw, 520px" /></a>
+        <a class="media" href={`/work/${lead.slug}`} tabindex="-1" aria-hidden="true"><Img name={`work/${lead.slug}/${lead.card.image}`} alt="" sizes="(max-width: 860px) 100vw, 520px" />{hover.has(lead.slug) && <video class="hover-clip" data-hover-src={`/assets/hover/${lead.slug}.mp4`} muted loop playsinline preload="none" aria-hidden="true"></video>}</a>
         <div class="text">
           <h3><a href={`/work/${lead.slug}`}>{lead.title}</a></h3>
           <p>{plain(lead.description)}</p>
@@ -41,7 +43,7 @@ const plain = (html = '') => html.replace(/<[^>]+>/g, '').trim();
   <div class="grid">
     {rest.map((p, i) => (
       <a class="build" href={`/work/${p.slug}`} data-anim="float-up" style={`--anim-dur:.8s;--anim-delay:${i * 0.1}s`}>
-        <Img name={`work/${p.slug}/${p.card.image}`} alt="" sizes="(max-width: 560px) 100vw, (max-width: 999px) 50vw, 270px" />
+        <span class="cover"><Img name={`work/${p.slug}/${p.card.image}`} alt="" sizes="(max-width: 560px) 100vw, (max-width: 999px) 50vw, 270px" />{hover.has(p.slug) && <video class="hover-clip" data-hover-src={`/assets/hover/${p.slug}.mp4`} muted loop playsinline preload="none" aria-hidden="true"></video>}</span>
         <span class="t">{p.title}</span>
         <span class="d">{plain(p.description)}</span>
       </a>
@@ -57,7 +59,10 @@ const plain = (html = '') => html.replace(/<[^>]+>/g, '').trim();
   .intro p:not(.eyebrow) { margin-top: 14px; color: #b9b9bf; font-size: 16px; line-height: 1.55; }
   .intro .gh a { color: var(--mint); font-weight: 700; text-decoration: none; }
   .lead { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 18px; }
-  .media { display: block; border-radius: 10px; overflow: hidden; }
+  .media { position: relative; display: block; border-radius: 10px; overflow: hidden; }
+  .cover { position: relative; display: block; border-radius: 10px; overflow: hidden; }
+  .hover-clip { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #121214; opacity: 0; transition: opacity .35s; pointer-events: none; }
+  .hover-clip.playing { opacity: 1; }
   .media :global(img) { width: 100%; aspect-ratio: 960 / 544; object-fit: cover; }
   h3 { font-size: 24px; font-weight: 700; }
   h3 a { color: #fff; text-decoration: none; }

@@ -1,0 +1,150 @@
+{
+ "title": "Hollowtide",
+ "pageTitle": "MV | Hollowtide",
+ "slug": "hollowtide",
+ "order": 0.12,
+ "description": "<p>A fan revival of Asheron's Call, the 1999 MMO I grew up on: its own client for Windows, Mac and Linux with the community's favorite add-ons built in, on a live server with new bosses, gear and events.</p>",
+ "meta": {
+  "date": "2026",
+  "fields": [
+   "Game design",
+   "Development",
+   "Live ops"
+  ]
+ },
+ "card": {
+  "image": "cover",
+  "line": "2026 · Build · MMO revival"
+ },
+ "links": [
+  {
+   "label": "Play on itch.io",
+   "href": "https://lumpybutt33.itch.io/hollowtide"
+  },
+  {
+   "label": "Server source on GitHub",
+   "href": "https://github.com/hotdog-face/hollowtide-server"
+  }
+ ],
+ "background": "#121214",
+ "dark": true,
+ "modules": [
+  {
+   "type": "image",
+   "name": "hero-wide",
+   "width": 1600,
+   "height": 900,
+   "alt": "Hollowtide: a player facing an Aetherium Golem on a sunlit coast"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Overview</h3><p class=\"ta-l\">I've wanted to make something like Asheron's Call since I first played it in 1999 on dial-up. AI coding tools are what finally made it possible. Hollowtide is its own game client, native on Windows, Mac (including Apple Silicon) and Linux, that installs and updates through itch.io, connected to a live server I run with new content on top of the original game.</p><p class=\"ta-l\">I design it, build it and run it: the client, the server mod, the new content and the community around it.</p>"
+  },
+  {
+   "type": "video",
+   "name": "cut",
+   "width": 960,
+   "height": 540,
+   "label": "Hollowtide portfolio cut: the browser login, Holtburg, the built-in map, VTank, auto loot and the Forge-Warden boss fight"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Quality of life, built in</h3><p class=\"ta-l\">Veteran players relied on third-party add-ons to make the game playable. Hollowtide builds them into the client, so there's nothing to install:</p><ul class=\"ta-l\"><li><strong>VTank, built in:</strong> auto attack, buffing, healing, looting and salvage, with navigation routes drawn right in the world. Players' old route and loot files load as they are.</li><li><strong>A searchable world map</strong> you can zoom from one town to the whole continent, with your own pins.</li><li><strong>Item comparison</strong> that shows what a new piece of gear changes before you equip it.</li><li><strong>A radar</strong> that shows walls and coordinates, plus real water, swaying trees, grass you walk through and smoother movement for everyone around you.</li></ul>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "world-map",
+     "width": 1600,
+     "height": 1292,
+     "alt": "The world map: pin your own spots, zoom from Holtburg to all of Dereth, search any place by name",
+     "ratio": 1.2384
+    },
+    {
+     "kind": "image",
+     "name": "item-compare",
+     "width": 1600,
+     "height": 1292,
+     "alt": "Item comparison tooltip showing what a new axe changes",
+     "ratio": 1.2384
+    },
+    {
+     "kind": "image",
+     "name": "radar",
+     "width": 1600,
+     "height": 1292,
+     "alt": "Radar with walls and coordinates",
+     "ratio": 1.2384
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>A living world</h3><p class=\"ta-l\">The server runs new content on top of the original game: world bosses on a timer with personal loot, new quests, weapons, creatures and pets, a seasonal festival, and a PK season ladder with titles and the Arena back.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "forge-warden",
+     "width": 1600,
+     "height": 1292,
+     "alt": "The Forge-Warden of Ispar, a new world boss",
+     "ratio": 1.2384
+    },
+    {
+     "kind": "image",
+     "name": "brinecoil",
+     "width": 1600,
+     "height": 1292,
+     "alt": "The Brinecoil Serpent rising from the water",
+     "ratio": 1.2384
+    }
+   ]
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "armor",
+     "width": 1600,
+     "height": 1292,
+     "alt": "Wardenforged armor, new gear",
+     "ratio": 1.2384
+    },
+    {
+     "kind": "image",
+     "name": "varrow",
+     "width": 1600,
+     "height": 1292,
+     "alt": "Varrow the Unbowed, a new duelist",
+     "ratio": 1.2384
+    },
+    {
+     "kind": "image",
+     "name": "festival",
+     "width": 1600,
+     "height": 1292,
+     "alt": "The festival season in town",
+     "ratio": 1.2384
+    }
+   ]
+  },
+  {
+   "type": "image",
+   "name": "creatures",
+   "width": 1600,
+   "height": 1102,
+   "alt": "New creatures and bosses: the Forge-Warden of Ispar, Aetherium Golem, Brinecoil Serpent, Tidewrack Crabs, Lanternmaw, Varrow the Unbowed and more",
+   "maxWidth": 1200
+  },
+  {
+   "type": "text",
+   "html": "<h3>Running it live</h3><p class=\"ta-l\">Running a live server is its own design job: tuning anti-cheat limits, fixing what players hit, and inviting people in. I announce updates, invite players to meet up in Holtburg, and ask them directly what isn't working, because one person can only find so many bugs. The client also speaks the same protocol as other community servers, so it can bring the scattered Asheron's Call community together rather than split it further.</p><p class=\"ta-l\" style=\"font-size:13px;opacity:.75\">Hollowtide is a fan project, not affiliated with or endorsed by Turbine, WB Games or the original game's owners. No game data is included: players use their own copy of the original game's files. The server source is published under the AGPL, as required by the ACE emulator it builds on.</p>"
+  }
+ ]
+}
