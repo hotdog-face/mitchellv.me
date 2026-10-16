@@ -10,12 +10,13 @@ const [lead, ...rest] = items;
 const github: Record<string, string> = {
   vitaos: 'https://github.com/hotdog-face/VitaOS',
   'gameplay-spotlight': 'https://github.com/hotdog-face/gameplay-spotlight',
+  prism: 'https://github.com/hotdog-face/prism',
   'vita-agent-bridge': 'https://github.com/hotdog-face/vita-agent-bridge',
   'classic-mac': 'https://github.com/hotdog-face/classic-mac',
   'retro-tv': 'https://github.com/hotdog-face/BroadcastBrain',
 };
 // short loops that play over a build's cover on hover (public/assets/hover/<slug>.mp4)
-const hover = new Set(['vitaos', 'hollowtide', 'classic-mac', 'mr2-dash']);
+const hover = new Set(['vitaos', 'prism', 'hollowtide', 'classic-mac', 'mr2-dash']);
 const plain = (html = '') => html.replace(/<[^>]+>/g, '').trim();
 ---
 <section class="lab" id="builds">
@@ -23,7 +24,7 @@ const plain = (html = '') => html.replace(/<[^>]+>/g, '').trim();
     <div class="intro">
       <p class="eyebrow">Builds</p>
       <h2>I design and build my own software, end to end.</h2>
-      <p>An MMO revival with its own client and a live server, homebrew for consoles, games for the original black-and-white Macintosh, a dashboard for my car. I take each one from idea to a working build, often with AI coding tools. It keeps my prototyping sharp, and it's how I test ideas for real.</p>
+      <p>A console home screen for the Steam Deck, an MMO revival with its own client and a live server, homebrew for consoles, games for the original black-and-white Macintosh, a dashboard for my car. I take each one from idea to a working build, often with AI coding tools. It keeps my prototyping sharp, and it's how I test ideas for real.</p>
       <p class="gh"><a href="https://github.com/hotdog-face" target="_blank" rel="noopener">Everything is on GitHub →</a></p>
     </div>
     {lead && (
