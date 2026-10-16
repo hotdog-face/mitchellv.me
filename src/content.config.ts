@@ -24,7 +24,7 @@ const module = z.discriminatedUnion('type', [
     // looping clip laid over part of the image; position/size in % of the image
     overlay: z.object({ name: z.string(), left: z.number(), top: z.number(), width: z.number() }).optional(),
   }),
-  video.extend({ type: z.literal('video') }),
+  video.extend({ type: z.literal('video'), maxWidth: z.number().optional() }),
   z.object({
     type: z.literal('grid'),
     // justified row: each item grows in proportion to its aspect ratio

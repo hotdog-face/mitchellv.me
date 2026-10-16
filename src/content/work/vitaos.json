@@ -34,7 +34,8 @@
    "name": "showcase",
    "width": 1920,
    "height": 1080,
-   "label": "VitaOS captured on the PS Vita: the boot splash, Home with community news, Play, Music, Apps, Files, the homebrew store and Settings"
+   "label": "VitaOS captured on the PS Vita: the boot splash, Home with community news, Play, Music, Apps, Files, the homebrew store and Settings",
+   "maxWidth": 1000
   },
   {
    "type": "text",
@@ -100,6 +101,18 @@
   {
    "type": "text",
    "html": "<h3>Movies and Downloads</h3><p class=\"ta-l\"><b>Movies</b> is a cover flow of your films with resume, plus swipe gestures for brightness and volume. <b>Downloads</b> is a homebrew store built on VitaHomebrewDB. It sorts by popularity and installs straight onto the Vita.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>On the real hardware</h3><p class=\"ta-l\">VitaOS running on my PS Vita: powering on, the Vita splash into Home and Quick Resume, then the Play tab, game pages, Music, Apps, the homebrew store and Settings, driven with the buttons and the touchscreen.</p>"
+  },
+  {
+   "type": "video",
+   "name": "hardware",
+   "width": 1280,
+   "height": 720,
+   "label": "VitaOS running on a PS Vita held in two hands: boot, Home, Play, Music, Apps, Store and Settings",
+   "maxWidth": 1000
   },
   {
    "type": "text",

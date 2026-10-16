@@ -63,7 +63,7 @@ const description = p.description ? plain(p.description) : `${p.title} - ${p.met
               );
             case 'video':
               return (
-                <figure class="m m-img">
+                <figure class="m m-img" style={m.maxWidth ? `max-width:${m.maxWidth}px;margin-inline:auto;padding:32px 16px` : undefined}>
                   {i === 0
                     ? <video src={`${pub}/${m.name}.mp4`} poster={`${pub}/${m.name}.webp`} width={m.width} height={m.height}
                         autoplay muted loop playsinline preload="metadata" aria-label={m.label}></video>
