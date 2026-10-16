@@ -41,6 +41,17 @@
    "html": "<h3>Overview</h3><p class=\"ta-l\">The Vita's original menu is a grid of app bubbles, and its homebrew lives in separate tools that each work differently. VitaOS brings everything into one place: games across RetroArch, PSP and Vita, films, music, photos, apps and a homebrew store. All of it sits behind tabbed navigation that is quick to learn on a 5-inch screen and works with the buttons or the touchscreen.</p><p class=\"ta-l\">I designed and built it end to end: the information architecture, the interface and motion, the sound and the code. It's free and open source.</p>"
   },
   {
+   "type": "text",
+   "html": "<h3>On the real hardware</h3><p class=\"ta-l\">VitaOS running on my PS Vita: powering on, the Vita splash into Home and Quick Resume, then the Play tab, game pages, Music, Apps, the homebrew store and Settings, driven with the buttons and the touchscreen.</p>"
+  },
+  {
+   "type": "video",
+   "name": "hardware",
+   "width": 1024,
+   "height": 576,
+   "label": "VitaOS running on a PS Vita held in two hands: boot, Home, Play, Music, Apps, Store and Settings"
+  },
+  {
    "type": "image",
    "name": "home",
    "width": 960,
