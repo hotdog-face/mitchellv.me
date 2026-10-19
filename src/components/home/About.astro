@@ -18,7 +18,7 @@ import processDetails from '../../data/process-details.html?raw';
     <h2 data-anim="fade" style="--anim-dur:.6s;--anim-delay:.6s">SERVICES</h2>
     <p class="services" data-anim="fade" style="--anim-dur:.6s;--anim-delay:.7s">{about.services.split(' / ').map(s => s.replaceAll(' ', '\u00a0')).join(' / ')}</p>
     <div class="ctas">
-      <a class="btn btn--green" href={about.resume}>Resume</a>
+      <a class="btn btn--green" href={about.resume} target="_blank" rel="noopener">Resume</a>
       <EmailMenu label="Email" class="btn btn--ghost" />
       <button class="btn btn--ghost" type="button" data-open="process-details">My Process</button>
     </div>
@@ -61,7 +61,8 @@ import processDetails from '../../data/process-details.html?raw';
   /* My Process popup */
   .popup { width: min(760px, 100% - 32px); max-height: min(85vh, 900px); padding: 0; border: 0; color: var(--text); box-shadow: 0 20px 60px rgba(0,0,0,.35); }
   .popup::backdrop { background: rgba(0,0,0,.6); }
-  .close { position: sticky; top: 0; float: right; margin: 8px 8px 0 0; width: 44px; height: 44px; border: 0; background: var(--white); font-size: 32px; line-height: 1; cursor: pointer; }
+  .close { position: sticky; top: 0; float: right; margin: 8px 8px 0 0; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: var(--heading); font-size: 32px; line-height: 1; cursor: pointer; transition: background .2s; }
+  .close:hover, .close:focus-visible { background: color-mix(in srgb, var(--heading) 12%, transparent); }
   .popup-body { padding: 48px clamp(20px, 6vw, 64px); font-size: 15px; text-align: left; }
   .popup-body :global(h2) { font-size: 30px; text-align: center; margin-bottom: 32px; }
   .popup-body :global(h3) { color: var(--teal); font-size: 17px; font-weight: 700; margin: 40px 0 16px; }
