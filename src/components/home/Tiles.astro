@@ -9,7 +9,7 @@ const above = new Set<string>([...caseStudies.filter(c => c.featured).map(c => c
 const ARCHIVE_MAX = 9;
 const items = (await getCards()).filter(c => !above.has(c.href)).slice(0, ARCHIVE_MAX)
   .map(c => ({ ...c, short: c.title.split(/ [-—–] /)[0] }));
-const sizes = '(max-width: 520px) 92vw, (max-width: 820px) 46vw, 330px';
+const sizes = '(max-width: 820px) 46vw, 330px';
 ---
 <section class="tiles-band" id="archive">
   <div class="head">
@@ -44,6 +44,15 @@ const sizes = '(max-width: 520px) 92vw, (max-width: 820px) 46vw, 330px';
   .more { margin: 36px 0 0; text-align: center; }
   .more .btn { border-radius: 5px; font-size: 18px; }
   @media (max-width: 820px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } }
-  @media (max-width: 520px) { .tiles { grid-template-columns: 1fr; } .tiles-band { padding: 56px 0; } }
+  /* phones: two small columns, three rows; /work has the rest */
+  @media (max-width: 520px) {
+    .tiles-band { padding: 56px 0; }
+    .tiles { gap: 12px; }
+    .tile { border-radius: 10px; }
+    .tile:nth-child(n+7) { display: none; }
+    .cap { left: 10px; right: 10px; bottom: 9px; }
+    .t { font-size: 14px; }
+    .l { display: none; }
+  }
   @media (prefers-reduced-motion: reduce) { .tile :global(img) { transition: none; } }
 </style>

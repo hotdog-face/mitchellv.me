@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import PhoneBar from '../components/PhoneBar.astro';
 
 interface Props { title: string; description?: string; fonts?: string; image?: string; theme?: 'light' }
-const { title, theme, image = '/assets/og/home.jpg', description = 'Mitchell Vizensky - Senior UX/UI Designer at The Pokémon Company International. Portfolio of game and product design work.', fonts } = Astro.props;
+const { title, theme, image = '/assets/og/home.jpg', description = 'Mitchell Vizensky, senior game UX designer who takes features from idea to playable. Case studies, playable prototypes and builds.', fonts } = Astro.props;
 // pages are served without a trailing slash, except the home page and the /work/ index
 const path = Astro.url.pathname === '/' || Astro.url.pathname === '/work/' ? Astro.url.pathname : Astro.url.pathname.replace(/\/$/, '');
 const canonical = new URL(path, Astro.site);
@@ -35,6 +35,7 @@ const ogImage = new URL(image, Astro.site);
   <meta property="og:image" content={ogImage}>
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content={title}>
   <meta name="twitter:card" content="summary_large_image">
   {fonts && <link rel="preconnect" href="https://fonts.googleapis.com" />}
   {fonts && <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />}

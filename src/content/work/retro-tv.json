@@ -1,6 +1,6 @@
 {
  "title": "Retro Cable TV",
- "pageTitle": "MV | Retro Cable TV",
+ "pageTitle": "Retro Cable TV | Mitchell Vizensky",
  "slug": "retro-tv",
  "order": 0.5,
  "description": "<p>A retro cable box that plays 2002 to 2006 American television on a CRT, fed by a pipeline that turns archived TV into a searchable, scheduled library.</p>",
@@ -39,7 +39,11 @@
   },
   {
    "type": "text",
-   "html": "<h3>Turning a pile of tapes into a channel</h3><p class=\"ta-l\">The box runs FieldStation42 on a Raspberry Pi driving a composite CRT. The hard part is the library, so I built two tools for it.</p><p class=\"ta-l\"><strong>BroadcastBrain</strong> takes Internet Archive downloads, VHS captures, DVR recordings and DVD rips, and turns them into a segmented, analyzed, deduplicated library ready to schedule as cable. You drop videos in a folder, run one command, and wake up to a processed library. You can search it in plain English, like \"all MTV clips from 2004\", and every AI step is optional: the pipeline still runs without it and fills the gaps later.</p><p class=\"ta-l\"><strong>RetroConvert</strong> batch-converts video to 640x480 for the CRT. It never upscales, verifies each file before deleting the source, and picks up where it left off.</p><p><a href=\"https://github.com/hotdog-face/BroadcastBrain\">View BroadcastBrain on GitHub</a> · <a href=\"https://github.com/hotdog-face/RetroConvert\">RetroConvert</a></p>"
+   "html": "<h3>Turning a pile of tapes into a channel</h3><p class=\"ta-l\">The box runs FieldStation42 on a Raspberry Pi driving a composite CRT. The hard part is the library, so I built two tools for it.</p><p class=\"ta-l\"><strong>BroadcastBrain</strong> takes Internet Archive downloads, VHS captures, DVR recordings and DVD rips, and turns them into a segmented, analyzed, deduplicated library ready to schedule as cable. You drop videos in a folder, run one command, and wake up to a processed library. You can search it in plain English, like \"all MTV clips from 2004\", and every AI step is optional: the pipeline still runs without it and fills the gaps later.</p><p class=\"ta-l\"><strong>RetroConvert</strong> batch-converts video to 640x480 for the CRT. It never upscales, verifies each file before deleting the source, and picks up where it left off.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Three steps for the person using it</h3><p class=\"ta-l\">Under the hood the pipeline is complex: it finds the cuts in hours of recordings, analyzes every clip, removes duplicates and sorts everything into a library. I designed it so none of that is the user's problem. The job is three steps.</p><ol class=\"flow\"><li>Drop videos in a folder</li><li>Run one command</li><li>Wake up to a library</li></ol><h3>Key decisions</h3><ul class=\"ta-l\"><li><strong>Explain every decision.</strong> The tool never just labels a clip. Each analyzer votes with a reason, and you can ask why something was filed as a promo and see the votes.</li><li><strong>Never guess, never delete.</strong> Clips that don't clear the confidence bar go to Unknown, where they stay searchable. Duplicates are set aside, not thrown away.</li><li><strong>Recover from anything.</strong> Pull the plug mid-run and the next run picks up where it stopped, losing at most one step.</li><li><strong>Make it feel like real cable.</strong> Cuts snap to the 15, 30 and 60-second slots cable actually used, and the export builds real ad breaks: a show, then commercials with a network promo in the middle and a bumper coming back.</li></ul><ol class=\"flow\"><li>Show</li><li>Commercial</li><li>Network promo</li><li>Commercial</li><li>Bumper</li><li>Next show</li></ol><h3>What I learned</h3><p class=\"ta-l\">Automation people can't see into is automation they don't trust. Making the AI optional, and showing its reasoning when it is used, mattered more to the experience than making it smarter.</p><p><a href=\"https://github.com/hotdog-face/BroadcastBrain\">View BroadcastBrain on GitHub</a> · <a href=\"https://github.com/hotdog-face/RetroConvert\">RetroConvert</a></p>"
   }
  ]
 }

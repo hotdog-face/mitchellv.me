@@ -44,6 +44,13 @@
 .m-text ol, .m-text ul { text-align: left; padding-left: 1.4em; margin: 0 0 1em; }
 .m-text li { margin-bottom: .5em; }
 .m-text a { color: var(--teal); }
+.m-text .flow { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 6px; list-style: none; padding: 0; margin: 1.4em 0; text-align: center; counter-reset: none; }
+.m-text .flow li { position: relative; margin: 0; padding: 8px 14px; border: 1px solid rgba(127,127,127,.35); border-radius: 999px; font-size: 14px; line-height: 1.3; white-space: nowrap; }
+.m-text .flow li + li { margin-left: 22px; }
+.m-text .flow li + li::before { content: "\2192"; position: absolute; left: -20px; top: 50%; transform: translateY(-50%); opacity: .55; }
+.m-text .keys { width: 100%; border-collapse: collapse; margin: 1em 0 1.4em; font-size: 15px; text-align: left; }
+.m-text .keys th, .m-text .keys td { padding: 8px 10px; border-bottom: 1px solid rgba(127,127,127,.25); vertical-align: top; }
+.m-text .keys th { font-weight: 700; white-space: nowrap; }
 
 /* Justified image grid (Behance "media collection"): each item grows in proportion to its aspect ratio --r */
 .m-grid { display: flex; flex-wrap: wrap; }

@@ -1,6 +1,6 @@
 {
  "title": "MR2 Dash",
- "pageTitle": "MV | MR2 Dash",
+ "pageTitle": "MR2 Dash | Mitchell Vizensky",
  "slug": "mr2-dash",
  "order": 0.5,
  "description": "<p>A live dashboard for my Toyota MR2, on my phone. It reads the car's computer through an OBD adapter and turns raw sensor data into the numbers that actually change how you drive: fuel economy right now, this trip and over time.</p>",
