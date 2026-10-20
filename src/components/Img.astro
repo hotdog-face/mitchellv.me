@@ -13,8 +13,9 @@ interface Props {
   loading?: 'lazy' | 'eager';
   fetchpriority?: 'high' | 'low' | 'auto';
   widths?: number[];
+  quality?: number;
 }
-const { name, alt = '', sizes = '100vw', loading = 'lazy', widths, ...rest } = Astro.props;
+const { name, alt = '', sizes = '100vw', loading = 'lazy', widths, quality = 82, ...rest } = Astro.props;
 const files = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{webp,png,jpg,jpeg,gif}', { eager: true });
 const key = Object.keys(files).find(k => k.replace(/^\/src\/assets\/(img\/)?/, '').replace(/\.\w+$/, '') === name);
 if (!key) throw new Error(`Img: no asset named "${name}"`);
@@ -24,4 +25,4 @@ const w = widths ?? [480, 800, 1200, 1600, 2400].filter(x => x < src.width).conc
 ---
 {isGif
   ? <img src={src.src} width={src.width} height={src.height} alt={alt} loading={loading} decoding="async" {...rest} />
-  : <Image src={src} widths={w} sizes={sizes} alt={alt} loading={loading} decoding="async" format="webp" quality={82} {...rest} />}
+  : <Image src={src} widths={w} sizes={sizes} alt={alt} loading={loading} decoding="async" format="webp" quality={quality} {...rest} />}
