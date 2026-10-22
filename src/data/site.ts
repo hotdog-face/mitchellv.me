@@ -18,3 +18,7 @@ export const footerSocial = [
 
 // "Last updated" line in the footer — change this when the site gets new content
 export const lastUpdated = '2026';
+
+// Visitor counts (GoatCounter: free, no cookies, so no consent banner). Set this to the site code
+// from https://<code>.goatcounter.com to turn counting on; leave it empty to turn it off.
+export const goatcounter = '';

@@ -397,7 +397,27 @@ function initFlowDemo() {
   });
 }
 
+// ---------------------------------------------------------------------------
+// Click counts (only when GoatCounter is on): resume opens, email, GitHub, LinkedIn and other
+// outbound links, so the stats show what visitors do, not just which pages they load.
+function initClickCounts() {
+  document.addEventListener('click', e => {
+    const gc = (window as unknown as { goatcounter?: { count: (o: object) => void } }).goatcounter;
+    const a = (e.target as Element).closest?.('a[href]') as HTMLAnchorElement | null;
+    if (!gc?.count || !a) return;
+    const href = a.getAttribute('href')!;
+    let name = '';
+    if (href.endsWith('resume.pdf')) name = 'resume';
+    else if (href.startsWith('mailto:')) name = 'email';
+    else if (a.hostname === 'github.com') name = 'github' + a.pathname.replace(/\/$/, '');
+    else if (a.hostname.endsWith('linkedin.com')) name = 'linkedin';
+    else if (a.host && a.host !== location.host) name = 'out/' + a.hostname;
+    if (name) gc.count({ path: 'click/' + name, title: a.textContent?.trim() || name, event: true });
+  });
+}
+
 initReveal();
+initClickCounts();
 initLazyVideo();
 initFlowDemo();
 initEmailMenus();
