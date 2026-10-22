@@ -126,7 +126,22 @@ export const caseStudies: CaseStudy[] = [
 ];
 
 /** Builds: side projects I design and build myself, in the order shown. */
-export const lab = ['/work/vitaos', '/work/wiizard', '/work/prism', '/work/living-room-music', '/work/hollowtide', '/work/classic-mac', '/work/mr2-dash', '/work/gameplay-spotlight', '/work/vita-agent-bridge', '/work/retro-tv'];
+export const lab = ['/work/wiizard', '/work/vitaos', '/work/prism', '/work/living-room-music', '/work/hollowtide', '/work/classic-mac', '/work/mr2-dash', '/work/gameplay-spotlight', '/work/vita-agent-bridge', '/work/retro-tv'];
+
+// What each build shows about my UX work (one line on its Builds card), and which ones are
+// console and living-room interfaces: built for a controller or a remote and read from the couch.
+export const labAngle: Record<string, { angle: string; tv?: boolean }> = {
+  wiizard: { angle: 'Kid-proof design: anyone can walk up and play', tv: true },
+  vitaos: { angle: 'A console-grade home screen for a handheld', tv: true },
+  prism: { angle: 'Console habits on a PC: one button always gets you home', tv: true },
+  'living-room-music': { angle: 'Calm, couch-distance design for a family room', tv: true },
+  hollowtide: { angle: 'Game design and live ops for a real player community' },
+  'classic-mac': { angle: 'Designing within a 1-bit, 512 by 342 screen' },
+  'mr2-dash': { angle: 'Glanceable numbers you can read while driving' },
+  'gameplay-spotlight': { angle: 'Choosing a game from across the room', tv: true },
+  'vita-agent-bridge': { angle: 'Designing for an AI user: look, act, look again' },
+  'retro-tv': { angle: 'Automation people can trust: it explains every decision' },
+};
 
 export const caseStudyFor = (path: string) => caseStudies.find(c => c.href === path.replace(/\/$/, ''));
 
