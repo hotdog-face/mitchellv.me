@@ -44,7 +44,7 @@
      "name": "album",
      "width": 1280,
      "height": 720,
-     "label": "Starting an album: the screen washes in the cover's colors and shows the album's story",
+     "label": "Finding an album, opening it and pressing play: the screen washes in the cover's colors and shows the album's story",
      "ratio": 1.7778
     },
     {
@@ -66,7 +66,7 @@
    "name": "visualizers",
    "width": 1280,
    "height": 720,
-   "label": "The visualizers: ribbon, aurora and bars reacting to the music"
+   "label": "Switching visualizers: ribbon, aurora and bars reacting to the music"
   },
   {
    "type": "text",
@@ -77,7 +77,7 @@
    "name": "lights",
    "width": 1280,
    "height": 720,
-   "label": "Lights on: the aurora visualizer in the album's blue and pink, the same colors the room's lights take"
+   "label": "Turning the lights on, the aurora in the album's colors, and calm mode folding the controls away"
   },
   {
    "type": "grid",
