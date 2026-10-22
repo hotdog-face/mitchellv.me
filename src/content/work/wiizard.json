@@ -42,6 +42,14 @@
    "html": "<h3>From boxes of Wiis to a home arcade</h3><p class=\"ta-l\">I'm an avid retro game collector, and I had boxes of Nintendo Wiis sitting around collecting dust. Softmodded, a Wii can emulate a lot, but the homebrew software they were running felt stale and was hard for anyone but me to use. I also had a garage full of CRTs I'd collected and refurbished.</p><p class=\"ta-l\">With Claude Code and LLMs, I figured I could push the software much further than the old homebrew ever went. So I combined the two into one project: a fleet of arcade cabinets, ready to play the moment someone walks up. My stack of Wiis and CRTs is now a full arcade at home for when we have friends over.</p>"
   },
   {
+   "type": "video",
+   "name": "reel",
+   "width": 1280,
+   "height": 720,
+   "maxWidth": 1100,
+   "label": "WIIZARD reel: the power-on intro, attract mode, browsing, launching games and coming back, and how it was made"
+  },
+  {
    "type": "grid",
    "items": [
     {
