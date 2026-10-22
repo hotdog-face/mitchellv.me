@@ -16,6 +16,16 @@
   "image": "cover",
   "line": "2026 · Build · Wii arcade cabinets"
  },
+ "links": [
+  {
+   "label": "View on GitHub",
+   "href": "https://github.com/hotdog-face/wiizard"
+  },
+  {
+   "label": "libwiieth",
+   "href": "https://github.com/hotdog-face/libwiieth"
+  }
+ ],
  "background": "#121214",
  "dark": true,
  "modules": [
@@ -91,7 +101,7 @@
   },
   {
    "type": "text",
-   "html": "<h3>Built for real hardware</h3><p class=\"ta-l\">I built the launcher in C for the Wii with its own graphics code, after the off-the-shelf renderer crashed. It runs the menu at 60 fps on a 2006 console. A small agent inside it lets me run the whole fleet from a Mac, hands-free, with Claude through an MCP server: screenshots, button presses, installs and updates.</p><p class=\"ta-l\">The first cabinet sits next to the router but its USB network adapter wasn't one the Wii supports. So I wrote a driver for it, with a full network stack on top. As far as I know it's the only public homebrew USB Ethernet driver for the Wii, and I've packaged it as its own library, libwiieth.</p><h3>Designed from what gets played</h3><p class=\"ta-l\">Every cabinet reports what gets played and what fails. Collections are ordered by what actually gets played, updates download on their own while the cabinet sits in attract mode, and a nightly report tells me which cabinet needs attention.</p>"
+   "html": "<h3>Built for real hardware</h3><p class=\"ta-l\">I built the launcher in C for the Wii with its own graphics code, after the off-the-shelf renderer crashed. It runs the menu at 60 fps on a 2006 console. A small agent inside it lets me run the whole fleet from a Mac, hands-free, with Claude through an MCP server: screenshots, button presses, installs and updates.</p><p class=\"ta-l\">The first cabinet sits next to the router but its USB network adapter wasn't one the Wii supports. So I wrote a driver for it, with a full network stack on top. As far as I know it's the only public homebrew USB Ethernet driver for the Wii, and I've packaged it as its own library, <a href=\"https://github.com/hotdog-face/libwiieth\">libwiieth</a>.</p><h3>Designed from what gets played</h3><p class=\"ta-l\">Every cabinet reports what gets played and what fails. Collections are ordered by what actually gets played, updates download on their own while the cabinet sits in attract mode, and a nightly report tells me which cabinet needs attention.</p><p><a href=\"https://github.com/hotdog-face/wiizard\">View WIIZARD on GitHub</a> · <a href=\"https://github.com/hotdog-face/libwiieth\">libwiieth</a></p>"
   }
  ]
 }

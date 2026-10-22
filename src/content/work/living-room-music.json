@@ -16,6 +16,12 @@
   "image": "cover",
   "line": "2026 · Build · Android TV music app"
  },
+ "links": [
+  {
+   "label": "View on GitHub",
+   "href": "https://github.com/hotdog-face/living-room-music"
+  }
+ ],
  "background": "#121214",
  "dark": true,
  "modules": [
@@ -66,7 +72,7 @@
   },
   {
    "type": "text",
-   "html": "<h3>One server behind it</h3><p class=\"ta-l\">The TV app is small: Kotlin with no third-party libraries. A home server does the heavy lifting: it builds stations, converts hi-res FLAC for the TV, evens out loudness, and caches lyrics and album stories. Keeping the app simple made it fast on the Shield and easy to change from the couch.</p><p class=\"ta-l\">It's a personal project for our home, built with Claude Code, and not a product.</p>"
+   "html": "<h3>One server behind it</h3><p class=\"ta-l\">The TV app is small: Kotlin with no third-party libraries. A home server does the heavy lifting: it builds stations, converts hi-res FLAC for the TV, evens out loudness, and caches lyrics and album stories. Keeping the app simple made it fast on the Shield and easy to change from the couch.</p><p class=\"ta-l\">It's a personal project for our home, built with Claude Code, and not a product.</p><p><a href=\"https://github.com/hotdog-face/living-room-music\">View Living Room Music on GitHub</a></p>"
   }
  ]
 }
