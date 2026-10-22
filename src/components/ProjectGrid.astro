@@ -1,5 +1,6 @@
 ---
 // A grid of project cards (cover, title, one-line summary). Used on /work and the home page.
+import { brandHtml } from '../data/brand';
 import Img from './Img.astro';
 import type { Card } from '../data/work';
 import { vtName } from '../data/caseStudies';
@@ -13,7 +14,7 @@ const sizes = '(min-width: 1432px) 332px, (min-width: 1004px) 31vw, (min-width: 
   {cards.map((c, i) => (
     <a class="project-card" href={c.href}>
       <figure><Img name={c.image} sizes={sizes} loading={i < eager ? 'eager' : 'lazy'} /></figure>
-      <h2 style={`view-transition-name:${vtName(c.href)}`}>{c.title}</h2>
+      <h2 style={`view-transition-name:${vtName(c.href)}`} set:html={brandHtml(c.title)} />
       <p>{c.line}</p>
       {c.note && <p class="note">{c.note}</p>}
     </a>

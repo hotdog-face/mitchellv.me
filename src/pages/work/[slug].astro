@@ -1,4 +1,5 @@
 ---
+import { brandHtml } from '../../data/brand';
 import fs from 'node:fs';
 import Base from '../../layouts/Base.astro';
 import Img from '../../components/Img.astro';
@@ -34,7 +35,7 @@ const description = p.description ? plain(p.description) : `${p.title} - ${p.met
 
     <div class="work-intro">
       <a class="work-back" href="/work/">&larr; All work</a>
-      <h1 style={`view-transition-name:${vtName(`/work/${p.slug}`)}`}>{p.title}</h1>
+      <h1 style={`view-transition-name:${vtName(`/work/${p.slug}`)}`} set:html={brandHtml(p.title)} />
       {p.description && <p class="work-desc" set:html={p.description} />}
       <ul class="work-meta">
         {p.meta.date && <li class="work-date">{p.meta.date}</li>}
@@ -118,8 +119,8 @@ const description = p.description ? plain(p.description) : `${p.title} - ${p.met
 
     {nextCs && <NextCase cs={nextCs} />}
     <nav class="work-pager" aria-label="More projects">
-      <a class="prev" href={`/work/${prev.slug}`}><span>&larr; Previous</span><strong>{prev.title}</strong></a>
-      <a class="next" href={`/work/${next.slug}`}><span>Next &rarr;</span><strong>{next.title}</strong></a>
+      <a class="prev" href={`/work/${prev.slug}`}><span>&larr; Previous</span><strong set:html={brandHtml(prev.title)} /></a>
+      <a class="next" href={`/work/${next.slug}`}><span>Next &rarr;</span><strong set:html={brandHtml(next.title)} /></a>
       <a class="work-all" href="/work/">All work</a>
     </nav>
 

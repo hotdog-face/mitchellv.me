@@ -123,3 +123,6 @@ button { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
 }
+
+/* WIIZARD: "WII" is always underlined */
+u.wii { text-decoration: underline; text-decoration-thickness: .08em; text-underline-offset: .12em; text-decoration-skip-ink: none; }
