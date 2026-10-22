@@ -3,13 +3,13 @@
  "pageTitle": "Living Room Music | Mitchell Vizensky",
  "slug": "living-room-music",
  "order": 0.115,
- "description": "<p>A calm, audio-only music app for the TV in our living room, on an NVIDIA Shield. It plays YouTube Music and our own Plex library with no videos, finds new music from the songs we like, shows karaoke lyrics, and colors the room's lights to match each album.</p>",
+ "description": "<p>A calm, audio-only music app and home server for our living-room TV. It plays streaming and our own lossless library with no videos, colors the room's Hue lights to match each album, and finds new music from what we already love.</p>",
  "meta": {
   "date": "2026",
   "fields": [
-   "UX/UI",
-   "TV app",
-   "Development"
+   "Product design",
+   "Art direction",
+   "TV app"
   ]
  },
  "card": {
@@ -26,41 +26,83 @@
  "dark": true,
  "modules": [
   {
-   "type": "image",
-   "name": "home",
-   "width": 1920,
-   "height": 1080,
-   "maxWidth": 1200,
-   "alt": "The home screen: stations, the record shelf and new finds"
+   "type": "video",
+   "name": "browse",
+   "width": 1280,
+   "height": 720,
+   "label": "Browsing the home screen with a TV remote: stations, our Plex library and new finds"
   },
   {
    "type": "text",
-   "html": "<h3>Music, not videos</h3><p class=\"ta-l\">We play music on the living-room TV all day, and every music app on TV wants to show you videos, ads and autoplay rabbit holes. I wanted something closer to a good stereo: put on a station, see what's playing from across the room, and let the music be the point.</p><p class=\"ta-l\">Living Room Music is audio only. The home screen is a few stations, the albums we own, and new finds based on what we like, all big enough to read from the couch and easy to move through with a TV remote.</p>"
+   "html": "<h3>Music for the room, not the screen</h3><p class=\"ta-l\">We wanted music in the living room without a screen full of video. With two small kids, music videos on the TV meant more stimulation than we wanted, but the parents still wanted something good to listen to. So I designed a music app for our TV that plays sound only and lets the screen settle into album art, lyrics or a slow visual.</p><ul class=\"ta-l\"><li><strong>Calm by design.</strong> Every song plays as audio. The TV never shows a video.</li><li><strong>Better discovery.</strong> The official app's suggestions felt thin, so new finds come from the songs we've already liked, each with a reason.</li><li><strong>Our record collection.</strong> The TV runs into 70s vintage speakers, and our own FLAC library plays lossless right next to streaming.</li><li><strong>The kids.</strong> A place for the songs they dance to, without opening YouTube.</li></ul>"
   },
   {
    "type": "grid",
    "items": [
     {
-     "kind": "image",
-     "name": "player",
-     "width": 1920,
-     "height": 1080,
-     "alt": "The player with synced karaoke lyrics",
+     "kind": "video",
+     "name": "album",
+     "width": 1280,
+     "height": 720,
+     "label": "Starting an album: the screen washes in the cover's colors and shows the album's story",
      "ratio": 1.7778
     },
     {
-     "kind": "image",
-     "name": "aurora",
-     "width": 1920,
-     "height": 1080,
-     "alt": "The Aurora visualizer in the album's colors",
+     "kind": "video",
+     "name": "karaoke",
+     "width": 1280,
+     "height": 720,
+     "label": "Synced karaoke lyrics, the current line filling as it's sung",
      "ratio": 1.7778
     }
    ]
   },
   {
    "type": "text",
-   "html": "<h3>Key decisions</h3><ul class=\"ta-l\"><li><strong>Stations from what you like.</strong> \"Likes + new finds\" mixes songs you've liked with ones you haven't heard, so discovery happens without searching.</li><li><strong>Your own records, side by side.</strong> Albums we own in lossless sit on a Record shelf next to streaming, in one app.</li><li><strong>Sound like a stereo.</strong> Albums play gaplessly, songs crossfade, and loudness is evened out so nothing jumps.</li><li><strong>Something to look at, calmly.</strong> Synced karaoke lyrics and four visualizers in each album's colors, plus a calm mode.</li><li><strong>The room joins in.</strong> Each album can tint the Hue lights through Home Assistant. Only lights that are already on change, and the room goes back to normal afterwards.</li></ul>"
+   "html": "<h3>What it does</h3><ul class=\"ta-l\"><li><strong>Discovery from your likes.</strong> New finds are ranked by how many of our liked songs lead to them, each with a \"because you like\" reason.</li><li><strong>Your own library, lossless.</strong> Albums from Plex stream as the original FLAC, and songs we own play from our file instead of the stream.</li><li><strong>Album-colored player.</strong> The whole screen washes in the cover's colors, and the accent color follows the album.</li><li><strong>Karaoke lyrics.</strong> Synced lyrics, with the current line filling left to right as it's sung.</li><li><strong>Four visualizers.</strong> Ribbon, aurora, particles and bars, all reacting to the music.</li><li><strong>Kids' dance party.</strong> The family's most-played kids' songs, found in our watch history.</li><li><strong>Listening craft.</strong> Gapless albums, crossfades between other songs, and even volume across tracks.</li><li><strong>Calm mode.</strong> After 12 quiet seconds the controls fold away, leaving the art, lyrics or visual and the song's name.</li><li><strong>Time of day.</strong> Home opens with a mix that learns what we play in the morning, evening and at night.</li></ul>"
+  },
+  {
+   "type": "video",
+   "name": "visualizers",
+   "width": 1280,
+   "height": 720,
+   "label": "The visualizers: ribbon, aurora and bars reacting to the music"
+  },
+  {
+   "type": "text",
+   "html": "<h3>The room follows the music</h3><p class=\"ta-l\">Turn the lights on and the living room's Hue lights take each album's colors, the same colors as the aurora on screen. Only lights that are already on change, and the room goes back to how it was when the music stops, so it feels considerate rather than like a gimmick.</p>"
+  },
+  {
+   "type": "video",
+   "name": "lights",
+   "width": 1280,
+   "height": 720,
+   "label": "Lights on: the aurora visualizer in the album's blue and pink, the same colors the room's lights take"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "kids",
+     "width": 1920,
+     "height": 1080,
+     "alt": "The Kids tab: Dance party, Cars and trucks, Sing-alongs and Party hits stations above the most-played songs",
+     "ratio": 1.7778
+    },
+    {
+     "kind": "image",
+     "name": "album-page",
+     "width": 1920,
+     "height": 1080,
+     "alt": "An album page with the cover, a wash of its color, a round Play button and the track list",
+     "ratio": 1.7778
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>Designed on the actual TV</h3><p class=\"ta-l\">The look went through three passes in one day, each a reaction to seeing the last one on the TV from the couch.</p><ol class=\"ta-l\"><li><strong>Functional first.</strong> A plain dark layout to prove playback, discovery and remote navigation worked.</li><li><strong>Vintage hi-fi, rejected.</strong> Serif type, brass accents, record sleeves and VU meters. It looked good, but it wasn't the feel I wanted for a family room.</li><li><strong>Modern and album-led, shipped.</strong> An accent color that adapts to each album, a full-bleed album-color player with lyrics, and blue-violet visualizers.</li></ol><ul class=\"ta-l\"><li><strong>Built for a remote, not a mouse.</strong> Big focus states, a quick stop button on every screen, and two presses to thumbs-down, so a stray click can't throw a song away.</li><li><strong>Quiet by default.</strong> Calm mode, soft fades at the screen edges, no hard cut-offs.</li></ul>"
   },
   {
    "type": "image",
@@ -72,7 +114,7 @@
   },
   {
    "type": "text",
-   "html": "<h3>One server behind it</h3><p class=\"ta-l\">The TV app is small: Kotlin with no third-party libraries. A home server does the heavy lifting: it builds stations, converts hi-res FLAC for the TV, evens out loudness, and caches lyrics and album stories. Keeping the app simple made it fast on the Shield and easy to change from the couch.</p><p class=\"ta-l\">It's a personal project for our home, built with Claude Code, and not a product.</p><p><a href=\"https://github.com/hotdog-face/living-room-music\">View Living Room Music on GitHub</a></p>"
+   "html": "<h3>One server behind it</h3><p class=\"ta-l\">The TV app is plain Kotlin with no third-party libraries. A Python server at home does the heavy lifting, and solved the problems worth telling:</p><ul class=\"ta-l\"><li><strong>Hi-res audio that played clean.</strong> 24-bit, 192 kHz FLAC distorted on the TV, so the server converts it once, caches it, and prepares the next song while the current one plays.</li><li><strong>Even volume without flattening albums.</strong> Every song is measured once and played toward the same level, but an album played straight through keeps one level so its dynamics stay intact.</li><li><strong>Seamless listening.</strong> The next song loads before it's needed: same-album tracks hand off on the exact sample, others crossfade over four seconds, and skips are instant.</li><li><strong>The kids' songs, from 7,000 watched videos.</strong> Claude sorted our watch history into kids' songs, family dance songs and everything else, and play counts rank them.</li></ul><p class=\"ta-l\">I designed and directed it, and built it with Claude Code over one long day. It's a personal project for our home, not a product.</p><p><a href=\"https://github.com/hotdog-face/living-room-music\">View Living Room Music on GitHub</a></p>"
   }
  ]
 }

@@ -30,51 +30,59 @@
  "dark": true,
  "modules": [
   {
-   "type": "grid",
-   "items": [
-    {
-     "kind": "image",
-     "name": "cab1-menu",
-     "width": 1280,
-     "height": 960,
-     "alt": "The WIIZARD menu on a cabinet: Street Fighter II on a taped photo, collections and button hints",
-     "ratio": 1.3333
-    },
-    {
-     "kind": "image",
-     "name": "cab1-attract",
-     "width": 1280,
-     "height": 960,
-     "alt": "Attract mode playing a gameplay clip with Press A to play",
-     "ratio": 1.3333
-    }
-   ]
+   "type": "video",
+   "name": "intro",
+   "width": 960,
+   "height": 720,
+   "maxWidth": 960,
+   "label": "Power-on: the wizard pops in, WIIZARD slams onto the screen and the game count ticks up"
   },
   {
    "type": "text",
    "html": "<h3>From boxes of Wiis to a home arcade</h3><p class=\"ta-l\">I'm an avid retro game collector, and I had boxes of Nintendo Wiis sitting around collecting dust. Softmodded, a Wii can emulate a lot, but the homebrew software they were running felt stale and was hard for anyone but me to use. I also had a garage full of CRTs I'd collected and refurbished.</p><p class=\"ta-l\">With Claude Code and LLMs, I figured I could push the software much further than the old homebrew ever went. So I combined the two into one project: a fleet of arcade cabinets, ready to play the moment someone walks up. My stack of Wiis and CRTs is now a full arcade at home for when we have friends over.</p>"
   },
   {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "video",
+     "name": "menu",
+     "width": 960,
+     "height": 720,
+     "label": "Browsing the menu: the carousel, collections and the favorite heart",
+     "ratio": 1.3333
+    },
+    {
+     "kind": "video",
+     "name": "attract",
+     "width": 960,
+     "height": 720,
+     "label": "Attract mode: each game's own demo on a taped photo, Press A to play",
+     "ratio": 1.3333
+    }
+   ]
+  },
+  {
    "type": "text",
-   "html": "<h3>What it does</h3><ul class=\"ta-l\"><li><strong>Arcade, consoles and more in one place.</strong> Neo Geo, Capcom CPS-1 and CPS-2 and classic arcade sets, plus Genesis, Super Nintendo and NES, GameCube and Wii games, all started with one button.</li><li><strong>The disc drive works.</strong> Pop in a Wii or GameCube disc, or a DVD, and play it from the same launcher.</li><li><strong>Attract mode.</strong> Left alone, the cabinet plays gameplay clips like a real arcade machine until someone picks up a controller.</li><li><strong>Collections.</strong> Favorites, Recent, Quick Picks, Little Kids, Arcade Classics and more, ordered by what actually gets played.</li><li><strong>High scores.</strong> Arcade high scores are collected from every cabinet and shown as badges in the menu, so friends can chase the best score in the house.</li><li><strong>Resume where you left off.</strong> Arcade and console games save when you quit and pick up from the same spot next time.</li><li><strong>Controls on screen.</strong> Every loading screen shows that game's buttons and the one exit combo that works in every game.</li><li><strong>Nearly pixel-perfect on a CRT.</strong> Games run at their original 240p resolution, with each arcade board's real pixel width, so they look the way they did on the original hardware.</li><li><strong>Looks after itself.</strong> Cabinets update on their own while idle, power down after a quiet stretch, and report problems to me.</li></ul>"
+   "html": "<h3>What it does</h3><ul class=\"ta-l\"><li><strong>Arcade, consoles and more in one place.</strong> Neo Geo, Capcom CPS-1 and CPS-2 and classic arcade sets, plus Genesis, Super Nintendo and NES, GameCube and Wii games, all started with one button.</li><li><strong>Attract mode.</strong> Left alone, the cabinet plays gameplay clips like a real arcade machine until someone picks up a controller.</li><li><strong>Collections.</strong> Favorites, Recent, Quick Picks, Little Kids, Arcade Classics and more, ordered by what actually gets played.</li><li><strong>High scores.</strong> Arcade high scores are collected from every cabinet and shown as badges in the menu, so friends can chase the best score in the house.</li><li><strong>Resume where you left off.</strong> Arcade and console games save when you quit and pick up from the same spot next time.</li><li><strong>Controls on screen.</strong> Every loading screen shows that game's buttons and the one exit combo that works in every game.</li><li><strong>Nearly pixel-perfect on a CRT.</strong> Games run at their original 240p resolution, with each arcade board's real pixel width, so they look the way they did on the original hardware.</li><li><strong>Looks after itself.</strong> Cabinets update on their own while idle, power down after a quiet stretch, and report problems to me.</li><li><strong>Next up: the disc drive.</strong> The launcher can already talk to each Wii's disc drive. Coming next: pop in a GameCube or Wii disc to play it or add it to the library, and DVD movies on drives that can read them.</li></ul>"
   },
   {
    "type": "grid",
    "items": [
     {
      "kind": "image",
-     "name": "cab1-loading",
+     "name": "menu-carousel",
      "width": 1280,
      "height": 960,
-     "alt": "Loading screen with the controls and the one exit combo for every game",
+     "alt": "The menu: the selected game's clip on a taped photo, neighbors as blue duotones",
      "ratio": 1.3333
     },
     {
      "kind": "image",
-     "name": "intro",
-     "width": 320,
-     "height": 240,
-     "alt": "The WIIZARD intro: the wizard pops in and flicks a Wii Remote like a wand",
+     "name": "favorite",
+     "width": 1280,
+     "height": 960,
+     "alt": "Favorites: Y hearts a game",
      "ratio": 1.3333
     }
    ]
@@ -84,20 +92,73 @@
    "html": "<h3>Easy for anyone, including kids</h3><ul class=\"ta-l\"><li><strong>Nothing to break.</strong> Reset and HOME always go back to attract mode, never out of the launcher. There's no path to a settings screen, and nobody ever needs a Wii Remote.</li><li><strong>No accidental presses.</strong> Buttons do nothing for 0.8 seconds after a screen changes, so a mashed button doesn't skip what you were about to see.</li><li><strong>It recovers on its own.</strong> A game that doesn't start is retried once, then shows a plain message. One that fails twice is hidden and flagged for me.</li><li><strong>Made for the TV it's on.</strong> Each CRT is calibrated for its own width, height and position.</li></ul>"
   },
   {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "console-classics",
+     "width": 1280,
+     "height": 960,
+     "alt": "Collections: L and R move through sections like Console Classics",
+     "ratio": 1.3333
+    },
+    {
+     "kind": "image",
+     "name": "loading",
+     "width": 1280,
+     "height": 960,
+     "alt": "Loading: the controls and the one exit combo, before every game",
+     "ratio": 1.3333
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>A look that reads across a garage</h3><p class=\"ta-l\">The first launcher was a green terminal menu: it worked, but it looked like a tool. The new look is a maximal collage: pink halftone paper, cut blue and yellow shapes, and the selected game's own demo on a taped, tilted photo, with the neighbors as blue duotones. It reads from across a garage and feels like a toy, not a settings app.</p>"
+  },
+  {
    "type": "image",
-   "name": "chosen",
-   "width": 1280,
-   "height": 1008,
-   "maxWidth": 900,
-   "alt": "The WIIZARD menu in its maximal collage look"
+   "name": "before-after",
+   "width": 1600,
+   "height": 900,
+   "maxWidth": 1200,
+   "alt": "Before and after: the green terminal menu and the maximal collage look on the same cabinet"
   },
   {
    "type": "text",
-   "html": "<h3>A look that reads across a garage</h3><p class=\"ta-l\">The art direction is a maximal collage: pink halftone paper, cut blue and yellow shapes, and the selected game's clip on a taped, tilted photo. It reads from across a garage and feels like a toy, not a settings app.</p><p class=\"ta-l\">The wizard is my own character. I cut him out of the original Photoshop file and puppeted him for the power-on intro: a pop-in with squash and stretch, a blink, the Wii Remote flicked up like a wand, and a wink.</p>"
+   "html": "<h3>A wizard who says hello</h3><p class=\"ta-l\">The wizard is my own character. I cut him out of the original Photoshop file, layer by layer, and puppeted him for the power-on intro: a pop-in with squash and stretch, a blink, the Wii Remote flicked up like a wand, sparkles and a wink. The 126 frames stream from the SD card one per frame.</p>"
+  },
+  {
+   "type": "image",
+   "name": "rig",
+   "width": 1600,
+   "height": 900,
+   "maxWidth": 1200,
+   "alt": "Rigging the wizard: body, eyes, brows and sparkles as layers, animated into the power-on intro"
   },
   {
    "type": "text",
-   "html": "<h3>Built and tested with Claude</h3><p class=\"ta-l\">I built the launcher in C for the Wii with its own graphics code, after the off-the-shelf renderer crashed. It runs the menu at 60 fps on a 2006 console. A small agent inside it lets Claude run the whole fleet from my Mac, hands-free, through an MCP server: screenshots, button presses, installs, updates and unattended boot tests of every game, on real cabinets and in a simulator.</p><p class=\"ta-l\">The first cabinet sits next to the router, but its USB network adapter wasn't one the Wii supports. So I wrote a driver for it, with a full network stack on top. As far as I know it's the only public homebrew USB Ethernet driver for the Wii, and I've packaged it as its own library, <a href=\"https://github.com/hotdog-face/libwiieth\">libwiieth</a>.</p><p class=\"ta-l\">The result is software my Wiis never had: it looks great on a CRT, plays with great controls, is easy for anyone to use, and is heavily tested.</p><p><a href=\"https://github.com/hotdog-face/wiizard\">View <u class=\"wii\">WII</u>ZARD on GitHub</a> · <a href=\"https://github.com/hotdog-face/libwiieth\">libwiieth</a></p>"
+   "html": "<h3>Built and tested with Claude</h3><p class=\"ta-l\">I built the launcher in C for the Wii with its own graphics code, after the off-the-shelf renderer crashed. It runs the menu at 60 fps on a 2006 console. A small agent inside it lets Claude run the whole fleet from my Mac, hands-free, through an MCP server: screenshots, button presses, installs, updates and unattended boot tests of every game, on real cabinets and in a simulator.</p>"
+  },
+  {
+   "type": "image",
+   "name": "fleet",
+   "width": 1600,
+   "height": 900,
+   "maxWidth": 1200,
+   "alt": "Run like a fleet: Claude Code on the Mac, an update server, the cabinets and a simulator"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Wired, the hard way</h3><p class=\"ta-l\">The first cabinet sits next to the router, but its USB network adapter wasn't one the Wii supports. So I wrote a driver for it, with a full network stack on top. As far as I know it's the only public homebrew USB Ethernet driver for the Wii, and I've packaged it as its own library, <a href=\"https://github.com/hotdog-face/libwiieth\">libwiieth</a>.</p><p class=\"ta-l\">The result is software my Wiis never had: it looks great on a CRT, plays with great controls, is easy for anyone to use, and is heavily tested.</p><p><a href=\"https://github.com/hotdog-face/wiizard\">View <u class=\"wii\">WII</u>ZARD on GitHub</a> · <a href=\"https://github.com/hotdog-face/libwiieth\">libwiieth</a></p>"
+  },
+  {
+   "type": "image",
+   "name": "ethernet",
+   "width": 1600,
+   "height": 900,
+   "maxWidth": 1200,
+   "alt": "Wired, the hard way: the Wii, the USB adapter, the new driver, lwIP and the launcher"
   }
  ]
 }
