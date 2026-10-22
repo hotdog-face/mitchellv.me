@@ -24,7 +24,7 @@ const plain = (html = '') => html.replace(/<[^>]+>/g, '').trim();
     <div class="intro">
       <p class="eyebrow">Builds</p>
       <h2>I design and build my own software, end to end.</h2>
-      <p>A console home screen for the Steam Deck, an MMO revival with its own client and a live server, homebrew for consoles, games for the original black-and-white Macintosh, a dashboard for my car. I take each one from idea to a working build, often with AI coding tools. It keeps my prototyping sharp, and it's how I test ideas for real.</p>
+      <p>A console home screen for the Steam Deck, arcade cabinets built from old Wiis, a music app for our living-room TV, an MMO revival with its own client and a live server, homebrew for consoles, games for the original black-and-white Macintosh, a dashboard for my car. I take each one from idea to a working build, often with AI coding tools. It keeps my prototyping sharp, and it's how I test ideas for real.</p>
       <p class="gh"><a href="https://github.com/hotdog-face" target="_blank" rel="noopener">Everything is on GitHub →</a></p>
     </div>
     {lead && (
@@ -44,7 +44,7 @@ const plain = (html = '') => html.replace(/<[^>]+>/g, '').trim();
   <div class="grid">
     {rest.map((p, i) => (
       <a class="build" href={`/work/${p.slug}`} data-anim="float-up" style={`--anim-dur:.8s;--anim-delay:${i * 0.1}s`}>
-        <span class="cover"><Img name={`work/${p.slug}/${p.card.image}`} alt="" sizes="(max-width: 560px) 100vw, (max-width: 999px) 50vw, 270px" />{hover.has(p.slug) && <video class="hover-clip" data-hover-src={`/assets/hover/${p.slug}.mp4`} muted loop playsinline preload="none" aria-hidden="true"></video>}</span>
+        <span class="cover"><Img name={`work/${p.slug}/${p.card.image}`} alt="" sizes="(max-width: 560px) 100vw, (max-width: 999px) 50vw, 360px" />{hover.has(p.slug) && <video class="hover-clip" data-hover-src={`/assets/hover/${p.slug}.mp4`} muted loop playsinline preload="none" aria-hidden="true"></video>}</span>
         <span class="t">{p.title}</span>
         <span class="d">{plain(p.description)}</span>
       </a>
@@ -72,7 +72,7 @@ const plain = (html = '') => html.replace(/<[^>]+>/g, '').trim();
   .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
   .links .btn { min-width: 0; min-height: 44px; padding: 0 18px; border-radius: 5px; font-size: 15px; }
   .links .btn--ghost:hover { color: #121214; }
-  .grid { width: min(1100px, 100% - 2 * var(--gutter)); margin: 32px auto 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+  .grid { width: min(1100px, 100% - 2 * var(--gutter)); margin: 32px auto 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
   .build { display: grid; gap: 8px; align-content: start; text-decoration: none; color: #b9b9bf; }
   .build :global(img) { width: 100%; aspect-ratio: 1150 / 900; object-fit: cover; border-radius: 10px; border: 1px solid rgba(255,255,255,.08); transition: transform .3s; }
   .build:hover :global(img) { transform: translateY(-3px); }

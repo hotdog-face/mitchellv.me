@@ -1,0 +1,97 @@
+{
+ "title": "WIIZARD",
+ "pageTitle": "WIIZARD | Mitchell Vizensky",
+ "slug": "wiizard",
+ "order": 0.05,
+ "description": "<p>Old Wiis turned into garage arcade cabinets on CRT TVs. They boot straight into WIIZARD, a launcher I designed and built, with an attract mode, collections and one-button starts for arcade, console, GameCube and Wii games. No menus, no settings, no Wii Remote.</p>",
+ "meta": {
+  "date": "2026",
+  "fields": [
+   "UX/UI",
+   "Art direction",
+   "Development"
+  ]
+ },
+ "card": {
+  "image": "cover",
+  "line": "2026 · Build · Wii arcade cabinets"
+ },
+ "background": "#121214",
+ "dark": true,
+ "modules": [
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "cab1-menu",
+     "width": 1280,
+     "height": 960,
+     "alt": "The WIIZARD menu on a cabinet: Street Fighter II on a taped photo, collections and button hints",
+     "ratio": 1.3333
+    },
+    {
+     "kind": "image",
+     "name": "cab1-attract",
+     "width": 1280,
+     "height": 960,
+     "alt": "Attract mode playing a gameplay clip with Press A to play",
+     "ratio": 1.3333
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>An arcade anyone can walk up to</h3><p class=\"ta-l\">A softmodded Wii can play almost anything, but getting to a game means the Wii Menu, the Homebrew Channel, a loader and a Wii Remote. That's fine for me and hopeless for a kid in the garage. I wanted each cabinet to feel like a real arcade machine: turn it on, see something playing, press a button, play.</p><p class=\"ta-l\">So every cabinet boots straight into WIIZARD. It plays gameplay clips in attract mode until someone picks up a pad, then shows a browse menu with collections like Quick Picks, Little Kids and Arcade Classics. Arcade sets, console classics, GameCube discs and Wii games all start the same way, with one button.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "cab1-loading",
+     "width": 1280,
+     "height": 960,
+     "alt": "Loading screen with the controls and the one exit combo for every game",
+     "ratio": 1.3333
+    },
+    {
+     "kind": "image",
+     "name": "intro",
+     "width": 320,
+     "height": 240,
+     "alt": "The WIIZARD intro: the wizard pops in and flicks a Wii Remote like a wand",
+     "ratio": 1.3333
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>Designed to be kid-proof</h3><ul class=\"ta-l\"><li><strong>Nothing to break.</strong> Reset and HOME always go back to attract mode, never out of the launcher. There's no path to a settings screen.</li><li><strong>One way out of every game.</strong> L + R + Z + Start exits any arcade or GameCube game, and the loading screen shows it, along with that game's controls.</li><li><strong>No accidental presses.</strong> Buttons do nothing for 0.8 seconds after a screen changes, so a mashed button doesn't skip what you were about to see.</li><li><strong>It recovers on its own.</strong> A game that doesn't start is retried once, then shows a plain message. One that fails twice is hidden and flagged for me.</li><li><strong>Made for the TV it's on.</strong> Each CRT is calibrated for width, height and position, and games run at their original 240p resolution so pixels look right.</li></ul>"
+  },
+  {
+   "type": "image",
+   "name": "explore",
+   "width": 1280,
+   "height": 2600,
+   "maxWidth": 900,
+   "alt": "Ten of the twenty explored looks for the WIIZARD menu, each on the same Street Fighter II screen"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Twenty looks, one menu</h3><p class=\"ta-l\">I mocked up twenty art directions on the same menu, from kinetic poster and neon low-poly to risograph and Bauhaus, shortlisted six, and picked \"maximal collage\": pink halftone paper, cut blue and yellow shapes, and the selected game's clip on a taped, tilted photo. It reads from across a garage and feels like a toy, not a settings app.</p><p class=\"ta-l\">The wizard is my own character from a 2017 drawing. I cut him out of the original Photoshop file and puppeted him for the power-on intro: a pop-in with squash and stretch, a blink, the Wii Remote flicked up like a wand, and a wink.</p>"
+  },
+  {
+   "type": "image",
+   "name": "chosen",
+   "width": 1280,
+   "height": 1008,
+   "maxWidth": 900,
+   "alt": "The chosen maximal collage direction"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Built for real hardware</h3><p class=\"ta-l\">I built the launcher in C for the Wii with its own graphics code, after the off-the-shelf renderer crashed. It runs the menu at 60 fps on a 2006 console. A small agent inside it lets me run the whole fleet from a Mac, hands-free, with Claude through an MCP server: screenshots, button presses, installs and updates.</p><p class=\"ta-l\">The first cabinet sits next to the router but its USB network adapter wasn't one the Wii supports. So I wrote a driver for it, with a full network stack on top. As far as I know it's the only public homebrew USB Ethernet driver for the Wii, and I've packaged it as its own library, libwiieth.</p><h3>Designed from what gets played</h3><p class=\"ta-l\">Every cabinet reports what gets played and what fails. Collections are ordered by what actually gets played, updates download on their own while the cabinet sits in attract mode, and a nightly report tells me which cabinet needs attention.</p>"
+  }
+ ]
+}

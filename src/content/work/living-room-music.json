@@ -1,0 +1,72 @@
+{
+ "title": "Living Room Music",
+ "pageTitle": "Living Room Music | Mitchell Vizensky",
+ "slug": "living-room-music",
+ "order": 0.115,
+ "description": "<p>A calm, audio-only music app for the TV in our living room, on an NVIDIA Shield. It plays YouTube Music and our own Plex library with no videos, finds new music from the songs we like, shows karaoke lyrics, and colors the room's lights to match each album.</p>",
+ "meta": {
+  "date": "2026",
+  "fields": [
+   "UX/UI",
+   "TV app",
+   "Development"
+  ]
+ },
+ "card": {
+  "image": "cover",
+  "line": "2026 · Build · Android TV music app"
+ },
+ "background": "#121214",
+ "dark": true,
+ "modules": [
+  {
+   "type": "image",
+   "name": "home",
+   "width": 1920,
+   "height": 1080,
+   "maxWidth": 1200,
+   "alt": "The home screen: stations, the record shelf and new finds"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Music, not videos</h3><p class=\"ta-l\">We play music on the living-room TV all day, and every music app on TV wants to show you videos, ads and autoplay rabbit holes. I wanted something closer to a good stereo: put on a station, see what's playing from across the room, and let the music be the point.</p><p class=\"ta-l\">Living Room Music is audio only. The home screen is a few stations, the albums we own, and new finds based on what we like, all big enough to read from the couch and easy to move through with a TV remote.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "player",
+     "width": 1920,
+     "height": 1080,
+     "alt": "The player with synced karaoke lyrics",
+     "ratio": 1.7778
+    },
+    {
+     "kind": "image",
+     "name": "aurora",
+     "width": 1920,
+     "height": 1080,
+     "alt": "The Aurora visualizer in the album's colors",
+     "ratio": 1.7778
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>Key decisions</h3><ul class=\"ta-l\"><li><strong>Stations from what you like.</strong> \"Likes + new finds\" mixes songs you've liked with ones you haven't heard, so discovery happens without searching.</li><li><strong>Your own records, side by side.</strong> Albums we own in lossless sit on a Record shelf next to streaming, in one app.</li><li><strong>Sound like a stereo.</strong> Albums play gaplessly, songs crossfade, and loudness is evened out so nothing jumps.</li><li><strong>Something to look at, calmly.</strong> Synced karaoke lyrics and four visualizers in each album's colors, plus a calm mode.</li><li><strong>The room joins in.</strong> Each album can tint the Hue lights through Home Assistant. Only lights that are already on change, and the room goes back to normal afterwards.</li></ul>"
+  },
+  {
+   "type": "image",
+   "name": "how-it-works",
+   "width": 1344,
+   "height": 578,
+   "maxWidth": 900,
+   "alt": "How it works: the TV app asks one home server for everything"
+  },
+  {
+   "type": "text",
+   "html": "<h3>One server behind it</h3><p class=\"ta-l\">The TV app is small: Kotlin with no third-party libraries. A home server does the heavy lifting: it builds stations, converts hi-res FLAC for the TV, evens out loudness, and caches lyrics and album stories. Keeping the app simple made it fast on the Shield and easy to change from the couch.</p><p class=\"ta-l\">It's a personal project for our home, built with Claude Code, and not a product.</p>"
+  }
+ ]
+}
