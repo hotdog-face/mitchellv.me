@@ -93,6 +93,25 @@ export const caseStudies: CaseStudy[] = [
     featured: true,
   },
   {
+    href: '/work/hollowtide',
+    title: 'Hollowtide',
+    company: 'Personal project, a fan revival of Asheron\'s Call',
+    product: 'Hollowtide',
+    year: '2026',
+    summary: 'Playing a 1999 MMO today means a 20-year-old client, a stack of third-party add-ons and a weekend of setup. I designed a new client with the add-ons built in, put it in the browser, and ran the launch.',
+    role: 'Designer, director and live-ops lead, working with AI coding agents',
+    team: 'Solo, directing AI coding agents, with a player community testing every release',
+    platforms: 'Browser, Windows, Mac and Linux',
+    impact: [
+      { value: '348', label: 'players in the first three weeks' },
+      { value: '94%', label: 'of them played in the browser, no install' },
+      { value: '71', label: 'releases in 21 days' },
+    ],
+    image: 'work/hollowtide/cover',
+    hoverClip: { name: 'hollowtide' },
+    featured: true,
+  },
+  {
     href: '/work/bfc-store-revamp',
     title: 'Big Fish Casino Store Revamp',
     company: 'Big Fish Games',
@@ -126,7 +145,7 @@ export const caseStudies: CaseStudy[] = [
 ];
 
 /** Builds: side projects I design and build myself, in the order shown. */
-export const lab = ['/work/wiizard', '/work/vitaos', '/work/prism', '/work/living-room-music', '/work/hollowtide', '/work/classic-mac', '/work/mr2-dash', '/work/gameplay-spotlight', '/work/vita-agent-bridge', '/work/retro-tv'];
+export const lab = ['/work/wiizard', '/work/vitaos', '/work/prism', '/work/living-room-music', '/work/classic-mac', '/work/mr2-dash', '/work/gameplay-spotlight', '/work/vita-agent-bridge', '/work/retro-tv'];
 
 // What each build shows about my UX work (one line on its Builds card), and which ones are
 // console and living-room interfaces: built for a controller or a remote and read from the couch.
