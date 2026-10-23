@@ -3,7 +3,7 @@
  "pageTitle": "Hollowtide | Mitchell Vizensky",
  "slug": "hollowtide",
  "order": 0.12,
- "description": "<p>A fan revival of Asheron's Call, the 1999 MMO I grew up on: its own client for Windows, Mac and Linux with the community's favorite add-ons built in, on a live server with new bosses, gear and events.</p>",
+ "description": "<p>A fan revival of Asheron's Call, the 1999 MMO I grew up on: a new client for Windows, Mac, Linux and the browser with the community's favorite add-ons built in, on a live server I run. 348 players and 71 releases in its first three weeks.</p>",
  "meta": {
   "date": "2026",
   "fields": [
@@ -18,7 +18,11 @@
  },
  "links": [
   {
-   "label": "Play on itch.io",
+   "label": "Play in your browser",
+   "href": "https://hollowtide.org"
+  },
+  {
+   "label": "Desktop builds on itch.io",
    "href": "https://lumpybutt33.itch.io/hollowtide"
   },
   {
@@ -38,18 +42,59 @@
   },
   {
    "type": "text",
-   "html": "<h3>Overview</h3><p class=\"ta-l\">I've wanted to make something like Asheron's Call since I first played it in 1999 on dial-up. AI coding tools are what finally made it possible. Hollowtide is its own game client, native on Windows, Mac (including Apple Silicon) and Linux, that installs and updates through itch.io, connected to a live server I run with new content on top of the original game.</p><p class=\"ta-l\">I design it, build it and run it: the client, the server mod, the new content and the community around it.</p>"
+   "html": "<h3>Overview</h3><p class=\"ta-l\">I've wanted to make something like Asheron's Call since I first played it in 1999 on dial-up. AI coding tools are what finally made it possible. Hollowtide is a new game client for the original game, native on Windows, Mac (including Apple Silicon) and Linux, and playable in a browser tab. It connects to a live server I run, with new content on top of the original world.</p><p class=\"ta-l\"><strong>My role.</strong> I'm the designer, director and live-ops lead. I set the vision and the rules, decide what ships, play every build and talk to players. The code is written by AI coding agents (Claude Code) working from my direction, design docs and decisions, several at once. Over 8 weeks that was 4,420 commits and 337 design, plan and findings documents. Every release went out on my explicit go.</p><p class=\"ta-l\">It's like running a small studio where every engineer is an agent. My job was the same as on a game team: find the real player problem, decide what good looks like, make it testable, and hold the line on quality.</p>"
   },
   {
    "type": "video",
-   "name": "cut",
+   "name": "reel",
    "width": 960,
    "height": 540,
-   "label": "Hollowtide portfolio cut: the browser login, Holtburg, the built-in map, VTank, auto loot and the Forge-Warden boss fight"
+   "label": "Hollowtide highlight reel: one-click browser login to Holtburg, new creatures, the Forge-Warden boss fight, the built-in Assistant, the world map and a day-night time-lapse",
+   "maxWidth": 1000
   },
   {
    "type": "text",
-   "html": "<h3>Quality of life, built in</h3><p class=\"ta-l\">Veteran players relied on third-party add-ons to make the game playable. Hollowtide builds them into the client, so there's nothing to install:</p><ul class=\"ta-l\"><li><strong>VTank, built in:</strong> auto attack, buffing, healing, looting and salvage, with navigation routes drawn right in the world. Players' old route and loot files load as they are.</li><li><strong>A searchable world map</strong> you can zoom from one town to the whole continent, with your own pins.</li><li><strong>Item comparison</strong> that shows what a new piece of gear changes before you equip it.</li><li><strong>A radar</strong> that shows walls and coordinates, plus real water, swaying trees, grass you walk through and smoother movement for everyone around you.</li></ul>"
+   "html": "<h3>The problem: the hardest part of playing was getting in</h3><p class=\"ta-l\">Asheron's Call shut down in 2017. Fans kept it alive on community servers, but playing today means:</p><ul class=\"ta-l\"><li>An original 32-bit Windows client that needs workarounds on a modern PC and doesn't run natively on a Mac.</li><li>Third-party add-ons that veterans call mandatory (VTank for combat and looting, maps, radars), each installed separately through a separate plugin framework.</li><li>The original game's data files, which a new player has to find on their own.</li></ul><p class=\"ta-l\">On our first public launch night, October 9, nobody from outside the project even reached the login screen. The download wasn't the barrier. The setup was. Three design goals came out of that:</p><ol class=\"ta-l\"><li><strong>Feel like the original.</strong> Veterans notice small differences in movement and casting right away. If it doesn't feel like the game they remember, nothing else matters.</li><li><strong>Build the add-ons in.</strong> Everything players used to install is part of the client, on by default where it helps, and compatible with their old files.</li><li><strong>One click to play.</strong> A browser link should put a new player in the world in about a minute.</li></ol>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>One click to play, in the browser</h3><p class=\"ta-l\">After launch night I made the call to build a browser version. It was live two days later: a player opens a link, picks a name and is in Holtburg about a minute later, with nothing to install. A guest can keep their character later by choosing a password, and an Invite a friend button copies a link that tells the friend who invited them.</p><p class=\"ta-l\">Designing for the browser meant real constraints: low-end laptops (the game lowers its own render resolution when the graphics card struggles), browser shortcuts that fight game keys (F5, Alt+Left, Tab), and slow connections (your own armor downloads first, so you never arrive undressed).</p>"
+  },
+  {
+   "type": "video",
+   "name": "browser",
+   "width": 960,
+   "height": 540,
+   "label": "From the browser page to walking in Holtburg in under 30 seconds, with nothing installed",
+   "maxWidth": 1000
+  },
+  {
+   "type": "text",
+   "html": "<p class=\"ta-l\">It worked. <strong>326 of the 348 players who entered the world played in the browser.</strong></p>"
+  },
+  {
+   "type": "image",
+   "name": "players-per-day",
+   "width": 1600,
+   "height": 820,
+   "alt": "Players per day, October 3 to 23: almost none before the browser version, then a peak of 164 on October 16 and a steady 25 to 40 a day after",
+   "maxWidth": 1000
+  },
+  {
+   "type": "text",
+   "html": "<h3>\"Feel like the original,\" made testable</h3><p class=\"ta-l\">You can't fix \"it feels off.\" So I made the original client the judge. The 1999 client runs on a test machine, and a harness drives it and our client through the same inputs and compares positions, timing, animation and what the server is told. Movement passes 69 of 69 of those cases on every release, and the network layer passes 2,314 automated checks against replays of 26 recorded sessions of the original client.</p><p class=\"ta-l\">Where I chose to differ from the original on purpose, it's written down with a reason and approved before it ships: for example, a 10-second rescue when a spell cast gets stuck, while keeping the original's rule that you hold still to cast. Matching the original is the default; every exception is a design decision.</p><p class=\"ta-l\">A player's report shows how this pays off. One veteran told us that holding strafe and turn, then pressing run, moved differently from the original. We recorded both clients doing it, found the rule, added it to the tests and shipped the fix the next day, with a thank-you in the patch notes.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>The add-ons, built in</h3><ul class=\"ta-l\"><li><strong>The Assistant (VTank built in):</strong> auto attack, healing, buffing, looting, salvage, mana and navigation routes drawn in the world. Players' old route and loot files load as they are.</li><li><strong>A searchable world map</strong> you can zoom from one town to the whole continent, with your own pins and a go arrow.</li><li><strong>Item comparison, an in-game wiki (F1) and a radar</strong> with walls and coordinates.</li></ul><p class=\"ta-l\">The design work was mostly about trust. An automation that acts for you has to explain itself: hovering the Assistant shows what it's doing and its last five actions, a red ring says when something you turned on can't work and why, and it leaves your hands alone for 30 seconds after you wield something yourself.</p>"
+  },
+  {
+   "type": "video",
+   "name": "assistant",
+   "width": 960,
+   "height": 540,
+   "label": "The Assistant fighting Tidewrack Crabs on its own, then the world map zooming from one town to the whole continent",
+   "maxWidth": 1000
   },
   {
    "type": "grid",
@@ -82,7 +127,52 @@
   },
   {
    "type": "text",
-   "html": "<h3>A living world</h3><p class=\"ta-l\">The server runs new content on top of the original game: world bosses on a timer with personal loot, new quests, weapons, creatures and pets, a seasonal festival, and a PK season ladder with titles and the Arena back.</p>"
+   "html": "<h3>Guidance: from \"where do I go?\" to a Journal that knows</h3><p class=\"ta-l\">Asheron's Call never told you where to go. That's part of its charm for veterans and a wall for everyone else, and the funnel showed it: 56% of new players never passed level 1. I designed guidance in layers, lightest first, so veterans can ignore it:</p><ul class=\"ta-l\"><li><strong>Tips at the moment they matter,</strong> once each: your first death, first resist, first time over-burdened. One Hide tips turns them all off.</li><li><strong>A gold arrow to your first hunt</strong> after a minute in town, and quest givers that mark themselves only when you meet their level.</li><li><strong>Long NPC speeches end with one short gold line</strong> saying what they want, with Track and Go.</li><li><strong>The Journal</strong> became the home for quests: Active, Waiting, Done and Available, a Next step for each, \"Where next\" for hunting grounds at your level, and directions that use portals and your recalls.</li><li><strong>A quest tracker</strong> on screen that leads you into buildings and up stairs.</li></ul>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "journal",
+     "width": 730,
+     "height": 360,
+     "alt": "The Journal's Next step, with a first-hour tip above it",
+     "ratio": 2.0278
+    },
+    {
+     "kind": "image",
+     "name": "tracker",
+     "width": 1600,
+     "height": 853,
+     "alt": "The on-screen quest tracker pointing toward a turn-in (opt-in while it's tested)",
+     "ratio": 1.8757
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<p class=\"ta-l\">The tracker taught me the most. Its first version pointed players at places where nothing was, so I pulled it from players' screens and kept it opt-in while we audited every hint against the world itself. In the audit, 351 of 2,579 \"where to get it\" sources couldn't actually give the item, 252 hints pointed at NPCs this server never spawns, and 27 travel routes were impossible. All three are now at zero, and that fix is in the next update. The Journal shipped to everyone; the on-screen tracker waits until it's right.</p>"
+  },
+  {
+   "type": "image",
+   "name": "player-funnel",
+   "width": 1600,
+   "height": 700,
+   "alt": "From first visit to regular: 348 entered the world, 44% reached level 2, 36% reached level 5, 16% played on two or more days",
+   "maxWidth": 1000
+  },
+  {
+   "type": "text",
+   "html": "<h3>A world that feels alive with a small population</h3><p class=\"ta-l\">Early on there were only a handful of players online, and an empty MMO feels dead. Three design answers:</p><ul class=\"ta-l\"><li><strong>New content on the server:</strong> world bosses on a timer with telegraphed attacks and personal loot (the Forge-Warden of Ispar, Old Snapjaw, Varrow the Unbowed), new creatures and regions, new weapons and a nine-piece armor set, pets, and a festival calendar that runs every year.</li><li><strong>The Hollow Company:</strong> mercenaries who roam Holtburg, talk in General chat and join your fellowship if you invite them. They're clearly labeled as not players and never counted in the online number. A busy town, never a fake population.</li><li><strong>Founders:</strong> everyone who made an account before November gets a shirt, a house banner and a title, for life.</li></ul>"
+  },
+  {
+   "type": "video",
+   "name": "boss",
+   "width": 960,
+   "height": 540,
+   "label": "The Forge-Warden of Ispar: three golem cores open the vault, it shields itself, then gathers a killing overload",
+   "maxWidth": 1000
   },
   {
    "type": "grid",
@@ -144,7 +234,23 @@
   },
   {
    "type": "text",
-   "html": "<h3>Running it live</h3><p class=\"ta-l\">Running a live server is its own design job: tuning anti-cheat limits, fixing what players hit, and inviting people in. I announce updates, invite players to meet up in Holtburg, and ask them directly what isn't working, because one person can only find so many bugs. The client also speaks the same protocol as other community servers, so it can bring the scattered Asheron's Call community together rather than split it further.</p><p class=\"ta-l\" style=\"font-size:13px;opacity:.75\">Hollowtide is a fan project, not affiliated with or endorsed by Turbine, WB Games or the original game's owners. No game data is included: players use their own copy of the original game's files. The server source is published under the AGPL, as required by the ACE emulator it builds on.</p>"
+   "html": "<h3>Quality of life, in the hundreds</h3><p class=\"ta-l\">Most of the work players actually feel is small. A few favorites:</p><ul class=\"ta-l\"><li><strong>A login screen that tells the truth:</strong> Online, Restarting or Maintenance, players on, your ping, and a countdown to the nightly restart. \"Is it me or the server?\" is the first question when something goes wrong.</li><li><strong>Drag shows where an item will land:</strong> a green ring, or a red sign where it can't go.</li><li><strong>Drop gear on another player to hand it over.</strong> Giving is far more common than trading.</li><li><strong>Chat tabs that sort themselves,</strong> so spell words and system lines stop drowning out conversation.</li><li><strong>The disconnect screen says why:</strong> a planned update, the nightly restart, or your connection.</li><li><strong>Your windows and settings follow your character</strong> to another computer, including the browser.</li></ul>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Running it live</h3><p class=\"ta-l\">I treated the launch as a series of small beats, each a new reason to invite people and each small enough for the server and me to handle:</p><ul class=\"ta-l\"><li><strong>October 3, soft launch:</strong> a small group of players finds the rough edges.</li><li><strong>October 9, first public post</strong> to the Asheron's Call community. Nobody got past setup, which led straight to the browser version.</li><li><strong>October 11, the browser version goes live,</strong> with Founders and Invite a friend. October 13, the Discord opens.</li><li><strong>October 15 and 16, the browser post and a Holtburg meet-up</strong> at a set time, with the game moved to hollowtide.org. 164 players logged in on the 16th.</li><li><strong>Since then,</strong> a steady 25 to 40 players a day and 8 to 11 online together at peak.</li></ul><p class=\"ta-l\">I kept it deliberately low-key: community channels only, free to play, no press. The right first audience is the people who love the original, and the pitch is the easiest way to play, never a reason to leave another server.</p><h3>The feedback loop</h3><ul class=\"ta-l\"><li><strong>F7 files a bug report</strong> from inside the game, with a snapshot and where you were standing. Players sent 163 written reports from 21 different people, and the client's own watchdog sent 423 automatic ones.</li><li><strong>A new-bug alarm</strong> compares each release with the last one per hour of real play, so a regression shows up within hours.</li><li><strong>Fixes come back with credit:</strong> each release post thanks the players whose reports drove it.</li><li><strong>A Feature Requests board</strong> in the game: players suggest and vote, and see what's planned, done or declined, and why.</li></ul>"
+  },
+  {
+   "type": "image",
+   "name": "requests",
+   "width": 478,
+   "height": 557,
+   "alt": "The in-game Feature Requests board: player ideas with votes and a status for each",
+   "maxWidth": 480
+  },
+  {
+   "type": "text",
+   "html": "<h3>Learning to slow down</h3><p class=\"ta-l\">The first weeks shipped fast: 71 releases in 21 days, 9 of them on October 16 alone. Speed got fixes to players within hours, but in that stretch one fix broke teleports and had to be pulled, and players on old versions kept reporting bugs that were already fixed. So I set a stability plan:</p><ol class=\"ta-l\"><li>Every fixed bug gets a replay test that runs before each release.</li><li>One planned release a day, after a soak: bots play the candidate for about 20 minutes, and it ships only if its error rate is no worse than the live version's.</li><li>Old clients are asked to update: a browser tab offers a reload, and the desktop app asks at login.</li><li>Reports are grouped in a daily digest, so a genuinely new bug stands out.</li></ol><p class=\"ta-l\">The last four releases each soaked with zero errors. Then I paused releases so the next one can be a real update instead of another patch.</p><h3>Results</h3><table class=\"keys\"><tbody><tr><th>8 weeks</th><td>from first commit to three weeks live</td></tr><tr><th>348</th><td>players entered the world in the first three weeks</td></tr><tr><th>94%</th><td>of them played in the browser, with nothing to install</td></tr><tr><th>About 790</th><td>hours played by real players</td></tr><tr><th>54</th><td>players came back on two or more days; 13 have played more than 10 hours</td></tr><tr><th>595</th><td>player reports, written and automatic, read and triaged</td></tr><tr><th>71</th><td>releases in 21 days, then one soaked release a day</td></tr><tr><th>69 of 69</th><td>movement tests match the original 1999 client</td></tr></tbody></table><h3>What I learned</h3><ul class=\"ta-l\"><li><strong>The barrier is rarely the one you plan for.</strong> I built a native client for three platforms, and launch night showed the real wall was setup. The browser version now carries 94% of players.</li><li><strong>Make \"feel\" measurable.</strong> Using the original client as the judge turned arguments about feel into tests that pass or fail, and let me approve each intentional difference on purpose.</li><li><strong>Shipping fast is a tool, not a virtue.</strong> Same-day fixes built trust with players. The day one of them broke teleports, a soak and a replay test per fix were cheaper than another apology.</li><li><strong>Guidance has to be true before it's helpful.</strong> A quest arrow that points nowhere is worse than no arrow.</li><li><strong>Directing AI agents is directing a team.</strong> The leverage is real, but it's still design: clear goals, written decisions, a definition of done that can be checked, and someone who plays every build.</li></ul><h3>What's next</h3><ul class=\"ta-l\"><li>Fix the first-session drop: 56% of new players never pass level 1. The guidance work is the first step, and arrival-week cohorts are how I'll measure it.</li><li>Turn the on-screen quest tracker on for everyone once its hints pass the accuracy audit.</li><li>A player dungeon builder, so the community can make content, not just consume it.</li></ul><p class=\"ta-l\" style=\"font-size:13px;opacity:.75\">Numbers are from the live server, October 3 to 23, 2026, counting real players only (no staff, no bots). Hollowtide is a fan project, not affiliated with or endorsed by Turbine, WB Games or the original game's owners. The server runs a modified ACEmulator, and its source is published under the AGPL.</p>"
   }
  ]
 }
