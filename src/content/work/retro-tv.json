@@ -3,18 +3,18 @@
  "pageTitle": "Retro Cable TV | Mitchell Vizensky",
  "slug": "retro-tv",
  "order": 0.5,
- "description": "<p>A retro cable box that plays 2002 to 2006 American television on a CRT, fed by a pipeline that turns archived TV into a searchable, scheduled library.</p>",
+ "description": "<p>A cable box from another decade, built from scratch: 40-plus channels on a CRT with a live TV guide, local weather, period commercials and live local news. It runs itself on a Raspberry Pi, with no app and no setup.</p>",
  "meta": {
   "date": "2026",
   "fields": [
    "Development",
-   "AI tooling",
-   "Hardware"
+   "Hardware",
+   "TV UI"
   ]
  },
  "card": {
   "image": "cover",
-  "line": "2026 · Build · CRT cable channel"
+  "line": "2026 · Build · CRT cable box"
  },
  "links": [
   {
@@ -35,15 +35,97 @@
    "width": 1150,
    "height": 900,
    "maxWidth": 900,
-   "alt": "BroadcastBrain commands: run, search and dashboard"
+   "alt": "Channel 1 on the tube: the live guide, with a preview of what's on now"
   },
   {
    "type": "text",
-   "html": "<h3>Turning a pile of tapes into a channel</h3><p class=\"ta-l\">The box runs FieldStation42 on a Raspberry Pi driving a composite CRT. The hard part is the library, so I built two tools for it.</p><p class=\"ta-l\"><strong>BroadcastBrain</strong> takes Internet Archive downloads, VHS captures, DVR recordings and DVD rips, and turns them into a segmented, analyzed, deduplicated library ready to schedule as cable. You drop videos in a folder, run one command, and wake up to a processed library. You can search it in plain English, like \"all MTV clips from 2004\", and every AI step is optional: the pipeline still runs without it and fills the gaps later.</p><p class=\"ta-l\"><strong>RetroConvert</strong> batch-converts video to 640x480 for the CRT. It never upscales, verifies each file before deleting the source, and picks up where it left off.</p>"
+   "html": "<h3>The idea</h3><p class=\"ta-l\">Cable TV used to just be on. You picked up the remote, flipped to something, and there was a schedule, a guide channel, the weather, and commercials for things you'd forgotten existed. Streaming took away the flipping and added a decision to every evening.</p><p class=\"ta-l\">I wanted that back for my family, on a real CRT, with no menus to learn. The brief: turn it on and something good is playing. Change the channel and something else is.</p><h3>What I built</h3><p class=\"ta-l\">The box is a Raspberry Pi 4 behind a Sony Trinitron, wired over composite. It runs FieldStation42, an open-source cable simulator. I forked it and rebuilt it around how a family actually watches TV. I designed and built all of it: the lineup, the programming rules, the on-screen look, the hardware, and the pipeline that fills it. I built it with Claude Code.</p><ul class=\"ta-l\"><li><strong>40-plus channels with real identities.</strong> Each network has its own dayparts, logo bug, bumpers and coming-up-next promos. Cartoons after school, Toonami in the afternoon, horror after dark.</li><li><strong>A guide you can use.</strong> Channel 1 is a live listings grid with a clock and a cursor the remote can move. Pick a show and press OK to tune to it.</li><li><strong>Local weather and live news.</strong> Channel 2 is a forecast loop. When the National Weather Service issues a warning, a red crawl runs across every channel. The local stations' live newscasts sit next to it in the lineup.</li><li><strong>Commercials from the right year.</strong> A 1994 sitcom gets 1994 ads. A 2005 cartoon gets 2005 toy spots.</li><li><strong>The calendar matters.</strong> Halloween episodes air in late October and Thanksgiving episodes in November. The Christmas channel only exists in December.</li><li><strong>It knows when you've gone to bed.</strong> Turn the TV off and the box drops to standby. Turn it back on and you're on the same channel, watching whatever is airing <em>now</em>.</li></ul>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "guide-grid",
+     "width": 1280,
+     "height": 960,
+     "ratio": 1.3333,
+     "alt": "Channel 1: the live guide, with the clock and the NOW line"
+    },
+    {
+     "kind": "image",
+     "name": "weather-forecast",
+     "width": 1280,
+     "height": 960,
+     "ratio": 1.3333,
+     "alt": "Channel 2: the local forecast, rendered every hour"
+    }
+   ]
   },
   {
    "type": "text",
-   "html": "<h3>Three steps for the person using it</h3><p class=\"ta-l\">Under the hood the pipeline is complex: it finds the cuts in hours of recordings, analyzes every clip, removes duplicates and sorts everything into a library. I designed it so none of that is the user's problem. The job is three steps.</p><ol class=\"flow\"><li>Drop videos in a folder</li><li>Run one command</li><li>Wake up to a library</li></ol><h3>Key decisions</h3><ul class=\"ta-l\"><li><strong>Explain every decision.</strong> The tool never just labels a clip. Each analyzer votes with a reason, and you can ask why something was filed as a promo and see the votes.</li><li><strong>Never guess, never delete.</strong> Clips that don't clear the confidence bar go to Unknown, where they stay searchable. Duplicates are set aside, not thrown away.</li><li><strong>Recover from anything.</strong> Pull the plug mid-run and the next run picks up where it stopped, losing at most one step.</li><li><strong>Make it feel like real cable.</strong> Cuts snap to the 15, 30 and 60-second slots cable actually used, and the export builds real ad breaks: a show, then commercials with a network promo in the middle and a bumper coming back.</li></ul><ol class=\"flow\"><li>Show</li><li>Commercial</li><li>Network promo</li><li>Commercial</li><li>Bumper</li><li>Next show</li></ol><h3>What I learned</h3><p class=\"ta-l\">Automation people can't see into is automation they don't trust. Making the AI optional, and showing its reasoning when it is used, mattered more to the experience than making it smarter.</p><p><a href=\"https://github.com/hotdog-face/BroadcastBrain\">View BroadcastBrain on GitHub</a> · <a href=\"https://github.com/hotdog-face/RetroConvert\">RetroConvert</a></p>"
+   "html": "<h3>Designing for people who'll never see a setting</h3><p class=\"ta-l\">My family uses it, kids included. Nobody will ever read a log, so the box has to behave like an appliance.</p><ul class=\"ta-l\"><li><strong>Nothing to manage.</strong> There are no menus and no settings screens. The TV's own remote does everything.</li><li><strong>Variety you can feel.</strong> Programming rules are checked against the schedule the box actually built. No show holds the same hour two days running, no film airs twice in a week, and no show takes over a channel.</li><li><strong>Made for who's watching.</strong> The PBS Kids channel leans on calm, educational shows picked for a three-year-old. Late-night tapes play uncut, exactly as they aired.</li><li><strong>Kind to the hardware.</strong> A CRT is the one part I can't replace. After a few minutes in standby the screen goes fully black, so no still image burns into the tube.</li></ul>"
+  },
+  {
+   "type": "video",
+   "name": "next-cards",
+   "width": 960,
+   "height": 720,
+   "maxWidth": 960,
+   "label": "Coming-up-next cards for Nickelodeon, Cartoon Network and Toonami, built from the real schedule"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Building the library</h3><p class=\"ta-l\">Most of the work is the library, so I built a pipeline for it. It started with two tools, <a href=\"https://github.com/hotdog-face/BroadcastBrain\">BroadcastBrain</a> and <a href=\"https://github.com/hotdog-face/RetroConvert\">RetroConvert</a>, and grew into three machines feeding the box.</p><ul class=\"ta-l\"><li><strong>Every source has a path.</strong> The family's DVDs rip the moment they go in the drive, feature only. Internet Archive titles are picked one by one in a picker page I built, so nothing lands that nobody asked for. Broadcast tapes stay whole and play raw, ads and all.</li><li><strong>Nothing airs until it's verified.</strong> Every file is decoded end to end, its checksum is matched when it lands on the box, and speech recognition confirms it's in English.</li><li><strong>The box never stutters for a copy.</strong> New files go straight to the Pi over Ethernet: full speed when nobody is watching, a trickle when someone is.</li><li><strong>Every removal is reversible.</strong> Nothing is deleted on the box. Removals wait in quarantine until I've signed off.</li></ul>"
+  },
+  {
+   "type": "image",
+   "name": "pipeline",
+   "width": 1600,
+   "height": 900,
+   "maxWidth": 1200,
+   "alt": "The content pipeline: DVDs, archive downloads and tapes go through three worker machines, picture fitting and verification, then over Ethernet to the box"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Every picture fits a 4:3 tube</h3><p class=\"ta-l\">A CRT is 4:3, and old video comes in every shape. A squeezed or stretched picture is the fastest way to make the whole box feel broken, so I treat shape as a quality gate.</p><ul class=\"ta-l\"><li><strong>Fill the tube when the picture allows it.</strong> Black side bars are cropped so a 4:3 show fills the screen.</li><li><strong>Never crop a widescreen film.</strong> True widescreen is letterboxed. The picture is never cut to fit.</li><li><strong>Live channels get checked as they play.</strong> A live feed can switch from widescreen to an old 4:3 show at any moment, so the box looks again every 20 seconds and adjusts.</li><li><strong>Fix the whole class, not the one example.</strong> When someone spotted a squeezed Kia ad, I scanned all 16,000 ads and bumpers for the same fault and fixed more than 300 that night.</li></ul><h3>Engineering challenges</h3><p class=\"ta-l\"><strong>The case's AV jack only carried audio.</strong> On the new build the TV stayed black. I checked the video signal at the register level before touching any hardware. The case's rear jack turned out to be wired for audio only. The fix was a slim right-angle lead to the Pi's own jack.</p><p class=\"ta-l\"><strong>A picture can die while everything says &ldquo;playing.&rdquo;</strong> Twice, the screen froze while every service reported healthy. The watchdog now asks the video player directly whether its clock is moving, and it acts only when two checks in a row agree.</p><p class=\"ta-l\"><strong>The remote stopped listening on the new channels.</strong> Old channels changed instantly. The live and streaming ones often ignored the remote. I logged every raw infrared burst against the presses that decoded: 82% got through on local channels and only 18% on streaming ones. The receiver was picking up noise from the Wi-Fi radio. Moving the box to Ethernet fixed it.</p><p class=\"ta-l\"><strong>Era-matched commercials.</strong> Every programme and every ad has a year. Each break uses the narrowest window that still has enough fresh spots. On a week of schedules, the average gap between show and ad fell from 4-12 years to 1-3.</p><p class=\"ta-l\"><strong>Three machines, one queue.</strong> A GPU box, a Linux Mac and an M5 Mac share the work. Hardware encoding is tuned to match x264 quality at the same size, with a CPU fallback when the GPU is busy. An overnight watchdog restarts anything that stalls and frees disk once a file is safely on the box.</p>"
+  },
+  {
+   "type": "image",
+   "name": "architecture",
+   "width": 1600,
+   "height": 900,
+   "maxWidth": 1200,
+   "alt": "How the box fits together: media library, scheduler, player and composite out to the CRT, with the guide, weather, remote, standby and watchdog around it"
+  },
+  {
+   "type": "text",
+   "html": "<h3>The result</h3><p class=\"ta-l\">The box has run unattended since August. It carries about 14,400 episodes and films (roughly 6,500 hours), more than 4,200 dated commercials and 10,000 bumpers. Every night it catalogues new content, extends its schedule, backs up its configuration and checks its own health. My family turns it on like a TV.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "tonight-card",
+     "width": 1280,
+     "height": 960,
+     "ratio": 1.3333,
+     "alt": "A Tonight card showing what's coming up this evening"
+    },
+    {
+     "kind": "image",
+     "name": "standby-card",
+     "width": 1280,
+     "height": 960,
+     "ratio": 1.3333,
+     "alt": "The standby card, styled like a set-top box from the early 2000s"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>What I learned</h3><p class=\"ta-l\">The family is the best QA team I've had. Every fix this month started with someone on the couch saying &ldquo;that looks wrong.&rdquo; The work was making a one-line report, like &ldquo;the Kia ad is stretched&rdquo;, turn into a fix for every case like it by morning.</p><p><a href=\"https://github.com/hotdog-face/BroadcastBrain\">View BroadcastBrain on GitHub</a> · <a href=\"https://github.com/hotdog-face/RetroConvert\">RetroConvert</a></p>"
   }
  ]
 }

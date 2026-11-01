@@ -159,7 +159,7 @@ export const labAngle: Record<string, { angle: string; tv?: boolean }> = {
   'mr2-dash': { angle: 'Glanceable numbers you can read while driving' },
   'gameplay-spotlight': { angle: 'Choosing a game from across the room', tv: true },
   'vita-agent-bridge': { angle: 'Designing for an AI user: look, act, look again' },
-  'retro-tv': { angle: 'Automation people can trust: it explains every decision' },
+  'retro-tv': { angle: 'Designing a TV nobody has to manage', tv: true },
 };
 
 export const caseStudyFor = (path: string) => caseStudies.find(c => c.href === path.replace(/\/$/, ''));
