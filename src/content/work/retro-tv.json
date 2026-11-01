@@ -30,16 +30,16 @@
  "dark": true,
  "modules": [
   {
-   "type": "image",
-   "name": "cover",
-   "width": 1150,
-   "height": 900,
-   "maxWidth": 900,
-   "alt": "Channel 1 on the tube: the live guide, with a preview of what's on now"
+   "type": "video",
+   "name": "surf",
+   "width": 960,
+   "height": 720,
+   "maxWidth": 960,
+   "label": "Flipping channels on the box: Dexter's Laboratory on Cartoon Network, Pokémon on Kids' WB, Gundam Wing on Toonami, Aqua Teen Hunger Force on Adult Swim, SpongeBob, The Simpsons, Jackass and Chappelle's Show, each with the box's own tune-in banner"
   },
   {
    "type": "text",
-   "html": "<h3>The idea</h3><p class=\"ta-l\">Cable TV used to just be on. You picked up the remote, flipped to something, and there was a schedule, a guide channel, the weather, and commercials for things you'd forgotten existed. Streaming took away the flipping and added a decision to every evening.</p><p class=\"ta-l\">I wanted that back for my family, on a real CRT, with no menus to learn. The brief: turn it on and something good is playing. Change the channel and something else is.</p><h3>What I built</h3><p class=\"ta-l\">The box is a Raspberry Pi 4 behind a Sony Trinitron, wired over composite. It runs FieldStation42, an open-source cable simulator. I forked it and rebuilt it around how a family actually watches TV. I designed and built all of it: the lineup, the programming rules, the on-screen look, the hardware, and the pipeline that fills it. I built it with Claude Code.</p><ul class=\"ta-l\"><li><strong>40-plus channels with real identities.</strong> Each network has its own dayparts, logo bug, bumpers and coming-up-next promos. Cartoons after school, Toonami in the afternoon, horror after dark.</li><li><strong>A guide you can use.</strong> Channel 1 is a live listings grid with a clock and a cursor the remote can move. Pick a show and press OK to tune to it.</li><li><strong>Local weather and live news.</strong> Channel 2 is a forecast loop. When the National Weather Service issues a warning, a red crawl runs across every channel. The local stations' live newscasts sit next to it in the lineup.</li><li><strong>Commercials from the right year.</strong> A 1994 sitcom gets 1994 ads. A 2005 cartoon gets 2005 toy spots.</li><li><strong>The calendar matters.</strong> Halloween episodes air in late October and Thanksgiving episodes in November. The Christmas channel only exists in December.</li><li><strong>It knows when you've gone to bed.</strong> Turn the TV off and the box drops to standby. Turn it back on and you're on the same channel, watching whatever is airing <em>now</em>.</li></ul>"
+   "html": "<h3>The idea</h3><p class=\"ta-l\">Cable TV used to just be on. You picked up the remote, flipped to something, and there was a schedule, a guide channel, the weather, and commercials for things you'd forgotten existed. Streaming took away the flipping and added a decision to every evening.</p><p class=\"ta-l\">I wanted that back for my family, on a real CRT, with no menus to learn. The brief: turn it on and something good is playing. Change the channel and something else is.</p><h3>What I built</h3><p class=\"ta-l\">The box is a Raspberry Pi 4 behind a Sony Trinitron, wired over composite. It runs FieldStation42, an open-source cable simulator. I forked it and rebuilt it around how a family actually watches TV. I designed and built all of it: the lineup, the programming rules, the on-screen look, the hardware, and the pipeline that fills it. I built it with Claude Code.</p><ul class=\"ta-l\"><li><strong>40-plus channels with real identities.</strong> Each network has its own dayparts, logo bug, bumpers and coming-up-next promos. Dexter's Lab after school, Toonami in the afternoon, Adult Swim after dark.</li><li><strong>A guide you can use.</strong> Channel 1 is a live listings grid with a clock and a cursor the remote can move. Pick a show and press OK to tune to it.</li><li><strong>Local weather and live news.</strong> Channel 2 is a forecast loop. When the National Weather Service issues a warning, a red crawl runs across every channel. The local stations' live newscasts sit next to it in the lineup.</li><li><strong>Commercials from the right year.</strong> A 1994 sitcom gets 1994 ads. A 2005 cartoon gets 2005 toy spots.</li><li><strong>The calendar matters.</strong> Halloween episodes air in late October and Thanksgiving episodes in November. The Christmas channel only exists in December.</li><li><strong>It knows when you've gone to bed.</strong> Turn the TV off and the box drops to standby. Turn it back on and you're on the same channel, watching whatever is airing <em>now</em>.</li></ul>"
   },
   {
    "type": "grid",
@@ -50,7 +50,7 @@
      "width": 1280,
      "height": 960,
      "ratio": 1.3333,
-     "alt": "Channel 1: the live guide, with the clock and the NOW line"
+     "alt": "Channel 1: the live guide at 10:42 in the morning, with X-Men previewing on FOX and Captain Planet, Pinky and the Brain, Dragon Ball Z Kai, Samurai Champloo and Even Stevens on the air"
     },
     {
      "kind": "image",
@@ -61,6 +61,14 @@
      "alt": "Channel 2: the local forecast, rendered every hour"
     }
    ]
+  },
+  {
+   "type": "image",
+   "name": "whats-on",
+   "width": 1600,
+   "height": 1210,
+   "maxWidth": 1200,
+   "alt": "What's on: Dexter's Laboratory, SpongeBob SquarePants, Pokémon, Aqua Teen Hunger Force, The Simpsons, Jackass, Chappelle's Show, a 2001 Game Boy Advance ad and a Cartoon Network bumper, all from the box's library"
   },
   {
    "type": "text",
@@ -89,6 +97,14 @@
   {
    "type": "text",
    "html": "<h3>Every picture fits a 4:3 tube</h3><p class=\"ta-l\">A CRT is 4:3, and old video comes in every shape. A squeezed or stretched picture is the fastest way to make the whole box feel broken, so I treat shape as a quality gate.</p><ul class=\"ta-l\"><li><strong>Fill the tube when the picture allows it.</strong> Black side bars are cropped so a 4:3 show fills the screen.</li><li><strong>Never crop a widescreen film.</strong> True widescreen is letterboxed. The picture is never cut to fit.</li><li><strong>Live channels get checked as they play.</strong> A live feed can switch from widescreen to an old 4:3 show at any moment, so the box looks again every 20 seconds and adjusts.</li><li><strong>Fix the whole class, not the one example.</strong> When someone spotted a squeezed Kia ad, I scanned all 16,000 ads and bumpers for the same fault and fixed more than 300 that night.</li></ul><h3>Engineering challenges</h3><p class=\"ta-l\"><strong>The case's AV jack only carried audio.</strong> On the new build the TV stayed black. I checked the video signal at the register level before touching any hardware. The case's rear jack turned out to be wired for audio only. The fix was a slim right-angle lead to the Pi's own jack.</p><p class=\"ta-l\"><strong>A picture can die while everything says &ldquo;playing.&rdquo;</strong> Twice, the screen froze while every service reported healthy. The watchdog now asks the video player directly whether its clock is moving, and it acts only when two checks in a row agree.</p><p class=\"ta-l\"><strong>The remote stopped listening on the new channels.</strong> Old channels changed instantly. The live and streaming ones often ignored the remote. I logged every raw infrared burst against the presses that decoded: 82% got through on local channels and only 18% on streaming ones. The receiver was picking up noise from the Wi-Fi radio. Moving the box to Ethernet fixed it.</p><p class=\"ta-l\"><strong>Era-matched commercials.</strong> Every programme and every ad has a year. Each break uses the narrowest window that still has enough fresh spots. On a week of schedules, the average gap between show and ad fell from 4-12 years to 1-3.</p><p class=\"ta-l\"><strong>Three machines, one queue.</strong> A GPU box, a Linux Mac and an M5 Mac share the work. Hardware encoding is tuned to match x264 quality at the same size, with a CPU fallback when the GPU is busy. An overnight watchdog restarts anything that stalls and frees disk once a file is safely on the box.</p>"
+  },
+  {
+   "type": "image",
+   "name": "ad-break",
+   "width": 1600,
+   "height": 480,
+   "maxWidth": 1200,
+   "alt": "One era-matched break: Dexter's Laboratory, then a 2000 ad for WWF SmackDown! 2, then a Cartoon Network bumper"
   },
   {
    "type": "image",
