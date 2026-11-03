@@ -39,7 +39,7 @@
   },
   {
    "type": "text",
-   "html": "<h3>The idea</h3><p class=\"ta-l\">Cable TV used to just be on. You picked up the remote, flipped to something, and there was a schedule, a guide channel, the weather, and commercials for things you'd forgotten existed. Streaming took away the flipping and added a decision to every evening.</p><p class=\"ta-l\">I wanted that back for my family, on a real CRT, with no menus to learn. The brief: turn it on and something good is playing. Change the channel and something else is.</p><h3>What I built</h3><p class=\"ta-l\">The box is a Raspberry Pi 4 behind a Sony Trinitron, wired over composite. It runs FieldStation42, an open-source cable simulator. I forked it and rebuilt it around how a family actually watches TV. I designed and built all of it: the lineup, the programming rules, the on-screen look, the hardware, and the pipeline that fills it. I built it with Claude Code.</p><ul class=\"ta-l\"><li><strong>40-plus channels with real identities.</strong> Each network has its own dayparts, logo bug, bumpers and coming-up-next promos. Dexter's Lab after school, Toonami in the afternoon, Adult Swim after dark.</li><li><strong>A guide you can use.</strong> Channel 1 is a live listings grid with a clock and a cursor the remote can move. Pick a show and press OK to tune to it.</li><li><strong>Local weather and live news.</strong> Channel 2 is a forecast loop. When the National Weather Service issues a warning, a red crawl runs across every channel. The local stations' live newscasts sit next to it in the lineup.</li><li><strong>Commercials from the right year.</strong> A 1994 sitcom gets 1994 ads. A 2005 cartoon gets 2005 toy spots.</li><li><strong>The calendar matters.</strong> Halloween episodes air in late October and Thanksgiving episodes in November. The Christmas channel only exists in December.</li><li><strong>It knows when you've gone to bed.</strong> Turn the TV off and the box drops to standby. Turn it back on and you're on the same channel, watching whatever is airing <em>now</em>.</li></ul>"
+   "html": "<h3>The idea</h3><p class=\"ta-l\">Cable TV used to just be on. You picked up the remote, flipped to something, and there was a schedule, a guide channel, the weather, and commercials for things you'd forgotten existed. Streaming took away the flipping and added a decision to every evening.</p><p class=\"ta-l\">I wanted that back for my family, on a real CRT, with no menus to learn. The brief: turn it on and something good is playing. Change the channel and something else is.</p><h3>What I built</h3><p class=\"ta-l\">The box is a Raspberry Pi 4 behind a Sony Trinitron, wired over composite. It runs FieldStation42, an open-source cable simulator. I forked it and rebuilt it around how a family actually watches TV. I designed and built all of it: the lineup, the programming rules, the on-screen look, the hardware, and the pipeline that fills it. I built it with Claude Code.</p><ul class=\"ta-l\"><li><strong>40-plus channels with real identities.</strong> Each network has its own dayparts, logo bug, bumpers and coming-up-next promos. Dexter's Lab after school, Toonami in the afternoon, Adult Swim after dark.</li><li><strong>A guide you can use.</strong> Channel 1 is a live listings grid with a clock and a cursor the remote can move. Pick a show and press OK to tune to it. Smooth jazz plays underneath, 104 tracks on a continuous loop, the way the old cable guide channel sounded.</li><li><strong>Local weather and live news.</strong> Channel 2 is a forecast loop. When the National Weather Service issues a warning, a red crawl runs across every channel. The local stations' live newscasts sit next to it in the lineup.</li><li><strong>Commercials from the right year.</strong> A 1994 sitcom gets 1994 ads. A 2005 cartoon gets 2005 toy spots.</li><li><strong>The calendar matters.</strong> Halloween episodes air in late October and Thanksgiving episodes in November. The Christmas channel only exists in December.</li><li><strong>It knows when you've gone to bed.</strong> Turn the TV off and the box drops to standby. Turn it back on and you're on the same channel, watching whatever is airing <em>now</em>.</li></ul>"
   },
   {
    "type": "grid",
@@ -84,7 +84,7 @@
   },
   {
    "type": "text",
-   "html": "<h3>Building the library</h3><p class=\"ta-l\">Most of the work is the library, so I built a pipeline for it. It started with two tools, <a href=\"https://github.com/hotdog-face/BroadcastBrain\">BroadcastBrain</a> and <a href=\"https://github.com/hotdog-face/RetroConvert\">RetroConvert</a>, and grew into three machines feeding the box.</p><ul class=\"ta-l\"><li><strong>Every source has a path.</strong> The family's DVDs rip the moment they go in the drive, feature only. Internet Archive titles are picked one by one in a picker page I built, so nothing lands that nobody asked for. Broadcast tapes stay whole and play raw, ads and all.</li><li><strong>Nothing airs until it's verified.</strong> Every file is decoded end to end, its checksum is matched when it lands on the box, and speech recognition confirms it's in English.</li><li><strong>The box never stutters for a copy.</strong> New files go straight to the Pi over Ethernet: full speed when nobody is watching, a trickle when someone is.</li><li><strong>Every removal is reversible.</strong> Nothing is deleted on the box. Removals wait in quarantine until I've signed off.</li></ul>"
+   "html": "<h3>Building the library</h3><p class=\"ta-l\">Most of the work is the library, so I built a pipeline for it. It started with two tools, <a href=\"https://github.com/hotdog-face/BroadcastBrain\">BroadcastBrain</a> and <a href=\"https://github.com/hotdog-face/RetroConvert\">RetroConvert</a>, and grew into four machines feeding the box.</p><ul class=\"ta-l\"><li><strong>Every source has a path.</strong> The family's DVDs rip the moment they go in the drive, feature only. Internet Archive titles are picked one by one in a picker page I built, so nothing lands that nobody asked for. Broadcast tapes stay whole and play raw, ads and all.</li><li><strong>Nothing airs until it's verified.</strong> Every file is decoded end to end, its checksum is matched when it lands on the box, and speech recognition confirms it's in English.</li><li><strong>The box never stutters for a copy.</strong> New files go straight to the Pi over Ethernet: full speed when nobody is watching, a trickle when someone is.</li><li><strong>Every removal is reversible.</strong> Nothing is deleted on the box. Removals wait in quarantine until I've signed off.</li></ul>"
   },
   {
    "type": "image",
@@ -96,7 +96,7 @@
   },
   {
    "type": "text",
-   "html": "<h3>Every picture fits a 4:3 tube</h3><p class=\"ta-l\">A CRT is 4:3, and old video comes in every shape. A squeezed or stretched picture is the fastest way to make the whole box feel broken, so I treat shape as a quality gate.</p><ul class=\"ta-l\"><li><strong>Fill the tube when the picture allows it.</strong> Black side bars are cropped so a 4:3 show fills the screen.</li><li><strong>Never crop a widescreen film.</strong> True widescreen is letterboxed. The picture is never cut to fit.</li><li><strong>Live channels get checked as they play.</strong> A live feed can switch from widescreen to an old 4:3 show at any moment, so the box looks again every 20 seconds and adjusts.</li><li><strong>Fix the whole class, not the one example.</strong> When someone spotted a squeezed Kia ad, I scanned all 16,000 ads and bumpers for the same fault and fixed more than 300 that night.</li></ul><h3>Engineering challenges</h3><p class=\"ta-l\"><strong>The case's AV jack only carried audio.</strong> On the new build the TV stayed black. I checked the video signal at the register level before touching any hardware. The case's rear jack turned out to be wired for audio only. The fix was a slim right-angle lead to the Pi's own jack.</p><p class=\"ta-l\"><strong>A picture can die while everything says &ldquo;playing.&rdquo;</strong> Twice, the screen froze while every service reported healthy. The watchdog now asks the video player directly whether its clock is moving, and it acts only when two checks in a row agree.</p><p class=\"ta-l\"><strong>The remote stopped listening on the new channels.</strong> Old channels changed instantly. The live and streaming ones often ignored the remote. I logged every raw infrared burst against the presses that decoded: 82% got through on local channels and only 18% on streaming ones. The receiver was picking up noise from the Wi-Fi radio. Moving the box to Ethernet fixed it.</p><p class=\"ta-l\"><strong>Era-matched commercials.</strong> Every programme and every ad has a year. Each break uses the narrowest window that still has enough fresh spots. On a week of schedules, the average gap between show and ad fell from 4-12 years to 1-3.</p><p class=\"ta-l\"><strong>Three machines, one queue.</strong> A GPU box, a Linux Mac and an M5 Mac share the work. Hardware encoding is tuned to match x264 quality at the same size, with a CPU fallback when the GPU is busy. An overnight watchdog restarts anything that stalls and frees disk once a file is safely on the box.</p>"
+   "html": "<h3>Every picture fits a 4:3 tube</h3><p class=\"ta-l\">A CRT is 4:3, and old video comes in every shape. A squeezed or stretched picture is the fastest way to make the whole box feel broken, so I treat shape as a quality gate.</p><ul class=\"ta-l\"><li><strong>Fill the tube when the picture allows it.</strong> Black side bars are cropped so a 4:3 show fills the screen.</li><li><strong>Never crop a widescreen film.</strong> True widescreen is letterboxed. The picture is never cut to fit.</li><li><strong>Live channels get checked as they play.</strong> A live feed can switch from widescreen to an old 4:3 show at any moment, so the box looks again every 20 seconds and adjusts.</li><li><strong>Fix the whole class, not the one example.</strong> When someone spotted a squeezed Kia ad, I scanned all 16,000 ads and bumpers for the same fault and fixed more than 300 that night.</li></ul><h3>Engineering challenges</h3><p class=\"ta-l\"><strong>The case's AV jack only carried audio.</strong> On the new build the TV stayed black. I checked the video signal at the register level before touching any hardware. The case's rear jack turned out to be wired for audio only. The fix was a slim right-angle lead to the Pi's own jack.</p><p class=\"ta-l\"><strong>A picture can die while everything says &ldquo;playing.&rdquo;</strong> Twice, the screen froze while every service reported healthy. The watchdog now asks the video player directly whether its clock is moving, and it acts only when two checks in a row agree.</p><p class=\"ta-l\"><strong>The remote stopped listening on the new channels.</strong> Old channels changed instantly. The live and streaming ones often ignored the remote. I logged every raw infrared burst against the presses that decoded: 82% got through on local channels and only 18% on streaming ones. The receiver was picking up noise from the Wi-Fi radio. Moving the box to Ethernet fixed it.</p><p class=\"ta-l\"><strong>Era-matched commercials.</strong> Every programme and every ad has a year. Each break uses the narrowest window that still has enough fresh spots. On a week of schedules, the average gap between show and ad fell from 4-12 years to 1-3.</p><p class=\"ta-l\"><strong>Four machines, one queue.</strong> A GPU box, a Linux Mac and an M5 Mac share the heavy work, and my MacBook runs one low-priority encode queue on the side. Hardware encoding is tuned to match x264 quality at the same size, with a CPU fallback when the GPU is busy. An overnight watchdog restarts anything that stalls and frees disk once a file is safely on the box.</p>"
   },
   {
    "type": "image",
@@ -105,6 +105,55 @@
    "height": 480,
    "maxWidth": 1200,
    "alt": "One era-matched break: Dexter's Laboratory, then a 2000 ad for WWF SmackDown! 2, then a Cartoon Network bumper"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Tapes that air when they aired</h3><p class=\"ta-l\">The best footage on the box is recorded broadcasts: whole blocks taped off cable, with the bumpers, promos and commercials still in. Playing them at random hours wasted them, so each network's tapes now have a slot that matches when they really aired.</p><ul class=\"ta-l\"><li><strong>Adult Swim</strong>, Sunday 11 PM to 2 AM.</li><li><strong>Nickelodeon</strong>, weekdays 3 to 6 PM.</li><li><strong>Cartoon Network</strong>, Wednesday and Friday 3 to 6 PM.</li><li><strong>Disney and Fox Kids</strong>, Saturday at 8 AM.</li><li><strong>Toonami</strong>, weekday afternoons.</li></ul><p class=\"ta-l\">A long tape is split where the real block broke, so a slot starts on a show's open instead of halfway through an ad.</p>"
+  },
+  {
+   "type": "image",
+   "name": "tape-slots",
+   "width": 1600,
+   "height": 480,
+   "maxWidth": 1200,
+   "alt": "As-aired tapes in their real slots: Family Guy on a 2004 Adult Swim tape at 11 PM Sunday, Hey Arnold! on a 2001 Nickelodeon tape at 3 PM on weekdays, and Ed, Edd n Eddy on a 2004 Cartoon Network tape at 3 PM Wednesday and Friday"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Mining the tapes for commercials</h3><p class=\"ta-l\">Those tapes are also full of period commercials. A tape mapper finds each break and cuts out the individual spots, and a vision model checks every cut: a cut that caught show footage, or two ads run together, is rejected or split at the black gap between them. Duplicates are caught by fingerprint, so the same ad taped twice lands once.</p><p class=\"ta-l\">I review every batch on a page where the only action is skip, so approving a thousand ads is just watching them. The third round added 1,111, for 1,267 across all three. Holiday spots are routed into date-range folders, so a Christmas ad only airs from November 20 to December 31.</p>"
+  },
+  {
+   "type": "image",
+   "name": "tape-ads",
+   "width": 1600,
+   "height": 480,
+   "maxWidth": 1200,
+   "alt": "Three commercials cut from Adult Swim tapes: Kill Bill Vol. 2 (2004), the Aqua Teen Hunger Force Zombie Ninja Pro-Am game (2005) and Burger King (2005)"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Put in a DVD and it's on TV</h3><p class=\"ta-l\">The family's discs take one step: put one in the drive. A worker machine rips the feature, encodes it and letterboxes widescreen into 640x480, speech recognition confirms the audio is English, and the file is checksum-verified onto the box and placed on its channel. In one day that was A Quiet Place, National Lampoon's Vacation and European Vacation, Ghostbusters and Ghostbusters II, The Fly II, and the fourth season of Rocko's Modern Life.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "rocko-title",
+     "width": 1280,
+     "height": 960,
+     "ratio": 1.3333,
+     "alt": "Rocko's Modern Life, season 4: the title card for The High Five of Doom, ripped from DVD and on the Nicktoons channel"
+    },
+    {
+     "kind": "image",
+     "name": "ghostbusters",
+     "width": 1280,
+     "height": 960,
+     "ratio": 1.3333,
+     "alt": "Ghostbusters (1984) from DVD, letterboxed into the 4:3 frame rather than cropped"
+    }
+   ]
   },
   {
    "type": "image",
@@ -116,7 +165,7 @@
   },
   {
    "type": "text",
-   "html": "<h3>The result</h3><p class=\"ta-l\">The box has run unattended since August. It carries about 14,400 episodes and films (roughly 6,500 hours), more than 4,200 dated commercials and 10,000 bumpers. Every night it catalogues new content, extends its schedule, backs up its configuration and checks its own health. My family turns it on like a TV.</p>"
+   "html": "<h3>The result</h3><p class=\"ta-l\">The box has run unattended since August. It carries about 14,400 episodes and films (roughly 6,500 hours), nearly 5,000 dated commercials and 10,000 bumpers. Every night it catalogues new content, extends its schedule, backs up its configuration and checks its own health. My family turns it on like a TV.</p>"
   },
   {
    "type": "grid",
