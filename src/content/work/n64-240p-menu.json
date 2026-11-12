@@ -1,0 +1,110 @@
+{
+ "title": "N64 240p Menu",
+ "pageTitle": "N64 240p Menu - From a file list to a game shelf on a CRT | Mitchell Vizensky",
+ "slug": "n64-240p-menu",
+ "order": 0.6,
+ "description": "<p>The EverDrive's stock menu is a text list of file names. I redesigned it around discovery: cover art, screenshots, descriptions and mood shelves for 111 games, readable from the couch on a real CRT.</p>",
+ "meta": {
+  "date": "2026",
+  "fields": [
+   "UX/UI",
+   "Development",
+   "Hardware"
+  ]
+ },
+ "card": {
+  "image": "cover",
+  "line": "2026 · Build · N64 front end for a CRT"
+ },
+ "links": [
+  {
+   "label": "View on GitHub",
+   "href": "https://github.com/hotdog-face/n64-240p-menu"
+  },
+  {
+   "label": "The bootloader write-up I filed upstream",
+   "href": "https://github.com/Polprzewodnikowy/N64FlashcartMenu/issues/353"
+  }
+ ],
+ "background": "#101224",
+ "dark": true,
+ "modules": [
+  {
+   "type": "image",
+   "name": "cover",
+   "width": 1150,
+   "height": 900,
+   "alt": "The carousel on a Sony Trinitron XBR: a 240p test pattern, 1080 Snowboarding and Mario Kart 64 covers above, a 1080 screenshot and description below",
+   "maxWidth": 1000
+  },
+  {
+   "type": "text",
+   "html": "<h3>Overview</h3><p class=\"ta-l\">An EverDrive lets a Nintendo 64 play games from an SD card. The menu it ships with, from its maker krikzz, is a text list: folder names and ROM file names in a small font, one screen at a time. It works if you already know exactly what you want and where you put it. It does nothing to help you choose.</p><p class=\"ta-l\">I redesigned the experience around browsing and discovery, the way a shelf of boxed games works, and built it to run in true 240p on the Trinitron my N64 is plugged into.</p>"
+  },
+  {
+   "type": "grid",
+   "items": [
+    {
+     "kind": "image",
+     "name": "before",
+     "width": 1024,
+     "height": 768,
+     "alt": "Before: the EverDrive's stock menu, a blue screen listing ROM file names such as \"Banjo-Kazooie (U) (V1.1) [!].z64\" with page and save type along the bottom",
+     "ratio": 1.3333
+    },
+    {
+     "kind": "image",
+     "name": "carousel",
+     "width": 1150,
+     "height": 900,
+     "alt": "After: the carousel, with covers along the top and a screenshot and description of the selected game below",
+     "ratio": 1.2778
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<p class=\"ta-l\"><small>Before: krikzz's stock EverDrive-64 menu (photo: <a href=\"https://flashcartcentral.blogspot.com/2013/12/krikzz-everdrive-64-nintendo-64-flash.html\">Flashcart Review Central</a>). After: my redesign, on a Sony Trinitron.</small></p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>The problem with a file list</h3><ul><li><b>File names aren't game names.</b> \"Legend of Zelda, The - Majora's Mask (USA).z64\" and \"001 Conker...\" are what you read, sorted by whatever the file happens to start with.</li><li><b>Too much, all at once.</b> My card held 2,707 ROM files: region variants, duplicates from collections, hacks, translations and prototypes. Finding one game meant drilling through folders and scrolling hundreds of near-identical rows.</li><li><b>Nothing to recognise.</b> No box art, no screenshot, no description, so a game you'd love but don't remember the name of is invisible.</li><li><b>Hard to read from the couch.</b> Small text on a CRT, in a flickering 480i picture, from across the room.</li></ul>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Curate first, keep everything</h3><p class=\"ta-l\">Before any interface work I fixed the information. I read the game code from every ROM's header and grouped files by game, which took 2,707 files down to 835 unique games. From those I curated 111 for the front page: the classics, hidden gems and the hacks and translations worth playing. Nothing was thrown away. The full library is still one press of B away in the file browser, so the curated shelf adds a front door without taking anything out of reach.</p>"
+  },
+  {
+   "type": "image",
+   "name": "racing",
+   "width": 1150,
+   "height": 900,
+   "alt": "Further along the shelf, with Cruis'n World selected and its gameplay screenshot below",
+   "maxWidth": 900
+  },
+  {
+   "type": "text",
+   "html": "<h3>Recognise, then decide</h3><p class=\"ta-l\">The screen splits in two. Along the top, covers scroll like boxes on a shelf, so you can spot a game by its art before you read a word. Below, the selected game gets a gameplay screenshot and a short description, which answers the questions a file name can't: what is this, and do I want to play it right now? The controls (A play, B files, L shelf, Z random, R menu) stay on screen the whole time.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Help for when you don't know what you want</h3><ul><li><b>Mood shelves.</b> Party, Racing, Action, Adventure, Sports, Chill and Homebrew, cycled with L. They match how people actually choose on a games night (\"something for four players\") better than an alphabetical list does.</li><li><b>Random pick.</b> Z jumps to a random game, which turns up things you'd forgotten were on the card.</li><li><b>Back to where you were.</b> The menu starts on the game you played last.</li><li><b>Saves at a glance.</b> A badge marks games you already have progress in.</li><li><b>Custom covers for hacks.</b> Romhacks reuse their base game's code, so Star Road showed up as plain Super Mario 64. I made covers so each one is recognisable on the shelf.</li></ul>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Designed for 240 lines</h3><p class=\"ta-l\">I rebuilt the menu to output 640 by 240 progressive, the same signal N64 games send, so it's sharp and steady on the CRT instead of flickering in 480i. Every pixel is twice as tall as it is wide and there's half the vertical space, so I halved the vertical layout, drew art at half height so the TV's stretch makes it look right, and widened the fonts to keep text readable from the couch. Everything sits inside the overscan, where the CRT can't crop it. A 240p test pattern is pinned first on the shelf for checking the TV before playing.</p>"
+  },
+  {
+   "type": "image",
+   "name": "bootloader",
+   "width": 1150,
+   "height": 720,
+   "alt": "The EverDrive-64 V3 bootloader's error screen on the Trinitron",
+   "maxWidth": 800
+  },
+  {
+   "type": "text",
+   "html": "<h3>Built on real hardware, tested on the couch</h3><p class=\"ta-l\">The front end started from N64FlashcartMenu, an open-source replacement for the stock menu, with a community cover-art front end. I designed the experience and built it with AI coding tools across 25 builds, each played on the real console and TV. Playtest notes drove the changes: text that overlapped at 240p, a grid that loaded too slowly, screenshots that vanished while scrolling. My cart's 2014 bootloader turned out to hold a menu of only about 2 MB, so I moved 48 MB of cover art onto the SD card as one indexed file, which also made art load much faster. I wrote up that limit for the upstream project so other owners of this cart don't hit the same wall.</p><p><a href=\"https://github.com/hotdog-face/n64-240p-menu\">View the source on GitHub</a></p>"
+  }
+ ]
+}
