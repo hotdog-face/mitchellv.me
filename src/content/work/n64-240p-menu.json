@@ -3,7 +3,7 @@
  "pageTitle": "N64 240p Menu - From a file list to a game shelf on a CRT | Mitchell Vizensky",
  "slug": "n64-240p-menu",
  "order": 0.6,
- "description": "<p>The EverDrive's stock menu is a text list of file names. I redesigned it around discovery: cover art, screenshots, descriptions and mood shelves for 111 games, readable from the couch on a real CRT.</p>",
+ "description": "<p>The EverDrive's stock menu is a text list of file names. I redesigned it around discovery: cover art, screenshots, descriptions and mood shelves for 90 games, readable from the couch on a real CRT.</p>",
  "meta": {
   "date": "2026",
   "fields": [
@@ -72,7 +72,7 @@
   },
   {
    "type": "text",
-   "html": "<h3>Curate first, keep everything</h3><p class=\"ta-l\">Before any interface work I fixed the information. I read the game code from every ROM's header and grouped files by game, which took 2,707 files down to 835 unique games. From those I curated 111 for the front page: the classics, hidden gems and the hacks and translations worth playing. Nothing was thrown away. The full library is still one press of B away in the file browser, so the curated shelf adds a front door without taking anything out of reach.</p>"
+   "html": "<h3>Curate first, keep everything</h3><p class=\"ta-l\">Before any interface work I fixed the information. I read the game code from every ROM's header and grouped files by game, which took 2,707 files down to 835 unique games. From those I curated a front page of about a hundred, since trimmed to 90: the classics, hidden gems and the hacks and translations worth playing. Nothing was thrown away. The full library is still one press of B away in the file browser, so the curated shelf adds a front door without taking anything out of reach.</p>"
   },
   {
    "type": "image",
@@ -88,7 +88,7 @@
   },
   {
    "type": "text",
-   "html": "<h3>Help for when you don't know what you want</h3><ul><li><b>Mood shelves.</b> Party, Racing, Action, Adventure, Sports, Chill and Homebrew, cycled with L. They match how people actually choose on a games night (\"something for four players\") better than an alphabetical list does.</li><li><b>Random pick.</b> Z jumps to a random game, which turns up things you'd forgotten were on the card.</li><li><b>Back to where you were.</b> The menu starts on the game you played last.</li><li><b>Saves at a glance.</b> A badge marks games you already have progress in.</li><li><b>Custom covers for hacks.</b> Romhacks reuse their base game's code, so Star Road showed up as plain Super Mario 64. I made covers so each one is recognisable on the shelf.</li></ul>"
+   "html": "<h3>Help for when you don't know what you want</h3><ul><li><b>Mood shelves.</b> Party, Racing, Action, Adventure, Chill and Homebrew, cycled with L. They match how people actually choose on a games night (\"something for four players\") better than an alphabetical list does.</li><li><b>Random pick.</b> Z jumps to a random game, which turns up things you'd forgotten were on the card.</li><li><b>Back to where you were.</b> The menu starts on the game you played last.</li><li><b>Saves at a glance.</b> A badge marks games you already have progress in.</li><li><b>Custom covers for hacks.</b> Romhacks reuse their base game's code, so Star Road showed up as plain Super Mario 64. I made covers so each one is recognisable on the shelf.</li></ul>"
   },
   {
    "type": "text",
@@ -104,7 +104,7 @@
   },
   {
    "type": "text",
-   "html": "<h3>Built on real hardware, tested on the couch</h3><p class=\"ta-l\">The front end started from N64FlashcartMenu, an open-source replacement for the stock menu, with a community cover-art front end. I designed the experience and built it with AI coding tools across 25 builds, each played on the real console and TV. Playtest notes drove the changes: text that overlapped at 240p, a grid that loaded too slowly, screenshots that vanished while scrolling. My cart's 2014 bootloader turned out to hold a menu of only about 2 MB, so I moved 48 MB of cover art onto the SD card as one indexed file, which also made art load much faster. I wrote up that limit for the upstream project so other owners of this cart don't hit the same wall.</p><p><a href=\"https://github.com/hotdog-face/n64-240p-menu\">View the source on GitHub</a></p>"
+   "html": "<h3>Built on real hardware, tested on the couch</h3><p class=\"ta-l\">The front end started from N64FlashcartMenu, an open-source replacement for the stock menu, with a community cover-art front end. I designed the experience and built it with AI coding tools across 28 builds, each played on the real console and TV. Playtest notes drove the changes: text that overlapped at 240p, a grid that loaded too slowly, screenshots that vanished while scrolling. My cart's 2014 bootloader turned out to hold a menu of only about 2 MB, so I moved 48 MB of cover art onto the SD card as one indexed file, which also made art load much faster. I wrote up that limit for the upstream project so other owners of this cart don't hit the same wall.</p><p class=\"ta-l\">Later the menu itself started damaging the SD card: it rewrote its history file every time a game launched, and on this cart those rewrites corrupted the card's file table, eventually wiping the menu off the card. Now the menu rewrites its files in place at a fixed size, so launching a game never touches the file table. That fix is confirmed on the console.</p><p><a href=\"https://github.com/hotdog-face/n64-240p-menu\">View the source on GitHub</a></p>"
   }
  ]
 }
