@@ -93,14 +93,14 @@
      "name": "store",
      "width": 960,
      "height": 544,
-     "alt": "Downloads tab: the homebrew store",
+     "alt": "Store tab: the homebrew store",
      "ratio": 1.7647
     }
    ]
   },
   {
    "type": "text",
-   "html": "<h3>Movies and Downloads</h3><p class=\"ta-l\"><b>Movies</b> is a cover flow of your films with resume, plus swipe gestures for brightness and volume. <b>Downloads</b> is a homebrew store built on VitaHomebrewDB. It sorts by popularity and installs straight onto the Vita.</p>"
+   "html": "<h3>Movies and the Store</h3><p class=\"ta-l\"><b>Movies</b> is a cover flow of your films with resume, plus swipe gestures for brightness and volume. The <b>Store</b> lists more than 1,600 homebrew apps, ports and emulators and installs them straight onto the Vita. Its catalogue is rebuilt every day from two community databases and a search of GitHub, so new projects show up without anyone having to submit them.</p>"
   },
   {
    "type": "text",
@@ -116,7 +116,7 @@
   },
   {
    "type": "text",
-   "html": "<h3>Details that make it feel like a console</h3><ul><li>Finds everything on the memory card by itself, with no setup.</li><li>Files, Settings, search, an on-screen keyboard, toasts, UI sounds and a live, tilt-aware background.</li><li>An optional plugin makes VitaOS start at power-on and turns the PS button into a Home button, the way HOME works on a Switch.</li><li>Updates itself from Settings with one button.</li><li>Speaks eight languages: English, Español, Português, Français, Deutsch, Italiano, 日本語 and Русский.</li></ul><p><a href=\"https://github.com/hotdog-face/VitaOS\">View VitaOS on GitHub</a></p>"
+   "html": "<h3>Details that make it feel like a console</h3><ul><li>Finds everything on the memory card by itself, with no setup.</li><li>Files, Settings, search, an on-screen keyboard, toasts, UI sounds and a live, tilt-aware background.</li><li>An optional plugin makes VitaOS start at power-on and turns the PS button into a Home button, the way HOME works on a Switch.</li><li>Updates itself from Settings with one button.</li><li>Opens quickly: on my Vita the first screen is complete about four and a half seconds after it starts.</li><li>Speaks eight languages: English, Español, Português, Français, Deutsch, Italiano, 日本語 and Русский.</li></ul><p><a href=\"https://github.com/hotdog-face/VitaOS\">View VitaOS on GitHub</a></p>"
   }
  ]
 }
