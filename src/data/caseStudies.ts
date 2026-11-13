@@ -145,7 +145,7 @@ export const caseStudies: CaseStudy[] = [
 ];
 
 /** Builds: side projects I design and build myself, in the order shown. */
-export const lab = ['/work/wiizard', '/work/vitaos', '/work/prism', '/work/living-room-music', '/work/classic-mac', '/work/mr2-dash', '/work/gameplay-spotlight', '/work/n64-240p-menu', '/work/vita-agent-bridge', '/work/retro-tv'];
+export const lab = ['/work/wiizard', '/work/vitaos', '/work/prism', '/work/living-room-music', '/work/classic-mac', '/work/mr2-dash', '/work/gameplay-spotlight', '/work/n64-240p-menu', '/work/hollowtide-experiments', '/work/vita-agent-bridge', '/work/retro-tv'];
 
 // What each build shows about my UX work (one line on its Builds card), and which ones are
 // console and living-room interfaces: built for a controller or a remote and read from the couch.
@@ -159,6 +159,7 @@ export const labAngle: Record<string, { angle: string; tv?: boolean }> = {
   'mr2-dash': { angle: 'Glanceable numbers you can read while driving' },
   'gameplay-spotlight': { angle: 'Choosing a game from across the room', tv: true },
   'n64-240p-menu': { angle: 'Readable from the couch on a 240-line CRT', tv: true },
+  'hollowtide-experiments': { angle: 'Designing a score that rewards real progress, not loopholes' },
   'vita-agent-bridge': { angle: 'Designing for an AI user: look, act, look again' },
   'retro-tv': { angle: 'Designing a TV nobody has to manage', tv: true },
 };
