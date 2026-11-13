@@ -1,0 +1,69 @@
+{
+ "title": "Teaching Bots to Experiment",
+ "pageTitle": "Teaching Bots to Experiment | Mitchell Vizensky",
+ "slug": "hollowtide-experiments",
+ "order": 0.13,
+ "description": "<p>The bots on my Hollowtide server started out following rulebooks I wrote. Now they're moving to something better: a score for real progress, experiments on private test servers, and alarms for wins that look too good. It's a small, hands-on version of a real problem in AI research.</p>",
+ "meta": {
+  "date": "2026",
+  "fields": [
+   "Systems design",
+   "AI agents",
+   "Game design"
+  ]
+ },
+ "card": {
+  "image": "bots-armor",
+  "line": "2026 · Build · Hollowtide bots"
+ },
+ "links": [
+  {
+   "label": "Read the Hollowtide case study",
+   "href": "https://www.mitchellv.me/work/hollowtide"
+  },
+  {
+   "label": "Play Hollowtide",
+   "href": "https://hollowtide.org"
+  }
+ ],
+ "background": "#121214",
+ "dark": true,
+ "modules": [
+  {
+   "type": "image",
+   "name": "bots-armor",
+   "width": 1064,
+   "height": 568,
+   "alt": "Three of the server's bots in matching black-and-gold armor with red shields, overlooking a river, rendered in Hollowtide's own client",
+   "maxWidth": 1064
+  },
+  {
+   "type": "text",
+   "html": "<h3>Why the server has bots</h3><p class=\"ta-l\">Hollowtide is my fan revival of Asheron's Call, with a new client and a live server I run. An MMO with a small population feels empty, and a server that only real players exercise finds its bugs the hard way. So the server also runs bots: characters that log in and play the game the way a person would. They level up, gear up, hunt and travel. They're part of how each release gets tested before players see it, and they keep the world from feeling empty If you ask one, it will tell you it's a bot.</p><p class=\"ta-l\">This page is about how they decide what to do, and why I'm changing that from the ground up.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Version one: the rulebook</h3><p class=\"ta-l\">The first bots played from documents I wrote: a leveling guide, rules for gear, rules for how to play safely. AI coding agents turned those documents into behavior, and it worked. The bots played like a careful new player who had read the wiki.</p><p class=\"ta-l\">Then the same loop kept repeating. I'd watch the bots, notice something a real player would never do, write a new rule, and ship it. Each fix was fine. Together they showed the problem:</p><ul class=\"ta-l\"><li><strong>They could only be as good as my notes.</strong> Every trick had to come from me, so the bots never knew anything I didn't.</li><li><strong>Spoon-feeding doesn't scale.</strong> Each new rule touched the others, and the edge cases grew faster than I could write them down.</li><li><strong>Rules go stale.</strong> When the world changes with new content or a rebalance, a written strategy keeps doing yesterday's best thing.</li><li><strong>They could never surprise me.</strong> A veteran player finds things the designer didn't plan for. A bot that only follows instructions can't.</li></ul><p class=\"ta-l\">The rulebook had a ceiling, and the ceiling was me.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Version two: a score, experiments and alarms</h3><p class=\"ta-l\">Instead of telling the bots how to play, the new design tells them what good looks like and lets them find out how. It has three parts:</p><ol class=\"flow\"><li>Try a variation</li><li>Play it on a test server</li><li>Score it</li><li>Check the alarms</li><li>Keep what wins</li></ol><p class=\"ta-l\"><strong>A score for real progress.</strong> This is the hardest part, and it's a design problem, not a coding one. The score has to measure what a player would call progress, not something that's easy to inflate. Get it wrong and you've built a machine for making the wrong number go up.</p><p class=\"ta-l\"><strong>Experiments on private test servers.</strong> Bots try variations on a strategy in copies of the world that no player is on, side by side with the current approach. A change is kept only when it measurably wins, over enough runs that it isn't luck. Nothing reaches the live server until it has won somewhere safe first.</p><p class=\"ta-l\"><strong>Alarms for suspicious wins.</strong> A win that's too big, too sudden, or comes from something no player would think to do doesn't get kept automatically. It gets flagged and held until a person looks at it.</p><table class=\"keys\"><tbody><tr><th></th><td><strong>Rulebook</strong></td><td><strong>Experiments</strong></td></tr><tr><th>Where strategy comes from</th><td>What I already know</td><td>What measurably works</td></tr><tr><th>When the world changes</th><td>I rewrite the rules</td><td>The next experiment notices</td></tr><tr><th>My job</th><td>Write every trick down</td><td>Define progress, review surprises</td></tr><tr><th>Can it surprise me?</th><td>No</td><td>Yes, which is the point and the risk</td></tr></tbody></table>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>The part that's really an AI alignment problem</h3><p class=\"ta-l\">AI researchers have a name for what happens when you give an optimizer a score: specification gaming, or reward hacking. The system finds the cheapest way to raise the number, and the cheapest way is often one nobody intended. The classic example is a boat-racing agent that learned to spin in circles collecting points instead of finishing the race. It wasn't broken. It did exactly what the score asked.</p><p class=\"ta-l\">On a game server, that has a very concrete meaning. A system clever enough to find a better way to level is also clever enough to find a hole in the wall. You don't get one without the risk of the other. That's why the alarms exist, and why a surprising win is treated as a question, not a victory.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>The guardrail: clever is welcome, exploits are reported</h3><p class=\"ta-l\">The line is simple to say and matters a lot:</p><ul class=\"ta-l\"><li><strong>Clever play within the game's rules is welcome.</strong> An unexpected but fair strategy is exactly what this is for. It might even teach me something about my own game.</li><li><strong>Real bugs and exploits get reported and fixed.</strong> They never count as a win, and they're never used on the live server.</li></ul><p class=\"ta-l\">It matters for three reasons. It's a shared world, and a bot using a bug would be cheating against real people. It keeps the score honest, because an exploit that can't be kept isn't worth chasing. And it turns the bots' cleverness into something useful: anything that finds a hole becomes the server's most persistent QA tester. A found exploit is a bug report, not a strategy.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>Results</h3><p class=\"ta-l\">The experiments are running now. Once they've had a few weeks, this is where the results go: how the bots' progress compares with the rulebook version, the most surprising fair strategy they found, and what the alarms caught and how it was handled.</p><table class=\"keys\"><tbody><tr><th>Progress vs. the rulebook</th><td>Coming after the first runs</td></tr><tr><th>Most surprising fair strategy</th><td>Coming after the first runs</td></tr><tr><th>Suspicious wins flagged</th><td>Coming after the first runs</td></tr><tr><th>Bugs found and fixed</th><td>Coming after the first runs</td></tr></tbody></table>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>What I'm taking from it</h3><ul class=\"ta-l\"><li><strong>Rules capture what you know. Experiments find what you don't.</strong> Both have a place, but only one can grow past its author.</li><li><strong>The score is the design.</strong> Most of the real thinking goes into what counts as progress and what explicitly doesn't.</li><li><strong>Plan for the system to be cleverer than you.</strong> Build the alarm before you need it.</li><li><strong>Keep a person on the decisions that matter.</strong> What counts, what gets kept and what ships are still mine, the same way every Hollowtide release goes out on my go.</li></ul><p class=\"ta-l\">I'll update this page as the bots learn things I didn't teach them.</p><p class=\"ta-l\" style=\"font-size:13px;opacity:.75\">On purpose, this page stays high level. How the bots play, where and in detail is theirs to work out, and it's a shared world that players should discover for themselves. Hollowtide is a fan project, not affiliated with or endorsed by Turbine, WB Games or the original game's owners.</p>"
+  }
+ ]
+}
