@@ -83,6 +83,24 @@ export const tileLabels: Record<string, string> = {
   '/work/my-konami-slots': 'My Konami Slots',
 };
 
+// "Vintage TVs" section under Builds: the CRT restoration work. Photos live in src/assets/img/crt/.
+export const crts = {
+  eyebrow: 'Vintage TVs',
+  headline: 'I also restore old CRT TVs.',
+  text: [
+    "Outside of games, I bring old tube TVs back to life: repairs and recaps, service-menu color and geometry calibration, RGB mods for retro consoles, and the occasional custom stand. I've worked on dozens of sets, from a 1978 Sony Trinitron to a 40\" XBR.",
+    'I share each one with the retro community on Sunthar and help fill gaps in the CRT Database. Got an old TV that needs some love? Get in touch.',
+  ],
+  showcase: { label: 'See the TVs on Sunthar', href: 'https://my.sunthar.com/mitchell' },
+  contactLabel: 'Ask about a TV',
+  emailSubject: 'Old CRT TV',
+  photos: [
+    { image: 'crt/kv-32xbr45', alt: 'Sony KV-32XBR45 showing Sonic the Hedgehog', caption: 'Sony KV-32XBR45' },
+    { image: 'crt/kv-1941r', alt: '1978 Sony KV-1941R Trinitron in a wood-grain cabinet showing Star Fox 64', caption: 'Sony KV-1941R (1978)' },
+    { image: 'crt/sears-portable', alt: 'Small cream-colored Sears portable TV showing Super Mario Bros.', caption: 'Sears portable' },
+  ],
+};
+
 export const clients = {
   image: '9b965350',
   alt: 'Clients: Shaq, Cirque du Soleil, MGM Grand, Konami, Big Fish, Plarium, Virgin, Adobe, Amazon, MTV, The Pokémon Company International',

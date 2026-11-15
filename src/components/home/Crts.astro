@@ -1,0 +1,44 @@
+---
+// Home page "Vintage TVs": the CRT restoration side of things (text and links in src/data/home.ts → crts).
+import Img from '../Img.astro';
+import { crts } from '../../data/home';
+import { email } from '../../data/site';
+---
+<section class="crts" id="crts">
+  <div class="inner">
+    <div class="intro">
+      <p class="eyebrow">{crts.eyebrow}</p>
+      <h2>{crts.headline}</h2>
+      {crts.text.map(p => <p>{p}</p>)}
+      <div class="links">
+        <a class="btn" href={crts.showcase.href} target="_blank" rel="noopener">{crts.showcase.label}</a>
+        <a class="btn btn--ghost" href={`mailto:${email}?subject=${encodeURIComponent(crts.emailSubject)}`}>{crts.contactLabel}</a>
+      </div>
+    </div>
+    <div class="photos">
+      {crts.photos.map((p, i) => (
+        <figure data-anim="float-up" style={`--anim-dur:.8s;--anim-delay:${i * 0.1}s`}>
+          <Img name={p.image} alt={p.alt} sizes="(max-width: 860px) 33vw, 220px" />
+          <figcaption>{p.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .crts { background: #0b0b0d; color: #ececef; padding: 80px 0; border-top: 1px solid rgba(255,255,255,.06); }
+  .inner { width: min(1100px, 100% - 2 * var(--gutter)); margin-inline: auto; display: grid; grid-template-columns: 1fr 1.25fr; gap: 56px; align-items: center; }
+  .eyebrow { margin: 0 0 10px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--mint); font-weight: 700; }
+  h2 { font-size: clamp(26px, 3vw, 34px); font-weight: 700; color: #fff; line-height: 1.2; }
+  .intro p:not(.eyebrow) { margin-top: 14px; color: #b9b9bf; font-size: 16px; line-height: 1.55; }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+  .links .btn { min-width: 0; min-height: 44px; padding: 0 18px; border-radius: 5px; font-size: 15px; }
+  .links .btn--ghost:hover { color: #0b0b0d; }
+  .photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  figure { margin: 0; }
+  .photos :global(img) { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 10px; border: 1px solid rgba(255,255,255,.08); }
+  figcaption { margin-top: 8px; font-size: 13px; color: #9a9aa2; text-align: center; }
+  @media (max-width: 860px) { .inner { grid-template-columns: 1fr; gap: 32px; } .crts { padding: 64px 0; } }
+  @media (max-width: 480px) { .photos { gap: 8px; } figcaption { font-size: 12px; } }
+</style>
