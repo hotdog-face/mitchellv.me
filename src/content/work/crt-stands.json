@@ -1,0 +1,86 @@
+{
+ "title": "Matching Stands for Sony CRTs",
+ "pageTitle": "Matching Stands for Sony CRTs | Mitchell Vizensky",
+ "slug": "crt-stands",
+ "order": 0.6,
+ "description": "<p>Big Sony CRTs were designed with matching stands, and most of those stands are long gone. I design and build replacements that follow each TV's own lines, so the set looks like it shipped that way. The silver Wega stand is my favorite so far; the black XBR stand came first.</p>",
+ "meta": {
+  "date": "2026",
+  "fields": [
+   "Industrial design",
+   "Woodworking",
+   "CRT restoration"
+  ]
+ },
+ "card": {
+  "image": "w-cover",
+  "line": "2026 · Build · Furniture for vintage Sony TVs"
+ },
+ "background": "#121214",
+ "dark": true,
+ "modules": [
+  {
+   "type": "grid",
+   "maxWidth": 1000,
+   "items": [
+    { "kind": "image", "name": "w-cover", "width": 1050, "height": 1400, "alt": "Silver Sony KV-32FS320 Wega on its new matching stand, showing Pocky & Rocky", "ratio": 0.75 },
+    { "kind": "image", "name": "w-game", "width": 1050, "height": 1400, "alt": "Close-up of the Wega's flat screen on the new stand", "ratio": 0.75 }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h2>Sony KV-32FS320 Wega: a silver stand with curved sides</h2><p class=\"ta-l\">The FS320 is a 32\" flat-screen Wega in Sony's two-tone silver, with sides that curve back from the screen. A plain box under it would have looked wrong, so the stand had to carry that curve and the silver finish down to the floor.</p><h3>Bending plywood</h3><p class=\"ta-l\">Plywood doesn't bend on its own, so I kerf-cut the side panels: dozens of shallow, evenly spaced saw cuts across the back of the sheet. That let each side flex into the same curve as the TV's cabinet, and gluing it into the frame locked the shape in.</p>"
+  },
+  {
+   "type": "grid",
+   "maxWidth": 1100,
+   "items": [
+    { "kind": "image", "name": "w-kerf", "width": 1050, "height": 1400, "alt": "Plywood side panel with rows of kerf cuts", "ratio": 0.75 },
+    { "kind": "image", "name": "w-bent", "width": 1050, "height": 1400, "alt": "The kerfed panel flexing into a curve", "ratio": 0.75 },
+    { "kind": "image", "name": "w-glued", "width": 1050, "height": 1400, "alt": "The curved side glued into the frame", "ratio": 0.75 },
+    { "kind": "image", "name": "w-box", "width": 1050, "height": 1400, "alt": "The raw plywood stand with its shelf", "ratio": 0.75 }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h3>Matching Sony's silver</h3><p class=\"ta-l\">I primed the stand, filled the kerf lines so the curve reads as one smooth surface, and sprayed it to match the TV's silver. The top is shaped to the TV's footprint, with a shelf for consoles and a pull-out drawer for games and controllers, all on casters.</p>"
+  },
+  {
+   "type": "grid",
+   "maxWidth": 1100,
+   "items": [
+    { "kind": "image", "name": "w-primer", "width": 1050, "height": 1400, "alt": "The stand in grey primer", "ratio": 0.75 },
+    { "kind": "image", "name": "w-curve", "width": 1050, "height": 1400, "alt": "The finished curve in silver", "ratio": 0.75 },
+    { "kind": "image", "name": "w-done", "width": 1050, "height": 1400, "alt": "The finished silver stand", "ratio": 0.75 },
+    { "kind": "image", "name": "w-top", "width": 1050, "height": 1400, "alt": "The top of the stand, shaped to the TV's footprint", "ratio": 0.75 }
+   ]
+  },
+  {
+   "type": "grid",
+   "maxWidth": 1100,
+   "items": [
+    { "kind": "image", "name": "w-drawer", "width": 1050, "height": 1400, "alt": "The pull-out drawer under the shelf", "ratio": 0.75 },
+    { "kind": "image", "name": "w-shelf", "width": 1400, "height": 1050, "alt": "The open shelf for consoles", "ratio": 1.3333 },
+    { "kind": "image", "name": "w-room", "width": 1400, "height": 1050, "alt": "The Wega on its new stand in the living room", "ratio": 1.3333 }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<h2>Sony KV-32XBR45: the first stand</h2><p class=\"ta-l\">Before the Wega, I built a stand for a 1995 KV-32XBR45, a 32\" Trinitron with a bowed front and sides that taper toward the back. I took the footprint and front curve straight from the TV's base, matched the taper, and finished it in textured black. It does the job; the Wega stand is where I got the curves and finish right.</p>"
+  },
+  {
+   "type": "grid",
+   "maxWidth": 1100,
+   "items": [
+    { "kind": "image", "name": "cover", "width": 1050, "height": 1400, "alt": "The Sony KV-32XBR45 showing Sonic the Hedgehog", "ratio": 0.75 },
+    { "kind": "image", "name": "frame", "width": 1050, "height": 1400, "alt": "The XBR stand's plywood carcass on sawhorses", "ratio": 0.75 },
+    { "kind": "image", "name": "painted", "width": 1050, "height": 1400, "alt": "The XBR stand in textured black", "ratio": 0.75 },
+    { "kind": "image", "name": "done-front", "width": 1050, "height": 1400, "alt": "The finished XBR on its black stand", "ratio": 0.75 }
+   ]
+  },
+  {
+   "type": "text",
+   "html": "<p class=\"ta-l\">It's the same habit I bring to UX work: start from what's already there, match the system instead of fighting it, and finish the details people only notice when they're wrong. More of my restored TVs are on <a href=\"https://my.sunthar.com/mitchell\" target=\"_blank\" rel=\"noopener\">Sunthar</a>.</p>"
+  }
+ ]
+}
